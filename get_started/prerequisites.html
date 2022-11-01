@@ -247,7 +247,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Visualisation with Kedro-Viz</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Visualisation with Kedro-Viz</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#install-kedro-viz-and-visualise-the-project">Install Kedro-Viz and visualise the project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
@@ -1292,18 +1292,17 @@
 </style>
 <div class="section" id="installation-prerequisites">
 <h1>Installation prerequisites<a class="headerlink" href="#installation-prerequisites" title="Permalink to this headline">¶</a></h1>
-<p>Kedro supports macOS, Linux and Windows (7 / 8 / 10 and Windows Server 2016+). If you encounter any problems on these platforms, please check the <a class="reference external" href="https://kedro-org.slack.com">Kedro Slack channels</a>.</p>
-<p>If you use PySpark, you must also <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html">install Java</a>. If you are a Windows user, you will need admin rights to complete the installation.</p>
+<p>Kedro supports macOS, Linux and Windows. If you encounter any problems on these platforms, please check the <a class="reference external" href="https://kedro-org.slack.com">Kedro Slack channels</a>.</p>
+<p>If you are a Windows user, you will need to install <a class="reference external" href="https://git-scm.com/"><code class="docutils literal notranslate"><span class="pre">git</span></code></a> onto your machine if you do not have it.</p>
+<p>PySpark users must <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html">install Java</a> (if you are working on Windows, you will need admin rights to complete the installation).</p>
 <div class="section" id="virtual-environments">
 <h2>Virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h2>
-<p>A Python virtual environment creates an isolated environment for a Python project to have its own dependencies, regardless of other projects.</p>
+<p>We recommend that you create a new Python virtual environment for <em>each</em> new Kedro project you create. A virtual environment creates an isolated environment for a Python project to have its own dependencies, regardless of other projects.</p>
+<p>If you don’t already have it, you should <a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">download and install Anaconda</a> (Python 3.x version), which comes bundled with a package and environment manager called <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
 <blockquote>
 <div><p><a class="reference external" href="https://realpython.com/python-virtual-environments-a-primer/">Read more about Python Virtual Environments</a>.</p>
 </div></blockquote>
-<p>We suggest that you create a new virtual environment for <em>each</em> new Kedro project you create, and recommend that you <a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">download and install Anaconda</a> (Python 3.x version), which comes bundled with a package and environment manager called <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
-<blockquote>
-<div><p>Depending on your preferred Python installation, you can also create virtual environments to work with Kedro using <code class="docutils literal notranslate"><span class="pre">venv</span></code> or <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Further information about these can be found in the <a class="reference internal" href="../faq/faq.html"><span class="doc std std-doc">FAQ</span></a></p>
-</div></blockquote>
+<p>Depending on your preferred Python installation, you can also create virtual environments to work with Kedro using <code class="docutils literal notranslate"><span class="pre">venv</span></code> or <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Further information about these can be found in the <a class="reference internal" href="../faq/faq.html"><span class="doc std std-doc">FAQ</span></a></p>
 <div class="section" id="create-a-virtual-environment-with-conda">
 <h3>Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#create-a-virtual-environment-with-conda" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">

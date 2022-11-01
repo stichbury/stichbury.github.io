@@ -247,7 +247,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Visualisation with Kedro-Viz</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Visualisation with Kedro-Viz</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#install-kedro-viz-and-visualise-the-project">Install Kedro-Viz and visualise the project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
@@ -1301,7 +1301,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro build-docs --open
 </pre></div>
 </div>
-<p>The HTML documention is built to <code class="docutils literal notranslate"><span class="pre">docs/build/html/</span></code> and opens automatically in a browser tab.</p>
+<p>The HTML documention is built to <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> and opens automatically in a browser tab.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">build-docs</span></code> command creates documentation based on the code structure of your project. Documentation includes any <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> defined in your code.</p>
@@ -1313,8 +1313,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro package
 </pre></div>
 </div>
-<p>Kedro builds the package into the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder of your project, and creates one <code class="docutils literal notranslate"><span class="pre">.egg</span></code> file and one <code class="docutils literal notranslate"><span class="pre">.whl</span></code> file, which are <a class="reference external" href="https://packaging.python.org/">Python packaging formats for binary distribution</a>.</p>
-<p>The resulting package only contains the Python source code of your Kedro pipeline, not any of the <code class="docutils literal notranslate"><span class="pre">conf/</span></code>, <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">logs/</span></code> subfolders. This means that you can distribute the project to run elsewhere, such as on a separate computer with different configuration, dataset location and logging as.</p>
+<p>Kedro builds the package into the <code class="docutils literal notranslate"><span class="pre">dist</span></code> folder of your project, and creates one <code class="docutils literal notranslate"><span class="pre">.egg</span></code> file and one <code class="docutils literal notranslate"><span class="pre">.whl</span></code> file, which are <a class="reference external" href="https://packaging.python.org/">Python packaging formats for binary distribution</a>.</p>
+<p>The resulting package only contains the Python source code of your Kedro pipeline, not any of the <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">logs</span></code> subfolders. This means that you can distribute the project to run elsewhere, such as on a separate computer with different configuration information, dataset and logging locations.</p>
 <div class="section" id="package-recipients">
 <h3>Package recipients<a class="headerlink" href="#package-recipients" title="Permalink to this headline">¶</a></h3>
 <p>Recipients of the <code class="docutils literal notranslate"><span class="pre">.egg</span></code> and <code class="docutils literal notranslate"><span class="pre">.whl</span></code> files need to have Python and <code class="docutils literal notranslate"><span class="pre">pip</span></code> on their machines, but do not need to have Kedro installed.</p>
@@ -1322,13 +1322,13 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install &lt;path-to-wheel-file&gt;
 </pre></div>
 </div>
-<p>An executable, <code class="docutils literal notranslate"><span class="pre">kedro-tutorial</span></code>, is placed in the <code class="docutils literal notranslate"><span class="pre">bin/</span></code> subfolder of the Python installation location, so the project can be run as follows from the installation directory:</p>
+<p>An executable, <code class="docutils literal notranslate"><span class="pre">kedro-tutorial</span></code>, is placed in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> subfolder of the Python installation location, so the project can be run as follows from the installation directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m kedro_tutorial
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The recipient will need to add a <code class="docutils literal notranslate"><span class="pre">conf/</span></code> subfolder. They also need to add <code class="docutils literal notranslate"><span class="pre">data/</span></code> and <code class="docutils literal notranslate"><span class="pre">logs/</span></code> if the pipeline loads/saves local data or uses logging.</p>
+<p>The recipient will need to add a <code class="docutils literal notranslate"><span class="pre">conf</span></code> subfolder. They also need to add <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">logs</span></code> if the pipeline loads/saves local data or uses logging.</p>
 </div>
 <p>Once your project is installed, to run your pipelines from any Python code, simply import it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro_tutorial.__main__</span> <span class="kn">import</span> <span class="n">main</span>
