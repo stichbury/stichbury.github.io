@@ -213,7 +213,7 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-pre-processed-data">Optional: persist pre-processed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
@@ -224,7 +224,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="add_another_pipeline.html">Create a data science pipeline</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#data-science-pipeline">Data science pipeline</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#create-the-data-science-pipeline">Create the data science pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#generate-a-new-pipeline-template">Generate a new pipeline template</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#configure-the-input-parameters">Configure the input parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#assemble-the-data-science-pipeline">Assemble the data science pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#register-the-dataset">Register the dataset</a></li>
@@ -255,11 +255,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#common-errors">Common errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
 </ul>
@@ -1317,7 +1317,7 @@
 </style>
 <div class="section" id="set-up-the-spaceflights-tutorial-project">
 <h1>Set up the spaceflights tutorial project<a class="headerlink" href="#set-up-the-spaceflights-tutorial-project" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we discuss the project set-up phase, which is the first part of the standard development workflow. The set-up steps are as follows:</p>
+<p>In this section, we discuss the project set-up phase, which is the first part of the standard development workflow. The setup steps are as follows:</p>
 <ul class="simple">
 <li><p>Create a new project with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code></p></li>
 <li><p>Install project dependencies with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">src/requirements.txt</span></code></p></li>
@@ -1334,18 +1334,18 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new
 </pre></div>
 </div>
-<p>Alternatively, if you want to include a full set of working example code within the project, generate the project from the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/spaceflights">Kedro starter for the spaceflights tutorial</a> by typing the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternatively, if you want to include a complete set of working example code within the project, generate the project from the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/spaceflights">Kedro starter for the spaceflights tutorial</a> by typing <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span> <span class="pre">--starter=spaceflights</span></code>.</p>
 </div>
-<p>When prompted for a project name, enter <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code>. Your project will be created and you can navigate to the <a class="reference internal" href="spaceflights_tutorial.html#project-root-directory"><span class="std std-doc">project root directory</span></a>:</p>
+<p>When prompted for a project name, enter <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code>. When Kedro has created your project, you can navigate to the <a class="reference internal" href="spaceflights_tutorial.html#project-root-directory"><span class="std std-doc">project root directory</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> kedro-tutorial
 </pre></div>
 </div>
 </div>
 <div class="section" id="project-dependencies">
 <h2>Project dependencies<a class="headerlink" href="#project-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>Up to this point, we have not discussed project dependencies, so now is a good time to examine them. We use a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file to specify a project’s dependencies and make it easier for others to run your project. This avoids version conflicts by ensuring that you use same Python packages and versions.</p>
+<p>Kedro projects have a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file to specify their dependencies and enable sharable projects by ensuring consistency across Python packages and versions.</p>
 <p>The generic project template bundles some typical dependencies in <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code>. Here’s a typical example, although you may find that the version numbers differ slightly depending on your version of Kedro:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>black==22.1.0 # Used for formatting code with `kedro lint`
 flake8&gt;=3.7.9, &lt;5.0 # Used for linting code with `kedro lint`
@@ -1360,9 +1360,10 @@ pytest-mock&gt;=1.7.1, &lt;2.0 # Wrapper around the mock package for easier use 
 pytest~=6.2 # Testing framework for Python code
 </pre></div>
 </div>
-<p>The dependencies above might be sufficient for some projects, but for this tutorial you must add some extra requirements. These requirements will enable us to work with different data formats (including CSV, Excel and Parquet) and to visualise the pipeline.</p>
+<p>You can learn more about <a class="reference internal" href="../kedro_project_setup/dependencies.html"><span class="doc std std-doc">project dependencies</span></a> in the Kedro project documentation.</p>
 <div class="section" id="add-dependencies-to-the-project">
 <h3>Add dependencies to the project<a class="headerlink" href="#add-dependencies-to-the-project" title="Permalink to this headline">¶</a></h3>
+<p>The dependencies above might be sufficient for some projects, but for this tutorial, you must add some extra requirements. These requirements will enable us to work with different data formats (including CSV, Excel, and Parquet) and to visualise the pipeline.</p>
 <blockquote>
 <div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth opening <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> to inspect the contents.</p>
 </div></blockquote>
@@ -1379,15 +1380,14 @@ scikit-learn~=1.0                                                              #
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
 </pre></div>
 </div>
-<p>You can find out more about <a class="reference internal" href="../kedro_project_setup/dependencies.html"><span class="doc std std-doc">how to work with project dependencies</span></a> in the Kedro project documentation.</p>
 </div>
 </div>
 <div class="section" id="optional-configuration-and-logging">
 <h2>Optional: configuration and logging<a class="headerlink" href="#optional-configuration-and-logging" title="Permalink to this headline">¶</a></h2>
-<p>You may want to store credentials, such as usernames and passwords, if they are needed for specific data sources.
-To do this, add them to <code class="docutils literal notranslate"><span class="pre">conf/local/credentials.yml</span></code> (some examples are included in that file for illustration).</p>
+<p>You may want to store credentials such as usernames and passwords if they are needed for specific data sources used by the project.</p>
+<p>To do this, add them to <code class="docutils literal notranslate"><span class="pre">conf/local/credentials.yml</span></code> (some examples are included in that file for illustration).</p>
 <p>You can find additional information in the <a class="reference internal" href="../kedro_project_setup/configuration.html"><span class="doc std std-doc">advanced documentation on configuration</span></a>.</p>
-<p>At this stage of the workflow, you might also want to <a class="reference internal" href="../logging/logging.html"><span class="doc std std-doc">set up logging</span></a>, but we do not use it in this tutorial.</p>
+<p>You might also want to <a class="reference internal" href="../logging/logging.html"><span class="doc std std-doc">set up logging</span></a> at this stage of the workflow, but we do not use it in this tutorial.</p>
 </div>
 </div>
 

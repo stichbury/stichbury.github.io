@@ -213,7 +213,7 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-pre-processed-data">Optional: persist pre-processed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
@@ -224,7 +224,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="add_another_pipeline.html">Create a data science pipeline</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#data-science-pipeline">Data science pipeline</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#create-the-data-science-pipeline">Create the data science pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#generate-a-new-pipeline-template">Generate a new pipeline template</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#configure-the-input-parameters">Configure the input parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#assemble-the-data-science-pipeline">Assemble the data science pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#register-the-dataset">Register the dataset</a></li>
@@ -255,11 +255,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#common-errors">Common errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
 </ul>
@@ -1318,14 +1318,14 @@
 <div class="section" id="kedro-spaceflights-tutorial">
 <h1>Kedro spaceflights tutorial<a class="headerlink" href="#kedro-spaceflights-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial, we construct nodes and pipelines for a price-prediction model to illustrate the steps of a typical Kedro workflow.</p>
-<p>In the text, we assume that you have created an empty Kedro project; we show the steps necessary to convert it into a working project. The tutorial guides you to copy and paste example code into the Kedro project. It takes approximately <strong>one hour</strong> to complete.</p>
+<p>In the text, we assume you have created an empty Kedro project; we show the steps necessary to convert it into a working project. The tutorial guides you to copy and paste example code into the Kedro project. It takes approximately <strong>one hour</strong> to complete.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You may prefer to get up and running more swiftly. We also provide the example as a <a class="reference internal" href="../get_started/starters.html"><span class="doc std std-doc">Kedro starter</span></a> so you can follow along without copy/pasting.</p>
+<p>You may prefer to get up and running more swiftly. We also provide the example as a <a class="reference internal" href="../get_started/starters.html"><span class="doc std std-doc">Kedro starter</span></a> you can follow along without copy/pasting.</p>
 </div>
 <div class="section" id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
-<p><em>It is 2160 and the space tourism industry is booming. Globally, thousands of space shuttle companies take tourists to the Moon and back. You have been able to source data that lists the amenities offered in each space shuttle, customer reviews and company information.</em></p>
+<p><em>It is 2160, and the space tourism industry is booming. Globally, thousands of space shuttle companies take tourists to the Moon and back. You have been able to source data that lists the amenities offered in each space shuttle, customer reviews, and company information.</em></p>
 <p><em><strong>Project</strong></em>: <em>You want to construct a model that predicts the price for each trip to the Moon and the corresponding return flight.</em></p>
 <p><img alt="" src="../_images/moon-rocket.gif" /></p>
 </div>
@@ -1336,19 +1336,19 @@
 <ul class="simple">
 <li><p>check the <a class="reference internal" href="spaceflights_tutorial_faqs.html"><span class="doc std std-doc">Spaceflights tutorial FAQ</span></a> to see if we have answered the question already</p></li>
 <li><p>search the <a class="reference external" href="https://linen-discord.kedro.org/">archive of Discord discussions</a></p></li>
-<li><p>use the <a class="reference external" href="https://kedro-org.slack.com/archives/C03RKP2LW64">#questions channel</a> on our Slack channel (which replaces our Discord server) to ask the community for help.</p></li>
+<li><p>use the <a class="reference external" href="https://kedro-org.slack.com/archives/C03RKP2LW64">#questions channel</a> on our Slack channel (which replaces our Discord server) to ask the community for help</p></li>
 </ul>
 </div>
 <div class="section" id="terminology">
 <h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
-<p>The Kedro specific terminology we use in the tutorial will be explained as we introduce it. We use some additional terminology which may not be familiar to every reader, so we explain some of the commonly used concepts below.</p>
+<p>We will explain any Kedro-specific terminology we use in the tutorial as we introduce it. We use additional terminology that may not be familiar to some readers, such as the concepts below.</p>
 <div class="section" id="project-root-directory">
 <h3>Project root directory<a class="headerlink" href="#project-root-directory" title="Permalink to this headline">¶</a></h3>
-<p>Also known as “root directory”, this is the parent folder for the entire project, it is the top level folder that contains all other files and directories associated with the project.</p>
+<p>Also known as the “root directory”, this is the parent folder for the entire project. It is the top-level folder that contains all other files and directories associated with the project.</p>
 </div>
 <div class="section" id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
-<p>These are Python packages, or libraries, that an individual project depends upon in order to complete a task. For example, the Spaceflights tutorial project depends on the <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> library.</p>
+<p>These are Python packages or libraries that an individual project depends upon to complete a task. For example, the Spaceflights tutorial project depends on the <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> library.</p>
 </div>
 <div class="section" id="standard-development-workflow">
 <h3>Standard development workflow<a class="headerlink" href="#standard-development-workflow" title="Permalink to this headline">¶</a></h3>
@@ -1356,9 +1356,8 @@
 <ol class="arabic simple">
 <li><p>Set up the project template</p>
 <ul class="simple">
-<li><p>Create a new project with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code></p></li>
-<li><p>Install project dependencies.</p></li>
-<li><p>Configure credentials and any other sensitive / personal content, and logging</p></li>
+<li><p>Create a new project` and install project dependencies.</p></li>
+<li><p>Configure credentials and any other sensitive/personal content, and logging</p></li>
 </ul>
 </li>
 <li><p>Set up the data</p>
@@ -1383,7 +1382,7 @@
 </div>
 <div class="section" id="source-control-with-git">
 <h3>Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#source-control-with-git" title="Permalink to this headline">¶</a></h3>
-<p>We recommend that you use <code class="docutils literal notranslate"><span class="pre">git</span></code> for source control. If you are unfamiliar with a typical <code class="docutils literal notranslate"><span class="pre">git</span></code> workflow, but want to learn more, we suggest that you look into <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a>.</p>
+<p>We recommend that you use <code class="docutils literal notranslate"><span class="pre">git</span></code> for source control. If you are unfamiliar with a typical <code class="docutils literal notranslate"><span class="pre">git</span></code> workflow but want to learn more, we suggest you look into <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a>.</p>
 <p>Navigate to the project root directory and create a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository on your machine (a local repository) for the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin https://github.com/&lt;your-repo&gt;
@@ -1392,7 +1391,7 @@ git remote add origin https://github.com/&lt;your-repo&gt;
 </div>
 <div class="section" id="submit-your-changes-to-github">
 <h3>Submit your changes to GitHub<a class="headerlink" href="#submit-your-changes-to-github" title="Permalink to this headline">¶</a></h3>
-<p>If you work on a project as part of a team, you will share the <code class="docutils literal notranslate"><span class="pre">git</span></code> repository via Github, which stores a shared copy of the repository. You should periodically save your changes to your local repository and then merge them into the Github repository.</p>
+<p>If you work on a project as part of a team, you will share the <code class="docutils literal notranslate"><span class="pre">git</span></code> repository via GitHub, which stores a shared copy of the repository. You should periodically save your changes to your local repository and merge them into the GitHub repository.</p>
 <p>Within your team, we suggest that you each develop your code on a branch and create pull requests to submit it to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> or <code class="docutils literal notranslate"><span class="pre">main</span></code> branches:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new feature branch called &#39;feature/project-template&#39;</span>
 git checkout -b feature/project-template

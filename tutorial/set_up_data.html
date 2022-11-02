@@ -213,7 +213,7 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-pre-processed-data">Optional: persist pre-processed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
@@ -224,7 +224,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="add_another_pipeline.html">Create a data science pipeline</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#data-science-pipeline">Data science pipeline</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#create-the-data-science-pipeline">Create the data science pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#generate-a-new-pipeline-template">Generate a new pipeline template</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#configure-the-input-parameters">Configure the input parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#assemble-the-data-science-pipeline">Assemble the data science pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#register-the-dataset">Register the dataset</a></li>
@@ -255,11 +255,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#common-errors">Common errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
 </ul>
@@ -1317,10 +1317,10 @@
 </style>
 <div class="section" id="set-up-the-data">
 <h1>Set up the data<a class="headerlink" href="#set-up-the-data" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we discuss the data set-up phase, which is the second part of the standard development workflow. The steps are as follows:</p>
+<p>In this section, we discuss the data setup phase, which is the second part of the standard development workflow. The steps are as follows:</p>
 <ul class="simple">
 <li><p>Add datasets to your <code class="docutils literal notranslate"><span class="pre">data</span></code> folder, according to <a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention"><span class="std std-doc">data engineering convention</span></a></p></li>
-<li><p>Register the datasets with the Data Catalog in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>, which is the registry of all data sources available for use by the project. This ensures that your code is reproducible when it references datasets in different locations and/or environments.</p></li>
+<li><p>Register the datasets with the Kedro Data Catalog in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>, which is the registry of all data sources available for use by the project. This ensures that your code is reproducible when it references datasets in different locations and/or environments.</p></li>
 </ul>
 <p>You can find further information about the <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc">Data Catalog</span></a> in specific documentation covering advanced usage.</p>
 <div class="section" id="download-datasets">
@@ -1357,7 +1357,7 @@
 <blockquote>
 <div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth opening <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> to inspect the contents.</p>
 </div></blockquote>
-<p>First, for the spaceflights data, first register the two <code class="docutils literal notranslate"><span class="pre">csv</span></code> datasets by adding this snippet to the end of the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file and saving it:</p>
+<p>First, for the spaceflights data, register the two <code class="docutils literal notranslate"><span class="pre">csv</span></code> datasets by adding this snippet to the end of the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file and saving it:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span><span class="w"></span>
@@ -1374,16 +1374,19 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro ipython
 </pre></div>
 </div>
-<p>Then type in and run the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">companies</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;companies&quot;</span><span class="p">)</span>
-<span class="n">companies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If this is the first <code class="docutils literal notranslate"><span class="pre">kedro</span></code> command you have executed in the project, you will be asked whether you wish to opt into <a class="reference external" href="https://github.com/quantumblacklabs/kedro-telemetry">usage analytics</a>. Your decision is recorded in the <code class="docutils literal notranslate"><span class="pre">.telemetry</span></code> file so that subsequent calls to <code class="docutils literal notranslate"><span class="pre">kedro</span></code> in this project do not ask you again.</p>
 </div>
-<p>The command loads the dataset named <code class="docutils literal notranslate"><span class="pre">companies</span></code> (as per top-level key in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>) from the underlying filepath <code class="docutils literal notranslate"><span class="pre">data/01_raw/companies.csv</span></code> into the variable <code class="docutils literal notranslate"><span class="pre">companies</span></code>, which is of type <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">head</span></code> method from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> then displays the first five rows of the DataFrame.</p>
+<p>Then type the following into the iPython prompt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">companies</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;companies&quot;</span><span class="p">)</span>
+<span class="n">companies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The first command creates a variable (<code class="docutils literal notranslate"><span class="pre">companies</span></code>), which is of type <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> and loads the dataset (also named <code class="docutils literal notranslate"><span class="pre">companies</span></code> as per top-level key in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>) from the underlying filepath <code class="docutils literal notranslate"><span class="pre">data/01_raw/companies.csv</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> method from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> displays the first five rows of the DataFrame.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;companies&#39;</span> <span class="p">(</span><span class="n">CSVDataSet</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> 
       <span class="nb">id</span> <span class="n">company_rating</span>       <span class="n">company_location</span>  <span class="n">total_fleet_count</span> <span class="n">iata_approved</span>
@@ -1395,7 +1398,7 @@
 
 </pre></div>
 </div>
-<p>When you have finished, close <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session as follows:</p>
+<p>When you have finished, close the <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1410,10 +1413,10 @@
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span><span class="w"></span>
 <span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine, it is the default since Kedro 0.18.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine (the default since Kedro 0.18.0)</span><span class="w"></span>
 </pre></div>
 </div>
-<p>This registration has an additional line: <code class="docutils literal notranslate"><span class="pre">load_args</span></code>. This value is passed to the excel file read method (<code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>) as <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html">keyword arguments</a>. Although not specified here, the equivalent output is <code class="docutils literal notranslate"><span class="pre">save_args</span></code> and the value would be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_excel</span></code> method</a>.</p>
+<p>This registration has an additional line: <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, which is passed to the excel file read method (<code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>) as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html">keyword argument</a>. Although not specified here, the equivalent output is <code class="docutils literal notranslate"><span class="pre">save_args</span></code> and the value would be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_excel</span></code> method</a>.</p>
 </div>
 <div class="section" id="test-that-kedro-can-load-the-xlsx-data">
 <h3>Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data<a class="headerlink" href="#test-that-kedro-can-load-the-xlsx-data" title="Permalink to this headline">¶</a></h3>
@@ -1434,17 +1437,14 @@ Out[1]:
 
 </pre></div>
 </div>
-<p>When you have finished, close <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>When you have finished, close <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session with <code class="docutils literal notranslate"><span class="pre">exit()</span></code>.</p>
 </div>
 </div>
 <div class="section" id="futher-information">
 <h2>Futher information<a class="headerlink" href="#futher-information" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="custom-data">
 <h3>Custom data<a class="headerlink" href="#custom-data" title="Permalink to this headline">¶</a></h3>
-<p>Kedro supports a number of <a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">datasets</span></a> out of the box, but you can also add support for any proprietary data format or filesystem in your pipeline.</p>
+<p><a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">Kedro supports a number of datasets</span></a> out of the box, but you can also add support for any proprietary data format or filesystem in your pipeline.</p>
 <p>You can find further information about <a class="reference internal" href="../extend_kedro/custom_datasets.html"><span class="doc std std-doc">how to add support for custom datasets</span></a> in specific documentation covering advanced usage.</p>
 </div>
 <div class="section" id="data-location">
