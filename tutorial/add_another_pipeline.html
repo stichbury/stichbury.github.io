@@ -1652,7 +1652,7 @@
         <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;candidate_modelling_pipeline&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">ds_pipeline_1</span> <span class="o">+</span> <span class="n">ds_pipeline_2</span>    
+    <span class="k">return</span> <span class="n">ds_pipeline_1</span> <span class="o">+</span> <span class="n">ds_pipeline_2</span>
 </pre></div>
 </div>
 </details>
@@ -1660,41 +1660,41 @@
 <details>
 <summary><b>Click to expand</b></summary>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:06<span class="o">]</span> WARNING  /Users/jo_stichbury/opt/anaconda3/envs/py38/lib/python3.8/site-packages/plotly/graph_objects/ warnings.py:109
-                             __init__.py:288: DeprecationWarning: distutils Version classes are deprecated. Use                           
-                             packaging.version instead.                                                                                   
-                               <span class="k">if</span> LooseVersion<span class="o">(</span>ipywidgets.__version__<span class="o">)</span> &gt;<span class="o">=</span> LooseVersion<span class="o">(</span><span class="s2">&quot;7.0.0&quot;</span><span class="o">)</span>:                                          
-                                                                                                                                          
+                             __init__.py:288: DeprecationWarning: distutils Version classes are deprecated. Use
+                             packaging.version instead.
+                               <span class="k">if</span> LooseVersion<span class="o">(</span>ipywidgets.__version__<span class="o">)</span> &gt;<span class="o">=</span> LooseVersion<span class="o">(</span><span class="s2">&quot;7.0.0&quot;</span><span class="o">)</span>:
+
 <span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:07<span class="o">]</span> INFO     Kedro project kedro-tutorial                                                                   session.py:340
 <span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:08<span class="o">]</span> INFO     Loading data from <span class="s1">&#39;companies&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                                             data_catalog.py:343
                     INFO     Running node: preprocess_companies_node: preprocess_companies<span class="o">([</span>companies<span class="o">])</span> -&gt;                     node.py:327
-                             <span class="o">[</span>preprocessed_companies<span class="o">]</span>                                                                                     
+                             <span class="o">[</span>preprocessed_companies<span class="o">]</span>
                     INFO     Saving data to <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                               data_catalog.py:382
                     INFO     Completed <span class="m">1</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;shuttles&#39;</span> <span class="o">(</span>ExcelDataSet<span class="o">)</span>...                                            data_catalog.py:343
 <span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:13<span class="o">]</span> INFO     Running node: preprocess_shuttles_node: preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span> -&gt;                        node.py:327
-                             <span class="o">[</span>preprocessed_shuttles<span class="o">]</span>                                                                                      
+                             <span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
                     WARNING  /Users/jo_stichbury/Documents/kedro-projects/kedro-tutorial/src/kedro_tutorial/pipelines/data warnings.py:109
-                             _processing/nodes.py:19: FutureWarning: The default value of regex will change from True to                  
-                             False <span class="k">in</span> a future version. In addition, single character regular expressions will *not* be                   
-                             treated as literal strings when <span class="nv">regex</span><span class="o">=</span>True.                                                                  
-                               <span class="nv">x</span> <span class="o">=</span> x.str.replace<span class="o">(</span><span class="s2">&quot;</span>$<span class="s2">&quot;</span>, <span class="s2">&quot;&quot;</span><span class="o">)</span>.str.replace<span class="o">(</span><span class="s2">&quot;,&quot;</span>, <span class="s2">&quot;&quot;</span><span class="o">)</span>                                                            
-                                                                                                                                          
+                             _processing/nodes.py:19: FutureWarning: The default value of regex will change from True to
+                             False <span class="k">in</span> a future version. In addition, single character regular expressions will *not* be
+                             treated as literal strings when <span class="nv">regex</span><span class="o">=</span>True.
+                               <span class="nv">x</span> <span class="o">=</span> x.str.replace<span class="o">(</span><span class="s2">&quot;</span>$<span class="s2">&quot;</span>, <span class="s2">&quot;&quot;</span><span class="o">)</span>.str.replace<span class="o">(</span><span class="s2">&quot;,&quot;</span>, <span class="s2">&quot;&quot;</span><span class="o">)</span>
+
                     INFO     Saving data to <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                                data_catalog.py:382
                     INFO     Completed <span class="m">2</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                             data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                            data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;reviews&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                                               data_catalog.py:343
                     INFO     Running node: create_model_input_table_node:                                                      node.py:327
-                             create_model_input_table<span class="o">([</span>preprocessed_shuttles,preprocessed_companies,reviews<span class="o">])</span> -&gt;                          
-                             <span class="o">[</span>model_input_table<span class="o">]</span>                                                                                          
+                             create_model_input_table<span class="o">([</span>preprocessed_shuttles,preprocessed_companies,reviews<span class="o">])</span> -&gt;
+                             <span class="o">[</span>model_input_table<span class="o">]</span>
 ^<span class="o">[[</span>B<span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:14<span class="o">]</span> INFO     Saving data to <span class="s1">&#39;model_input_table&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                                    data_catalog.py:382
 <span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:15<span class="o">]</span> INFO     Completed <span class="m">3</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;model_input_table&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                                 data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;params:active_modelling_pipeline.model_options&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...     data_catalog.py:343
                     INFO     Running node: split_data_node:                                                                    node.py:327
-                             split_data<span class="o">([</span>model_input_table,params:active_modelling_pipeline.model_options<span class="o">])</span> -&gt;                            
-                             <span class="o">[</span>active_modelling_pipeline.X_train,active_modelling_pipeline.X_test,active_modelling_pipeline.y_t            
-                             rain,active_modelling_pipeline.y_test<span class="o">]</span>                                                                       
+                             split_data<span class="o">([</span>model_input_table,params:active_modelling_pipeline.model_options<span class="o">])</span> -&gt;
+                             <span class="o">[</span>active_modelling_pipeline.X_train,active_modelling_pipeline.X_test,active_modelling_pipeline.y_t
+                             rain,active_modelling_pipeline.y_test<span class="o">]</span>
                     INFO     Saving data to <span class="s1">&#39;active_modelling_pipeline.X_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                     data_catalog.py:382
                     INFO     Saving data to <span class="s1">&#39;active_modelling_pipeline.X_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                      data_catalog.py:382
                     INFO     Saving data to <span class="s1">&#39;active_modelling_pipeline.y_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                     data_catalog.py:382
@@ -1703,9 +1703,9 @@
                     INFO     Loading data from <span class="s1">&#39;model_input_table&#39;</span> <span class="o">(</span>ParquetDataSet<span class="o">)</span>...                                 data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;params:candidate_modelling_pipeline.model_options&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...  data_catalog.py:343
                     INFO     Running node: split_data_node:                                                                    node.py:327
-                             split_data<span class="o">([</span>model_input_table,params:candidate_modelling_pipeline.model_options<span class="o">])</span> -&gt;                         
-                             <span class="o">[</span>candidate_modelling_pipeline.X_train,candidate_modelling_pipeline.X_test,candidate_modelling_pip            
-                             eline.y_train,candidate_modelling_pipeline.y_test<span class="o">]</span>                                                           
+                             split_data<span class="o">([</span>model_input_table,params:candidate_modelling_pipeline.model_options<span class="o">])</span> -&gt;
+                             <span class="o">[</span>candidate_modelling_pipeline.X_train,candidate_modelling_pipeline.X_test,candidate_modelling_pip
+                             eline.y_train,candidate_modelling_pipeline.y_test<span class="o">]</span>
                     INFO     Saving data to <span class="s1">&#39;candidate_modelling_pipeline.X_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                  data_catalog.py:382
                     INFO     Saving data to <span class="s1">&#39;candidate_modelling_pipeline.X_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                   data_catalog.py:382
                     INFO     Saving data to <span class="s1">&#39;candidate_modelling_pipeline.y_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                  data_catalog.py:382
@@ -1714,34 +1714,34 @@
                     INFO     Loading data from <span class="s1">&#39;active_modelling_pipeline.X_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                  data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;active_modelling_pipeline.y_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                  data_catalog.py:343
                     INFO     Running node: train_model_node:                                                                   node.py:327
-                             train_model<span class="o">([</span>active_modelling_pipeline.X_train,active_modelling_pipeline.y_train<span class="o">])</span> -&gt;                        
-                             <span class="o">[</span>active_modelling_pipeline.regressor<span class="o">]</span>                                                                        
+                             train_model<span class="o">([</span>active_modelling_pipeline.X_train,active_modelling_pipeline.y_train<span class="o">])</span> -&gt;
+                             <span class="o">[</span>active_modelling_pipeline.regressor<span class="o">]</span>
                     INFO     Saving data to <span class="s1">&#39;active_modelling_pipeline.regressor&#39;</span> <span class="o">(</span>PickleDataSet<span class="o">)</span>...                   data_catalog.py:382
                     INFO     Completed <span class="m">6</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;candidate_modelling_pipeline.X_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...               data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;candidate_modelling_pipeline.y_train&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...               data_catalog.py:343
                     INFO     Running node: train_model_node:                                                                   node.py:327
-                             train_model<span class="o">([</span>candidate_modelling_pipeline.X_train,candidate_modelling_pipeline.y_train<span class="o">])</span> -&gt;                  
-                             <span class="o">[</span>candidate_modelling_pipeline.regressor<span class="o">]</span>                                                                     
+                             train_model<span class="o">([</span>candidate_modelling_pipeline.X_train,candidate_modelling_pipeline.y_train<span class="o">])</span> -&gt;
+                             <span class="o">[</span>candidate_modelling_pipeline.regressor<span class="o">]</span>
                     INFO     Saving data to <span class="s1">&#39;candidate_modelling_pipeline.regressor&#39;</span> <span class="o">(</span>PickleDataSet<span class="o">)</span>...                data_catalog.py:382
                     INFO     Completed <span class="m">7</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;active_modelling_pipeline.regressor&#39;</span> <span class="o">(</span>PickleDataSet<span class="o">)</span>...                data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;active_modelling_pipeline.X_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                   data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;active_modelling_pipeline.y_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                   data_catalog.py:343
                     INFO     Running node: evaluate_model_node:                                                                node.py:327
-                             evaluate_model<span class="o">([</span>active_modelling_pipeline.regressor,active_modelling_pipeline.X_test,active_model            
-                             ling_pipeline.y_test<span class="o">])</span> -&gt; None                                                                               
+                             evaluate_model<span class="o">([</span>active_modelling_pipeline.regressor,active_modelling_pipeline.X_test,active_model
+                             ling_pipeline.y_test<span class="o">])</span> -&gt; None
                     INFO     Model has a coefficient R^2 of <span class="m">0</span>.462 on <span class="nb">test</span> data.                                                nodes.py:60
                     INFO     Completed <span class="m">8</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
                     INFO     Loading data from <span class="s1">&#39;candidate_modelling_pipeline.regressor&#39;</span> <span class="o">(</span>PickleDataSet<span class="o">)</span>...             data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;candidate_modelling_pipeline.X_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                data_catalog.py:343
                     INFO     Loading data from <span class="s1">&#39;candidate_modelling_pipeline.y_test&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...                data_catalog.py:343
                     INFO     Running node: evaluate_model_node:                                                                node.py:327
-                             evaluate_model<span class="o">([</span>candidate_modelling_pipeline.regressor,candidate_modelling_pipeline.X_test,candid            
-                             ate_modelling_pipeline.y_test<span class="o">])</span> -&gt; None                                                                      
+                             evaluate_model<span class="o">([</span>candidate_modelling_pipeline.regressor,candidate_modelling_pipeline.X_test,candid
+                             ate_modelling_pipeline.y_test<span class="o">])</span> -&gt; None
                     INFO     Model has a coefficient R^2 of <span class="m">0</span>.449 on <span class="nb">test</span> data.                                                nodes.py:60
                     INFO     Completed <span class="m">9</span> out of <span class="m">9</span> tasks                                                            sequential_runner.py:85
-                    INFO     Pipeline execution completed successfully.            
+                    INFO     Pipeline execution completed successfully.
 </pre></div>
 </div>
 </details>
