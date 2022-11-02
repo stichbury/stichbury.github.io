@@ -32,7 +32,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Spaceflights tutorial FAQs" href="spaceflights_tutorial_faqs.html" />
-    <link rel="prev" title="Create a pipeline" href="create_pipelines.html" />
+    <link rel="prev" title="Create a data science pipeline" href="add_another_pipeline.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -170,7 +170,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial.html">Kedro spaceflights tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial.html#scenario">Scenario</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial.html#get-help">Get help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial.html#terminology">Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_template.html">Set up the spaceflights tutorial project</a><ul>
@@ -199,32 +207,42 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="create_pipelines.html">Create a pipeline</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="create_pipelines.html#data-processing-pipeline">Data processing pipeline</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#generate-a-new-pipeline-template">Generate a new pipeline template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#add-node-functions">Add node functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#optional-persist-pre-processed-data">Optional: persist pre-processed data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#id1">Test the example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_a_pipeline.html">Create a data processing pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create_a_pipeline.html#data-processing-pipeline">Data processing pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#generate-a-new-pipeline-template">Generate a new pipeline template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-pre-processed-data">Optional: persist pre-processed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="create_pipelines.html#checkpoint">Checkpoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_pipelines.html#data-science-pipeline">Data science pipeline</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#create-the-data-science-pipeline">Create the data science pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#configure-the-input-parameters">Configure the input parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#assemble-the-data-science-pipeline">Assemble the data science pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#register-the-dataset">Register the dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#test-the-pipelines">Test the pipelines</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="create_pipelines.html#slice-a-pipeline">Slice a pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_a_pipeline.html#checkpoint">Checkpoint</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="create_pipelines.html#visualise-the-project">Visualise the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_another_pipeline.html">Create a data science pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#data-science-pipeline">Data science pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#create-the-data-science-pipeline">Create the data science pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#configure-the-input-parameters">Configure the input parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#assemble-the-data-science-pipeline">Assemble the data science pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#register-the-dataset">Register the dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#test-the-pipelines">Test the pipelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="add_another_pipeline.html#slice-a-pipeline">Slice a pipeline</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="create_pipelines.html#optional-kedro-runners">Optional: Kedro runners</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#visualise-the-project">Visualise the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-modular-pipelines">Optional: Modular pipelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#extend-the-project-with-namespacing-and-a-modular-pipeline">Extend the project with namespacing and a modular pipeline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="add_another_pipeline.html#how-it-works-the-modular-pipeline-wrapper">How it works: the modular <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> wrapper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Package a Kedro project</a><ul>
@@ -916,13 +934,20 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Frequently asked questions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#what-is-kedro">What is Kedro?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#who-maintains-kedro">Who maintains Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#what-are-the-primary-advantages-of-kedro">What are the primary advantages of Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#how-does-kedro-compare-to-other-projects">How does Kedro compare to other projects?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#what-is-the-typical-kedro-project-development-workflow">What is the typical Kedro project development workflow?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#set-up-the-project-template">1. Set up the project template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#set-up-the-data">2. Set up the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#create-the-pipeline">3. Create the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#package-the-project">4. Package the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#how-do-i-upgrade-kedro">How do I upgrade Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#how-can-i-use-a-development-version-of-kedro">How can I use a development version of Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#how-can-i-find-out-more-about-kedro">How can I find out more about Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#who-maintains-kedro">Who maintains Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#how-can-i-cite-kedro">How can I cite Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/faq.html#can-i-create-a-virtual-environment-without-conda">Can I create a virtual environment without <code class="docutils literal notranslate"><span class="pre">conda</span></code>?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#venv-instead-of-conda"><code class="docutils literal notranslate"><span class="pre">venv</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>)</a></li>
@@ -1297,7 +1322,7 @@
 <h2>Add documentation to your project<a class="headerlink" href="#add-documentation-to-your-project" title="Permalink to this headline">¶</a></h2>
 <p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> and creates a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory that builds a basic template for project-specific documentation. We recommend that you add your project-specific documentation as markdown in <code class="docutils literal notranslate"><span class="pre">docs/source</span></code></p>
 <p>If you want to customise your documentation beyond the basic template, refer to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a> for details of how to extend <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>.</p>
-<p>Once you have added any documentation you need, run the following from the project’s root directory:</p>
+<p>Once you have added any documentation you need, run the following from the project root directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro build-docs --open
 </pre></div>
 </div>
@@ -1309,20 +1334,21 @@
 </div>
 <div class="section" id="package-your-project">
 <h2>Package your project<a class="headerlink" href="#package-your-project" title="Permalink to this headline">¶</a></h2>
-<p>To package your project, run the following in your project’s root directory:</p>
+<p>To package your project, run the following in your project root directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro package
 </pre></div>
 </div>
 <p>Kedro builds the package into the <code class="docutils literal notranslate"><span class="pre">dist</span></code> folder of your project, and creates one <code class="docutils literal notranslate"><span class="pre">.egg</span></code> file and one <code class="docutils literal notranslate"><span class="pre">.whl</span></code> file, which are <a class="reference external" href="https://packaging.python.org/">Python packaging formats for binary distribution</a>.</p>
 <p>The resulting package only contains the Python source code of your Kedro pipeline, not any of the <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">logs</span></code> subfolders. This means that you can distribute the project to run elsewhere, such as on a separate computer with different configuration information, dataset and logging locations.</p>
+<p>We recommend that you document the configuration required (parameters and catalog) in the local <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file for any project recipients.</p>
 <div class="section" id="package-recipients">
 <h3>Package recipients<a class="headerlink" href="#package-recipients" title="Permalink to this headline">¶</a></h3>
 <p>Recipients of the <code class="docutils literal notranslate"><span class="pre">.egg</span></code> and <code class="docutils literal notranslate"><span class="pre">.whl</span></code> files need to have Python and <code class="docutils literal notranslate"><span class="pre">pip</span></code> on their machines, but do not need to have Kedro installed.</p>
-<p>A recipient can install the project into a folder by calling:</p>
+<p>A recipient can install the project by calling:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install &lt;path-to-wheel-file&gt;
 </pre></div>
 </div>
-<p>An executable, <code class="docutils literal notranslate"><span class="pre">kedro-tutorial</span></code>, is placed in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> subfolder of the Python installation location, so the project can be run as follows from the installation directory:</p>
+<p>An executable, <code class="docutils literal notranslate"><span class="pre">kedro-tutorial</span></code>, is placed in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> subfolder of the Python install folder, so the project can be run as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m kedro_tutorial
 </pre></div>
 </div>
@@ -1363,7 +1389,7 @@
         <a href="spaceflights_tutorial_faqs.html" class="btn btn-neutral float-right" title="Spaceflights tutorial FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="create_pipelines.html" class="btn btn-neutral" title="Create a pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="add_another_pipeline.html" class="btn btn-neutral" title="Create a data science pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
