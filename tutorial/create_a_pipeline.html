@@ -237,7 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#visualise-the-project">Visualise the project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-modular-pipelines">Optional: Modular pipelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-modular-pipelines">Optional: modular pipelines</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#extend-the-project-with-namespacing-and-a-modular-pipeline">Extend the project with namespacing and a modular pipeline</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="add_another_pipeline.html#how-it-works-the-modular-pipeline-wrapper">How it works: the modular <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> wrapper</a></li>
 </ul>
@@ -1336,6 +1336,7 @@
 </div>
 <div class="section" id="data-processing-pipeline">
 <h2>Data processing pipeline<a class="headerlink" href="#data-processing-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>You will use the data to train a model to predict the price of shuttle hire, but before you get to train the model, you need to prepare the data for model building by combining the files to create a model input table.</p>
 <p>You previously registered the raw datasets for your Kedro project, so you can now create nodes to preprocess two of the datasets, <code class="docutils literal notranslate"><span class="pre">companies.csv</span></code>, and <code class="docutils literal notranslate"><span class="pre">shuttles.xlsx</span></code>, to prepare the data for modelling.</p>
 <div class="section" id="generate-a-new-pipeline-template">
 <h3>Generate a new pipeline template<a class="headerlink" href="#generate-a-new-pipeline-template" title="Permalink to this headline">¶</a></h3>
@@ -1604,7 +1605,7 @@
 <p>This is an excellent place to take a breath and summarise what you have done so far.</p>
 <ul class="simple">
 <li><p>Created a new project and installed dependencies</p></li>
-<li><p>Added three datasets to the project and set up the Kedro Data Catalog to accept it</p></li>
+<li><p>Added three datasets to the project and set up the Kedro Data Catalog</p></li>
 <li><p>Created a data processing pipeline with three nodes to transform and merge the input datasets and create a model input table</p></li>
 </ul>
 <p>The next step is to create the data science pipeline for spaceflight price prediction.</p>

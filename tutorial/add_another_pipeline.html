@@ -237,7 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#visualise-the-project">Visualise the project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#optional-modular-pipelines">Optional: Modular pipelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#optional-modular-pipelines">Optional: modular pipelines</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#extend-the-project-with-namespacing-and-a-modular-pipeline">Extend the project with namespacing and a modular pipeline</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#how-it-works-the-modular-pipeline-wrapper">How it works: the modular <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> wrapper</a></li>
 </ul>
@@ -1561,7 +1561,7 @@
 <p>To exit the visualisation, close the browser tab. To regain control of the terminal, enter <code class="docutils literal notranslate"><span class="pre">⌘+c</span></code> on Mac or <code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code> on Windows or Linux machines.</p>
 </div>
 <div class="section" id="optional-modular-pipelines">
-<h2>Optional: Modular pipelines<a class="headerlink" href="#optional-modular-pipelines" title="Permalink to this headline">¶</a></h2>
+<h2>Optional: modular pipelines<a class="headerlink" href="#optional-modular-pipelines" title="Permalink to this headline">¶</a></h2>
 <p>In many typical Kedro projects, a single (“main”) pipeline increases in complexity as the project evolves. To keep your project fit for purpose, we recommend that you create <a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html"><span class="doc std std-doc">modular pipelines</span></a>, which are logically isolated and can be reused. You can instantiate a modular pipeline multiple times as a “template” pipeline that can run with different inputs/outputs/parameters.</p>
 <p>Modular pipelines are easier to develop, test and maintain. They are reusable within the same codebase but also portable across projects via <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">micro-packaging</span></a>. This is a scalable way to use Kedro, and will change how you think about Kedro pipelines.</p>
 <div class="section" id="extend-the-project-with-namespacing-and-a-modular-pipeline">
@@ -1662,6 +1662,7 @@
 </pre></div>
 </div>
 </details>
+<br/>
 <p>After executing <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, you should see output as follows:</p>
 <details>
 <summary><b>Click to expand</b></summary>
@@ -1816,7 +1817,7 @@
 </ul>
 </li>
 </ul>
-<p>However, <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code> does not get parameterised as it was <em>frozen</em> in the pipeline wrapper. So any datasets that you want to share between instances you need to lift outside their scope of the wrapper.</p>
+<p>However, <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code> does not get parameterised as it needs to be shared between instances, so is frozen outside the scope of the namespace wrappers.</p>
 <p>This renders as follows using <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code> (hover over the datasets to see their full path) :</p>
 <p><img alt="modular_ds" src="../_images/modular_ds.gif" /></p>
 </div>

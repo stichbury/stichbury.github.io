@@ -237,7 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#visualise-the-project">Visualise the project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-modular-pipelines">Optional: Modular pipelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-modular-pipelines">Optional: modular pipelines</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="add_another_pipeline.html#extend-the-project-with-namespacing-and-a-modular-pipeline">Extend the project with namespacing and a modular pipeline</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="add_another_pipeline.html#how-it-works-the-modular-pipeline-wrapper">How it works: the modular <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code> wrapper</a></li>
 </ul>
@@ -1336,14 +1336,12 @@
 </div>
 <div class="section" id="download-datasets">
 <h2>Download datasets<a class="headerlink" href="#download-datasets" title="Permalink to this headline">¶</a></h2>
-<p>The spaceflights tutorial makes use of three fictional datasets of companies shuttling customers to the Moon and back:</p>
+<p>The spaceflights tutorial makes use of three fictional datasets of companies shuttling customers to the Moon and back. The data comes in two different formats: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">companies.csv</span></code> contains data about space travel companies, such as their location, fleet count and rating</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">reviews.csv</span></code> is a set of reviews from customers for categories, such as comfort and price</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">shuttles.xlsx</span></code> is a set of attributes for spacecraft across the fleet, such as their engine type and passenger capacity</p></li>
 </ul>
-<p>You will use the data to train a model to predict the price of shuttle hire. However, before you get to train the model, you will need to prepare the data for model building by combining the files to create a model input table.</p>
-<p>The data comes in two different formats: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Kedro supports a number of different data types, and those supported can be found in the API documentation.</p>
 <p>Download and save the files to the <code class="docutils literal notranslate"><span class="pre">data/01_raw</span></code> folder of your project:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://kedro-org.github.io/kedro/companies.csv">companies.csv</a></p></li>
