@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="package_a_project.html#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1327,7 +1334,8 @@
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
 <p><em>It is 2160, and the space tourism industry is booming. Globally, thousands of space shuttle companies take tourists to the Moon and back. You have been able to source data that lists the amenities offered in each space shuttle, customer reviews, and company information.</em></p>
 <p><em><strong>Project</strong></em>: <em>You want to construct a model that predicts the price for each trip to the Moon and the corresponding return flight.</em></p>
-<p><img alt="" src="../_images/moon-rocket.gif" /></p>
+<p><img alt="" src="../_images/moon-rocket.png" /></p>
+<p>Photo by <a href="https://unsplash.com/@ivvndiaz">Ivan Diaz</a> on <a href="https://unsplash.com/s/photos/spaceship">Unsplash</a></p>
 </div>
 <div class="section" id="get-help">
 <h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this headline">¶</a></h2>
@@ -1335,6 +1343,7 @@
 <p>Things you can do:</p>
 <ul class="simple">
 <li><p>check the <a class="reference internal" href="spaceflights_tutorial_faqs.html"><span class="doc std std-doc">Spaceflights tutorial FAQ</span></a> to see if we have answered the question already</p></li>
+<li><p>use the spaceflights starter to <a class="reference internal" href="tutorial_template.html#create-a-new-project"><span class="std std-doc">create a new, separate project which contains working example code</span></a>, and compare that project with your own</p></li>
 <li><p>search the <a class="reference external" href="https://linen-discord.kedro.org/">archive of Discord discussions</a></p></li>
 <li><p>use the <a class="reference external" href="https://kedro-org.slack.com/archives/C03RKP2LW64">#questions channel</a> on our Slack channel (which replaces our Discord server) to ask the community for help</p></li>
 </ul>
@@ -1356,7 +1365,7 @@
 <ol class="arabic simple">
 <li><p>Set up the project template</p>
 <ul class="simple">
-<li><p>Create a new project` and install project dependencies.</p></li>
+<li><p>Create a new project and install project dependencies.</p></li>
 <li><p>Configure credentials and any other sensitive/personal content, and logging</p></li>
 </ul>
 </li>
@@ -1380,17 +1389,19 @@
 </li>
 </ol>
 </div>
-<div class="section" id="source-control-with-git">
-<h3>Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#source-control-with-git" title="Permalink to this headline">¶</a></h3>
-<p>We recommend that you use <code class="docutils literal notranslate"><span class="pre">git</span></code> for source control. If you are unfamiliar with a typical <code class="docutils literal notranslate"><span class="pre">git</span></code> workflow but want to learn more, we suggest you look into <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a>.</p>
-<p>Navigate to the project root directory and create a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository on your machine (a local repository) for the project:</p>
+<div class="section" id="optional-source-control-with-git">
+<h3>Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#optional-source-control-with-git" title="Permalink to this headline">¶</a></h3>
+<p>You don’t need to do this section for the tutorial, but you may want to familiarise yourself with the use of <code class="docutils literal notranslate"><span class="pre">git</span></code> for source control.</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<p>If you want to learn more about a typical <code class="docutils literal notranslate"><span class="pre">git</span></code> workflow, we suggest you look into <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a>.
+Navigate to the project root directory and create a <code class="docutils literal notranslate"><span class="pre">git</span></code> repository on your machine (a local repository) for the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
 git remote add origin https://github.com/&lt;your-repo&gt;
 </pre></div>
 </div>
-</div>
 <div class="section" id="submit-your-changes-to-github">
-<h3>Submit your changes to GitHub<a class="headerlink" href="#submit-your-changes-to-github" title="Permalink to this headline">¶</a></h3>
+<h4>Submit your changes to GitHub<a class="headerlink" href="#submit-your-changes-to-github" title="Permalink to this headline">¶</a></h4>
 <p>If you work on a project as part of a team, you will share the <code class="docutils literal notranslate"><span class="pre">git</span></code> repository via GitHub, which stores a shared copy of the repository. You should periodically save your changes to your local repository and merge them into the GitHub repository.</p>
 <p>Within your team, we suggest that you each develop your code on a branch and create pull requests to submit it to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> or <code class="docutils literal notranslate"><span class="pre">main</span></code> branches:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new feature branch called &#39;feature/project-template&#39;</span>
@@ -1412,6 +1423,7 @@ git commit -m <span class="s1">&#39;Create project template&#39;</span>
 git push origin main
 </pre></div>
 </div>
+</details></div>
 </div>
 </div>
 </div>

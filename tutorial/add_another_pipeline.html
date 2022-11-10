@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../_static/css/theme-overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Package a Kedro project" href="package_a_project.html" />
+    <link rel="next" title="Package an entire Kedro project" href="package_a_project.html" />
     <link rel="prev" title="Create a data processing pipeline" href="create_a_pipeline.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="package_a_project.html#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1322,22 +1329,23 @@
 <li><p>How to add a second Kedro pipeline for data science code that extends the default project pipeline</p></li>
 <li><p>How to ‘slice’ the project and run just part of the default pipeline</p></li>
 <li><p>How to visualise the default project pipeline</p></li>
+<li><p>(Optional) How to make a <a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html"><span class="doc std std-doc">modular pipeline</span></a></p></li>
 <li><p>(Optional) How to specify the way the pipeline nodes are run: sequentially or in parallel</p></li>
-<li><p>(Optional) How to make a modular pipeline</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste steps below, but it is worth reviewing the files described.</p>
+</div>
 <div class="section" id="data-science-pipeline">
 <h2>Data science pipeline<a class="headerlink" href="#data-science-pipeline" title="Permalink to this headline">¶</a></h2>
 <p>The data science pipeline uses the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html"><code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code></a> implementation from the <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> library.</p>
 <div class="section" id="generate-a-new-pipeline-template">
 <h3>Generate a new pipeline template<a class="headerlink" href="#generate-a-new-pipeline-template" title="Permalink to this headline">¶</a></h3>
-<p>Run the following command to create the <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline. If you are using the tutorial created by the spaceflights starter, you can omit this step:</p>
+<p>Run the following command to create the <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create data_science
 </pre></div>
 </div>
 <p>Add the following code to the <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_science/nodes.py</span></code> file:</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth reviewing the code for the three nodes.</p>
-</div></blockquote>
 <details>
 <summary><b>Click to expand</b></summary>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -1402,9 +1410,6 @@
 <div class="section" id="configure-the-input-parameters">
 <h3>Configure the input parameters<a class="headerlink" href="#configure-the-input-parameters" title="Permalink to this headline">¶</a></h3>
 <p>You now need to add some parameters that are used by the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> when the pipeline executes.</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth reviewing the code for the three nodes.</p>
-</div></blockquote>
 <p>Add the following to <code class="docutils literal notranslate"><span class="pre">conf/base/parameters/data_science.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_options</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span><span class="w"></span>
@@ -1426,9 +1431,6 @@
 <div class="section" id="assemble-the-data-science-pipeline">
 <h3>Assemble the data science pipeline<a class="headerlink" href="#assemble-the-data-science-pipeline" title="Permalink to this headline">¶</a></h3>
 <p>To create a modular pipeline for the price prediction model, replace the contents of <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_science/pipeline.py</span></code> with the following:</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste.</p>
-</div></blockquote>
 <details>
 <summary><b>Click to expand</b></summary>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">pipeline</span>
@@ -1466,9 +1468,6 @@
 <div class="section" id="register-the-dataset">
 <h3>Register the dataset<a class="headerlink" href="#register-the-dataset" title="Permalink to this headline">¶</a></h3>
 <p>The next step is to register the dataset that will save the trained model, by adding the following definition to <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste.</p>
-</div></blockquote>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">regressor</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/regressor.pickle</span><span class="w"></span>
@@ -1479,7 +1478,7 @@
 </div>
 <div class="section" id="test-the-pipelines">
 <h3>Test the pipelines<a class="headerlink" href="#test-the-pipelines" title="Permalink to this headline">¶</a></h3>
-<p>You can now run the default pipeline, which executes the data processing and then data science pipelines in turn:</p>
+<p>You can now instruct Kedro to run the default pipeline, which automatically executes the data processing and then data science pipeline in turn.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
 </pre></div>
 </div>
@@ -1532,12 +1531,18 @@
 </pre></div>
 </div>
 </details>
+<p>As you can see we successfully ran both the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> and <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipelines, generating a model and evaluating it.</p>
 <div class="section" id="slice-a-pipeline">
 <h4>Slice a pipeline<a class="headerlink" href="#slice-a-pipeline" title="Permalink to this headline">¶</a></h4>
-<p>Sometimes you may want to run just part of the default pipeline. For example, you may could skip data processing execution and run only the data science pipeline to tune the hyperparameters of the price prediction model.</p>
+<p>When you created your project with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code>, one of the files generated was <code class="docutils literal notranslate"><span class="pre">src/&lt;project_name&gt;/pipeline_registry.py</span></code> which constructs the <code class="docutils literal notranslate"><span class="pre">__default__</span></code> pipeline from every pipeline in the project, so you do not need to manually instruct Kedro to run each pipeline.</p>
+<p>However, there may be occasions when you want to run just part of the default pipeline. For example, you could skip <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> execution and run only the <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline to tune the hyperparameters of the price prediction model.</p>
 <p>You can ‘slice’ the pipeline and specify just the portion you want to run by using the <code class="docutils literal notranslate"><span class="pre">--pipeline</span></code> command line option. For example, to only run the pipeline named <code class="docutils literal notranslate"><span class="pre">data_science</span></code> (as labelled automatically in <code class="docutils literal notranslate"><span class="pre">register_pipelines</span></code>), execute the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --pipeline<span class="o">=</span>data_science
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will only work if you have persisted the input to the <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline, which is the <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code>. This was an optional step in the previous chapter.</p>
 </div>
 <p>There are a range of options to run sections of the default pipeline as described in the <a class="reference internal" href="../nodes_and_pipelines/slice_a_pipeline.html"><span class="doc std std-doc">pipeline slicing documentation</span></a> and the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> <a class="reference internal" href="../development/commands_reference.html#modifying-a-kedro-run"><span class="std std-doc">CLI documentation</span></a>.</p>
 </div>
@@ -1553,7 +1558,7 @@
 <p>This command automatically opens a browser tab to serve the visualisation at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:4141/</span></code>.</p>
 <p>You should see the following:</p>
 <p><img alt="" src="../_images/pipeline_visualisation.png" /></p>
-<p>To exit the visualisation, close the browser tab. To regain control of the terminal, enter <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> or <code class="docutils literal notranslate"><span class="pre">Cmd+C</span></code>.</p>
+<p>To exit the visualisation, close the browser tab. To regain control of the terminal, enter <code class="docutils literal notranslate"><span class="pre">⌘+c</span></code> on Mac or <code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code> on Windows or Linux machines.</p>
 </div>
 <div class="section" id="optional-modular-pipelines">
 <h2>Optional: Modular pipelines<a class="headerlink" href="#optional-modular-pipelines" title="Permalink to this headline">¶</a></h2>
@@ -1561,10 +1566,11 @@
 <p>Modular pipelines are easier to develop, test and maintain. They are reusable within the same codebase but also portable across projects via <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">micro-packaging</span></a>. This is a scalable way to use Kedro, and will change how you think about Kedro pipelines.</p>
 <div class="section" id="extend-the-project-with-namespacing-and-a-modular-pipeline">
 <h3>Extend the project with namespacing and a modular pipeline<a class="headerlink" href="#extend-the-project-with-namespacing-and-a-modular-pipeline" title="Permalink to this headline">¶</a></h3>
-<p>We first add some namespaces to the modelling component of the data science pipeline to instantiate it as a template with different parameters for an <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline</span></code> and a <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline</span></code>.</p>
-<blockquote>
-<div><p>This is optional code so is <strong>not</strong> provided in the spaceflights starter. Unlike the rest of the tutorial, if you want to see this in action, you need to copy and paste the code as instructed.</p>
-</div></blockquote>
+<p>We first add some namespaces to the modelling component of the data science pipeline to instantiate it as a template with different parameters for an <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline</span></code> and a <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline</span></code> in order to test the model using different combinations of features.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is optional code so is <strong>not</strong> provided in the spaceflights starter. Unlike the rest of the tutorial, if you want to see this in action, you need to copy and paste the code as instructed.</p>
+</div>
 <ol class="arabic simple">
 <li><p>Update your catalog to add namespaces to the outputs of each instance. Replace the <code class="docutils literal notranslate"><span class="pre">regressor</span></code> key with the following two new dataset keys in the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file:</p></li>
 </ol>
@@ -1656,10 +1662,10 @@
 </pre></div>
 </div>
 </details>
-<p>You should see output as follows:</p>
+<p>After executing <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, you should see output as follows:</p>
 <details>
 <summary><b>Click to expand</b></summary>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:06<span class="o">]</span> WARNING  /Users/jo_stichbury/opt/anaconda3/envs/py38/lib/python3.8/site-packages/plotly/graph_objects/ warnings.py:109
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:06<span class="o">]</span> WARNING  /Users/&lt;username&gt;/opt/anaconda3/envs/py38/lib/python3.8/site-packages/plotly/graph_objects/ warnings.py:109
                              __init__.py:288: DeprecationWarning: distutils Version classes are deprecated. Use
                              packaging.version instead.
                                <span class="k">if</span> LooseVersion<span class="o">(</span>ipywidgets.__version__<span class="o">)</span> &gt;<span class="o">=</span> LooseVersion<span class="o">(</span><span class="s2">&quot;7.0.0&quot;</span><span class="o">)</span>:
@@ -1673,7 +1679,7 @@
                     INFO     Loading data from <span class="s1">&#39;shuttles&#39;</span> <span class="o">(</span>ExcelDataSet<span class="o">)</span>...                                            data_catalog.py:343
 <span class="o">[</span><span class="m">11</span>/02/22 <span class="m">10</span>:41:13<span class="o">]</span> INFO     Running node: preprocess_shuttles_node: preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span> -&gt;                        node.py:327
                              <span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
-                    WARNING  /Users/jo_stichbury/Documents/kedro-projects/kedro-tutorial/src/kedro_tutorial/pipelines/data warnings.py:109
+                    WARNING  /Users/&lt;username&gt;/Documents/kedro-projects/kedro-tutorial/src/kedro_tutorial/pipelines/data warnings.py:109
                              _processing/nodes.py:19: FutureWarning: The default value of regex will change from True to
                              False <span class="k">in</span> a future version. In addition, single character regular expressions will *not* be
                              treated as literal strings when <span class="nv">regex</span><span class="o">=</span>True.
@@ -1792,8 +1798,26 @@
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>We instantiate the template_pipeline twice but pass in different parameters. The <code class="docutils literal notranslate"><span class="pre">pipeline_instance</span></code> variable is our template pipeline, <code class="docutils literal notranslate"><span class="pre">ds_pipeline_1</span></code> and <code class="docutils literal notranslate"><span class="pre">ds_pipeline_2</span></code> are our parameterised instantiations.</p>
-<p>This renders as follows:</p>
+<p>We instantiate the template_pipeline twice but pass in different parameters. The <code class="docutils literal notranslate"><span class="pre">pipeline_instance</span></code> variable is the template pipeline, and <code class="docutils literal notranslate"><span class="pre">ds_pipeline_1</span></code> and <code class="docutils literal notranslate"><span class="pre">ds_pipeline_2</span></code> are the two separately parameterised instantiations.</p>
+<p>So let’s go through in detail how those namespaces affect our catalog references:</p>
+<ul class="simple">
+<li><p>All <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code> within the nodes of our <code class="docutils literal notranslate"><span class="pre">ds_pipeline_1</span></code> have the <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline</span></code> prefix:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">params:model_options</span></code> turns into <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline.params:model_options</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span></code> turns into <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline.X_train</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_test</span></code> turns into <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline.X_test</span></code>, and so on</p></li>
+</ul>
+</li>
+<li><p>There are a separate set of parameters for <code class="docutils literal notranslate"><span class="pre">ds_pipeline_2</span></code> with the <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline</span></code> prefix:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">params:model_options</span></code> turns into <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline.params:model_options</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span></code> turns into <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline.X_train</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_test</span></code> turns into <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline.X_test</span></code>, and so on</p></li>
+</ul>
+</li>
+</ul>
+<p>However, <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code> does not get parameterised as it was <em>frozen</em> in the pipeline wrapper. So any datasets that you want to share between instances you need to lift outside their scope of the wrapper.</p>
+<p>This renders as follows using <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code> (hover over the datasets to see their full path) :</p>
 <p><img alt="modular_ds" src="../_images/modular_ds.gif" /></p>
 </div>
 </div>
@@ -1828,7 +1852,7 @@ kedro run --runner<span class="o">=</span>module.path.to.my.runner
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="package_a_project.html" class="btn btn-neutral float-right" title="Package a Kedro project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="package_a_project.html" class="btn btn-neutral float-right" title="Package an entire Kedro project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="create_a_pipeline.html" class="btn btn-neutral" title="Create a data processing pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

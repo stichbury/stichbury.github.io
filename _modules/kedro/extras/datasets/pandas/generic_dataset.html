@@ -173,8 +173,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -193,14 +195,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -211,9 +213,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -243,7 +245,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/package_a_project.html#package-recipients">Package recipients</a></li>
@@ -254,7 +256,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tutorial/spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1306,6 +1313,11 @@
     <span class="n">get_protocol_and_path</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="c1"># NOTE: kedro.extras.datasets will be removed in Kedro 0.19.0.</span>
+<span class="c1"># Any contribution to datasets should be made in kedro-datasets</span>
+<span class="c1"># in kedro-plugins (https://github.com/kedro-org/kedro-plugins)</span>
+
+
 <span class="n">NON_FILE_SYSTEM_TARGETS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;clipboard&quot;</span><span class="p">,</span>
     <span class="s2">&quot;numpy&quot;</span><span class="p">,</span>
@@ -1362,7 +1374,6 @@
 <span class="sd">        &gt;&gt;&gt; data = pd.DataFrame({&#39;col1&#39;: [1, 2], &#39;col2&#39;: [4, 5],</span>
 <span class="sd">        &gt;&gt;&gt;                      &#39;col3&#39;: [5, 6]})</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-<span class="sd">        &gt;&gt;&gt; # data_set = GenericDataSet(filepath=&quot;s3://test.csv&quot;, file_format=&#39;csv&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; data_set = GenericDataSet(filepath=&quot;test.csv&quot;, file_format=&#39;csv&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; data_set.save(data)</span>
 <span class="sd">        &gt;&gt;&gt; reloaded = data_set.load()</span>

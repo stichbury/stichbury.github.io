@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Package a Kedro project &mdash; Kedro 0.18.3 documentation</title>
+  <title>Package an entire Kedro project &mdash; Kedro 0.18.3 documentation</title>
   
 
   
@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Package a Kedro project</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1269,7 +1276,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Package a Kedro project</li>
+      <li>Package an entire Kedro project</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1315,9 +1322,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="package-a-kedro-project">
-<h1>Package a Kedro project<a class="headerlink" href="#package-a-kedro-project" title="Permalink to this headline">¶</a></h1>
-<p>This section explains how to build your project documentation, and how to bundle your project into a Python package.</p>
+<div class="section" id="package-an-entire-kedro-project">
+<h1>Package an entire Kedro project<a class="headerlink" href="#package-an-entire-kedro-project" title="Permalink to this headline">¶</a></h1>
+<p>This section explains how to build your project documentation, and how to bundle your entire project into a Python package. If you want to include just a part of your project, you should instead take a look at the <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">documentation section on micro-packaging</span></a>.</p>
 <div class="section" id="add-documentation-to-your-project">
 <h2>Add documentation to your project<a class="headerlink" href="#add-documentation-to-your-project" title="Permalink to this headline">¶</a></h2>
 <p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> and creates a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory that builds a basic template for project-specific documentation. We recommend that you add your project-specific documentation as markdown in <code class="docutils literal notranslate"><span class="pre">docs/source</span></code></p>
@@ -1368,11 +1375,11 @@
 </div>
 <div class="section" id="docker-airflow-and-other-deployment-targets">
 <h3>Docker, Airflow and other deployment targets<a class="headerlink" href="#docker-airflow-and-other-deployment-targets" title="Permalink to this headline">¶</a></h3>
-<p>There are several methods to deploy packaged pipelines via 1st party plugins and associated documentation:</p>
+<p>There are various methods to deploy packaged pipelines via Kedro plugins:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/kedro-org/kedro-plugins/tree/main/kedro-docker">Kedro-Docker</a> plugin for packaging and shipping Kedro projects within <a class="reference external" href="https://www.docker.com/">Docker</a> containers.</p></li>
 <li><p><a class="reference external" href="https://github.com/kedro-org/kedro-plugins/tree/main/kedro-airflow">Kedro-Airflow</a> to convert your Kedro project into an <a class="reference external" href="https://airflow.apache.org/">Airflow</a> project.</p></li>
-<li><p>The <a class="reference internal" href="../deployment/deployment_guide.html"><span class="doc std std-doc">Deployment guide</span></a> touches on other deployment targets such as AWS Batch and Prefect.</p></li>
+<li><p>The <a class="reference internal" href="../deployment/deployment_guide.html"><span class="doc std std-doc">Deployment guide</span></a> touches on other deployment targets such as AWS Batch and Prefect, and there is a <a class="reference internal" href="../extend_kedro/plugins.html#community-developed-plugins"><span class="std std-ref">range of third-party plugins for deployment</span></a>.</p></li>
 </ul>
 </div>
 </div>

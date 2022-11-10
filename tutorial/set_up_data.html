@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="package_a_project.html#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1323,6 +1330,10 @@
 <li><p>Register the datasets with the Kedro Data Catalog in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>, which is the registry of all data sources available for use by the project. This ensures that your code is reproducible when it references datasets in different locations and/or environments.</p></li>
 </ul>
 <p>You can find further information about the <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc">Data Catalog</span></a> in specific documentation covering advanced usage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste steps below, but it is worth reviewing the files described.</p>
+</div>
 <div class="section" id="download-datasets">
 <h2>Download datasets<a class="headerlink" href="#download-datasets" title="Permalink to this headline">¶</a></h2>
 <p>The spaceflights tutorial makes use of three fictional datasets of companies shuttling customers to the Moon and back:</p>
@@ -1333,9 +1344,6 @@
 </ul>
 <p>You will use the data to train a model to predict the price of shuttle hire. However, before you get to train the model, you will need to prepare the data for model building by combining the files to create a model input table.</p>
 <p>The data comes in two different formats: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Kedro supports a number of different data types, and those supported can be found in the API documentation.</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit this step.</p>
-</div></blockquote>
 <p>Download and save the files to the <code class="docutils literal notranslate"><span class="pre">data/01_raw</span></code> folder of your project:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://kedro-org.github.io/kedro/companies.csv">companies.csv</a></p></li>
@@ -1354,9 +1362,6 @@
 </ul>
 <div class="section" id="register-csv-data">
 <h3>Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data<a class="headerlink" href="#register-csv-data" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth opening <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> to inspect the contents.</p>
-</div></blockquote>
 <p>First, for the spaceflights data, register the two <code class="docutils literal notranslate"><span class="pre">csv</span></code> datasets by adding this snippet to the end of the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file and saving it:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
@@ -1368,17 +1373,25 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="register-xlsx-data">
+<h3>Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data<a class="headerlink" href="#register-xlsx-data" title="Permalink to this headline">¶</a></h3>
+<p>Now register the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> dataset by adding this snippet to the end of the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file, and save it:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span><span class="w"></span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine (the default since Kedro 0.18.0)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This registration has an additional line: <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, which is passed to the excel file read method (<code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>) as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html">keyword argument</a>. Although not specified here, the equivalent output is <code class="docutils literal notranslate"><span class="pre">save_args</span></code> and the value would be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_excel</span></code> method</a>.</p>
+</div>
 <div class="section" id="test-that-kedro-can-load-the-csv-data">
 <h3>Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data<a class="headerlink" href="#test-that-kedro-can-load-the-csv-data" title="Permalink to this headline">¶</a></h3>
 <p>Open a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code> session in your terminal from the project root directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro ipython
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If this is the first <code class="docutils literal notranslate"><span class="pre">kedro</span></code> command you have executed in the project, you will be asked whether you wish to opt into <a class="reference external" href="https://github.com/quantumblacklabs/kedro-telemetry">usage analytics</a>. Your decision is recorded in the <code class="docutils literal notranslate"><span class="pre">.telemetry</span></code> file so that subsequent calls to <code class="docutils literal notranslate"><span class="pre">kedro</span></code> in this project do not ask you again.</p>
-</div>
-<p>Then type the following into the iPython prompt:</p>
+<p>Then type the following into the IPython prompt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">companies</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;companies&quot;</span><span class="p">)</span>
 <span class="n">companies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1398,29 +1411,10 @@
 
 </pre></div>
 </div>
-<p>When you have finished, close the <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="register-xlsx-data">
-<h3>Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data<a class="headerlink" href="#register-xlsx-data" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste.</p>
-</div></blockquote>
-<p>Now register the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> dataset by adding this snippet to the end of the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file, and save it:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine (the default since Kedro 0.18.0)</span><span class="w"></span>
-</pre></div>
-</div>
-<p>This registration has an additional line: <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, which is passed to the excel file read method (<code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>) as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html">keyword argument</a>. Although not specified here, the equivalent output is <code class="docutils literal notranslate"><span class="pre">save_args</span></code> and the value would be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_excel</span></code> method</a>.</p>
 </div>
 <div class="section" id="test-that-kedro-can-load-the-xlsx-data">
 <h3>Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data<a class="headerlink" href="#test-that-kedro-can-load-the-xlsx-data" title="Permalink to this headline">¶</a></h3>
-<p>To test that everything works as expected, load the dataset within a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code> session and display its first five rows:</p>
+<p>To test that everything works as expected, load the dataset within IPython and display its first five rows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shuttles</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;shuttles&quot;</span><span class="p">)</span>
 <span class="n">shuttles</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1440,16 +1434,16 @@ Out[1]:
 <p>When you have finished, close <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session with <code class="docutils literal notranslate"><span class="pre">exit()</span></code>.</p>
 </div>
 </div>
-<div class="section" id="futher-information">
-<h2>Futher information<a class="headerlink" href="#futher-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="custom-data">
 <h3>Custom data<a class="headerlink" href="#custom-data" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">Kedro supports a number of datasets</span></a> out of the box, but you can also add support for any proprietary data format or filesystem in your pipeline.</p>
 <p>You can find further information about <a class="reference internal" href="../extend_kedro/custom_datasets.html"><span class="doc std std-doc">how to add support for custom datasets</span></a> in specific documentation covering advanced usage.</p>
 </div>
-<div class="section" id="data-location">
-<h3>Data location<a class="headerlink" href="#data-location" title="Permalink to this headline">¶</a></h3>
-<p>Kedro uses <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">fssspec</span></code></a> to read data from a variety of data stores including local file systems, network file systems, cloud object stores and HDFS.</p>
+<div class="section" id="supported-data-locations">
+<h3>Supported data locations<a class="headerlink" href="#supported-data-locations" title="Permalink to this headline">¶</a></h3>
+<p>Kedro uses <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a> to read data from a variety of data stores including local file systems, network file systems, HDFS, and all of the widely-used cloud object stores.</p>
 </div>
 </div>
 </div>

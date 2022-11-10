@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="package_a_project.html#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial_faqs.html#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1323,21 +1330,27 @@
 <li><p>How to construct a Kedro pipeline from a set of nodes</p></li>
 <li><p>How to run the pipeline</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste steps below, but it is worth reviewing the files described.</p>
+</div>
 <div class="section" id="data-processing-pipeline">
 <h2>Data processing pipeline<a class="headerlink" href="#data-processing-pipeline" title="Permalink to this headline">¶</a></h2>
 <p>You previously registered the raw datasets for your Kedro project, so you can now create nodes to preprocess two of the datasets, <code class="docutils literal notranslate"><span class="pre">companies.csv</span></code>, and <code class="docutils literal notranslate"><span class="pre">shuttles.xlsx</span></code>, to prepare the data for modelling.</p>
 <div class="section" id="generate-a-new-pipeline-template">
 <h3>Generate a new pipeline template<a class="headerlink" href="#generate-a-new-pipeline-template" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit this command, but it’s worth reviewing the files associated with the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> pipeline as described below.</p>
-</div></blockquote>
 <p>In the terminal, run the following command to generate a new pipeline for data processing:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create data_processing
 </pre></div>
 </div>
 <p>This command generates all the files you need for the pipeline:</p>
 <ul class="simple">
-<li><p>Two python files: <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> (for the node functions that form the data processing) and <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> (to build the pipeline) within <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_processing</span></code> pipeline</p></li>
+<li><p>Two python files within <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_processing</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> (for the node functions that form the data processing)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> (to build the pipeline)</p></li>
+</ul>
+</li>
 <li><p>A yaml file: <code class="docutils literal notranslate"><span class="pre">conf/base/parameters/data_processing.yml</span></code> to define the parameters used when running the pipeline</p></li>
 <li><p>A folder for test code: <code class="docutils literal notranslate"><span class="pre">src/tests/pipelines/data_processing</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> files in the required folders to ensure that Python can import the pipeline</p></li>
@@ -1345,9 +1358,6 @@
 </div>
 <div class="section" id="add-node-functions">
 <h3>Add node functions<a class="headerlink" href="#add-node-functions" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste.</p>
-</div></blockquote>
 <p>Open <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_processing/nodes.py</span></code> and add the code below, which provides two functions (<code class="docutils literal notranslate"><span class="pre">preprocess_companies</span></code> and <code class="docutils literal notranslate"><span class="pre">preprocess_shuttles</span></code>) that each takes a raw DataFrame as input, convert the data in several columns to different types, and output a DataFrame containing the preprocessed data:</p>
 <details>
 <summary><b>Click to expand</b></summary>
@@ -1404,9 +1414,6 @@
 <div class="section" id="assemble-nodes-into-the-data-processing-pipeline">
 <h3>Assemble nodes into the data processing pipeline<a class="headerlink" href="#assemble-nodes-into-the-data-processing-pipeline" title="Permalink to this headline">¶</a></h3>
 <p>The next steps are to create a <a class="reference internal" href="../resources/glossary.html#node"><span class="std std-doc">node</span></a> for each function and to create a <a class="reference internal" href="../resources/glossary.html#modular-pipeline"><span class="std std-doc">modular pipeline</span></a> for data processing:</p>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit all the copy/paste actions, but it’s worth reviewing the code added to form the pipeline.</p>
-</div></blockquote>
 <p>First, add import statements for your functions by adding them to the beginning of <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">pipeline</span>
 
@@ -1436,7 +1443,7 @@
 </pre></div>
 </div>
 </details>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">input</span></code> statements for <code class="docutils literal notranslate"><span class="pre">companies</span></code> and <code class="docutils literal notranslate"><span class="pre">shuttles</span></code> refer to the datasets defined in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>. They are inputs to the <code class="docutils literal notranslate"><span class="pre">preprocess_companies</span></code> and <code class="docutils literal notranslate"><span class="pre">preprocess_shuttles</span></code> functions. Kedro uses the named node inputs (and outputs) to determine interdependencies between the nodes, and their execution order.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> statements for <code class="docutils literal notranslate"><span class="pre">companies</span></code> and <code class="docutils literal notranslate"><span class="pre">shuttles</span></code> refer to the datasets defined in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>. They are inputs to the <code class="docutils literal notranslate"><span class="pre">preprocess_companies</span></code> and <code class="docutils literal notranslate"><span class="pre">preprocess_shuttles</span></code> functions. Kedro uses the named node inputs (and outputs) to determine interdependencies between the nodes, and their execution order.</p>
 </div>
 <div class="section" id="test-the-example">
 <h3>Test the example<a class="headerlink" href="#test-the-example" title="Permalink to this headline">¶</a></h3>
@@ -1483,11 +1490,11 @@
 </div>
 </details>
 </div>
-<div class="section" id="optional-persist-preprocessed-data">
-<h3>Optional: persist preprocessed data<a class="headerlink" href="#optional-persist-preprocessed-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="optional-save-the-preprocessed-data">
+<h3>Optional: save the preprocessed data<a class="headerlink" href="#optional-save-the-preprocessed-data" title="Permalink to this headline">¶</a></h3>
 <p>Each of the nodes outputs a new dataset (<code class="docutils literal notranslate"><span class="pre">preprocessed_companies</span></code> and <code class="docutils literal notranslate"><span class="pre">preprocessed_shuttles</span></code>).</p>
-<p>When Kedro runs the pipeline, it determines that neither dataset is registered in the data catalog, so it stores these <em>ephemeral datasets</em> in memory as Python objects using the <a class="reference internal" href="../kedro.io.MemoryDataSet.html"><span class="doc std std-doc">MemoryDataSet</span></a> class. Once all nodes that depend on an ephemeral dataset have executed, the dataset is cleared and the Python garbage collector releases the memory.</p>
-<p>If you prefer to persist the preprocessed data, add the following to the end of <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> (If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste):</p>
+<p>When Kedro runs the pipeline, it determines that neither dataset is registered in the data catalog, so it stores these as temporary datasets in memory as Python objects using the <a class="reference internal" href="../kedro.io.MemoryDataSet.html"><span class="doc std std-doc">MemoryDataSet</span></a> class. Once all nodes that depend on an temporary dataset have executed, the dataset is cleared and the Python garbage collector releases the memory.</p>
+<p>If you prefer to save the preprocessed data to file, add the following to the end of <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> (If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste):</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preprocessed_companies</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span><span class="w"></span>
@@ -1507,9 +1514,6 @@
 <li><p>Kedro uses the <code class="docutils literal notranslate"><span class="pre">preprocessed_shuttles</span></code>, <code class="docutils literal notranslate"><span class="pre">preprocessed_companies</span></code>, and <code class="docutils literal notranslate"><span class="pre">reviews</span></code> datasets as inputs</p></li>
 <li><p>Kedro saves the output as a dataset called <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code></p></li>
 </ul>
-<blockquote>
-<div><p>If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste, but it’s worth reviewing the <code class="docutils literal notranslate"><span class="pre">create_model_input_table</span></code> code.</p>
-</div></blockquote>
 <p>First, add the <code class="docutils literal notranslate"><span class="pre">create_model_input_table()</span></code> function from the snippet below to <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/data_processing/nodes.py</span></code>.</p>
 <details>
 <summary><b>Click to expand</b></summary>
@@ -1549,9 +1553,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="optional-persist-the-model-input-table">
-<h3>Optional: persist the model input table<a class="headerlink" href="#optional-persist-the-model-input-table" title="Permalink to this headline">¶</a></h3>
-<p>If you want the model input table data to be saved to file (in <code class="docutils literal notranslate"><span class="pre">data/03_primary</span></code>) rather than used in memory, add an entry to <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>. (If you are using a project created by the spaceflights starter, you can omit the copy/paste):</p>
+<div class="section" id="optional-save-the-model-input-table">
+<h3>Optional: save the model input table<a class="headerlink" href="#optional-save-the-model-input-table" title="Permalink to this headline">¶</a></h3>
+<p>If you want the model input table data to be saved to file (in <code class="docutils literal notranslate"><span class="pre">data/03_primary</span></code>) rather than used in memory, add an entry to <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_input_table</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span><span class="w"></span>
@@ -1597,7 +1601,7 @@
 </div>
 <div class="section" id="checkpoint">
 <h2>Checkpoint<a class="headerlink" href="#checkpoint" title="Permalink to this headline">¶</a></h2>
-<p>This is an exceelent place to take a breath and summarise what you have done so far.</p>
+<p>This is an excellent place to take a breath and summarise what you have done so far.</p>
 <ul class="simple">
 <li><p>Created a new project and installed dependencies</p></li>
 <li><p>Added three datasets to the project and set up the Kedro Data Catalog to accept it</p></li>

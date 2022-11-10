@@ -32,7 +32,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Get started with Kedro-Viz" href="../visualisation/kedro-viz_visualisation.html" />
-    <link rel="prev" title="Package a Kedro project" href="package_a_project.html" />
+    <link rel="prev" title="Package an entire Kedro project" href="package_a_project.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -175,8 +175,10 @@
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#project-root-directory">Project root directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#standard-development-workflow">Standard development workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#source-control-with-git">Source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spaceflights_tutorial.html#optional-source-control-with-git">Optional: source control with <code class="docutils literal notranslate"><span class="pre">git</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spaceflights_tutorial.html#submit-your-changes-to-github">Submit your changes to GitHub</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,14 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#download-datasets">Download datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set_up_data.html#register-the-datasets">Register the datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-csv-data">Register <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#register-xlsx-data">Register <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-xlsx-data">Test that Kedro can load the <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#futher-information">Futher information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set_up_data.html#further-information">Further information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="set_up_data.html#custom-data">Custom data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#data-location">Data location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set_up_data.html#supported-data-locations">Supported data locations</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +215,9 @@
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#add-node-functions">Add node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#assemble-nodes-into-the-data-processing-pipeline">Assemble nodes into the data processing pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#test-the-example">Test the example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-preprocessed-data">Optional: persist preprocessed data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-preprocessed-data">Optional: save the preprocessed data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#extend-the-data-processing-pipeline">Extend the data processing pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-persist-the-model-input-table">Optional: persist the model input table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#optional-save-the-model-input-table">Optional: save the model input table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create_a_pipeline.html#id1">Test the example</a></li>
 </ul>
 </li>
@@ -245,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="add_another_pipeline.html#optional-kedro-runners">Optional: Kedro runners</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package a Kedro project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="package_a_project.html">Package an entire Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="package_a_project.html#package-recipients">Package recipients</a></li>
@@ -256,7 +258,12 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-catalog-setup">Data Catalog setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dataset-errors">DataSet errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dataseterror-failed-while-loading-data-from-data-set">DataSetError: Failed while loading data from data set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasetnotfounderror-dataset-not-found-in-the-catalog">DataSetNotFoundError: DataSet not found in the catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataseterror-an-exception-occurred-when-parsing-config-for-dataset">DataSetError: An exception occurred when parsing config for DataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -1319,25 +1326,39 @@
 <h1>Spaceflights tutorial FAQs<a class="headerlink" href="#spaceflights-tutorial-faqs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-do-i-resolve-these-common-errors">
 <h2>How do I resolve these common errors?<a class="headerlink" href="#how-do-i-resolve-these-common-errors" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="data-catalog-setup">
-<h3>Data Catalog setup<a class="headerlink" href="#data-catalog-setup" title="Permalink to this headline">¶</a></h3>
-<p>You’re <a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data"><span class="std std-doc">testing whether Kedro can load the companies or reviews data</span></a> and see the following:</p>
+<div class="section" id="dataset-errors">
+<h3>DataSet errors<a class="headerlink" href="#dataset-errors" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dataseterror-failed-while-loading-data-from-data-set">
+<h4>DataSetError: Failed while loading data from data set<a class="headerlink" href="#dataseterror-failed-while-loading-data-from-data-set" title="Permalink to this headline">¶</a></h4>
+<p>You’re <a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data"><span class="std std-doc">testing whether Kedro can load the raw test data</span></a> and see the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DataSetError</span><span class="p">:</span> <span class="n">Failed</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">data</span> <span class="nb">set</span>
 <span class="n">CSVDataSet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=...</span><span class="p">)</span><span class="o">.</span>
 <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="s1">&#39;.../companies.csv&#39;</span>
 </pre></div>
 </div>
+<p>or a similar error for the <code class="docutils literal notranslate"><span class="pre">shuttles</span></code> or <code class="docutils literal notranslate"><span class="pre">reviews</span></code> data.</p>
 <p>Have you downloaded <a class="reference internal" href="set_up_data.html#download-datasets"><span class="std std-doc">the three sample data files</span></a> and stored them in the <code class="docutils literal notranslate"><span class="pre">data/raw</span></code> folder?</p>
-<p>Or maybe you see the following:</p>
+</div>
+<div class="section" id="datasetnotfounderror-dataset-not-found-in-the-catalog">
+<h4>DataSetNotFoundError: DataSet not found in the catalog<a class="headerlink" href="#datasetnotfounderror-dataset-not-found-in-the-catalog" title="Permalink to this headline">¶</a></h4>
+<p>Do you see the following for one of the raw datasets, make sure you have saved <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DataSetNotFoundError</span><span class="p">:</span> <span class="n">DataSet</span> <span class="s1">&#39;companies&#39;</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">catalog</span>
 </pre></div>
 </div>
-<p>Make sure you have saved <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>. Call <code class="docutils literal notranslate"><span class="pre">exit()</span></code> within the ipython session and restart <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code>. Then try again.</p>
-<p>You’re <a class="reference internal" href="set_up_data.html#test-that-kedro-can-load-the-csv-data"><span class="std std-doc">testing whether Kedro can load the shuttles data</span></a> and see the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DataSetNotFoundError</span><span class="p">:</span> <span class="n">DataSet</span> <span class="s1">&#39;shuttles&#39;</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">catalog</span>
+<p>Call <code class="docutils literal notranslate"><span class="pre">exit()</span></code> within the IPython session and restart <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code> (or type <code class="docutils literal notranslate"><span class="pre">&#64;kedro_reload</span></code> into the IPython console to reload Kedro into the session without restarting). Then try again.</p>
+</div>
+<div class="section" id="dataseterror-an-exception-occurred-when-parsing-config-for-dataset">
+<h4>DataSetError: An exception occurred when parsing config for DataSet<a class="headerlink" href="#dataseterror-an-exception-occurred-when-parsing-config-for-dataset" title="Permalink to this headline">¶</a></h4>
+<p>Are you seeing a message saying that an exception occurred?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>DataSetError: An exception occurred when parsing config <span class="k">for</span> DataSet 
+<span class="s1">&#39;data_processing.preprocessed_companies&#39;</span>:
+Object <span class="s1">&#39;ParquetDataSet&#39;</span> cannot be loaded from <span class="s1">&#39;kedro.extras.datasets.pandas&#39;</span>. Please see the 
+documentation on how to install relevant dependencies <span class="k">for</span> kedro.extras.datasets.pandas.ParquetDataSet:
+https://kedro.readthedocs.io/en/stable/kedro_project_setup/dependencies.html
 </pre></div>
 </div>
-<p>Make sure you have saved <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>. Call <code class="docutils literal notranslate"><span class="pre">exit()</span></code> within the ipython session and restart <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code>. Then try again.</p>
+<p>The Kedro Data Catalog is missing <a class="reference internal" href="../kedro_project_setup/dependencies.html#install-dependencies-related-to-the-data-catalog"><span class="std std-doc">dependencies needed to parse the data</span></a>. Check that you’ve added <a class="reference internal" href="tutorial_template.html#project-dependencies"><span class="std std-doc">all the project dependencies to <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></span></a> and then call <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">src/requirements.txt</span></code> to install them.</p>
+</div>
 </div>
 <div class="section" id="pipeline-run">
 <h3>Pipeline run<a class="headerlink" href="#pipeline-run" title="Permalink to this headline">¶</a></h3>
@@ -1379,7 +1400,7 @@ kedro.io.core.DataSetError: Failed <span class="k">while</span> loading data fro
         <a href="../visualisation/kedro-viz_visualisation.html" class="btn btn-neutral float-right" title="Get started with Kedro-Viz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="package_a_project.html" class="btn btn-neutral" title="Package a Kedro project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="package_a_project.html" class="btn btn-neutral" title="Package an entire Kedro project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
