@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation prerequisites &mdash; Kedro 0.18.3 documentation</title>
+  <title>Build a Kedro pipeline with PySpark &mdash; Kedro 0.18.3 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="../_static/css/theme-overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Install Kedro" href="install.html" />
-    <link rel="prev" title="What is Kedro?" href="../introduction/introduction.html" />
+    <link rel="next" title="Frequently asked questions" href="../faq/faq.html" />
+    <link rel="prev" title="Deployment to a Dask cluster" href="../deployment/dask.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -102,74 +102,78 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Get started</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation prerequisites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-a-development-version">Install a development version</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="kedro_concepts.html">Kedro concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#node">Node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#pipeline">Pipeline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#data-catalog">Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#kedro-project-directory-structure">Kedro project directory structure</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="new_project.html">Create a new project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="new_project.html#create-a-new-project-containing-example-code">Create a new project containing example code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#background-information-for-the-iris-dataset-example">Background information for the iris dataset example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#create-the-example-project">Create the example project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#run-the-example-project">Run the example project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#under-the-hood-kedro-project-structure">Under the hood: Kedro project structure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="new_project.html#conf"><code class="docutils literal notranslate"><span class="pre">conf</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="new_project.html#data"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="new_project.html#src"><code class="docutils literal notranslate"><span class="pre">src</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Notebook &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebook_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install Kedro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environments">Virtual environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#kedro-variables-catalog-context-pipelines-and-session">Kedro variables: <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#catalog"><code class="docutils literal notranslate"><span class="pre">catalog</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#context"><code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#pipelines"><code class="docutils literal notranslate"><span class="pre">pipelines</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#session"><code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#kedro-and-jupyter">Kedro and Jupyter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#manage-jupyter-kernels">Manage Jupyter kernels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#use-an-alternative-jupyter-client">Use an alternative Jupyter client</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#convert-functions-from-jupyter-notebooks-into-kedro-nodes">Convert functions from Jupyter Notebooks into Kedro nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook_and_ipython/kedro_and_ipython.html#kedro-viz-line-magic">Kedro-Viz line magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/kedro_concepts.html">Kedro concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#node">Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#pipeline">Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#data-catalog">Data Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#kedro-project-directory-structure">Kedro project directory structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#conf"><code class="docutils literal notranslate"><span class="pre">conf</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/kedro_concepts.html#conf-base"><code class="docutils literal notranslate"><span class="pre">conf/base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/kedro_concepts.html#conf-local"><code class="docutils literal notranslate"><span class="pre">conf/local</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#data"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#src"><code class="docutils literal notranslate"><span class="pre">src</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-containing-example-code">Create a new project containing example code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#background-information-for-the-iris-dataset-example">Background information for the iris dataset example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-the-example-project">Create the example project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#run-the-example-project">Run the example project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-variables-catalog-context-pipelines-and-session">Kedro variables: <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#catalog"><code class="docutils literal notranslate"><span class="pre">catalog</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#context"><code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#pipelines"><code class="docutils literal notranslate"><span class="pre">pipelines</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#session"><code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-and-jupyter">Kedro and Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#manage-jupyter-kernels">Manage Jupyter kernels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#use-an-alternative-jupyter-client">Use an alternative Jupyter client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#convert-functions-from-jupyter-notebooks-into-kedro-nodes">Convert functions from Jupyter Notebooks into Kedro nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-viz-line-magic">Kedro-Viz line magic</a></li>
 </ul>
 </li>
 </ul>
@@ -919,6 +923,19 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Pyspark integration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Build a Kedro pipeline with PySpark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#centralise-spark-configuration-in-conf-base-spark-yml">Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialise-a-sparksession-using-a-hook">Initialise a <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> using a hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-kedro-s-built-in-spark-datasets-to-load-and-save-raw-data">Use Kedro’s built-in Spark datasets to load and save raw data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spark-and-delta-lake-interaction">Spark and Delta Lake interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-memorydataset-for-intermediary-dataframe">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> for intermediary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-memorydataset-with-copy-mode-assign-for-non-dataframe-spark-objects">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> with <code class="docutils literal notranslate"><span class="pre">copy_mode=&quot;assign&quot;</span></code> for non-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> Spark objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-for-maximising-concurrency-using-threadrunner">Tips for maximising concurrency using <code class="docutils literal notranslate"><span class="pre">ThreadRunner</span></code></a></li>
+</ul>
+</li>
+</ul>
 <p class="caption"><span class="caption-text">FAQs</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Frequently asked questions</a><ul>
@@ -1259,7 +1276,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Installation prerequisites</li>
+      <li>Build a Kedro pipeline with PySpark</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1305,50 +1322,233 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="installation-prerequisites">
-<h1>Installation prerequisites<a class="headerlink" href="#installation-prerequisites" title="Permalink to this headline">¶</a></h1>
-<p>Kedro supports macOS, Linux and Windows. If you encounter any problems on these platforms, please check the <a class="reference internal" href="../faq/faq.html"><span class="doc std std-doc">frequently asked questions</span></a>, the <a class="reference external" href="https://linen-discord.kedro.org">searchable archive from our retired Discord server</a> or post a new query on the <a class="reference external" href="https://join.slack.com/t/kedro-org/shared_invite/zt-1eicp0iw6-nkBvDlfAYb1AUJV7DgBIvw">Slack organisation</a>.</p>
-<p>If you are a Windows user, you will need to install <a class="reference external" href="https://git-scm.com/"><code class="docutils literal notranslate"><span class="pre">git</span></code></a> onto your machine if you do not have it. To confirm whether you have it installed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git -v
-</pre></div>
-</div>
-<p>You should see the version of <code class="docutils literal notranslate"><span class="pre">git</span></code> available, or an error message to indicate that it is not installed.</p>
-<p>PySpark users must <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html">install Java</a> (if you are working on Windows, you will need admin rights to complete the installation).</p>
-<div class="section" id="virtual-environments">
-<h2>Virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h2>
-<p>We recommend that you create a new Python virtual environment for <em>each</em> new Kedro project you create. A virtual environment creates an isolated environment for a Python project to have its own dependencies, regardless of other projects.</p>
-<p>If you don’t already have it, you should <a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">download and install Anaconda</a> (Python 3.x version), which comes bundled with a package and environment manager called <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
-<blockquote>
-<div><p><a class="reference external" href="https://realpython.com/python-virtual-environments-a-primer/">Read more about Python virtual environments</a> or <a class="reference external" href="https://youtu.be/YKfAwIItO7M">watch an explainer video about them</a>.</p>
-</div></blockquote>
-<p>Depending on your preferred Python installation, you can also create virtual environments to work with Kedro using <code class="docutils literal notranslate"><span class="pre">venv</span></code> or <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Further information about these can be found in the <a class="reference internal" href="../faq/faq.html"><span class="doc std std-doc">FAQ</span></a></p>
-<div class="section" id="create-a-virtual-environment-with-conda">
-<h3>Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#create-a-virtual-environment-with-conda" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">Install <code class="docutils literal notranslate"><span class="pre">conda</span></code></a> on your computer.</p></li>
-<li><p>Create a new Python virtual environment, called <code class="docutils literal notranslate"><span class="pre">kedro-environment</span></code>, using <code class="docutils literal notranslate"><span class="pre">conda</span></code>. In the example below, we use Python 3.10 but you can opt for a different version if you need it for your particular project:</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name kedro-environment <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 -y
-</pre></div>
-</div>
-<p>This will create an isolated Python 3.8 environment.</p>
-<ol class="arabic simple" start="3">
-<li><p>Activate the new environment:</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate kedro-environment
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>To exit <code class="docutils literal notranslate"><span class="pre">kedro-environment</span></code>:</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
+<div class="section" id="build-a-kedro-pipeline-with-pyspark">
+<h1>Build a Kedro pipeline with PySpark<a class="headerlink" href="#build-a-kedro-pipeline-with-pyspark" title="Permalink to this headline">¶</a></h1>
+<p>This page outlines some best practices when building a Kedro pipeline with <a class="reference external" href="https://spark.apache.org/docs/latest/api/python/index.html"><code class="docutils literal notranslate"><span class="pre">PySpark</span></code></a>. It assumes a basic understanding of both Kedro and <code class="docutils literal notranslate"><span class="pre">PySpark</span></code>.</p>
+<div class="section" id="centralise-spark-configuration-in-conf-base-spark-yml">
+<h2>Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code><a class="headerlink" href="#centralise-spark-configuration-in-conf-base-spark-yml" title="Permalink to this headline">¶</a></h2>
+<p>Spark allows you to specify many different <a class="reference external" href="https://spark.apache.org/docs/latest/configuration.html">configuration options</a>. We recommend storing all of these options in a file located at <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code>. Below is an example of the content of the file to specify the <code class="docutils literal notranslate"><span class="pre">maxResultSize</span></code> of the Spark’s driver and to use the <code class="docutils literal notranslate"><span class="pre">FAIR</span></code> scheduler:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spark.driver.maxResultSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3g</span><span class="w"></span>
+<span class="nt">spark.scheduler.mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FAIR</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">conda</span></code> virtual environment is not dependent on your current working directory and can be activated from any directory.</p>
+<p>Optimal configuration for Spark depends on the setup of your Spark cluster.</p>
 </div>
 </div>
+<div class="section" id="initialise-a-sparksession-using-a-hook">
+<h2>Initialise a <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> using a hook<a class="headerlink" href="#initialise-a-sparksession-using-a-hook" title="Permalink to this headline">¶</a></h2>
+<p>Before any <code class="docutils literal notranslate"><span class="pre">PySpark</span></code> operations are performed, you should initialise your <a class="reference external" href="https://spark.apache.org/docs/latest/sql-getting-started.html#starting-point-sparksession"><code class="docutils literal notranslate"><span class="pre">SparkSession</span></code></a> using an <code class="docutils literal notranslate"><span class="pre">after_context_created</span></code> <a class="reference internal" href="../hooks/introduction.html"><span class="doc std std-doc">hook</span></a>. This ensures that a <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> has been initialised before the Kedro pipeline is run.</p>
+<p>Below is an example implementation to initialise the <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> in <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/hooks.py</span></code> by reading configuration from the <code class="docutils literal notranslate"><span class="pre">spark.yml</span></code> configuration file created in the previous section:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.framework.hooks</span> <span class="kn">import</span> <span class="n">hook_impl</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+
+<span class="k">class</span> <span class="nc">SparkHooks</span><span class="p">:</span>
+    <span class="nd">@hook_impl</span>
+    <span class="k">def</span> <span class="nf">after_context_created</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Initialises a SparkSession using the config</span>
+<span class="sd">        defined in project&#39;s conf folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Load the spark configuration in spark.yaml using the config loader</span>
+        <span class="n">parameters</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">config_loader</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spark*&quot;</span><span class="p">,</span> <span class="s2">&quot;spark*/**&quot;</span><span class="p">)</span>
+        <span class="n">spark_conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span><span class="o">.</span><span class="n">setAll</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="c1"># Initialise the spark session</span>
+        <span class="n">spark_session_conf</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">_package_name</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">enableHiveSupport</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">spark_conf</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">_spark_session</span> <span class="o">=</span> <span class="n">spark_session_conf</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+        <span class="n">_spark_session</span><span class="o">.</span><span class="n">sparkContext</span><span class="o">.</span><span class="n">setLogLevel</span><span class="p">(</span><span class="s2">&quot;WARN&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should modify this code to adapt it to your cluster’s setup, e.g. setting master to <code class="docutils literal notranslate"><span class="pre">yarn</span></code> if you are running Spark on <a class="reference external" href="https://spark.apache.org/docs/latest/running-on-yarn.html">YARN</a>.</p>
+<p>Call <code class="docutils literal notranslate"><span class="pre">SparkSession.builder.getOrCreate()</span></code> to obtain the <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> anywhere in your pipeline. <code class="docutils literal notranslate"><span class="pre">SparkSession.builder.getOrCreate()</span></code> is a global <a class="reference external" href="https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html">singleton</a>.</p>
+<p>We don’t recommend storing Spark session on the context object, as it cannot be serialised and therefore prevents the context from being initialised for some plugins.</p>
+<p>You will also need to register <code class="docutils literal notranslate"><span class="pre">SparkHooks</span></code> by updating the <code class="docutils literal notranslate"><span class="pre">HOOKS</span></code> variable in <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code> as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;.</span><span class="n">hooks</span> <span class="kn">import</span> <span class="nn">SparkHooks</span>
+
+<span class="n">HOOKS</span> <span class="o">=</span> <span class="p">(</span><span class="n">SparkHooks</span><span class="p">(),)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-kedro-s-built-in-spark-datasets-to-load-and-save-raw-data">
+<h2>Use Kedro’s built-in Spark datasets to load and save raw data<a class="headerlink" href="#use-kedro-s-built-in-spark-datasets-to-load-and-save-raw-data" title="Permalink to this headline">¶</a></h2>
+<p>We recommend using Kedro’s built-in Spark datasets to load raw data into Spark’s <a class="reference external" href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html">DataFrame</a>, as well as to write them back to storage. Some of our built-in Spark datasets include:</p>
+<ul class="simple">
+<li><p><span class="xref myst">spark.DeltaTableDataSet</span></p></li>
+<li><p><span class="xref myst">spark.SparkDataSet</span></p></li>
+<li><p><span class="xref myst">spark.SparkJDBCDataSet</span></p></li>
+<li><p><span class="xref myst">spark.SparkHiveDataSet</span></p></li>
+</ul>
+<p>The example below illustrates how to use <code class="docutils literal notranslate"><span class="pre">spark.SparkDataSet</span></code> to read a CSV file located in S3 into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span><span class="w"></span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;|&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Or using the Python API:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyspark.sql</span>
+<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
+<span class="kn">from</span> <span class="nn">kedro.extras.datasets.spark</span> <span class="kn">import</span> <span class="n">SparkDataSet</span>
+
+<span class="n">spark_ds</span> <span class="o">=</span> <span class="n">SparkDataSet</span><span class="p">(</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;s3a://your_bucket/data/01_raw/weather*&quot;</span><span class="p">,</span>
+    <span class="n">file_format</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span>
+    <span class="n">load_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;inferSchema&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="n">save_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sep&quot;</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">({</span><span class="s2">&quot;weather&quot;</span><span class="p">:</span> <span class="n">spark_ds</span><span class="p">})</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;weather&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="spark-and-delta-lake-interaction">
+<h2>Spark and Delta Lake interaction<a class="headerlink" href="#spark-and-delta-lake-interaction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://delta.io/">Delta Lake</a> is an open-source project that enables building a Lakehouse architecture on top of data lakes. It provides ACID transactions and unifies streaming and batch data processing on top of existing data lakes, such as S3, ADLS, GCS, and HDFS.
+To setup PySpark with Delta Lake, have a look at <a class="reference external" href="https://docs.delta.io/latest/quick-start.html#python">the recommendations in Delta Lake’s documentation</a>.</p>
+<p>We recommend the following workflow, which makes use of the <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc">transcoding feature in Kedro</span></a>:</p>
+<ul class="simple">
+<li><p>To create a Delta table, use a <code class="docutils literal notranslate"><span class="pre">SparkDataSet</span></code> with <code class="docutils literal notranslate"><span class="pre">file_format=&quot;delta&quot;</span></code>. You can also use this type of dataset to read from a Delta table and/or overwrite it.</p></li>
+<li><p>To perform <a class="reference external" href="https://docs.delta.io/latest/delta-update.html#language-python">Delta table deletes, updates, and merges</a>, load the data using a <code class="docutils literal notranslate"><span class="pre">DeltaTableDataSet</span></code> and perform the write operations within the node function.</p></li>
+</ul>
+<p>As a result, we end up with a catalog that looks like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">temperature</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/data.csv</span><span class="w"></span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;csv&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;|&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+
+<span class="nt">weather@spark</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://my_bucket/03_primary/weather</span><span class="w"></span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;delta&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;overwrite&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">versionAsOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+
+<span class="nt">weather@delta</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.DeltaTableDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://my_bucket/03_primary/weather</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DeltaTableDataSet</span></code> does not support <code class="docutils literal notranslate"><span class="pre">save()</span></code> operation, as the updates happen in place inside the node function, i.e. through <code class="docutils literal notranslate"><span class="pre">DeltaTable.update()</span></code>, <code class="docutils literal notranslate"><span class="pre">DeltaTable.delete()</span></code>, <code class="docutils literal notranslate"><span class="pre">DeltaTable.merge()</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have defined an implementation for the Kedro <code class="docutils literal notranslate"><span class="pre">before_dataset_saved</span></code>/<code class="docutils literal notranslate"><span class="pre">after_dataset_saved</span></code> hook, the hook will not be triggered. This is because the save operation happens within the <code class="docutils literal notranslate"><span class="pre">node</span></code> itself, via the DeltaTable API.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">node</span><span class="p">(</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">process_barometer_data</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;weather@spark&quot;</span>
+        <span class="p">),</span>
+        <span class="n">node</span><span class="p">(</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">update_meterological_state</span><span class="p">,</span>
+            <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;weather@delta&quot;</span><span class="p">,</span>
+            <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;first_operation_complete&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">node</span><span class="p">(</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">estimate_weather_trend</span><span class="p">,</span>
+            <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;first_operation_complete&quot;</span><span class="p">,</span> <span class="s2">&quot;weather@delta&quot;</span><span class="p">],</span>
+            <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;second_operation_complete&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">first_operation_complete</span></code> is a <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> and it signals that any Delta operations which occur “outside” the Kedro DAG are complete. This can be used as input to a downstream node, to preserve the shape of the DAG. Otherwise, if no downstream nodes need to run after this, the node can simply not return anything:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">node</span><span class="p">(</span><span class="n">func</span><span class="o">=...</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;weather@spark&quot;</span><span class="p">),</span>
+        <span class="n">node</span><span class="p">(</span><span class="n">func</span><span class="o">=...</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;weather@delta&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The following diagram is the visual representation of the workflow explained above:</p>
+<p><img alt="Spark and Delta Lake workflow" src="../_images/spark_delta_workflow.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This pattern of creating “dummy” datasets to preserve the data flow also applies to other “out of DAG” execution operations such as SQL operations within a node.</p>
+</div>
+</div>
+<div class="section" id="use-memorydataset-for-intermediary-dataframe">
+<h2>Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> for intermediary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#use-memorydataset-for-intermediary-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>For nodes operating on <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that doesn’t need to perform Spark actions such as writing the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to storage, we recommend using the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> to hold the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. In other words, there is no need to specify it in the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> or <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>. This allows you to take advantage of Spark’s optimiser and lazy evaluation.</p>
+</div>
+<div class="section" id="use-memorydataset-with-copy-mode-assign-for-non-dataframe-spark-objects">
+<h2>Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> with <code class="docutils literal notranslate"><span class="pre">copy_mode=&quot;assign&quot;</span></code> for non-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> Spark objects<a class="headerlink" href="#use-memorydataset-with-copy-mode-assign-for-non-dataframe-spark-objects" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, you might want to use Spark objects that aren’t <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as inputs and outputs in your pipeline. For example, suppose you have a <code class="docutils literal notranslate"><span class="pre">train_model</span></code> node to train a classifier using Spark ML’s <a class="reference external" href="https://spark.apache.org/docs/latest/ml-classification-regression.html#random-forest-classifier"><code class="docutils literal notranslate"><span class="pre">RandomForrestClassifier</span></code></a> and a <code class="docutils literal notranslate"><span class="pre">predict</span></code> node to make predictions using this classifier. In this scenario, the <code class="docutils literal notranslate"><span class="pre">train_model</span></code> node will output a <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> object, which then becomes the input for the <code class="docutils literal notranslate"><span class="pre">predict</span></code> node. Below is the code for this pipeline:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">node</span><span class="p">,</span> <span class="n">pipeline</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+
+
+<span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">training_data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RandomForestClassifier</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Node for training a random forest model to classify the data.&quot;&quot;&quot;</span>
+    <span class="n">classifier</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">numTrees</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">testing_data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Node for making predictions given a pre-trained model and a testing dataset.&quot;&quot;&quot;</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">predictions</span>
+
+
+<span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">node</span><span class="p">(</span><span class="n">train_model</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;training_data&quot;</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;example_classifier&quot;</span><span class="p">),</span>
+            <span class="n">node</span><span class="p">(</span>
+                <span class="n">predict</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;example_classifier&quot;</span><span class="p">,</span> <span class="n">testing_data</span><span class="o">=</span><span class="s2">&quot;testing_data&quot;</span><span class="p">),</span>
+                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;example_predictions&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>To make the pipeline work, you will need to specify <code class="docutils literal notranslate"><span class="pre">example_classifier</span></code> as follows in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">example_classifier</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">copy_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assign</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">assign</span></code> copy mode ensures that the <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> will be assigned the Spark object itself, not a <a class="reference external" href="https://docs.python.org/3/library/copy.html">deep copy</a> version of it, since deep copy doesn’t work with Spark object generally.</p>
+</div>
+<div class="section" id="tips-for-maximising-concurrency-using-threadrunner">
+<h2>Tips for maximising concurrency using <code class="docutils literal notranslate"><span class="pre">ThreadRunner</span></code><a class="headerlink" href="#tips-for-maximising-concurrency-using-threadrunner" title="Permalink to this headline">¶</a></h2>
+<p>Under the hood, every Kedro node that performs a Spark action (e.g. <code class="docutils literal notranslate"><span class="pre">save</span></code>, <code class="docutils literal notranslate"><span class="pre">collect</span></code>) is submitted to the Spark cluster as a Spark job through the same <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> instance. These jobs may be running concurrently if they were submitted by different threads. In order to do that, you will need to run your Kedro pipeline with the <a class="reference internal" href="../kedro.runner.ThreadRunner.html"><span class="doc std std-doc">ThreadRunner</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --runner<span class="o">=</span>ThreadRunner
+</pre></div>
+</div>
+<p>To further increase the concurrency level, if you are using Spark &gt;= 0.8, you can also give each node a roughly equal share of the Spark cluster by turning on fair sharing and therefore giving them a roughly equal chance of being executed concurrently. By default, they are executed in a FIFO manner, which means if a job takes up too much resources, it could hold up the execution of other jobs. In order to turn on fair sharing, put the following in your <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code> file, which was created in the <a class="reference internal" href="#initialise-a-sparksession-using-a-hook"><span class="std std-doc">Initialise a <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code></span></a> section:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spark.scheduler.mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FAIR</span><span class="w"></span>
+</pre></div>
+</div>
+<p>For more information, please visit Spark documentation on <a class="reference external" href="https://spark.apache.org/docs/latest/job-scheduling.html#scheduling-within-an-application">jobs scheduling within an application</a>.</p>
 </div>
 </div>
 
@@ -1360,10 +1560,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="install.html" class="btn btn-neutral float-right" title="Install Kedro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../faq/faq.html" class="btn btn-neutral float-right" title="Frequently asked questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../introduction/introduction.html" class="btn btn-neutral" title="What is Kedro?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../deployment/dask.html" class="btn btn-neutral" title="Deployment to a Dask cluster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
