@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create a new project &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Create a new Kedro project &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Kedro spaceflights tutorial" href="../tutorial/spaceflights_tutorial.html" />
+    <link rel="next" title="TL;DR" href="summary.html" />
     <link rel="prev" title="Kedro concepts" href="kedro_concepts.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -60,14 +60,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -87,7 +91,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Create a new project</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -99,6 +103,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -241,15 +253,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1219,7 +1230,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Create a new project</li>
+      <li>Create a new Kedro project</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1265,9 +1276,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="create-a-new-project">
-<h1>Create a new project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h1>
-<p>There are several ways to create a new project once you have <a class="reference internal" href="install.html"><span class="doc std std-doc">installed Kedro</span></a>. For example, you can create a basic Kedro project which is set up with the project directories and basic code but is empty for you to extend as needed. Alternatively, you can create a Kedro project that is populated with template code that acts as a starter example.</p>
+<div class="section" id="create-a-new-kedro-project">
+<h1>Create a new Kedro project<a class="headerlink" href="#create-a-new-kedro-project" title="Permalink to this headline">¶</a></h1>
+<p>There are several ways to create a new project once you have <a class="reference internal" href="install.html"><span class="doc std std-doc">installed Kedro</span></a>. For example, you can create a basic Kedro project set up with the project directories and basic code, but empty to extend as you need. Alternatively, you can create a Kedro project populated with template code that acts as a starter example.</p>
 <p>You can also use an existing Kedro project, for example, by cloning it from a GitHub repository.</p>
 <div class="section" id="create-a-new-empty-project">
 <h2>Create a new empty project<a class="headerlink" href="#create-a-new-empty-project" title="Permalink to this headline">¶</a></h2>
@@ -1276,8 +1287,8 @@
 </pre></div>
 </div>
 <p>You will be asked to enter a name for your project, which can be human-readable and may contain alphanumeric symbols, spaces, underscores and hyphens. It must be at least two characters long.</p>
-<p>Your choice is set as the value of <code class="docutils literal notranslate"><span class="pre">project_name</span></code> and is used to automatically generate the <code class="docutils literal notranslate"><span class="pre">repo_name</span></code> and <code class="docutils literal notranslate"><span class="pre">python_package</span></code>.</p>
-<p>So, if you enter “Get Started”, the directory name for the project (<code class="docutils literal notranslate"><span class="pre">repo_name</span></code>) is automatically set to be <code class="docutils literal notranslate"><span class="pre">get-started</span></code> and the Python package name (<code class="docutils literal notranslate"><span class="pre">python_package</span></code>) for your project is set to be <code class="docutils literal notranslate"><span class="pre">get_started</span></code>.</p>
+<p>Your choice is set as the value of <code class="docutils literal notranslate"><span class="pre">project_name</span></code> and is used to generate the <code class="docutils literal notranslate"><span class="pre">repo_name</span></code> and <code class="docutils literal notranslate"><span class="pre">python_package</span></code> automatically.</p>
+<p>So, if you enter “Get Started”, the directory name for the project (<code class="docutils literal notranslate"><span class="pre">repo_name</span></code>) is automatically set to be <code class="docutils literal notranslate"><span class="pre">get-started</span></code>, and the Python package name (<code class="docutils literal notranslate"><span class="pre">python_package</span></code>) for your project is set to be <code class="docutils literal notranslate"><span class="pre">get_started</span></code>.</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
@@ -1300,7 +1311,7 @@
 </tr>
 </tbody>
 </table>
-<p>The output of <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code> is a directory that contains all the project files and subdirectories required for a basic Kedro project, ready for you to extend with your own code.</p>
+<p>The output of <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code> is a directory containing all the project files and subdirectories required for a basic Kedro project, ready to extend with your own code.</p>
 <div class="section" id="create-a-new-project-from-a-configuration-file">
 <h3>Create a new project from a configuration file<a class="headerlink" href="#create-a-new-project-from-a-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>If you prefer to customise your new project’s directory and package name, you can instead use a configuration file to specify those values. The configuration file must contain:</p>
@@ -1310,7 +1321,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">repo_name</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">python_package</span></code></p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> can be set to wherever you want to create the project. For example, <code class="docutils literal notranslate"><span class="pre">~</span></code> for your home directory, or <code class="docutils literal notranslate"><span class="pre">.</span></code> for the current working directory. Here is an example <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, which assumes that a directory named <code class="docutils literal notranslate"><span class="pre">~/code</span></code> already exists and creates custom project directory and package names:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> can be set to wherever you want to create the project. For example, <code class="docutils literal notranslate"><span class="pre">~</span></code> for your home directory, or <code class="docutils literal notranslate"><span class="pre">.</span></code> for the current working directory. Here is an example <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, which assumes that a directory named <code class="docutils literal notranslate"><span class="pre">~/code</span></code> already exists:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/code</span><span class="w"></span>
 <span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My First Kedro Project</span><span class="w"></span>
 <span class="nt">repo_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testing-kedro</span><span class="w"></span>
@@ -1331,11 +1342,11 @@
 <h3>Background information for the iris dataset example<a class="headerlink" href="#background-information-for-the-iris-dataset-example" title="Permalink to this headline">¶</a></h3>
 <p>The dataset was generated in 1936 by the British statistician and biologist Ronald Fisher. The dataset contains 150 samples in total, comprising 50 samples of 3 different species of Iris plant (Iris Setosa, Iris Versicolour and Iris Virginica). For each sample, the flower measurements are recorded for the sepal length, sepal width, petal length and petal width.</p>
 <p><img alt="" src="../_images/iris_measurements.png" /></p>
-<p>A machine learning model can use the Iris dataset to illustrate classification (a method used to determine the type of an object by comparison with similar objects previously been categorised). Once trained on known data, the machine learning model can make a predictive classification by comparing a test object to the output of its training data.</p>
+<p>A machine learning model can use the Iris dataset to illustrate classification (a method used to determine the type of an object by comparison with similar objects that have previously been categorised). Once trained on known data, the machine learning model can make a predictive classification by comparing a test object to the output of its training data.</p>
 </div>
 <div class="section" id="create-the-example-project">
 <h3>Create the example project<a class="headerlink" href="#create-the-example-project" title="Permalink to this headline">¶</a></h3>
-<p>The first step is to create the Kedro project using a starter to add in the example code and data. Feel free to name your project as you like, but here we will assume the project’s name is <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">started</span></code>.</p>
+<p>The first step is to create the Kedro project using a starter to add the example code and data. Feel free to name your project as you like, but here we will assume the project’s name is <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">started</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>pandas-iris
 </pre></div>
 </div>
@@ -1350,6 +1361,10 @@ pip install -r src/requirements.txt
 <p>You are ready to run the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first time you type a <code class="docutils literal notranslate"><span class="pre">kedro</span></code> command in your new project, you will be asked whether you wish to opt into <a class="reference external" href="https://github.com/kedro-org/kedro-plugins/tree/main/kedro-telemetry">usage analytics</a>. Your decision is recorded in the <code class="docutils literal notranslate"><span class="pre">.telemetry</span></code> file so that subsequent calls to <code class="docutils literal notranslate"><span class="pre">kedro</span></code> in this project do not ask you again.</p>
 </div>
 <p>When the command completes, you should see a log message similar to the following in your console:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">08</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="mi">22</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span> <span class="n">INFO</span>     <span class="n">Model</span> <span class="n">has</span> <span class="n">accuracy</span> <span class="n">of</span> <span class="mf">0.933</span> <span class="n">on</span> <span class="n">test</span> <span class="n">data</span><span class="o">.</span>                                        <span class="n">nodes</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">74</span>
@@ -1394,7 +1409,7 @@ pip install -r src/requirements.txt
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="kedro_concepts.html" class="btn btn-neutral float-left" title="Kedro concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../tutorial/spaceflights_tutorial.html" class="btn btn-neutral float-right" title="Kedro spaceflights tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="summary.html" class="btn btn-neutral float-right" title="TL;DR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What is Kedro? &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>TL;DR &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Install Kedro" href="../get_started/install.html" />
-    <link rel="prev" title="Welcome to Kedro’s documentation!" href="../index.html" />
+    <link rel="next" title="Kedro spaceflights tutorial" href="../tutorial/spaceflights_tutorial.html" />
+    <link rel="prev" title="Create a new Kedro project" href="new_project.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -49,68 +49,68 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What is Kedro?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#learn-how-to-use-kedro">Learn how to use Kedro</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#assumptions">Assumptions</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">What is Kedro?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/introduction.html#learn-how-to-use-kedro">Learn how to use Kedro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/introduction.html#assumptions">Assumptions</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Get started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#python">Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environment-manager">Virtual environment manager</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install Kedro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installation-prerequisites">Installation prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-a-development-version">Install a development version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/kedro_concepts.html">Kedro concepts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#node">Node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#pipeline">Pipeline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#data-catalog">Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/kedro_concepts.html#kedro-project-directory-structure">Kedro project directory structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#conf"><code class="docutils literal notranslate"><span class="pre">conf</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/kedro_concepts.html#conf-base"><code class="docutils literal notranslate"><span class="pre">conf/base</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/kedro_concepts.html#conf-local"><code class="docutils literal notranslate"><span class="pre">conf/local</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="kedro_concepts.html">Kedro concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#node">Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#pipeline">Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#data-catalog">Data Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_concepts.html#kedro-project-directory-structure">Kedro project directory structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_concepts.html#conf"><code class="docutils literal notranslate"><span class="pre">conf</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_concepts.html#conf-base"><code class="docutils literal notranslate"><span class="pre">conf/base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_concepts.html#conf-local"><code class="docutils literal notranslate"><span class="pre">conf/local</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#data"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/kedro_concepts.html#src"><code class="docutils literal notranslate"><span class="pre">src</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-containing-example-code">Create a new project containing example code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#background-information-for-the-iris-dataset-example">Background information for the iris dataset example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-the-example-project">Create the example project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#run-the-example-project">Run the example project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_concepts.html#data"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_concepts.html#src"><code class="docutils literal notranslate"><span class="pre">src</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/summary.html">TL;DR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics">Logistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#what-s-next">What’s next?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#useful-links">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_project.html">Create a new Kedro project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="new_project.html#create-a-new-project-containing-example-code">Create a new project containing example code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="new_project.html#background-information-for-the-iris-dataset-example">Background information for the iris dataset example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="new_project.html#create-the-example-project">Create the example project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="new_project.html#run-the-example-project">Run the example project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -1230,7 +1230,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>What is Kedro?</li>
+      <li>TL;DR</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1276,27 +1276,52 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="what-is-kedro">
-<h1>What is Kedro?<a class="headerlink" href="#what-is-kedro" title="Permalink to this headline">¶</a></h1>
-<p>Kedro is an open-source Python framework to create reproducible, maintainable, and modular data science code. It uses software engineering best practices to help you build production-ready data science pipelines.</p>
-<p>Kedro is hosted by the <a class="reference external" href="https://lfaidata.foundation/">LF AI &amp; Data Foundation</a>, and you can find the <a class="reference external" href="https://github.com/kedro-org/kedro">Kedro source code on GitHub</a>.</p>
-<div class="section" id="learn-how-to-use-kedro">
-<h2>Learn how to use Kedro<a class="headerlink" href="#learn-how-to-use-kedro" title="Permalink to this headline">¶</a></h2>
-<p>In the following few chapters, you will learn <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">how to install Kedro</span></a> and discover the <a class="reference internal" href="../get_started/kedro_concepts.html"><span class="doc std std-doc">key Kedro concepts</span></a>.</p>
+<div class="section" id="tl-dr">
+<h1>TL;DR<a class="headerlink" href="#tl-dr" title="Permalink to this headline">¶</a></h1>
+<p>This page summarises what you’ve learned about Kedro so far.</p>
+<div class="section" id="logistics">
+<h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>The first example illustrates the <a class="reference internal" href="../get_started/new_project.html"><span class="doc std std-doc">basics of a Kedro project</span></a> using the Iris dataset</p></li>
-<li><p>You can then review the <a class="reference internal" href="../tutorial/tutorial_template.html"><span class="doc std std-doc">spaceflights tutorial</span></a> to build a Kedro project for hands-on experience</p></li>
+<li><p>Kedro can be used on Windows, macOS or Linux</p></li>
+<li><p><a class="reference internal" href="install.html#installation-prerequisites"><span class="std std-doc">Installation prerequisites</span></a> include Python 3.7+, <code class="docutils literal notranslate"><span class="pre">git</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code></p></li>
+<li><p>You should install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">kedro</span></code></p></li>
 </ul>
-<p>For new and intermediate Kedro users, there’s also a comprehensive section on <a class="reference internal" href="../visualisation/kedro-viz_visualisation.html"><span class="doc std std-doc">how to visualise Kedro projects using Kedro-Viz</span></a> and <a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html"><span class="doc std std-doc">how to work with Kedro and Jupyter notebooks</span></a>.</p>
-<p>Use the left-hand table of contents to explore the documentation available for more advanced Kedro usage and deployment. We also recommend the <a class="reference internal" href="../resources/glossary.html"><span class="doc std std-doc">glossary</span></a> and the <a class="reference internal" href="../kedro.html"><span class="doc std std-doc">API reference documentation</span></a> for additional information.</p>
 </div>
-<div class="section" id="assumptions">
-<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
-<p>We have designed the preliminary documentation and the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a> for anyone new to Kedro. The more knowledge of Python you have, the easier you will find the learning curve.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are many excellent online resources for learning Python, but you should choose those that reference Python 3, as Kedro is built for Python 3.7+. There are plenty of curated lists of online resources, such as the <a class="reference external" href="https://www.python.org/">official Python programming language website</a> and this list of <a class="reference external" href="https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books-langs.md#python">free programming books and tutorials</a>.</p>
+<div class="section" id="kedro-fundamentals">
+<h2>Kedro fundamentals<a class="headerlink" href="#kedro-fundamentals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Kedro nodes are the building blocks of data processing pipelines. A node is a wrapper for a Python function that names the inputs and outputs of that function.</p></li>
+<li><p>A pipeline organises the dependencies and execution order of a collection of nodes.</p></li>
+<li><p>Kedro has a registry of all data sources the project can use called the Data Catalog. There is inbuilt support for various file types and file systems.</p></li>
+<li><p>Kedro projects follow a default template that uses specific folders to store datasets, notebooks, configuration and source code.</p></li>
+</ul>
 </div>
+<div class="section" id="kedro-project-creation">
+<h2>Kedro project creation<a class="headerlink" href="#kedro-project-creation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>You can create a Kedro project:</p>
+<ul>
+<li><p>with just the basic code: <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code></p></li>
+<li><p>or you can populate a new project with pre-built code, e.g. <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span> <span class="pre">--starter=pandas-iris</span></code> from a <a class="reference internal" href="../kedro_project_setup/starters.html#list-of-official-starters"><span class="std std-doc">range of starter projects</span></a></p></li>
+</ul>
+</li>
+<li><p>Once you’ve created a project, you need to navigate to its project folder; you can then install its dependencies: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">src/requirements.txt</span></code></p></li>
+<li><p>To run the project: <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Next, you should work through the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a> for the hands-on experience. It illustrates how to build a working project, which includes creating nodes, registering pipelines, setting up the Data Catalog and adding dependencies.</p></li>
+<li><p>Following the tutorial, you’ll learn how to <a class="reference internal" href="../visualisation/kedro-viz_visualisation.html"><span class="doc std std-doc">visualise a Kedro project</span></a> and learn more about <a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html"><span class="doc std std-doc">combining Kedro with a Jupyter notebook</span></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/kedro-org/kedro">Kedro on GitHub</a></p></li>
+<li><p><a class="reference external" href="https://slack.kedro.org">Join the Kedro community Slack channels</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -1304,8 +1329,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Kedro’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../get_started/install.html" class="btn btn-neutral float-right" title="Install Kedro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="new_project.html" class="btn btn-neutral float-left" title="Create a new Kedro project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tutorial/spaceflights_tutorial.html" class="btn btn-neutral float-right" title="Kedro spaceflights tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -61,14 +61,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -88,7 +92,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -100,6 +104,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -242,15 +254,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1270,7 +1281,7 @@
 <h1>Deployment guide<a class="headerlink" href="#deployment-guide" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deployment-choices">
 <h2>Deployment choices<a class="headerlink" href="#deployment-choices" title="Permalink to this headline">¶</a></h2>
-<p>Your choice of deployment method will depend on a number of factors. In this section we provide a number of guides for different approaches.</p>
+<p>Your choice of deployment method will depend on various factors. In this section we provide guides for different approaches.</p>
 <p>If you decide to deploy your Kedro project on a single machine, you should consult our <a class="reference internal" href="single_machine.html"><span class="doc std std-doc">guide to single-machine deployment</span></a>, and decide whether to <a class="reference internal" href="single_machine.html#container-based"><span class="std std-doc">use Docker for container-based deployment</span></a> or to use <a class="reference internal" href="single_machine.html#package-based"><span class="std std-doc">package-based deployment</span></a> or to <a class="reference internal" href="single_machine.html#cli-based"><span class="std std-doc">use the CLI to clone and deploy</span></a> your codebase to a server.</p>
 <p>If your pipeline is sizeable, you will want to run parts of it on separate machines, so will need to consult our <a class="reference internal" href="distributed.html"><span class="doc std std-doc">guide to distributed deployment</span></a>.</p>
 <p>We also provide information to help you deploy to the following:</p>

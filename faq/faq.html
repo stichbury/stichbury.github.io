@@ -60,14 +60,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -87,7 +91,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -99,6 +103,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -241,15 +253,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1268,11 +1279,11 @@
 <div class="section" id="frequently-asked-questions">
 <h1>Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
 <p>The following lists a set of questions that we have been asked about Kedro in the past. If you have a different
-question which isn’t answered here, check out the <a class="reference external" href="https://linen-discord.kedro.org">searchable archive from our retired Discord server</a> or post a new query on the <a class="reference external" href="https://join.slack.com/t/kedro-org/shared_invite/zt-1eicp0iw6-nkBvDlfAYb1AUJV7DgBIvw">Slack organisation</a>.</p>
+question which isn’t answered here, check out the <a class="reference external" href="https://linen-discord.kedro.org">searchable archive from our retired Discord server</a> or post a new query on the <a class="reference external" href="https://slack.kedro.org">Slack organisation</a>.</p>
 <div class="section" id="what-is-kedro">
 <h2>What is Kedro?<a class="headerlink" href="#what-is-kedro" title="Permalink to this headline">¶</a></h2>
 <p>Kedro is an open-source Python framework for creating reproducible, maintainable and modular data science code. It borrows concepts from software engineering and applies them to machine-learning code; applied concepts include modularity, separation of concerns and versioning. Kedro is hosted by the <a class="reference external" href="https://lfaidata.foundation/">LF AI &amp; Data Foundation</a>.</p>
-<p>For the source code, take a look at the <a class="reference external" href="https://github.com/kedro-org/kedro">Kedro repository on Github</a>.</p>
+<p>For the source code, take a look at the <a class="reference external" href="https://github.com/kedro-org/kedro">Kedro repository on GitHub</a>.</p>
 </div>
 <div class="section" id="what-are-the-primary-advantages-of-kedro">
 <h2>What are the primary advantages of Kedro?<a class="headerlink" href="#what-are-the-primary-advantages-of-kedro" title="Permalink to this headline">¶</a></h2>
@@ -1446,7 +1457,7 @@ brains behind a layered data-engineering convention as a model of managing data.
 <div class="section" id="how-can-i-find-out-more-about-kedro">
 <h2>How can I find out more about Kedro?<a class="headerlink" href="#how-can-i-find-out-more-about-kedro" title="Permalink to this headline">¶</a></h2>
 <p>There are a host of articles, podcasts, talks and Kedro showcase projects in the <a class="reference external" href="https://github.com/kedro-org/kedro-community"><code class="docutils literal notranslate"><span class="pre">kedro-community</span></code></a> repository.</p>
-<p>Our preferred Kedro-community channel for feedback is through <a class="reference external" href="https://github.com/kedro-org/kedro/issues">GitHub issues</a>. We update the codebase regularly; you can find news about updates and features in the <a class="reference external" href="https://github.com/kedro-org/kedro/blob/develop/RELEASE.md">RELEASE.md file on the Github repository</a>.</p>
+<p>Our preferred Kedro-community channel for feedback is through <a class="reference external" href="https://github.com/kedro-org/kedro/issues">GitHub issues</a>. We update the codebase regularly; you can find news about updates and features in the <a class="reference external" href="https://github.com/kedro-org/kedro/blob/develop/RELEASE.md">RELEASE.md file on the GitHub repository</a>.</p>
 </div>
 <div class="section" id="who-maintains-kedro">
 <h2>Who maintains Kedro?<a class="headerlink" href="#who-maintains-kedro" title="Permalink to this headline">¶</a></h2>
@@ -1540,7 +1551,7 @@ python -m venv env<span class="se">\k</span>edro-environment  <span class="c1">#
 </div>
 <div class="section" id="how-can-i-get-my-question-answered">
 <h2>How can I get my question answered?<a class="headerlink" href="#how-can-i-get-my-question-answered" title="Permalink to this headline">¶</a></h2>
-<p>If your question isn’t answered above, talk to the community on the <a class="reference external" href="https://join.slack.com/t/kedro-org/shared_invite/zt-1eicp0iw6-nkBvDlfAYb1AUJV7DgBIvw">Kedro Slack channels</a>.</p>
+<p>If your question isn’t answered above, talk to the community on the <a class="reference external" href="https://slack.kedro.org">Kedro Slack channels</a>.</p>
 </div>
 </div>
 

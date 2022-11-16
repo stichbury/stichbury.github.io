@@ -59,14 +59,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="get_started/install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="get_started/install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="get_started/install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_started/install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_started/install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_started/install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get_started/install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -86,7 +90,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="get_started/new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -98,6 +102,14 @@
 <li class="toctree-l3"><a class="reference internal" href="get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get_started/summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -240,15 +252,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1276,7 +1287,7 @@
 <a class="reference external image-reference" href="https://pypi.org/project/kedro/"><img alt="PyPI package version" src="https://badge.fury.io/py/kedro.svg" /></a>
 <a class="reference external image-reference" href="https://anaconda.org/conda-forge/kedro"><img alt="Conda package version" src="https://img.shields.io/conda/vn/conda-forge/kedro.svg" /></a>
 <a class="reference external image-reference" href="https://kedro.readthedocs.io/"><img alt="Docs build status" src="https://readthedocs.org/projects/kedro/badge/?version=stable" /></a>
-<a class="reference external image-reference" href="https://join.slack.com/t/kedro-org/shared_invite/zt-1eicp0iw6-nkBvDlfAYb1AUJV7DgBIvw"><img alt="Kedro's Slack organisation" src="https://img.shields.io/badge/slack-chat-blueviolet.svg?label=Kedro%20Slack&amp;logo=slack&amp;style=flat-square" /></a>
+<a class="reference external image-reference" href="https://slack.kedro.org"><img alt="Kedro's Slack organisation" src="https://img.shields.io/badge/slack-chat-blueviolet.svg?label=Kedro%20Slack&amp;logo=slack&amp;style=flat-square" /></a>
 <a class="reference external image-reference" href="https://github.com/psf/black"><img alt="Code style is Black" src="https://img.shields.io/badge/code%20style-black-black.svg" /></a>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Introduction</span></p>
@@ -1294,7 +1305,6 @@
 <li class="toctree-l1"><a class="reference internal" href="get_started/install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="get_started/install.html#installation-prerequisites">Installation prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -1305,9 +1315,17 @@
 <li class="toctree-l2"><a class="reference internal" href="get_started/kedro_concepts.html#kedro-project-directory-structure">Kedro project directory structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="get_started/new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get_started/new_project.html#create-a-new-project-containing-example-code">Create a new project containing example code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get_started/summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -1386,15 +1404,11 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#kedro-variables-catalog-context-pipelines-and-session">Kedro variables: <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks_and_ipython/kedro_and_ipython.html#kedro-and-jupyter">Kedro and Jupyter</a></li>

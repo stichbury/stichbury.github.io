@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create a new project" href="new_project.html" />
+    <link rel="next" title="Create a new Kedro project" href="new_project.html" />
     <link rel="prev" title="Install Kedro" href="install.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -60,14 +60,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -87,7 +91,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -99,6 +103,14 @@
 <li class="toctree-l3"><a class="reference internal" href="new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -241,15 +253,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1275,23 +1286,23 @@
 </div>
 <div class="section" id="pipeline">
 <h2>Pipeline<a class="headerlink" href="#pipeline" title="Permalink to this headline">¶</a></h2>
-<p>A pipeline organises the dependencies and execution order of a collection of nodes, and connects inputs and outputs while keeping your code modular. The pipeline determines the <strong>node execution order</strong> by resolving dependencies and does <em>not</em> necessarily run the nodes in the order in which they are passed in.</p>
+<p>A pipeline organises the dependencies and execution order of a collection of nodes and connects inputs and outputs while keeping your code modular. The pipeline determines the <strong>node execution order</strong> by resolving dependencies and does <em>not</em> necessarily run the nodes in the order in which they are passed in.</p>
 </div>
 <div class="section" id="data-catalog">
 <h2>Data Catalog<a class="headerlink" href="#data-catalog" title="Permalink to this headline">¶</a></h2>
-<p>The Kedro Data Catalog is the registry of all data sources that the project can use that manages loading and saving of data. It maps the names of node inputs and outputs as keys in a <code class="docutils literal notranslate"><span class="pre">DataSet</span></code>, which is a Kedro class that can be specialised for different types of data storage.</p>
-<p>Kedro provides a <a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">number of different built-in datasets</span></a> for different file types and file systems so you don’t have to write the logic for reading/writing data.</p>
+<p>The Kedro Data Catalog is the registry of all data sources that the project can use to manage loading and saving data. It maps the names of node inputs and outputs as keys in a <code class="docutils literal notranslate"><span class="pre">DataSet</span></code>, a Kedro class that can be specialised for different types of data storage.</p>
+<p><a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">Kedro provides numerous different built-in datasets</span></a> for various file types and file systems, so you don’t have to write the logic for reading/writing data.</p>
 </div>
 <div class="section" id="kedro-project-directory-structure">
 <h2>Kedro project directory structure<a class="headerlink" href="#kedro-project-directory-structure" title="Permalink to this headline">¶</a></h2>
-<p>Kedro projects follow a default structure that uses specific folders to store datasets, notebooks, configuration and source code. We advise you to retain the structure to make it easy to share your projects with other Kedro users, but you can adapt the folder structure if you need to.</p>
+<p>Kedro projects follow a default template that uses specific folders to store datasets, notebooks, configuration and source code. We advise you to retain the structure to make it easy to share your projects with other Kedro users, but you can adapt the folder structure if you need to.</p>
 <p>A standard Kedro project structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project-dir         # Parent directory of the template
 ├── conf            # Project configuration files
 ├── data            # Local project data (not committed to version control)
 ├── docs            # Project documentation
 ├── logs            # Project output logs (not committed to version control)
-├── notebooks       # Project related Jupyter notebooks (can be used for experimental code before moving the code to src)
+├── notebooks       # Project-related Jupyter notebooks (can be used for experimental code before moving the code to src)
 ├── README.md       # Project README
 ├── setup.cfg       # Configuration options for `pytest` when doing `kedro test` and for the `isort` utility when doing `kedro lint`
 └── src             # Project source code
@@ -1309,22 +1320,24 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder contains two subfolders for storing configuration information: <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">local</span></code>.</p>
 <div class="section" id="conf-base">
 <h4><code class="docutils literal notranslate"><span class="pre">conf/base</span></code><a class="headerlink" href="#conf-base" title="Permalink to this headline">¶</a></h4>
-<p>For project-specific settings to share across different installations (for example, with different users), you should use the <code class="docutils literal notranslate"><span class="pre">base</span></code> subfolder of <code class="docutils literal notranslate"><span class="pre">conf</span></code>.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">base</span></code> subfolder for project-specific settings to share across different installations (for example, with other users).</p>
 <p>The folder contains three files for the example, but you can add others as you require:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> - <a class="reference internal" href="../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration"><span class="std std-doc">Configures the Data Catalog</span></a> with the file paths and load/save configuration required for different datasets</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> - <a class="reference internal" href="../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration"><span class="std std-doc">Configures the Data Catalog</span></a> with the file paths and load/save configuration needed for different datasets</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">logging.yml</span></code> - Uses Python’s default <a class="reference external" href="https://docs.python.org/3/library/logging.html"><code class="docutils literal notranslate"><span class="pre">logging</span></code></a> library to set up logging</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> - Allows you to define parameters for machine learning experiments e.g. train / test split and number of iterations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> - Allows you to define parameters for machine learning experiments, for example, train/test split and the number of iterations</p></li>
 </ul>
 </div>
 <div class="section" id="conf-local">
 <h4><code class="docutils literal notranslate"><span class="pre">conf/local</span></code><a class="headerlink" href="#conf-local" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">local</span></code> subfolder of <code class="docutils literal notranslate"><span class="pre">conf</span></code> is used for <strong>settings that should not be shared</strong>, such as access credentials, custom editor configuration, personal IDE configuration and other sensitive or personal content. It is specific to user and installation. The contents of <code class="docutils literal notranslate"><span class="pre">conf/local</span></code> is ignored by <code class="docutils literal notranslate"><span class="pre">git</span></code> (through inclusion in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>). By default, Kedro creates one file, <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code>, in <code class="docutils literal notranslate"><span class="pre">conf/local</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">local</span></code> subfolder is specific to each user and installation and its contents is ignored by <code class="docutils literal notranslate"><span class="pre">git</span></code> (through inclusion in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>).</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">local</span></code> subfolder for <strong>settings that should not be shared</strong>, such as access credentials, custom editor configuration, personal IDE configuration and other sensitive or personal content.</p>
+<p>By default, Kedro creates one file, <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code>, in <code class="docutils literal notranslate"><span class="pre">conf/local</span></code>.</p>
 </div>
 </div>
 <div class="section" id="data">
 <h3><code class="docutils literal notranslate"><span class="pre">data</span></code><a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> folder contains a number of subfolders to store project data. We recommend that you put raw data into <code class="docutils literal notranslate"><span class="pre">raw</span></code> and move processed data to other subfolders according to <a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention"><span class="std std-doc">data engineering convention</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> folder contains multiple subfolders to store project data. We recommend you put raw data into <code class="docutils literal notranslate"><span class="pre">raw</span></code> and move processed data to other subfolders according to the <a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention"><span class="std std-doc">data engineering convention</span></a>.</p>
 </div>
 <div class="section" id="src">
 <h3><code class="docutils literal notranslate"><span class="pre">src</span></code><a class="headerlink" href="#src" title="Permalink to this headline">¶</a></h3>
@@ -1338,7 +1351,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="install.html" class="btn btn-neutral float-left" title="Install Kedro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="new_project.html" class="btn btn-neutral float-right" title="Create a new project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="new_project.html" class="btn btn-neutral float-right" title="Create a new Kedro project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Kedro project best practices" href="../kedro_project_setup/project_best_practices.html" />
-    <link rel="prev" title="Standalone use of the DataCatalog" href="kedro_and_notebooks.html" />
+    <link rel="prev" title="Kedro and Jupyter Notebooks" href="kedro_and_notebooks.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -60,14 +60,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../get_started/install.html">Install Kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#installation-prerequisites">Installation prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environments">Virtual environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-virtual-environment-with-conda">Create a virtual environment with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#git"><code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#virtual-environment-manager">Virtual environment manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get_started/install.html#create-a-new-python-virtual-environment-using-conda">Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/install.html#install-a-development-version">Install a development version</a></li>
 </ul>
 </li>
@@ -87,7 +91,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/new_project.html">Create a new Kedro project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project">Create a new empty project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file">Create a new project from a configuration file</a></li>
 </ul>
@@ -99,6 +103,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../get_started/new_project.html#under-the-hood-pipelines-and-nodes">Under the hood: Pipelines and nodes</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/summary.html">TL;DR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#what-s-next">What’s next?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 </ul>
@@ -241,15 +253,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="kedro_and_notebooks.html">Standalone use of the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_notebooks.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_notebooks.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_notebooks.html#content">Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_notebooks.html#create-a-full-kedro-project">Create a full Kedro project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kedro_and_notebooks.html#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_and_notebooks.html#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-use-a-notebook">Why use a Notebook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#kedro-ipython-extension">Kedro IPython extension</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#managed-jupyter-instances">Managed Jupyter instances</a></li>
 </ul>
@@ -1269,15 +1280,6 @@
 <h1>Use Kedro with IPython and Jupyter<a class="headerlink" href="#use-kedro-with-ipython-and-jupyter" title="Permalink to this headline">¶</a></h1>
 <p>This page demonstrates how to use Kedro with IPython, Jupyter Notebook and JupyterLab. We also recommend <a class="reference external" href="https://www.youtube.com/watch?v=dRnCovp1GRQ&amp;t=50s&amp;ab_channel=DataEngineerOne">a video by Data Engineer One</a> and <a class="reference external" href="https://www.youtube.com/watch?v=JLTYNPoK7nw&amp;ab_channel=PyConUS">a PyCon presentation by Yetunde Dada</a> that explain the transition from the use of vanilla Jupyter Notebooks to Kedro.</p>
 <iframe width="560" height="315" style="max-width: 100%" src="https://www.youtube.com/embed/dRnCovp1GRQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="section" id="why-use-a-notebook">
-<h2>Why use a Notebook?<a class="headerlink" href="#why-use-a-notebook" title="Permalink to this headline">¶</a></h2>
-<p>There are reasons why you may want to use a Notebook, although in general, the principles behind Kedro would discourage their use because they have some <a class="reference external" href="https://towardsdatascience.com/5-reasons-why-you-should-switch-from-jupyter-notebook-to-scripts-cb3535ba9c95">drawbacks when used to create production or reproducible code</a>. However, there are occasions when you’d want to put some code into a Notebook, for example:</p>
-<ul class="simple">
-<li><p>To conduct exploratory data analysis</p></li>
-<li><p>For experimentation as you create new Python functions (that could become Kedro nodes)</p></li>
-<li><p>As a tool for reporting and presentations</p></li>
-</ul>
-</div>
 <div class="section" id="kedro-ipython-extension">
 <h2>Kedro IPython extension<a class="headerlink" href="#kedro-ipython-extension" title="Permalink to this headline">¶</a></h2>
 <p>The recommended way to interact with Kedro in IPython and Jupyter is through the Kedro <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config/extensions/index.html">IPython extension</a>, <code class="docutils literal notranslate"><span class="pre">kedro.ipython</span></code>. An <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config/extensions/">IPython extension</a> is an importable Python module that has a couple of special functions to load and unload it.</p>
@@ -1551,7 +1553,7 @@ Out[1]: {}
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kedro_and_notebooks.html" class="btn btn-neutral float-left" title="Standalone use of the DataCatalog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kedro_and_notebooks.html" class="btn btn-neutral float-left" title="Kedro and Jupyter Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../kedro_project_setup/project_best_practices.html" class="btn btn-neutral float-right" title="Kedro project best practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
