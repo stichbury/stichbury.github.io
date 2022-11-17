@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Use Kedro with IPython and Jupyter" href="kedro_and_ipython.html" />
+    <link rel="next" title="Kedro as a data registry" href="kedro_as_a_data_registry.html" />
     <link rel="prev" title="Set up experiment tracking" href="../visualisation/experiment_tracking.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -254,31 +254,27 @@
 <p class="caption"><span class="caption-text">Notebooks &amp; IPython users</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Kedro and Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#use-kedro-as-a-data-registry-for-a-notebook-project">Use Kedro as a data registry for a Notebook project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-custom-kedro-kernel">A custom Kedro kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iris-dataset-example">Iris dataset example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#catalog"><code class="docutils literal notranslate"><span class="pre">catalog</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#context"><code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipelines"><code class="docutils literal notranslate"><span class="pre">pipelines</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#session"><code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#reload-kedro-line-magic"><code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> line magic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-viz-line-magic"><code class="docutils literal notranslate"><span class="pre">%run_viz</span></code> line magic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convert-functions-from-jupyter-notebooks-into-kedro-nodes">Convert functions from Jupyter Notebooks into Kedro nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-to-know">Useful to know…</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managed-services">Managed services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipython-jupyterlab-and-other-jupyter-clients">IPython, JupyterLab and other Jupyter clients</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="kedro_and_ipython.html">Use Kedro with IPython and Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_ipython.html#kedro-ipython-extension">Kedro IPython extension</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#managed-jupyter-instances">Managed Jupyter instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-out-more">Find out more</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_ipython.html#kedro-variables-catalog-context-pipelines-and-session">Kedro variables: <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#catalog"><code class="docutils literal notranslate"><span class="pre">catalog</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#context"><code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#pipelines"><code class="docutils literal notranslate"><span class="pre">pipelines</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#session"><code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="kedro_and_ipython.html#kedro-and-jupyter">Kedro and Jupyter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#manage-jupyter-kernels">Manage Jupyter kernels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#use-an-alternative-jupyter-client">Use an alternative Jupyter client</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#convert-functions-from-jupyter-notebooks-into-kedro-nodes">Convert functions from Jupyter Notebooks into Kedro nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_and_ipython.html#kedro-viz-line-magic">Kedro-Viz line magic</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="kedro_as_a_data_registry.html">Kedro as a data registry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kedro_as_a_data_registry.html#usage">Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -1278,52 +1274,272 @@
 </style>
 <div class="section" id="kedro-and-jupyter-notebooks">
 <h1>Kedro and Jupyter Notebooks<a class="headerlink" href="#kedro-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>There are reasons why you may want to use a Jupyter Notebook:</p>
+<p>You can take advantage of a Jupyter Notebook’s liberal development environment for exploratory data analysis and experimentation from within a Kedro project. Later, when you need to follow software best practices as the project complexity increases, or as you scale into production, you can transfer code from the Notebook into Kedro to benefit from its opinionated project framework.</p>
+<p>This page explains how best to combine Kedro and Jupyter Notebook development and illustrates with an example Notebook that has access to the <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> variables for a Kedro project.</p>
+<div class="section" id="a-custom-kedro-kernel">
+<h2>A custom Kedro kernel<a class="headerlink" href="#a-custom-kedro-kernel" title="Permalink to this headline">¶</a></h2>
+<p>Kedro offers a command (<code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code>) to create a Jupyter kernel named <code class="docutils literal notranslate"><span class="pre">kedro_&lt;package_name&gt;</span></code> that is almost identical to the <a class="reference external" href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html">default IPython kernel</a> but with a slightly customised <a class="reference external" href="https://jupyter-client.readthedocs.io/en/stable/kernels.html#kernel-specs">kernel specification</a>.</p>
+<p>The custom kernel automatically loads <code class="docutils literal notranslate"><span class="pre">kedro.ipython</span></code>, which is an <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config/extensions/">IPython extension</a> that launches a <a class="reference internal" href="../kedro_project_setup/session.html"><span class="doc std std-doc">Kedro session</span></a> and makes the following Kedro variables available:</p>
 <ul class="simple">
-<li><p>To get up and running fast as you conduct exploratory data analysis</p></li>
-<li><p>For experimentation as you create new Python functions</p></li>
-<li><p>As a tool for reporting and presentations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">catalog</span></code> (type <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>): <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc">Data Catalog</span></a> instance that contains all defined datasets; this is a shortcut for <code class="docutils literal notranslate"><span class="pre">context.catalog</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">context</span></code> (type <code class="docutils literal notranslate"><span class="pre">KedroContext</span></code>): Kedro project context that provides access to Kedro’s library components</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pipelines</span></code> (type <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">Pipeline]</span></code>): Pipelines defined in your <a class="reference internal" href="../nodes_and_pipelines/run_a_pipeline.html#run-a-pipeline-by-name"><span class="std std-doc">pipeline registry</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session</span></code> (type <code class="docutils literal notranslate"><span class="pre">KedroSession</span></code>): <a class="reference internal" href="../kedro_project_setup/session.html"><span class="doc std std-doc">Kedro session</span></a> that orchestrates a pipeline run</p></li>
 </ul>
-<p>Longer term, a project based around Notebooks may run into problems when you try to scale it because of <a class="reference external" href="https://towardsdatascience.com/5-reasons-why-you-should-switch-from-jupyter-notebook-to-scripts-cb3535ba9c95">lack of support for versioning, reproducibility, and modularity</a>.</p>
-<div class="section" id="use-kedro-as-a-data-registry-for-a-notebook-project">
-<h2>Use Kedro as a data registry for a Notebook project<a class="headerlink" href="#use-kedro-as-a-data-registry-for-a-notebook-project" title="Permalink to this headline">¶</a></h2>
-<p>One way to make it easier to share a Jupyter notebook with others, is to avoid the use of hard-coded file paths to load or save data. You may want to use Kedro’s <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></span></a> as a registry for your data, without using any of the other features of Kedro.</p>
-<p>The Kedro starter with alias <code class="docutils literal notranslate"><span class="pre">standalone-datacatalog</span></code> (formerly known as <code class="docutils literal notranslate"><span class="pre">mini-kedro</span></code>) provides minimal functionality so you can use YAML to specify the sources required to load and save data:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># conf/base/catalog.yml</span><span class="w"></span>
-<span class="nt">example_dataset_1</span><span class="p">:</span><span class="w"></span>
-<span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w"> </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">folder/filepath.csv</span><span class="w"></span>
+</div>
+<div class="section" id="iris-dataset-example">
+<h2>Iris dataset example<a class="headerlink" href="#iris-dataset-example" title="Permalink to this headline">¶</a></h2>
+<p>Create a sample Kedro project with the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/pandas-iris"><code class="docutils literal notranslate"><span class="pre">pandas-iris</span></code> starter</a> as we showed in the <a class="reference internal" href="../get_started/new_project.html#create-the-example-project"><span class="std std-doc">get started documentation</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>pandas-iris
+</pre></div>
+</div>
+<p>We will assume you call the project <code class="docutils literal notranslate"><span class="pre">iris</span></code>, but you can call it whatever you choose.</p>
+<p>Navigate to the project directory and issue the following command in the terminal to launch Jupyter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro jupyter notebook
+</pre></div>
+</div>
+<p>Your browser window will open, and you can then create a new Notebook using the dropdown and selecting the <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">(&lt;project_name&gt;)</span></code> kernel.</p>
+<p><img alt="Create a new Notebook with Kedro (iris) kernel" src="../_images/jupyter_new_notebook.png" /></p>
+<p>We recommend that you store your Notebooks in the <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> folder of your Kedro project.</p>
+<p>We will now give some examples of how to work with the Kedro variables. To explore the full range of attributes and methods available, you might like to consult the relevant <a class="reference internal" href="../kedro.html"><span class="doc std std-doc">API documentation</span></a> or use the <a class="reference external" href="https://docs.python.org/3/library/functions.html#dir">Python <code class="docutils literal notranslate"><span class="pre">dir</span></code> function</a> (e.g. <code class="docutils literal notranslate"><span class="pre">dir(catalog)</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Kedro variables are not available within your Notebook, you could have a malformed configuration file or missing dependencies. The full error message is shown on the terminal used to launch <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code>.</p>
+</div>
+<div class="section" id="catalog">
+<h3><code class="docutils literal notranslate"><span class="pre">catalog</span></code><a class="headerlink" href="#catalog" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">catalog</span></code> can be used to explore your <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc">Data Catalog</span></a>, including parameters. Useful methods include <code class="docutils literal notranslate"><span class="pre">catalog.list</span></code>, <code class="docutils literal notranslate"><span class="pre">catalog.load</span></code> and <code class="docutils literal notranslate"><span class="pre">catalog.save</span></code>. For example, add the following to a cell in your Notebook:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When you run the cell:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;example_iris_data&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;parameters&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;params:example_test_data_ratio&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;params:example_num_train_iter&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;params:example_learning_rate&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Next try the following:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;example_iris_data&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;example_iris_data&#39;</span> <span class="p">(</span><span class="n">CSVDataSet</span><span class="p">)</span><span class="o">...</span>
 
-<span class="nt">example_dataset_2</span><span class="p">:</span><span class="w"></span>
-<span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
-<span class="w"> </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/example_dataset_2*</span><span class="w"></span>
-<span class="w"> </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span><span class="w"></span>
-<span class="w"> </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
-<span class="w"> </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">   </span><span class="nt">if_exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replace</span><span class="w"></span>
+     <span class="n">sepal_length</span>  <span class="n">sepal_width</span>  <span class="n">petal_length</span>  <span class="n">petal_width</span>    <span class="n">species</span>
+<span class="mi">0</span>             <span class="mf">5.1</span>          <span class="mf">3.5</span>           <span class="mf">1.4</span>          <span class="mf">0.2</span>     <span class="n">setosa</span>
+<span class="mi">1</span>             <span class="mf">4.9</span>          <span class="mf">3.0</span>           <span class="mf">1.4</span>          <span class="mf">0.2</span>     <span class="n">setosa</span>
+<span class="mi">2</span>             <span class="mf">4.7</span>          <span class="mf">3.2</span>           <span class="mf">1.3</span>          <span class="mf">0.2</span>     <span class="n">setosa</span>
+<span class="mi">3</span>             <span class="mf">4.6</span>          <span class="mf">3.1</span>           <span class="mf">1.5</span>          <span class="mf">0.2</span>     <span class="n">setosa</span>
+<span class="mi">4</span>             <span class="mf">5.0</span>          <span class="mf">3.6</span>           <span class="mf">1.4</span>          <span class="mf">0.2</span>     <span class="n">setosa</span>
+<span class="o">..</span>            <span class="o">...</span>          <span class="o">...</span>           <span class="o">...</span>          <span class="o">...</span>        <span class="o">...</span>
+<span class="mi">145</span>           <span class="mf">6.7</span>          <span class="mf">3.0</span>           <span class="mf">5.2</span>          <span class="mf">2.3</span>  <span class="n">virginica</span>
+<span class="mi">146</span>           <span class="mf">6.3</span>          <span class="mf">2.5</span>           <span class="mf">5.0</span>          <span class="mf">1.9</span>  <span class="n">virginica</span>
+<span class="mi">147</span>           <span class="mf">6.5</span>          <span class="mf">3.0</span>           <span class="mf">5.2</span>          <span class="mf">2.0</span>  <span class="n">virginica</span>
+<span class="mi">148</span>           <span class="mf">6.2</span>          <span class="mf">3.4</span>           <span class="mf">5.4</span>          <span class="mf">2.3</span>  <span class="n">virginica</span>
+<span class="mi">149</span>           <span class="mf">5.9</span>          <span class="mf">3.0</span>           <span class="mf">5.1</span>          <span class="mf">1.8</span>  <span class="n">virginica</span>
 </pre></div>
 </div>
-<p>This makes it possible to interact with data within your Jupyter notebook, with code much like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;example_dataset_1&quot;</span><span class="p">)</span>
-<span class="n">df_2</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;example_dataset_2&quot;</span><span class="p">)</span>
+<p>Finally, try the following:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="usage">
-<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
-<p>Use the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/standalone-datacatalog"><code class="docutils literal notranslate"><span class="pre">standalone-datacatalog</span></code> starter</a> to create a new project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>standalone-datacatalog
+<p>You should see the following:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;parameters&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>
+
+<span class="p">{</span><span class="s1">&#39;example_test_data_ratio&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+ <span class="s1">&#39;example_num_train_iter&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+ <span class="s1">&#39;example_learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>The starter comprises a minimal setup to use the traditional <a class="reference external" href="https://www.kaggle.com/uciml/iris">Iris dataset</a> with Kedro’s <a class="reference internal" href="../data/data_catalog.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></span></a>.</p>
-<p>The starter contains:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you enable <a class="reference internal" href="../data/data_catalog.html#version-datasets-and-ml-models"><span class="std std-doc">versioning</span></a> you can load a particular version of a dataset, e.g. <code class="docutils literal notranslate"><span class="pre">catalog.load(&quot;example_train_x&quot;,</span> <span class="pre">version=&quot;2021-12-13T15.08.09.255Z&quot;)</span></code>.</p>
+</div>
+</div>
+<div class="section" id="context">
+<h3><code class="docutils literal notranslate"><span class="pre">context</span></code><a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">context</span></code> enables you to access Kedro’s library components and project metadata. For example, if you add the following to a cell and run it:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">project_path</span>
+</pre></div>
+</div>
+<p>You should see output similar to the following, according to your username and path:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">PosixPath</span><span class="p">(</span><span class="s1">&#39;/Users/username/kedro_projects/iris&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pipelines">
+<h3><code class="docutils literal notranslate"><span class="pre">pipelines</span></code><a class="headerlink" href="#pipelines" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pipelines</span></code> is a dictionary containing your project’s <a class="reference internal" href="../nodes_and_pipelines/run_a_pipeline.html#run-a-pipeline-by-name"><span class="std std-doc">registered pipelines</span></a>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">pipelines</span>
+</pre></div>
+</div>
+<p>The output will be a listing as follows:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;__default__&#39;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">([</span>
+<span class="n">Node</span><span class="p">(</span><span class="n">split_data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;example_iris_data&#39;</span><span class="p">,</span> <span class="s1">&#39;parameters&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;X_train&#39;</span><span class="p">,</span> <span class="s1">&#39;X_test&#39;</span><span class="p">,</span> <span class="s1">&#39;y_train&#39;</span><span class="p">,</span> <span class="s1">&#39;y_test&#39;</span><span class="p">],</span> <span class="s1">&#39;split&#39;</span><span class="p">),</span>
+<span class="n">Node</span><span class="p">(</span><span class="n">make_predictions</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;X_train&#39;</span><span class="p">,</span> <span class="s1">&#39;X_test&#39;</span><span class="p">,</span> <span class="s1">&#39;y_train&#39;</span><span class="p">],</span> <span class="s1">&#39;y_pred&#39;</span><span class="p">,</span> <span class="s1">&#39;make_predictions&#39;</span><span class="p">),</span>
+<span class="n">Node</span><span class="p">(</span><span class="n">report_accuracy</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;y_pred&#39;</span><span class="p">,</span> <span class="s1">&#39;y_test&#39;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;report_accuracy&#39;</span><span class="p">)</span>
+<span class="p">])}</span>
+</pre></div>
+</div>
+<p>You can use this to explore your pipelines and the nodes they contain:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">pipelines</span><span class="p">[</span><span class="s2">&quot;__default__&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">all_outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Should give the output:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;y_pred&#39;</span><span class="p">,</span> <span class="s1">&#39;X_test&#39;</span><span class="p">,</span> <span class="s1">&#39;y_train&#39;</span><span class="p">,</span> <span class="s1">&#39;X_train&#39;</span><span class="p">,</span> <span class="s1">&#39;y_test&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="session">
+<h3><code class="docutils literal notranslate"><span class="pre">session</span></code><a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">session.run</span></code> allows you to run a pipeline. With no arguments, this will run your <code class="docutils literal notranslate"><span class="pre">__default__</span></code> project pipeline sequentially, much as a call to <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> from the terminal:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only execute one <em>successful</em> run per session, as there’s a one-to-one mapping between a session and a run. If you wish to do multiple runs, you’ll have to run <code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> to obtain a new <code class="docutils literal notranslate"><span class="pre">session</span></code> (see below).</p>
+</div>
+<p>You can also specify the following optional arguments for <code class="docutils literal notranslate"><span class="pre">session.run</span></code>:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument name</p></th>
+<th class="head"><p>Accepted types</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tags</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>Construct the pipeline using only nodes which have this tag attached. A node is included in the resulting pipeline if it contains any of those tags</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">runner</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AbstractRunner</span></code></p></td>
+<td><p>An instance of Kedro <a class="reference internal" href="../kedro.runner.AbstractRunner.html"><span class="doc std std-doc">AbstractRunner</span></a>. Can be an instance of a <a class="reference internal" href="../kedro.runner.ParallelRunner.html"><span class="doc std std-doc">ParallelRunner</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">node_names</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>Run only nodes with specified names</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">from_nodes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>A list of node names which should be used as a starting point</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">to_nodes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>A list of node names which should be used as an end point</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">from_inputs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>A list of dataset names which should be used as a starting point</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">to_outputs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Iterable[str]</span></code></p></td>
+<td><p>A list of dataset names which should be used as an end point</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">load_versions</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">str]</span></code></p></td>
+<td><p>A mapping of a dataset name to a specific dataset version (timestamp) for loading. Applies to versioned datasets only</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pipeline_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Name of the modular pipeline to run. Must be one of those returned by the <code class="docutils literal notranslate"><span class="pre">register_pipelines</span></code> function in <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/pipeline_registry.py</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="reload-kedro-line-magic">
+<h2><code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> line magic<a class="headerlink" href="#reload-kedro-line-magic" title="Permalink to this headline">¶</a></h2>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">line magic</a> within your Notebook to reload the Kedro variables (for example, if you need to update <code class="docutils literal notranslate"><span class="pre">catalog</span></code> following changes to your Data Catalog).</p>
+<p>You don’t need to restart the kernel to reload the Kedro IPython extension and refresh the <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> variables.</p>
+<p><code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> accepts optional keyword arguments <code class="docutils literal notranslate"><span class="pre">env</span></code> and <code class="docutils literal notranslate"><span class="pre">params</span></code>. For example, to use configuration environment <code class="docutils literal notranslate"><span class="pre">prod</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_kedro</span> --env=prod`
+</pre></div>
+</div>
+<p>For more details, run <code class="docutils literal notranslate"><span class="pre">%reload_kedro?</span></code>.</p>
+</div>
+<div class="section" id="run-viz-line-magic">
+<h2><code class="docutils literal notranslate"><span class="pre">%run_viz</span></code> line magic<a class="headerlink" href="#run-viz-line-magic" title="Permalink to this headline">¶</a></h2>
+<p>If you have <a class="reference external" href="https://github.com/kedro-org/kedro-viz">Kedro-Viz</a> installed for the project you can display an interactive visualisation of your pipeline directly in your Notebook using the <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">line magic</a> <code class="docutils literal notranslate"><span class="pre">%run_viz</span></code>.</p>
+</div>
+<div class="section" id="convert-functions-from-jupyter-notebooks-into-kedro-nodes">
+<h2>Convert functions from Jupyter Notebooks into Kedro nodes<a class="headerlink" href="#convert-functions-from-jupyter-notebooks-into-kedro-nodes" title="Permalink to this headline">¶</a></h2>
+<p>If you are writing experimental code in your Notebook and later want to convert functions you’ve written to Kedro nodes, you can do this using tags.</p>
+<p>Say you have the following code in your Notebook:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_action</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function came from `notebooks/my_notebook.ipynb`&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Enable tags toolbar: <code class="docutils literal notranslate"><span class="pre">View</span></code> menu -&gt; <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">Toolbar</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Tags</span></code>
+<img alt="Enable the tags toolbar graphic" src="../_images/jupyter_notebook_workflow_activating_tags.png" /></p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">node</span></code> tag to the cell containing your function
+<img alt="Add the node tag graphic" src="../_images/jupyter_notebook_workflow_tagging_nodes.png" /></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Notebook can contain multiple functions tagged as <code class="docutils literal notranslate"><span class="pre">node</span></code>, each of them will be exported into the resulting Python file</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Save your Jupyter Notebook to <code class="docutils literal notranslate"><span class="pre">notebooks/my_notebook.ipynb</span></code></p></li>
+<li><p>From your terminal, run <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">convert</span> <span class="pre">notebooks/my_notebook.ipynb</span></code> from the Kedro project directory. The output is a Python file <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/nodes/my_notebook.py</span></code> containing the <code class="docutils literal notranslate"><span class="pre">some_action</span></code> function definition</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">some_action</span></code> function can now be used in your Kedro pipelines</p></li>
+</ol>
+</div>
+<div class="section" id="useful-to-know">
+<h2>Useful to know…<a class="headerlink" href="#useful-to-know" title="Permalink to this headline">¶</a></h2>
+<p>Each Kedro project has its own Jupyter kernel so you can switch between multiple Kedro projects from a single Jupyter instance simply by selecting the appropriate kernel.</p>
+<p>If a Jupyter kernel with the name <code class="docutils literal notranslate"><span class="pre">kedro_&lt;package_name&gt;</span></code> already exists then it is replaced. This ensures that the kernel always points to the correct Python executable. For example, if you change conda environment in a Kedro project then you should re-run <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code> to replace the kernel specification with one that points to the new environment.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">kernelspec</span></code> set of commands to manage your Jupyter kernels. For example, to remove a kernel, run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">kernelspec</span> <span class="pre">remove</span> <span class="pre">&lt;kernel_name&gt;</span></code>.</p>
+<div class="section" id="managed-services">
+<h3>Managed services<a class="headerlink" href="#managed-services" title="Permalink to this headline">¶</a></h3>
+<p>If you work within a managed Jupyter service such as a Databricks Notebook you may be unable to execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code>. You can explicitly load the Kedro IPython extension with the <code class="docutils literal notranslate"><span class="pre">%load_ext</span></code> line magic:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="o">%</span><span class="k">load_ext</span> kedro.ipython
+</pre></div>
+</div>
+<p>If you launch your Jupyter instance from outside your Kedro project, you will need to run a second line magic to set the project path so that Kedro can load the <code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">context</span></code>, <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> variables:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="o">%</span><span class="k">reload_kedro</span> &lt;project_root&gt;
+</pre></div>
+</div>
+<p>The Kedro IPython extension remembers the project path so that subsequent calls to <code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> do not need to specify it:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="o">%</span><span class="k">load_ext</span> kedro.ipython
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="o">%</span><span class="k">reload_kedro</span> &lt;project_root&gt;
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="o">%</span><span class="k">reload_kedro</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ipython-jupyterlab-and-other-jupyter-clients">
+<h3>IPython, JupyterLab and other Jupyter clients<a class="headerlink" href="#ipython-jupyterlab-and-other-jupyter-clients" title="Permalink to this headline">¶</a></h3>
+<p>You can also connect an IPython shell to a Kedro project kernel as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro ipython
+</pre></div>
+</div>
+<p>The command launches an IPython shell with the extension already loaded and is equivalent to the command <code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">--ext</span> <span class="pre">kedro.ipython</span></code>. You first saw this in action in the <a class="reference internal" href="../tutorial/set_up_data.html#test-that-kedro-can-load-the-csv-data"><span class="std std-doc">spaceflights tutorial</span></a>.</p>
+<p>Similarly, the following creates a custom Jupyter kernel that automatically loads the extension and launches JupyterLab with this kernel selected:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro jupyter lab
+</pre></div>
+</div>
+<p>You can use any other Jupyter client to connect to a Kedro project kernel such as the <a class="reference external" href="https://qtconsole.readthedocs.io/">Qt Console</a>, which can be launched using the <code class="docutils literal notranslate"><span class="pre">kedro_iris</span></code> kernel as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter qtconsole --kernel<span class="o">=</span>kedro_iris
+</pre></div>
+</div>
+<p>This will automatically load the Kedro IPython in a console that supports graphical features such as embedded figures:
+<img alt="Plot of example iris data in a Qt Console" src="../_images/jupyter_qtconsole.png" /></p>
+</div>
+</div>
+<div class="section" id="find-out-more">
+<h2>Find out more<a class="headerlink" href="#find-out-more" title="Permalink to this headline">¶</a></h2>
+<p>We recommend the following:</p>
 <ul class="simple">
-<li><p>A <code class="docutils literal notranslate"><span class="pre">conf</span></code> directory, which contains an example <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> configuration (<code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>)</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">data</span></code> directory, which contains an example dataset identical to the one used by the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/pandas-iris"><code class="docutils literal notranslate"><span class="pre">pandas-iris</span></code></a> starter</p></li>
-<li><p>An example notebook, which shows how to instantiate the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> and interact with the example dataset</p></li>
-<li><p>A blank <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, which points to this page of documentation</p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/power-is-nothing-without-control-aa43523745b6">Power is nothing without control: Don’t break up with Jupyter Notebooks. Just use Kedro too!</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ZHIqXJEp0-w">Two Tricks to Optimize your Kedro Jupyter Flow</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/dRnCovp1GRQ">Handling Custom Jupyter Data Sources</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=JLTYNPoK7nw&amp;ab_channel=PyConUS">Why transition from vanilla Jupyter Notebooks to Kedro?</a></p></li>
 </ul>
-<p>Should you later want to transition to use Kedro for the project, you can simply create a new empty Kedro project and copy the <code class="docutils literal notranslate"><span class="pre">conf</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> directories from your <code class="docutils literal notranslate"><span class="pre">standalone-datacatalog</span></code> starter project over to your new project</p>
-</div>
 </div>
 </div>
 
@@ -1332,7 +1548,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../visualisation/experiment_tracking.html" class="btn btn-neutral float-left" title="Set up experiment tracking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kedro_and_ipython.html" class="btn btn-neutral float-right" title="Use Kedro with IPython and Jupyter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kedro_as_a_data_registry.html" class="btn btn-neutral float-right" title="Kedro as a data registry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
