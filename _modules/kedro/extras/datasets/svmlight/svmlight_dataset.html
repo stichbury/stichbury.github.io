@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kedro.extras.datasets.api.api_dataset &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <title>kedro.extras.datasets.svmlight.svmlight_dataset &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -19,6 +19,24 @@
         <script src="../../../../../_static/copybutton.js"></script>
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
         <script >mermaid.initialize({startOnLoad:true});</script>
         <script >mermaid.initialize({startOnLoad:true});</script>
         <script >mermaid.initialize({startOnLoad:true});</script>
@@ -1433,7 +1451,7 @@
         
           <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>kedro.extras.datasets.api.api_dataset</li>
+      <li>kedro.extras.datasets.svmlight.svmlight_dataset</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1448,149 +1466,173 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for kedro.extras.datasets.api.api_dataset</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;``APIDataSet`` loads the data from HTTP(S) APIs.</span>
-<span class="sd">It uses the python requests library: https://requests.readthedocs.io/en/latest/</span>
+  <h1>Source code for kedro.extras.datasets.svmlight.svmlight_dataset</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;``SVMLightDataSet`` loads/saves data from/to a svmlight/libsvm file using an</span>
+<span class="sd">underlying filesystem (e.g.: local, S3, GCS). It uses sklearn functions</span>
+<span class="sd">``dump_svmlight_file`` to save and ``load_svmlight_file`` to load a file.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">NoReturn</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PurePosixPath</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">requests.auth</span> <span class="kn">import</span> <span class="n">AuthBase</span>
+<span class="kn">import</span> <span class="nn">fsspec</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">ndarray</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse.csr</span> <span class="kn">import</span> <span class="n">csr_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">dump_svmlight_file</span><span class="p">,</span> <span class="n">load_svmlight_file</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span><span class="p">,</span> <span class="n">DataSetError</span>
+<span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AbstractVersionedDataSet</span><span class="p">,</span>
+    <span class="n">DataSetError</span><span class="p">,</span>
+    <span class="n">Version</span><span class="p">,</span>
+    <span class="n">get_filepath_str</span><span class="p">,</span>
+    <span class="n">get_protocol_and_path</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1"># NOTE: kedro.extras.datasets will be removed in Kedro 0.19.0.</span>
 <span class="c1"># Any contribution to datasets should be made in kedro-datasets</span>
 <span class="c1"># in kedro-plugins (https://github.com/kedro-org/kedro-plugins)</span>
 
+<span class="c1"># Type of data input</span>
+<span class="n">_DI</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">csr_matrix</span><span class="p">],</span> <span class="n">ndarray</span><span class="p">]</span>
+<span class="c1"># Type of data output</span>
+<span class="n">_DO</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">csr_matrix</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">]</span>
 
-<div class="viewcode-block" id="APIDataSet"><a class="viewcode-back" href="../../../../../kedro.extras.datasets.api.APIDataSet.html#kedro.extras.datasets.api.APIDataSet">[docs]</a><span class="k">class</span> <span class="nc">APIDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;``APIDataSet`` loads the data from HTTP(S) APIs.</span>
-<span class="sd">    It uses the python requests library: https://requests.readthedocs.io/en/latest/</span>
 
-<span class="sd">    Example adding a catalog entry with</span>
-<span class="sd">    `YAML API</span>
-<span class="sd">    &lt;https://kedro.readthedocs.io/en/stable/data/\</span>
-<span class="sd">        data_catalog.html#use-the-data-catalog-with-the-yaml-api&gt;`_:</span>
+<div class="viewcode-block" id="SVMLightDataSet"><a class="viewcode-back" href="../../../../../kedro.extras.datasets.svmlight.SVMLightDataSet.html#kedro.extras.datasets.svmlight.SVMLightDataSet">[docs]</a><span class="k">class</span> <span class="nc">SVMLightDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataSet</span><span class="p">[</span><span class="n">_DI</span><span class="p">,</span> <span class="n">_DO</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;``SVMLightDataSet`` loads/saves data from/to a svmlight/libsvm file using an</span>
+<span class="sd">    underlying filesystem (e.g.: local, S3, GCS). It uses sklearn functions</span>
+<span class="sd">    ``dump_svmlight_file`` to save and ``load_svmlight_file`` to load a file.</span>
+
+<span class="sd">    Data is loaded as a tuple of features and labels. Labels is NumPy array,</span>
+<span class="sd">    and features is Compressed Sparse Row matrix.</span>
+
+<span class="sd">    This format is a text-based format, with one sample per line. It does</span>
+<span class="sd">    not store zero valued features hence it is suitable for sparse datasets.</span>
+
+<span class="sd">    This format is used as the default format for both svmlight and the</span>
+<span class="sd">    libsvm command line programs.</span>
+
+<span class="sd">    Example adding a catalog entry with the ``YAML API``:</span>
 
 <span class="sd">    .. code-block:: yaml</span>
 
-<span class="sd">        &gt;&gt;&gt; usda:</span>
-<span class="sd">        &gt;&gt;&gt;   type: api.APIDataSet</span>
-<span class="sd">        &gt;&gt;&gt;   url: https://quickstats.nass.usda.gov</span>
-<span class="sd">        &gt;&gt;&gt;   params:</span>
-<span class="sd">        &gt;&gt;&gt;     key: SOME_TOKEN,</span>
-<span class="sd">        &gt;&gt;&gt;     format: JSON,</span>
-<span class="sd">        &gt;&gt;&gt;     commodity_desc: CORN,</span>
-<span class="sd">        &gt;&gt;&gt;     statisticcat_des: YIELD,</span>
-<span class="sd">        &gt;&gt;&gt;     agg_level_desc: STATE,</span>
-<span class="sd">        &gt;&gt;&gt;     year: 2000</span>
+<span class="sd">        &gt;&gt;&gt; svm_dataset:</span>
+<span class="sd">        &gt;&gt;&gt;   type: svmlight.SVMLightDataSet</span>
+<span class="sd">        &gt;&gt;&gt;   filepath: data/01_raw/location.svm</span>
+<span class="sd">        &gt;&gt;&gt;   load_args:</span>
+<span class="sd">        &gt;&gt;&gt;     zero_based: False</span>
+<span class="sd">        &gt;&gt;&gt;   save_args:</span>
+<span class="sd">        &gt;&gt;&gt;     zero_based: False</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-
+<span class="sd">        &gt;&gt;&gt; cars:</span>
+<span class="sd">        &gt;&gt;&gt;   type: svmlight.SVMLightDataSet</span>
+<span class="sd">        &gt;&gt;&gt;   filepath: gcs://your_bucket/cars.svm</span>
+<span class="sd">        &gt;&gt;&gt;   fs_args:</span>
+<span class="sd">        &gt;&gt;&gt;     project: my-project</span>
+<span class="sd">        &gt;&gt;&gt;   credentials: my_gcp_credentials</span>
+<span class="sd">        &gt;&gt;&gt;   load_args:</span>
+<span class="sd">        &gt;&gt;&gt;     zero_based: False</span>
+<span class="sd">        &gt;&gt;&gt;   save_args:</span>
+<span class="sd">        &gt;&gt;&gt;     zero_based: False</span>
 
 <span class="sd">    Example using Python API:</span>
 <span class="sd">    ::</span>
 
-<span class="sd">        &gt;&gt;&gt; from kedro.extras.datasets.api import APIDataSet</span>
+<span class="sd">        &gt;&gt;&gt; from kedro.extras.datasets.svmlight import SVMLightDataSet</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Features and labels.</span>
+<span class="sd">        &gt;&gt;&gt; data = (np.array([[0, 1], [2, 3.14159]]), np.array([7, 3]))</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-<span class="sd">        &gt;&gt;&gt; data_set = APIDataSet(</span>
-<span class="sd">        &gt;&gt;&gt;     url=&quot;https://quickstats.nass.usda.gov&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;     params={</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;key&quot;: &quot;SOME_TOKEN&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;format&quot;: &quot;JSON&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;commodity_desc&quot;: &quot;CORN&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;statisticcat_des&quot;: &quot;YIELD&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;agg_level_desc&quot;: &quot;STATE&quot;,</span>
-<span class="sd">        &gt;&gt;&gt;         &quot;year&quot;: 2000</span>
-<span class="sd">        &gt;&gt;&gt;     }</span>
-<span class="sd">        &gt;&gt;&gt; )</span>
-<span class="sd">        &gt;&gt;&gt; data = data_set.load()</span>
+<span class="sd">        &gt;&gt;&gt; data_set = SVMLightDataSet(filepath=&quot;test.svm&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; data_set.save(data)</span>
+<span class="sd">        &gt;&gt;&gt; reloaded_features, reloaded_labels = data_set.load()</span>
+<span class="sd">        &gt;&gt;&gt; assert (data[0] == reloaded_features).all()</span>
+<span class="sd">        &gt;&gt;&gt; assert (data[1] == reloaded_labels).all()</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">DEFAULT_LOAD_ARGS</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, Any]</span>
+    <span class="n">DEFAULT_SAVE_ARGS</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, Any]</span>
+
     <span class="c1"># pylint: disable=too-many-arguments</span>
-<div class="viewcode-block" id="APIDataSet.__init__"><a class="viewcode-back" href="../../../../../kedro.extras.datasets.api.APIDataSet.html#kedro.extras.datasets.api.APIDataSet.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-        <span class="n">data</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">headers</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">auth</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">AuthBase</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">json</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>
-        <span class="n">credentials</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">AuthBase</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">load_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Version</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">credentials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fs_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Creates a new instance of ``APIDataSet`` to fetch data from an API endpoint.</span>
+        <span class="n">_fs_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">fs_args</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="n">_fs_open_args_load</span> <span class="o">=</span> <span class="n">_fs_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;open_args_load&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">_fs_open_args_save</span> <span class="o">=</span> <span class="n">_fs_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;open_args_save&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">_credentials</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">credentials</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            url: The API URL endpoint.</span>
-<span class="sd">            method: The Method of the request, GET, POST, PUT, DELETE, HEAD, etc...</span>
-<span class="sd">            data: The request payload, used for POST, PUT, etc requests</span>
-<span class="sd">                https://requests.readthedocs.io/en/latest/user/quickstart/#more-complicated-post-requests</span>
-<span class="sd">            params: The url parameters of the API.</span>
-<span class="sd">                https://requests.readthedocs.io/en/latest/user/quickstart/#passing-parameters-in-urls</span>
-<span class="sd">            headers: The HTTP headers.</span>
-<span class="sd">                https://requests.readthedocs.io/en/latest/user/quickstart/#custom-headers</span>
-<span class="sd">            auth: Anything ``requests`` accepts. Normally it&#39;s either ``(&#39;login&#39;, &#39;password&#39;)``,</span>
-<span class="sd">                or ``AuthBase``, ``HTTPBasicAuth`` instance for more complex cases. Any</span>
-<span class="sd">                iterable will be cast to a tuple.</span>
-<span class="sd">            json: The request payload, used for POST, PUT, etc requests, passed in</span>
-<span class="sd">                to the json kwarg in the requests object.</span>
-<span class="sd">                https://requests.readthedocs.io/en/latest/user/quickstart/#more-complicated-post-requests</span>
-<span class="sd">            timeout: The wait time in seconds for a response, defaults to 1 minute.</span>
-<span class="sd">                https://requests.readthedocs.io/en/latest/user/quickstart/#timeouts</span>
-<span class="sd">            credentials: same as ``auth``. Allows specifying ``auth`` secrets in</span>
-<span class="sd">                credentials.yml.</span>
+        <span class="n">protocol</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">get_protocol_and_path</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
 
-<span class="sd">        Raises:</span>
-<span class="sd">            ValueError: if both ``credentials`` and ``auth`` are specified.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span>
+        <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;file&quot;</span><span class="p">:</span>
+            <span class="n">_fs_args</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;auto_mkdir&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="o">**</span><span class="n">_credentials</span><span class="p">,</span> <span class="o">**</span><span class="n">_fs_args</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">credentials</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">auth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot specify both auth and credentials.&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">filepath</span><span class="o">=</span><span class="n">PurePosixPath</span><span class="p">(</span><span class="n">path</span><span class="p">),</span>
+            <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span>
+            <span class="n">exists_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">exists</span><span class="p">,</span>
+            <span class="n">glob_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">glob</span><span class="p">,</span>
+        <span class="p">)</span>
 
-        <span class="n">auth</span> <span class="o">=</span> <span class="n">credentials</span> <span class="ow">or</span> <span class="n">auth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_LOAD_ARGS</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">load_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">load_args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_SAVE_ARGS</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">save_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">save_args</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
-            <span class="n">auth</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+        <span class="n">_fs_open_args_load</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+        <span class="n">_fs_open_args_save</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fs_open_args_load</span> <span class="o">=</span> <span class="n">_fs_open_args_load</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fs_open_args_save</span> <span class="o">=</span> <span class="n">_fs_open_args_save</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_request_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
-            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">method</span><span class="p">,</span>
-            <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span>
-            <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="n">params</span><span class="p">,</span>
-            <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="n">headers</span><span class="p">,</span>
-            <span class="s2">&quot;auth&quot;</span><span class="p">:</span> <span class="n">auth</span><span class="p">,</span>
-            <span class="s2">&quot;json&quot;</span><span class="p">:</span> <span class="n">json</span><span class="p">,</span>
-            <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-        <span class="p">}</span></div>
+    <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">filepath</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span><span class="p">,</span>
+            <span class="n">protocol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span>
+            <span class="n">load_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="p">,</span>
+            <span class="n">save_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="p">,</span>
+            <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span>
+        <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_request_args</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>
+        <span class="n">load_path</span> <span class="o">=</span> <span class="n">get_filepath_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_load_path</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">load_path</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs_open_args_load</span><span class="p">)</span> <span class="k">as</span> <span class="n">fs_file</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">load_svmlight_file</span><span class="p">(</span><span class="n">fs_file</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_execute_request</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_request_args</span><span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">DataSetError</span><span class="p">(</span><span class="s2">&quot;Failed to fetch data&quot;</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">DataSetError</span><span class="p">(</span><span class="s2">&quot;Failed to connect to the remote server&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">save_path</span> <span class="o">=</span> <span class="n">get_filepath_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_save_path</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs_open_args_save</span><span class="p">)</span> <span class="k">as</span> <span class="n">fs_file</span><span class="p">:</span>
+            <span class="n">dump_svmlight_file</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fs_file</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">response</span>
-
-    <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_request</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">DataSetError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> is a read only data set type&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate_cache</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_request</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">load_path</span> <span class="o">=</span> <span class="n">get_filepath_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_load_path</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">DataSetError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_release</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_release</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate_cache</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_invalidate_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Invalidate underlying filesystem caches.&quot;&quot;&quot;</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">get_filepath_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">invalidate_cache</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
