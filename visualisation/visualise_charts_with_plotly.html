@@ -107,9 +107,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get_started/summary.html">TL;DR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics">Logistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-fundamentals">Kedro fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation">Kedro project creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#logistics"><span class="xref myst">Logistics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-concepts"><span class="xref myst">Kedro concepts</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#kedro-project-creation"><span class="xref myst">Kedro project creation</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#what-s-next">What’s next?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../get_started/summary.html#useful-links">Useful links</a></li>
 </ul>
@@ -233,10 +233,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-spaceflights-project">The spaceflights project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-the-dependencies">Update the dependencies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configure-the-data-catalog">Configure the Data Catalog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-the-reporting-pipeline">Add the reporting pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
 </ul>
@@ -1278,57 +1275,19 @@
 </style>
 <div class="section" id="visualise-charts-in-kedro-viz">
 <h1>Visualise charts in Kedro-Viz<a class="headerlink" href="#visualise-charts-in-kedro-viz" title="Permalink to this headline">¶</a></h1>
-<p>Kedro-Viz supports integration with Plotly and MatPlotLib so that you can share your data insights while exploring your pipeline. This page describes how you can set it up to make interactive visualisations of your Kedro projects.</p>
 <div class="section" id="visualisation-with-plotly">
 <h2>Visualisation with Plotly<a class="headerlink" href="#visualisation-with-plotly" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://plotly.com/python/">Plotly</a> is a free and open source Python library that combines with Kedro-Viz to output interactive charts as part of pipeline visualisation.</p>
-<div class="section" id="the-spaceflights-project">
-<h3>The spaceflights project<a class="headerlink" href="#the-spaceflights-project" title="Permalink to this headline">¶</a></h3>
-<p>We use the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a> and add a reporting pipeline that uses Plotly. Even if you have not yet worked through the tutorial, you can still follow this example; you’ll need to use the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/spaceflights">Kedro starter for the spaceflights tutorial</a> to generate a copy of the project with working code in place:</p>
-<p>From your terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
-</pre></div>
-</div>
-<p>When prompted for a project name, you can enter any name, but we will assume <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code> throughout.</p>
-</div>
-<div class="section" id="update-the-dependencies">
-<h3>Update the dependencies<a class="headerlink" href="#update-the-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>You can view Plotly charts in Kedro-Viz when you use Kedro’s plotly datasets. There are two types of Plotly datasets in Kedro: the <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code>.</p>
-<p>You must update the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder of your Kedro project and add the following datasets to enable Plotly for your project.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kedro[plotly.PlotlyDataSet, plotly.JSONDataSet]==0.18.3`
-</pre></div>
-</div>
-<p>Nvigate to the root directory of the project and install the dependencies for the project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
-</pre></div>
-</div>
-</div>
-<div class="section" id="configure-the-data-catalog">
-<h3>Configure the Data Catalog<a class="headerlink" href="#configure-the-data-catalog" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code> dataset only supports <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a>. To use it, you need to add it to the Data Catalog.</p>
-<p>Add the following to <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttle_passenger_capacity_plot</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly.PlotlyDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/shuttle_passenger_capacity_plot.json</span><span class="w"></span>
-<span class="w">  </span><span class="nt">plotly_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
-<span class="w">    </span><span class="nt">fig</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shuttle_type</span><span class="w"></span>
-<span class="w">      </span><span class="nt">y</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">passenger_capacity</span><span class="w"></span>
-<span class="w">      </span><span class="nt">orientation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h</span><span class="w"></span>
-<span class="w">    </span><span class="nt">layout</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">xaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttles</span><span class="w"></span>
-<span class="w">      </span><span class="nt">yaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Average passenger capacity</span><span class="w"></span>
-<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttle Passenger capacity</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="add-the-reporting-pipeline">
-<h3>Add the reporting pipeline<a class="headerlink" href="#add-the-reporting-pipeline" title="Permalink to this headline">¶</a></h3>
-<p>In the terminal, run the following command to generate a template for the reporting pipeline:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create reporting
-</pre></div>
-</div>
+<p>Kedro-Viz supports <a class="reference external" href="https://plotly.com/python/">Plotly</a> and <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> integrations so that you can share your data insights while exploring your pipeline.</p>
+<p><a class="reference external" href="https://plotly.com/python/">Plotly</a> is a free and open source Python library that allows you to make interactive, publication-quality graphs. With the Plotly integration on Kedro-Viz, you can output your interactive charts as part of your pipeline visualisation.</p>
+<p>We have also used the Plotly integration to allow users to <a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">visualise metrics from experiments</span></a>.</p>
+<p>You must update the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file in your Kedro project and add the following datasets to enable Plotly for your project.</p>
+<p><code class="docutils literal notranslate"><span class="pre">kedro[plotly.PlotlyDataSet,</span> <span class="pre">plotly.JSONDataSet]==0.18.3</span></code></p>
+<p>You can view Plotly charts in Kedro-Viz when you use Kedro’s plotly datasets.</p>
+<p>There are two types of Plotly datasets in Kedro: the <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code>.</p>
+<div class="section" id="plotly-plotlydataset">
+<h3><a class="reference external" href="https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.plotly.PlotlyDataSet.html#kedro.extras.datasets.plotly.PlotlyDataSet"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a><a class="headerlink" href="#plotly-plotlydataset" title="Permalink to this headline">¶</a></h3>
+<p>To use this dataset, configure your plot in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file. This dataset only supports <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a>.</p>
+<p>Below is an example of how to visualise plots on Kedro-Viz using <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code>.</p>
 <p>The below functions can be added to the <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> files respectively.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nodes.py</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1353,6 +1312,21 @@
 </pre></div>
 </div>
 <p>Next, configure the plot in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttle_passenger_capacity_plot</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly.PlotlyDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/shuttle_passenger_capacity_plot.json</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plotly_args</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<span class="w">    </span><span class="nt">fig</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shuttle_type</span><span class="w"></span>
+<span class="w">      </span><span class="nt">y</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">passenger_capacity</span><span class="w"></span>
+<span class="w">      </span><span class="nt">orientation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h</span><span class="w"></span>
+<span class="w">    </span><span class="nt">layout</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">xaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttles</span><span class="w"></span>
+<span class="w">      </span><span class="nt">yaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Average passenger capacity</span><span class="w"></span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttle Passenger capacity</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="plotly-jsondataset">
 <h3><a class="reference external" href="https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.plotly.JSONDataSet.html#kedro.extras.datasets.plotly.JSONDataSet"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a><a class="headerlink" href="#plotly-jsondataset" title="Permalink to this headline">¶</a></h3>
@@ -1412,7 +1386,6 @@
 <p><img alt="" src="../_images/pipeline_visualisation_plotly.png" /></p>
 <p>You can view the larger visualisation of the chart by clicking the ‘Expand Plotly Visualisation’ button on the bottom of the metadata panel.</p>
 <p><img alt="" src="../_images/pipeline_visualisation_plotly_expand.png" /></p>
-<p>We have also used the Plotly integration to allow users to <a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">visualise metrics from experiments</span></a>.</p>
 </div>
 <div class="section" id="visualisation-with-matplotlib">
 <h3>Visualisation with Matplotlib<a class="headerlink" href="#visualisation-with-matplotlib" title="Permalink to this headline">¶</a></h3>
