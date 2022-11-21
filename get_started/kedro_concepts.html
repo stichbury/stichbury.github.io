@@ -221,18 +221,22 @@
 <p class="caption"><span class="caption-text">Visualisation with Kedro-Viz</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#install-kedro-viz-and-visualise-the-project">Install Kedro-Viz and visualise the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#automatic-visualisation-updates">Automatic visualisation updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-layers">Visualise layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#share-a-pipeline">Share a pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#share-a-pipeline-visualisation">Share a pipeline visualisation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#the-spaceflights-project">The spaceflights project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-reporting-pipeline">Add the reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
 </ul>
@@ -1274,10 +1278,10 @@
 </style>
 <div class="section" id="kedro-concepts">
 <h1>Kedro concepts<a class="headerlink" href="#kedro-concepts" title="Permalink to this headline">¶</a></h1>
-<p>It is time to introduce the most basic elements of Kedro.</p>
+<p>It is time to introduce the most basic elements of Kedro. You can find further information about these and more advanced Kedro concepts in the <a class="reference internal" href="../resources/glossary.html"><span class="doc std std-doc">Kedro glossary</span></a>.</p>
 <div class="section" id="node">
 <h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
-<p>In Kedro, a node is a wrapper for a Python function that names the inputs and outputs of that function. Nodes are the building block of a pipeline, and the output of one node can be the input of another.</p>
+<p>In Kedro, a node is a wrapper for a <a class="reference internal" href="../resources/glossary.html#node"><span class="std std-doc">pure Python function</span></a> that names the inputs and outputs of that function. Nodes are the building block of a pipeline, and the output of one node can be the input of another.</p>
 </div>
 <div class="section" id="pipeline">
 <h2>Pipeline<a class="headerlink" href="#pipeline" title="Permalink to this headline">¶</a></h2>
@@ -1285,7 +1289,7 @@
 </div>
 <div class="section" id="data-catalog">
 <h2>Data Catalog<a class="headerlink" href="#data-catalog" title="Permalink to this headline">¶</a></h2>
-<p>The Kedro Data Catalog is the registry of all data sources that the project can use to manage loading and saving data. It maps the names of node inputs and outputs as keys in a <code class="docutils literal notranslate"><span class="pre">DataSet</span></code>, a Kedro class that can be specialised for different types of data storage.</p>
+<p>The Kedro Data Catalog is the registry of all data sources that the project can use to manage loading and saving data. It maps the names of node inputs and outputs as keys in a <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>, a Kedro class that can be specialised for different types of data storage.</p>
 <p><a class="reference internal" href="../kedro.extras.datasets.html"><span class="doc std std-doc">Kedro provides numerous different built-in datasets</span></a> for various file types and file systems, so you don’t have to write the logic for reading/writing data.</p>
 </div>
 <div class="section" id="kedro-project-directory-structure">
@@ -1293,21 +1297,16 @@
 <p>Kedro projects follow a default template that uses specific folders to store datasets, notebooks, configuration and source code. We advise you to retain the structure to make it easy to share your projects with other Kedro users, but you can adapt the folder structure if you need to.</p>
 <p>A standard Kedro project structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project-dir         # Parent directory of the template
+├── .gitignore      # Hidden file that prevents staging of unnecessary files to `git`
 ├── conf            # Project configuration files
 ├── data            # Local project data (not committed to version control)
 ├── docs            # Project documentation
 ├── logs            # Project output logs (not committed to version control)
 ├── notebooks       # Project-related Jupyter notebooks (can be used for experimental code before moving the code to src)
+├── pyproject.toml  # Identifies the project root and [contains configuration information](../faq/architecture_overview.md#kedro-project)
 ├── README.md       # Project README
 ├── setup.cfg       # Configuration options for `pytest` when doing `kedro test` and for the `isort` utility when doing `kedro lint`
 └── src             # Project source code
-</pre></div>
-</div>
-<p>Kedro also creates the following hidden files and folders:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project-dir
-├── .coveragerc     # Configuration file for the coverage reporting when doing `kedro test`
-├── .gitignore      # Prevent staging of unnecessary files to `git`
-└── pyproject.toml  # Identifies the project root and [contains configuration information](../faq/architecture_overview.md#kedro-project)
 </pre></div>
 </div>
 <div class="section" id="conf">

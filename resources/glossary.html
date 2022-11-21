@@ -221,18 +221,22 @@
 <p class="caption"><span class="caption-text">Visualisation with Kedro-Viz</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#install-kedro-viz-and-visualise-the-project">Install Kedro-Viz and visualise the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#automatic-visualisation-updates">Automatic visualisation updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-layers">Visualise layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#share-a-pipeline">Share a pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#share-a-pipeline-visualisation">Share a pipeline visualisation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#the-spaceflights-project">The spaceflights project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-reporting-pipeline">Add the reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
 </ul>
@@ -1322,7 +1326,9 @@
 </div>
 <div class="section" id="node">
 <h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
-<p>A Kedro node is a wrapper for a Python function that names the inputs and outputs of that function. It is the building block of a pipeline. Nodes can be linked when the output of one node is the input of another.</p>
+<p>A Kedro node is a wrapper for a pure Python function that names the inputs and outputs of that function.</p>
+<p>(A <a class="reference external" href="https://realpython.com/python-functional-programming/#:~:text=A%20pure%20function%20is%20a,to%20state%20or%20mutable%20data.">pure function</a> is a one whose output value follows solely from its input values, without any observable side effects such as changes to state or mutable data).</p>
+<p>Nodes are the building block of a pipeline. Nodes can be linked when the output of one node is the input of another.</p>
 <p><a class="reference internal" href="../nodes_and_pipelines/nodes.html"><span class="doc std std-doc">Further information about nodes</span></a></p>
 </div>
 <div class="section" id="node-execution-order">
