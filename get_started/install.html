@@ -68,7 +68,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-kedro-using-pip-or-conda">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#verify-a-successful-installation">Verify a successful installation</a></li>
 </ul>
 </li>
@@ -883,7 +883,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Pyspark integration</span></p>
+<p class="caption"><span class="caption-text">PySpark integration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools_integration/pyspark.html">Build a Kedro pipeline with PySpark</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools_integration/pyspark.html#centralise-spark-configuration-in-conf-base-spark-yml">Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code></a></li>
@@ -1281,18 +1281,18 @@
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Kedro supports macOS, Linux, and Windows and is built for Python 3.7+.</p>
-<p>To confirm that Python is installed, type the following in your terminal (macOS and Linux) or command prompt (Windows):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python
+<p>To confirm that a valid version of Python is installed, type the following in your terminal (macOS and Linux):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 --version
+</pre></div>
+</div>
+<p>On Windows, type the following into the command prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python --version
 </pre></div>
 </div>
 <p>You should see the version of Python installed on your machine:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.8.13</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Mar</span> <span class="mi">28</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">06</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">39</span><span class="p">)</span>
-<span class="p">[</span><span class="n">Clang</span> <span class="mf">12.0.0</span> <span class="p">]</span> <span class="p">::</span> <span class="n">Anaconda</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">on</span> <span class="n">darwin</span>
-<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.8.13</span>
 </pre></div>
 </div>
-<p>Type <code class="docutils literal notranslate"><span class="pre">exit()</span></code> to return to the terminal prompt.</p>
 <p>If you see an error message or need to install a later version of Python, you can download it from the <a class="reference external" href="https://www.python.org/downloads/">official Python website</a>.</p>
 </div>
 <div class="section" id="git">
@@ -1313,10 +1313,11 @@
 <p>Depending on your preferred Python installation, you can alternatively create virtual environments to work with Kedro using <code class="docutils literal notranslate"><span class="pre">venv</span></code> or <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>, as described in the <a class="reference internal" href="../faq/faq.html"><span class="doc std std-doc">FAQ</span></a></p>
 <div class="section" id="create-a-new-python-virtual-environment-using-conda">
 <h4>Create a new Python virtual environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#create-a-new-python-virtual-environment-using-conda" title="Permalink to this headline">¶</a></h4>
-<p>To create a new virtual environment, called <code class="docutils literal notranslate"><span class="pre">kedro-environment</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code>. In this example, we use Python 3.10, but you can opt for a different version if you need it for your particular project.:</p>
+<p>To create a new virtual environment called <code class="docutils literal notranslate"><span class="pre">kedro-environment</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name kedro-environment <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 -y
 </pre></div>
 </div>
+<p>In this example, we use Python 3.10, but you can opt for a different version if you need it for your particular project.</p>
 <p>To activate the new environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate kedro-environment
 </pre></div>
@@ -1332,8 +1333,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="install-kedro-using-pip">
-<h2>Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#install-kedro-using-pip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-kedro-using-pip-or-conda">
+<h2>Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#install-kedro-using-pip-or-conda" title="Permalink to this headline">¶</a></h2>
 <p>To install Kedro from the Python Package Index (PyPI):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install kedro
 </pre></div>

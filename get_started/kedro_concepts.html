@@ -68,7 +68,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip-or-conda">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
 </ul>
 </li>
@@ -883,7 +883,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Pyspark integration</span></p>
+<p class="caption"><span class="caption-text">PySpark integration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools_integration/pyspark.html">Build a Kedro pipeline with PySpark</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools_integration/pyspark.html#centralise-spark-configuration-in-conf-base-spark-yml">Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code></a></li>
@@ -1279,10 +1279,39 @@
 <div class="section" id="node">
 <h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
 <p>In Kedro, a node is a wrapper for a <a class="reference internal" href="../resources/glossary.html#node"><span class="std std-doc">pure Python function</span></a> that names the inputs and outputs of that function. Nodes are the building block of a pipeline, and the output of one node can be the input of another.</p>
+<p>Here are two simple nodes as an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">node</span>
+
+<span class="c1"># First node</span>
+<span class="k">def</span> <span class="nf">return_greeting</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello&quot;</span>
+
+
+<span class="n">return_greeting_node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">return_greeting</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;my_salutation&quot;</span><span class="p">)</span>
+
+<span class="c1"># Second node</span>
+<span class="k">def</span> <span class="nf">join_statements</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> Kedro!&quot;</span>
+
+
+<span class="n">join_statements_node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span>
+    <span class="n">join_statements</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;my_salutation&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;my_message&quot;</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
 </div>
 <div class="section" id="pipeline">
 <h2>Pipeline<a class="headerlink" href="#pipeline" title="Permalink to this headline">¶</a></h2>
 <p>A pipeline organises the dependencies and execution order of a collection of nodes and connects inputs and outputs while keeping your code modular. The pipeline determines the <strong>node execution order</strong> by resolving dependencies and does <em>not</em> necessarily run the nodes in the order in which they are passed in.</p>
+<p>Here is a pipeline comprised of the nodes shown above:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="c1"># Assemble nodes into a pipeline</span>
+<span class="n">greeting_pipeline</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">([</span><span class="n">return_greeting_node</span><span class="p">,</span> <span class="n">join_statements_node</span><span class="p">])</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="data-catalog">
 <h2>Data Catalog<a class="headerlink" href="#data-catalog" title="Permalink to this headline">¶</a></h2>

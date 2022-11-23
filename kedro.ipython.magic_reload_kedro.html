@@ -68,7 +68,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_started/install.html#install-kedro-using-pip-or-conda">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_started/install.html#verify-a-successful-installation">Verify a successful installation</a></li>
 </ul>
 </li>
@@ -883,7 +883,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Pyspark integration</span></p>
+<p class="caption"><span class="caption-text">PySpark integration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tools_integration/pyspark.html">Build a Kedro pipeline with PySpark</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools_integration/pyspark.html#centralise-spark-configuration-in-conf-base-spark-yml">Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code></a></li>
@@ -1295,9 +1295,10 @@
 <dd><p>Kedro configuration environment name. Defaults to <cite>local</cite>.</p>
 </dd>
 <dt><kbd><span class="option">--params <var>PARAMS</var></span></kbd></dt>
-<dd><p>Specify extra parameters that you want to pass to the context initializer. Items must be separated by comma, keys - by colon, example:
-param1:value1,param2:value2. Each parameter is split by the first comma, so parameter values are allowed to contain colons, parameter keys are not.
-To pass a nested dictionary as parameter, separate keys by ‘.’, example: param_group.param1:value1.</p>
+<dd><p>Specify extra parameters that you want to pass to the context initializer. Items must be separated by comma, keys -
+by colon, example: param1:value1,param2:value2. Each parameter is split by the first comma, so parameter values are
+allowed to contain colons, parameter keys are not. To pass a nested dictionary as parameter, separate keys by ‘.’,
+example: param_group.param1:value1.</p>
 </dd>
 </dl>
 </dd>

@@ -68,7 +68,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-kedro-using-pip-or-conda">Install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="install.html#verify-a-successful-installation">Verify a successful installation</a></li>
 </ul>
 </li>
@@ -883,7 +883,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Pyspark integration</span></p>
+<p class="caption"><span class="caption-text">PySpark integration</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tools_integration/pyspark.html">Build a Kedro pipeline with PySpark</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools_integration/pyspark.html#centralise-spark-configuration-in-conf-base-spark-yml">Centralise Spark configuration in <code class="docutils literal notranslate"><span class="pre">conf/base/spark.yml</span></code></a></li>
@@ -1280,14 +1280,14 @@
 <h2><a class="reference internal" href="install.html"><span class="doc std std-doc">Logistics</span></a><a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Kedro can be used on Windows, macOS or Linux</p></li>
-<li><p><a class="reference internal" href="install.html#installation-prerequisites"><span class="std std-doc">Installation prerequisites</span></a> include Python 3.7+, <code class="docutils literal notranslate"><span class="pre">git</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code></p></li>
-<li><p>You should install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">kedro</span></code></p></li>
+<li><p>Installation prerequisites include Python 3.7+, <code class="docutils literal notranslate"><span class="pre">git</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code></p></li>
+<li><p>You should install Kedro using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">kedro</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">kedro</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="kedro-concepts">
 <h2><a class="reference internal" href="kedro_concepts.html"><span class="doc std std-doc">Kedro concepts</span></a><a class="headerlink" href="#kedro-concepts" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Kedro nodes are the building blocks of data processing pipelines. A node is a wrapper for a Python function that names the inputs and outputs of that function.</p></li>
+<li><p>Kedro nodes are the building blocks of pipelines. A node is a wrapper for a Python function that names the inputs and outputs of that function.</p></li>
 <li><p>A pipeline organises the dependencies and execution order of a collection of nodes.</p></li>
 <li><p>Kedro has a registry of all data sources the project can use called the Data Catalog. There is inbuilt support for various file types and file systems.</p></li>
 <li><p>Kedro projects follow a default template that uses specific folders to store datasets, notebooks, configuration and source code.</p></li>
