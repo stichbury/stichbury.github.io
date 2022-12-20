@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visualise charts in Kedro-Viz &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Visualise charts in Kedro-Viz &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -233,9 +233,20 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-pipeline">Run the pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-another-node">Add another node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-the-pipeline">Update the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#generate-the-run-data">Generate the Run data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
@@ -1054,11 +1065,41 @@
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro.datasets.html">kedro.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.yaml.YAMLDataSet.html">kedro.datasets.yaml.YAMLDataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.extras.html">kedro.extras</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.extras.datasets.html">kedro.extras.datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
@@ -1073,6 +1114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
@@ -1275,43 +1317,34 @@
 </style>
 <div class="section" id="visualise-charts-in-kedro-viz">
 <h1>Visualise charts in Kedro-Viz<a class="headerlink" href="#visualise-charts-in-kedro-viz" title="Permalink to this headline">¶</a></h1>
+<p>This page describes how to make interactive visualisations of your Kedro projects with Kedro-Viz, which supports integration with <a class="reference external" href="https://plotly.com/python/">Plotly</a> and <a class="reference external" href="https://matplotlib.org/">Matplotlib</a>.</p>
 <div class="section" id="visualisation-with-plotly">
 <h2>Visualisation with Plotly<a class="headerlink" href="#visualisation-with-plotly" title="Permalink to this headline">¶</a></h2>
-<p>Kedro-Viz supports <a class="reference external" href="https://plotly.com/python/">Plotly</a> and <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> integrations so that you can share your data insights while exploring your pipeline.</p>
-<p><a class="reference external" href="https://plotly.com/python/">Plotly</a> is a free and open source Python library that allows you to make interactive, publication-quality graphs. With the Plotly integration on Kedro-Viz, you can output your interactive charts as part of your pipeline visualisation.</p>
-<p>We have also used the Plotly integration to allow users to <a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">visualise metrics from experiments</span></a>.</p>
-<p>You must update the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file in your Kedro project and add the following datasets to enable Plotly for your project.</p>
-<p><code class="docutils literal notranslate"><span class="pre">kedro[plotly.PlotlyDataSet,</span> <span class="pre">plotly.JSONDataSet]==0.18.3</span></code></p>
-<p>You can view Plotly charts in Kedro-Viz when you use Kedro’s plotly datasets.</p>
-<p>There are two types of Plotly datasets in Kedro: the <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code>.</p>
-<div class="section" id="plotly-plotlydataset">
-<h3><a class="reference external" href="https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.plotly.PlotlyDataSet.html#kedro.extras.datasets.plotly.PlotlyDataSet"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a><a class="headerlink" href="#plotly-plotlydataset" title="Permalink to this headline">¶</a></h3>
-<p>To use this dataset, configure your plot in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file. This dataset only supports <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a>.</p>
-<p>Below is an example of how to visualise plots on Kedro-Viz using <code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code>.</p>
-<p>The below functions can be added to the <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> files respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nodes.py</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-
-<span class="k">def</span> <span class="nf">compare_passenger_capacity</span><span class="p">(</span><span class="n">preprocessed_shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">preprocessed_shuttles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;shuttle_type&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<p>We use the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a> and add a reporting pipeline that uses Plotly. Even if you have not yet worked through the tutorial, you can still follow this example; you’ll need to use the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/spaceflights">Kedro starter for the spaceflights tutorial</a> to generate a copy of the project with working code in place:</p>
+<p>From your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pipeline.py</span>
-<span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;This is a simple pipeline which generates a plot&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">compare_passenger_capacity</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_shuttles&quot;</span><span class="p">,</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;shuttle_passenger_capacity_plot&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">)</span>
+<p>When prompted for a project name, you can enter any name, but we will assume <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code> throughout.</p>
+<div class="section" id="update-the-dependencies">
+<h3>Update the dependencies<a class="headerlink" href="#update-the-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>There are two types of Plotly datasets supported by Kedro:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code> which only supports <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code> which supports Plotly Express and <a class="reference external" href="https://plotly.com/python/graph-objects/">Plotly Graph Objects</a></p></li>
+</ul>
+<p>To use the Plotly datasets, you must update the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder of your Kedro project to add the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kedro-datasets[plotly.PlotlyDataSet, plotly.JSONDataSet]~=1.0.0
 </pre></div>
 </div>
-<p>Next, configure the plot in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file:</p>
+<p>Navigate to the root directory of the project in your terminal and install the dependencies for the tutorial project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-the-data-catalog">
+<h3>Configure the Data Catalog<a class="headerlink" href="#configure-the-data-catalog" title="Permalink to this headline">¶</a></h3>
+<p>To use the datasets, add them to the Data Catalog by updating <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttle_passenger_capacity_plot</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly.PlotlyDataSet</span><span class="w"></span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/shuttle_passenger_capacity_plot.json</span><span class="w"></span>
@@ -1325,20 +1358,33 @@
 <span class="w">      </span><span class="nt">xaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttles</span><span class="w"></span>
 <span class="w">      </span><span class="nt">yaxis_title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Average passenger capacity</span><span class="w"></span>
 <span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shuttle Passenger capacity</span><span class="w"></span>
+
+<span class="nt">shuttle_passenger_capacity_plot</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly.JSONDataSet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/shuttle_passenger_capacity_plot.json</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="plotly-jsondataset">
-<h3><a class="reference external" href="https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.plotly.JSONDataSet.html#kedro.extras.datasets.plotly.JSONDataSet"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a><a class="headerlink" href="#plotly-jsondataset" title="Permalink to this headline">¶</a></h3>
-<p>To use this dataset, configure your plot in your Kedro node. This dataset supports <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a> and <a class="reference external" href="https://plotly.com/python/graph-objects/">Plotly Graph Objects</a>.</p>
-<p>Below is an example of how to visualise plots using <a class="reference external" href="https://plotly.com/python/plotly-express">Plotly Express</a> and <a class="reference external" href="https://plotly.com/python/graph-objects/">Plotly Graph Objects</a> on Kedro-Viz using the <code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code>.</p>
-<p>The below functions can be added to the <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> files respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nodes.py</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<div class="section" id="create-the-template-reporting-pipeline">
+<h3>Create the template reporting pipeline<a class="headerlink" href="#create-the-template-reporting-pipeline" title="Permalink to this headline">¶</a></h3>
+<p>In the terminal, run the following command to generate a template for the reporting pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create reporting
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-the-plotly-reporting-nodes">
+<h3>Add the Plotly reporting nodes<a class="headerlink" href="#add-the-plotly-reporting-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Add the following to <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/reporting/nodes.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># the below function uses plotly.express</span>
+
+<span class="k">def</span> <span class="nf">compare_passenger_capacity</span><span class="p">(</span><span class="n">preprocessed_shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">preprocessed_shuttles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;shuttle_type&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+
+<span class="c1"># This function uses plotly.express</span>
 <span class="k">def</span> <span class="nf">compare_passenger_capacity</span><span class="p">(</span><span class="n">preprocessed_shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">preprocessed_shuttles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;shuttle_type&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span>
@@ -1348,7 +1394,7 @@
     <span class="k">return</span> <span class="n">fig</span>
 
 
-<span class="c1"># the below function uses plotly.graph_objects</span>
+<span class="c1"># This function uses plotly.graph_objects</span>
 <span class="k">def</span> <span class="nf">compare_passenger_capacity</span><span class="p">(</span><span class="n">preprocessed_shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
     <span class="n">data_frame</span> <span class="o">=</span> <span class="n">preprocessed_shuttles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;shuttle_type&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
@@ -1362,7 +1408,14 @@
     <span class="k">return</span> <span class="n">fig</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pipeline.py</span>
+</div>
+<div class="section" id="update-the-reporting-pipeline-code">
+<h3>Update the reporting pipeline code<a class="headerlink" href="#update-the-reporting-pipeline-code" title="Permalink to this headline">¶</a></h3>
+<p>Update <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/reporting/pipeline.py</span></code> to replace the existing code with the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">pipeline</span>
+<span class="kn">from</span> <span class="nn">.nodes</span> <span class="kn">import</span> <span class="n">compare_passenger_capacity</span>
+
+
 <span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a simple pipeline which generates a plot&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
@@ -1376,31 +1429,51 @@
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>For <code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code>, you must also specify the output type in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file, like below.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shuttle_passenger_capacity_plot</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly.JSONDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/shuttle_passenger_capacity_plot.json</span><span class="w"></span>
+</div>
+<div class="section" id="run-the-pipeline">
+<h3>Run the pipeline<a class="headerlink" href="#run-the-pipeline" title="Permalink to this headline">¶</a></h3>
+<p>Now run the pipelines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
 </pre></div>
 </div>
-<p>Once the above setup is completed, you can do a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> followed by <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code> and your Kedro-Viz pipeline will show a new dataset type with icon <img alt="" src="../_images/chart-icon.png" /> . Click on the node to see a small preview of your Plotly chart in the metadata panel.</p>
-<p><img alt="" src="../_images/pipeline_visualisation_plotly.png" /></p>
+<p>Then visualise with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code></p>
+<p>You will see a new dataset type as an icon:</p>
+<p><img alt="" src="../_images/chart-icon.png" />.</p>
+<p>Click on the node to see a small preview of your Plotly chart in the metadata panel.</p>
+<p><img alt="" src="../_images/pipeline_visualisation_plotly_1.png" /></p>
 <p>You can view the larger visualisation of the chart by clicking the ‘Expand Plotly Visualisation’ button on the bottom of the metadata panel.</p>
-<p><img alt="" src="../_images/pipeline_visualisation_plotly_expand.png" /></p>
+<p><img alt="" src="../_images/pipeline_visualisation_plotly_expand_1.png" /></p>
+</div>
 </div>
 <div class="section" id="visualisation-with-matplotlib">
-<h3>Visualisation with Matplotlib<a class="headerlink" href="#visualisation-with-matplotlib" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a> is a Python library for creating static, animated, and interactive visualisations. Integrating Matplotlib into Kedro-Viz allows you to output your charts as part of your pipeline visualisation.</p>
+<h2>Visualisation with Matplotlib<a class="headerlink" href="#visualisation-with-matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>Integrating Matplotlib into Kedro-Viz allows you to output charts as part of your pipeline visualisation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The MatplotlibWriter dataset converts Matplotlib objects to image files. This means that Matplotlib charts within Kedro-Viz are static and not interactive, unlike the Plotly charts seen above.</p>
 </div>
-<p>You can view Matplotlib charts in Kedro-Viz when you use the <span class="xref myst">Kedro MatplotLibWriter dataset</span>. You must update the <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> file in your Kedro project by adding the following dataset to enable Matplotlib for your project:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kedro</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">MatplotlibWriter</span><span class="p">]</span><span class="o">==</span><span class="mf">0.18.3</span>
+<p>You can view Matplotlib charts in Kedro-Viz when you use the <a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html"><span class="doc std std-doc">Kedro MatplotLibWriter dataset</span></a>.</p>
+<div class="section" id="id1">
+<h3>Update the dependencies<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>You must update the <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> file in your Kedro project by adding the following dataset to enable Matplotlib for your project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro-datasets<span class="o">[</span>matplotlib.MatplotlibWriter<span class="o">]</span>~<span class="o">=</span><span class="m">1</span>.0.0
 </pre></div>
 </div>
-<p>To use this dataset, configure your plot in your Kedro node. The below functions should be added to the <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code> files respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nodes.py</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</div>
+<div class="section" id="id2">
+<h3>Configure the Data Catalog<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>You must also specify the output type in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file for the Data Catalog:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dummy_confusion_matrix</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span><span class="w"></span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/dummy_confusion_matrix.png</span><span class="w"></span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-another-node">
+<h3>Add another node<a class="headerlink" href="#add-another-node" title="Permalink to this headline">¶</a></h3>
+<p>Add the following to <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/reporting/nodes.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sn</span>
 
 
@@ -1416,10 +1489,17 @@
     <span class="k">return</span> <span class="n">plt</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>You might have to execute <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">seaborn</span></code> if the <a class="reference external" href="https://seaborn.pydata.org/">seaborn library</a> is not installed yet.</p>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pipeline.py</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might have to execute <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">seaborn</span></code> if the <a class="reference external" href="https://seaborn.pydata.org/">seaborn library</a> is not installed yet.</p>
+</div>
+</div>
+<div class="section" id="update-the-pipeline">
+<h3>Update the pipeline<a class="headerlink" href="#update-the-pipeline" title="Permalink to this headline">¶</a></h3>
+<p>Update <code class="docutils literal notranslate"><span class="pre">src/kedro_tutorial/pipelines/reporting/pipeline.py</span></code> to add the following to <code class="docutils literal notranslate"><span class="pre">create_pipeline</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.nodes</span> <span class="kn">import</span> <span class="n">create_confusion_matrix</span>
+
+
 <span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a simple pipeline which generates a plot&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
@@ -1433,14 +1513,13 @@
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>You must also specify the output type in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file, like below. Remember to set the versioned flag to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you want to add the plots to experiment tracking as well.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dummy_confusion_matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/08_reporting/dummy_confusion_matrix.png</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-</pre></div>
 </div>
-<p>Once this setup is completed, you can do a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> followed by <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code> and your Kedro-Viz pipeline will show a new dataset node with this icon <img alt="" src="../_images/chart-icon.png" />. Click on the node to see a small preview of your Matplotlib image in the metadata panel.</p>
+<div class="section" id="id3">
+<h3>Run the pipeline<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Run the pipelines with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> and then visualise the result with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code>.</p>
+<p>Your Kedro-Viz pipeline will show a new dataset node with this icon</p>
+<p><img alt="" src="../_images/chart-icon.png" />.</p>
+<p>Click on the node to see a small preview of your Matplotlib image in the metadata panel.</p>
 <p><img alt="" src="../_images/pipeline_visualisation_matplotlib.png" /></p>
 <p>You can view the larger visualisation of the chart by clicking the ‘Expand Matplotlib Image’ button on the bottom of the metadata panel.</p>
 <p><img alt="" src="../_images/pipeline_visualisation_matplotlib_expand.png" /></p>

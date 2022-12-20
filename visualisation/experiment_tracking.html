@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Set up experiment tracking &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Set up experiment tracking &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -233,9 +233,20 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="visualise_charts_with_plotly.html">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="visualise_charts_with_plotly.html#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id1">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#set-up-the-session-store">Set up the session store</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-tracking-datasets">Set up tracking datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-the-run-data">Generate the Run data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#view-and-compare-plot-data">View and compare plot data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#view-your-metrics-timeline">View your metrics timeline</a></li>
@@ -1054,11 +1065,41 @@
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro.datasets.html">kedro.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.yaml.YAMLDataSet.html">kedro.datasets.yaml.YAMLDataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.extras.html">kedro.extras</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.extras.datasets.html">kedro.extras.datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
@@ -1073,6 +1114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
@@ -1275,7 +1317,8 @@
 </style>
 <div class="section" id="set-up-experiment-tracking">
 <h1>Set up experiment tracking<a class="headerlink" href="#set-up-experiment-tracking" title="Permalink to this headline">¶</a></h1>
-<p>Experiment tracking is the process of saving all machine-learning related experiment information so that it is easy to find and compare past runs. <a class="reference external" href="https://github.com/kedro-org/kedro-viz">Kedro-Viz</a> supports native experiment tracking from <a class="reference external" href="https://github.com/kedro-org/kedro-viz/releases/tag/v4.1.1">version 4.1.1</a> onwards. When experiment tracking is enabled in your Kedro project, you will be able to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> directly from the Kedro-Viz web app, as well as <a class="reference internal" href="#view-your-metrics-timeline"><span class="std std-doc">see how your metrics have changed over time</span></a>.</p>
+<p>Experiment tracking is the process of saving all machine-learning related experiment information so you can compare different runs.</p>
+<p><a class="reference external" href="https://github.com/kedro-org/kedro-viz">Kedro-Viz</a> supports native experiment tracking from <a class="reference external" href="https://github.com/kedro-org/kedro-viz/releases/tag/v4.1.1">version 4.1.1</a> onwards. When experiment tracking is enabled in your Kedro project, you will be able to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-your-metrics-timeline"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
 <p><img alt="" src="../_images/experiment-tracking_demo_small.gif" /></p>
 <p>Enabling experiment tracking features on Kedro-Viz relies on:</p>
 <ul class="simple">
@@ -1283,19 +1326,16 @@
 <li><p><a class="reference internal" href="#set-up-tracking-datasets"><span class="std std-doc">experiment tracking datasets to let Kedro know what metrics should be tracked</span></a></p></li>
 <li><p><a class="reference internal" href="#set-up-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">modifying your nodes and pipelines to output those metrics</span></a>.</p></li>
 </ul>
-<p>This tutorial will provide a step-by-step process to set up experiment tracking and access your logged metrics from each run on Kedro-Viz. It will use the starter outlined in the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a>. You can also jump directly to <a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">this section for direct reference in setting up experiment tracking</span></a> for your Kedro project.</p>
+<p>This page describes the steps necessary to set up experiment tracking and access logged metrics, using the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a>.</p>
+<p><a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">Further information is available in the experiment tracking section</span></a> for your Kedro project.</p>
 <p>You can also access a more detailed <a class="reference external" href="https://kedro-viz-live-demo.hfa4c8ufrmn4u.eu-west-2.cs.amazonlightsail.com/">Kedro-Viz live demo</a>.</p>
 <div class="section" id="set-up-a-project">
 <h2>Set up a project<a class="headerlink" href="#set-up-a-project" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can skip this step if you have followed all previous parts of the tutorial.</p>
-</div>
 <p>We assume that you have already <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">installed Kedro</span></a> and <a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Kedro-Viz</span></a>. To set up a new project using the spaceflights starter, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
 </pre></div>
 </div>
-<p>Feel free to name your project as you like, but this guide will assume the project is named <strong>Kedro Experiment Tracking Tutorial</strong>, and that your project is in a sub-folder in your working directory that was created by <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code>, named <code class="docutils literal notranslate"><span class="pre">kedro-experiment-tracking-tutorial</span></code>.</p>
+<p>Feel free to name your project as you like, but this guide will assume the project is named <strong>Kedro Experiment Tracking Tutorial</strong>.</p>
 </div>
 <div class="section" id="set-up-the-session-store">
 <h2>Set up the session store<a class="headerlink" href="#set-up-the-session-store" title="Permalink to this headline">¶</a></h2>
@@ -1396,7 +1436,7 @@
 <p>Having set up both datasets, you can now generate your first set of experiment tracking data!</p>
 </div>
 <div class="section" id="generate-the-run-data">
-<h2>Generate the Run data<a class="headerlink" href="#generate-the-run-data" title="Permalink to this headline">¶</a></h2>
+<h2>Generate the run data<a class="headerlink" href="#generate-the-run-data" title="Permalink to this headline">¶</a></h2>
 <p>The beauty of native experiment tracking in Kedro is that all tracked data is generated and stored each time you do a Kedro run. Hence, to generate the data, you need only execute:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
 </pre></div>
@@ -1459,13 +1499,10 @@
 </div>
 <p>After running the pipeline with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, the plot will be saved and you will be able to see the plot in the experiment tracking panel when you execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code>. Clicking on a plot will expand it. When in comparison view, expanding a plot will show all the plots in that view for them to be compared side-by-side.</p>
 <p><img alt="" src="../_images/expand-plot-comparison-view.gif" /></p>
-<blockquote>
-<div><p><a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Read more about creating plots and visualising them in Kedro-Viz</span></a>.</p>
-</div></blockquote>
 </div>
 <div class="section" id="view-your-metrics-timeline">
 <h2>View your metrics timeline<a class="headerlink" href="#view-your-metrics-timeline" title="Permalink to this headline">¶</a></h2>
-<p>Additionally, you can monitor the changes to metrics over time from the pipeline visualisation tab <img alt="" src="../_images/pipeline_visualisation_icon.png" />. Clicking on any <a class="reference external" href="https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.tracking.MetricsDataSet.html">MetricsDataset</a> node will open a side panel displaying how the metric value has changed over time.</p>
+<p>Additionally, you can monitor the changes to metrics over time from the pipeline visualisation tab <img alt="" src="../_images/pipeline_visualisation_icon.png" />. Clicking on any MetricsDataset node will open a side panel displaying how the metric value has changed over time.</p>
 <p><img alt="" src="../_images/pipeline_show_metrics.gif" /></p>
 <p>Keep an eye out on the <a class="reference external" href="https://github.com/kedro-org/kedro-viz/releases">Kedro-Viz release page</a> for the upcoming releases on this experiment tracking functionality.</p>
 </div>

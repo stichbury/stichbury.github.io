@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kedro Principles &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Kedro Principles &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -233,9 +233,20 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id1">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the Run data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
@@ -1054,11 +1065,41 @@
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro.datasets.html">kedro.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.yaml.YAMLDataSet.html">kedro.datasets.yaml.YAMLDataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.extras.html">kedro.extras</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.extras.datasets.html">kedro.extras.datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
@@ -1073,6 +1114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>

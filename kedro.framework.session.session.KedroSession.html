@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kedro.framework.session.session.KedroSession &mdash; Kedro 0.18.3 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>kedro.framework.session.session.KedroSession &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -233,9 +233,20 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html">Visualise charts in Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#visualisation-with-plotly">Visualisation with Plotly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#plotly-plotlydataset"><code class="docutils literal notranslate"><span class="pre">plotly.PlotlyDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#plotly-jsondataset"><code class="docutils literal notranslate"><span class="pre">plotly.JSONDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#configure-the-data-catalog">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#id1">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#generate-the-run-data">Generate the Run data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
@@ -1054,11 +1065,41 @@
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="kedro.datasets.html">kedro.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.yaml.YAMLDataSet.html">kedro.datasets.yaml.YAMLDataSet</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="kedro.extras.html">kedro.extras</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro.extras.datasets.html">kedro.extras.datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
@@ -1073,6 +1114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
@@ -1285,7 +1327,7 @@
 <h1>kedro.framework.session.session.KedroSession<a class="headerlink" href="#kedro-framework-session-session-kedrosession" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="kedro.framework.session.session.KedroSession">
-<em class="property">class </em><code class="sig-prename descclassname">kedro.framework.session.session.</code><code class="sig-name descname">KedroSession</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session_id</span></em>, <em class="sig-param"><span class="n">package_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_on_close</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/session/session.html#KedroSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.session.session.KedroSession" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kedro.framework.session.session.</code><code class="sig-name descname">KedroSession</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session_id</span></em>, <em class="sig-param"><span class="n">package_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_on_close</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">conf_source</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/session/session.html#KedroSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.session.session.KedroSession" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">KedroSession</span></code> is the object that is responsible for managing the lifecycle
 of a Kedro run. Use <cite>KedroSession.create()</cite> as
 a context manager to construct a new KedroSession with session data
@@ -1345,7 +1387,7 @@ if <cite>save_on_close</cite> attribute is True.</p>
 
 <dl class="py method">
 <dt id="kedro.framework.session.session.KedroSession.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_on_close</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extra_params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/session/session.html#KedroSession.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.session.session.KedroSession.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_on_close</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extra_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">conf_source</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/session/session.html#KedroSession.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.session.session.KedroSession.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new instance of <code class="docutils literal notranslate"><span class="pre">KedroSession</span></code> with the session data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1355,6 +1397,7 @@ created for. The package_name argument will be removed in Kedro <cite>0.19.0</ci
 <li><p><strong>project_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Path to the project root directory. Default is
 current working directory Path.cwd().</p></li>
 <li><p><strong>save_on_close</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not to save the session when it’s closed.</p></li>
+<li><p><strong>conf_source</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Path to a directory containing configuration</p></li>
 <li><p><strong>env</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Environment for the KedroContext.</p></li>
 <li><p><strong>extra_params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – Optional dictionary containing extra project parameters
 for underlying KedroContext. If specified, will update (and therefore
