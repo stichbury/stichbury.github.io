@@ -538,7 +538,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -546,7 +545,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -1620,6 +1619,8 @@
 <span class="sd">    IPython will look for this function specifically.</span>
 <span class="sd">    See https://ipython.readthedocs.io/en/stable/config/extensions/index.html</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ipython</span><span class="o">.</span><span class="n">register_magic_function</span><span class="p">(</span><span class="n">magic_reload_kedro</span><span class="p">,</span> <span class="n">magic_name</span><span class="o">=</span><span class="s2">&quot;reload_kedro&quot;</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="n">_find_kedro_project</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">())</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
             <span class="s2">&quot;Kedro extension was registered but couldn&#39;t find a Kedro project. &quot;</span>
@@ -1627,7 +1628,6 @@
         <span class="p">)</span>
         <span class="k">return</span>
 
-    <span class="n">ipython</span><span class="o">.</span><span class="n">register_magic_function</span><span class="p">(</span><span class="n">magic_reload_kedro</span><span class="p">,</span> <span class="n">magic_name</span><span class="o">=</span><span class="s2">&quot;reload_kedro&quot;</span><span class="p">)</span>
     <span class="n">reload_kedro</span><span class="p">()</span></div>
 
 
