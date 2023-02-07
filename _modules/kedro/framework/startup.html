@@ -1596,6 +1596,7 @@
 <span></span><span class="sd">&quot;&quot;&quot;This module provides metadata for a Kedro project.&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Union</span>
 
@@ -1615,12 +1616,13 @@
     <span class="n">project_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">project_path</span><span class="p">:</span> <span class="n">Path</span>
     <span class="n">project_version</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">source_dir</span><span class="p">:</span> <span class="n">Path</span></div>
+    <span class="n">source_dir</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">kedro_init_version</span><span class="p">:</span> <span class="nb">str</span></div>
 
 
-<span class="k">def</span> <span class="nf">_version_mismatch_error</span><span class="p">(</span><span class="n">project_version</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_version_mismatch_error</span><span class="p">(</span><span class="n">kedro_init_version</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;Your Kedro project version </span><span class="si">{</span><span class="n">project_version</span><span class="si">}</span><span class="s2"> does not match Kedro package &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Your Kedro project version </span><span class="si">{</span><span class="n">kedro_init_version</span><span class="si">}</span><span class="s2"> does not match Kedro package &quot;</span>
         <span class="sa">f</span><span class="s2">&quot;version </span><span class="si">{</span><span class="n">kedro_version</span><span class="si">}</span><span class="s2"> you are running. Make sure to update your project &quot;</span>
         <span class="sa">f</span><span class="s2">&quot;template. See https://github.com/kedro-org/kedro/blob/main/RELEASE.md &quot;</span>
         <span class="sa">f</span><span class="s2">&quot;for how to migrate your Kedro project.&quot;</span>
@@ -1681,14 +1683,32 @@
             <span class="sa">f</span><span class="s2">&quot;configuration parameters.&quot;</span>
         <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
-    <span class="n">mandatory_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;package_name&quot;</span><span class="p">,</span> <span class="s2">&quot;project_name&quot;</span><span class="p">,</span> <span class="s2">&quot;project_version&quot;</span><span class="p">]</span>
+    <span class="n">mandatory_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;package_name&quot;</span><span class="p">,</span> <span class="s2">&quot;project_name&quot;</span><span class="p">]</span>
     <span class="n">missing_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">mandatory_keys</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">missing_keys</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing required keys </span><span class="si">{</span><span class="n">missing_keys</span><span class="si">}</span><span class="s2"> from &#39;</span><span class="si">{</span><span class="n">_PYPROJECT</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
 
+    <span class="c1"># Temporary solution to keep project_version backwards compatible to be removed in 0.19.0</span>
+    <span class="k">if</span> <span class="s2">&quot;project_version&quot;</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;project_version in pyproject.toml is deprecated, use kedro_init_version instead&quot;</span><span class="p">,</span>
+            <span class="ne">DeprecationWarning</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;kedro_init_version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;project_version&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="s2">&quot;kedro_init_version&quot;</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="p">:</span>
+        <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;project_version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;kedro_init_version&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Missing required key kedro_init_version from &#39;</span><span class="si">{</span><span class="n">_PYPROJECT</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">mandatory_keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;kedro_init_version&quot;</span><span class="p">)</span>
     <span class="c1"># check the match for major and minor version (skip patch version)</span>
-    <span class="k">if</span> <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;project_version&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">kedro_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_version_mismatch_error</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;project_version&quot;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;kedro_init_version&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="o">!=</span> <span class="n">kedro_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_version_mismatch_error</span><span class="p">(</span><span class="n">metadata_dict</span><span class="p">[</span><span class="s2">&quot;kedro_init_version&quot;</span><span class="p">]))</span>
 
     <span class="n">source_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">metadata_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;source_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
     <span class="n">source_dir</span> <span class="o">=</span> <span class="p">(</span><span class="n">project_path</span> <span class="o">/</span> <span class="n">source_dir</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>

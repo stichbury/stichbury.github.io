@@ -1333,7 +1333,7 @@
 <h1>kedro.framework.startup.ProjectMetadata<a class="headerlink" href="#kedro-framework-startup-projectmetadata" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="kedro.framework.startup.ProjectMetadata">
-<em class="property">class </em><code class="sig-prename descclassname">kedro.framework.startup.</code><code class="sig-name descname">ProjectMetadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_file</span><span class="p">:</span> <span class="n">pathlib.Path</span></em>, <em class="sig-param"><span class="n">package_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">project_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="p">:</span> <span class="n">pathlib.Path</span></em>, <em class="sig-param"><span class="n">project_version</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">source_dir</span><span class="p">:</span> <span class="n">pathlib.Path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/startup.html#ProjectMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.startup.ProjectMetadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kedro.framework.startup.</code><code class="sig-name descname">ProjectMetadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_file</span><span class="p">:</span> <span class="n">pathlib.Path</span></em>, <em class="sig-param"><span class="n">package_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">project_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">project_path</span><span class="p">:</span> <span class="n">pathlib.Path</span></em>, <em class="sig-param"><span class="n">project_version</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">source_dir</span><span class="p">:</span> <span class="n">pathlib.Path</span></em>, <em class="sig-param"><span class="n">kedro_init_version</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/framework/startup.html#ProjectMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.framework.startup.ProjectMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure holding project metadata derived from <cite>pyproject.toml</cite></p>
 <p class="rubric">Attributes</p>
 <table class="longtable docutils align-default">
@@ -1345,19 +1345,22 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.config_file" title="kedro.framework.startup.ProjectMetadata.config_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_file</span></code></a></p></td>
 <td><p>Alias for field number 0</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.package_name" title="kedro.framework.startup.ProjectMetadata.package_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">package_name</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.kedro_init_version" title="kedro.framework.startup.ProjectMetadata.kedro_init_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro_init_version</span></code></a></p></td>
+<td><p>Alias for field number 6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.package_name" title="kedro.framework.startup.ProjectMetadata.package_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">package_name</span></code></a></p></td>
 <td><p>Alias for field number 1</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_name" title="kedro.framework.startup.ProjectMetadata.project_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_name</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_name" title="kedro.framework.startup.ProjectMetadata.project_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_name</span></code></a></p></td>
 <td><p>Alias for field number 2</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_path" title="kedro.framework.startup.ProjectMetadata.project_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_path</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_path" title="kedro.framework.startup.ProjectMetadata.project_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_path</span></code></a></p></td>
 <td><p>Alias for field number 3</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_version" title="kedro.framework.startup.ProjectMetadata.project_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_version</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.project_version" title="kedro.framework.startup.ProjectMetadata.project_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_version</span></code></a></p></td>
 <td><p>Alias for field number 4</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.source_dir" title="kedro.framework.startup.ProjectMetadata.source_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source_dir</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.framework.startup.ProjectMetadata.source_dir" title="kedro.framework.startup.ProjectMetadata.source_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source_dir</span></code></a></p></td>
 <td><p>Alias for field number 5</p></td>
 </tr>
 </tbody>
@@ -1394,6 +1397,12 @@
 <code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">stop</span><span class="o">=</span><span class="default_value">9223372036854775807</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.framework.startup.ProjectMetadata.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return first index of value.</p>
 <p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kedro.framework.startup.ProjectMetadata.kedro_init_version">
+<code class="sig-name descname">kedro_init_version</code><em class="property">: str</em><a class="headerlink" href="#kedro.framework.startup.ProjectMetadata.kedro_init_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 6</p>
 </dd></dl>
 
 <dl class="py attribute">
