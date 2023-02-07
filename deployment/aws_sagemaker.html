@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1344,8 +1353,8 @@ s3fs&gt;=0.3.0, &lt;0.4.1  # will be needed to work with AWS S3
 </pre></div>
 </div>
 <p>Since you have added two extra dependencies, you should install the updated project dependencies by running the following from your terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;project_root&gt;
-pip install -r src/requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;project_root&gt;
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1384,17 +1393,17 @@ pip install -r src/requirements.txt
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> - defines the datasets that need to be saved into S3 (rather than kept in memory):</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">X_train@pickle</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/X_train.pickle</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">X_train@pickle</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/X_train.pickle</span>
 
-<span class="nt">X_train@path</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/X_train.pickle</span><span class="w"></span>
+<span class="nt">X_train@path</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span>
+<span class="w">  </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/X_train.pickle</span>
 
-<span class="nt">y_train</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/y_train.pickle</span><span class="w"></span>
+<span class="nt">y_train</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.train_path}/y_train.pickle</span>
 </pre></div>
 </div>
 <blockquote>
@@ -1403,21 +1412,21 @@ pip install -r src/requirements.txt
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> - contains the configuration for <a class="reference external" href="https://sagemaker.readthedocs.io/en/stable/frameworks/sklearn/sagemaker.sklearn.html#scikit-learn-estimator">SageMaker Scikit Learn Estimator</a>:</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sklearn_estimator_kwargs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">entry_point</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/kedro_tutorial/sagemaker_entry_point.py</span><span class="w">  </span><span class="c1"># you will create this file later</span><span class="w"></span>
-<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your_sagemaker_role_name&gt;</span><span class="w">  </span><span class="c1"># put the name of the role you&#39;ve created earlier</span><span class="w"></span>
-<span class="w">  </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ml.m4.xlarge</span><span class="w"></span>
-<span class="w">  </span><span class="nt">instance_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">framework_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.23-1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.output_path}</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sklearn_estimator_kwargs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">entry_point</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/kedro_tutorial/sagemaker_entry_point.py</span><span class="w">  </span><span class="c1"># you will create this file later</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your_sagemaker_role_name&gt;</span><span class="w">  </span><span class="c1"># put the name of the role you&#39;ve created earlier</span>
+<span class="w">  </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ml.m4.xlarge</span>
+<span class="w">  </span><span class="nt">instance_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">framework_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.23-1</span>
+<span class="w">  </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${s3.output_path}</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">globals.yml</span></code> - contains the values that will be used to extrapolate the values in the config files above (you will need to replace the bucket name in the snippet below):</p></li>
 </ul>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">s3</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">train_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your_s3_bucket_name&gt;/train</span><span class="w"></span>
-<span class="w">  </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your_s3_bucket_name&gt;/output</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">s3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">train_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your_s3_bucket_name&gt;/train</span>
+<span class="w">  </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your_s3_bucket_name&gt;/output</span>
 </pre></div>
 </div>
 </div>
@@ -1458,7 +1467,7 @@ pip install -r src/requirements.txt
 <span class="k">def</span> <span class="nf">train_model_sagemaker</span><span class="p">(</span>
     <span class="n">X_train_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sklearn_estimator_kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Train the linear regression model on SageMaker.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Train the linear regression model on SageMaker.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        X_train_path: Full S3 path to `X_train` dataset.</span>
@@ -1487,7 +1496,7 @@ pip install -r src/requirements.txt
 
 
 <span class="k">def</span> <span class="nf">untar_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LinearRegression</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Unarchive the linear regression model artifact produced</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Unarchive the linear regression model artifact produced</span>
 <span class="sd">    by the training job on SageMaker.</span>
 
 <span class="sd">        Args:</span>
@@ -1567,19 +1576,19 @@ pip install -r src/requirements.txt
 
 
 <span class="k">def</span> <span class="nf">_pickle</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Pickle the object and save it to disk&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pickle the object and save it to disk&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_unpickle</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Unpickle the object from a given file&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Unpickle the object from a given file&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_get_arg_parser</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Instantiate the command line argument parser&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Instantiate the command line argument parser&quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
@@ -1593,7 +1602,7 @@ pip install -r src/requirements.txt
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;The main script entry point which will be called by SageMaker</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The main script entry point which will be called by SageMaker</span>
 <span class="sd">    when running the training job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">_get_arg_parser</span><span class="p">()</span>
@@ -1621,7 +1630,7 @@ pip install -r src/requirements.txt
 <div class="section" id="run-the-project">
 <h2>Run the project<a class="headerlink" href="#run-the-project" title="Permalink to this headline">¶</a></h2>
 <p>You are now ready to run your project! To do that, execute the following CLI command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --env sagemaker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--env<span class="o">=</span>sagemaker
 </pre></div>
 </div>
 <p>The first 4 nodes of the pipeline will still run locally, but then you should see a similar output in the terminal:</p>

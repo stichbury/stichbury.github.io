@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1423,22 +1432,23 @@
 </div>
 <div class="section" id="create-a-pull-request">
 <h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline">¶</a></h2>
-<p>Create your pull request with <a class="reference internal" href="#pull-request-title-conventions"><span class="std std-doc">a descriptive title</span></a>. Before you submit it, consider the following:</p>
-<ul class="simple">
+<p><a class="reference internal" href="#pull-request-title-conventions"><span class="std std-doc">Give your pull request a descriptive title</span></a>. Before you submit it, consider the following:</p>
+<ul>
 <li><p>You should aim for cross-platform compatibility on Windows, macOS and Linux</p></li>
-<li><p>We use <a class="reference external" href="https://semver.org/">SemVer</a> for versioning</p></li>
-<li><p>We have designed our code to be compatible with Python 3.6 onwards and our style guidelines are (in cascading order):</p>
+<li><p>We use <a class="reference external" href="https://semver.org/">Semantic Versioning</a> for versioning</p></li>
+<li><p>We have designed our code to be compatible with Python 3.7 onwards and our style guidelines are (in cascading order):</p>
 <ul>
 <li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 conventions</a> for all Python code</p></li>
 <li><p><a class="reference external" href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google docstrings</a> for code comments</p></li>
-<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484 type hints</a> for all user-facing functions / class methods e.g.</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_truthy</span><span class="p">(</span><span class="n">elements</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484 type hints</a> for all user-facing functions/class methods; e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_truthy</span><span class="p">(</span><span class="n">elements</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">elements</span> <span class="k">if</span> <span class="n">element</span><span class="p">)</span>
 </pre></div>
 </div>
+</li>
+</ul>
+</li>
+</ul>
 <p>Ensure that your PR builds cleanly before you submit it, by running the CI/CD checks locally, as follows:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code>: PEP-8 Standards (<code class="docutils literal notranslate"><span class="pre">pylint</span></code>, <code class="docutils literal notranslate"><span class="pre">flake8</span></code>)</p></li>
@@ -1467,11 +1477,11 @@
 <div class="section" id="hints-on-pre-commit-usage">
 <h3>Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage<a class="headerlink" href="#hints-on-pre-commit-usage" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://pre-commit.com"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code></a> hooks run checks automatically on all the changed files on each commit but can be skipped with the <code class="docutils literal notranslate"><span class="pre">--no-verify</span></code> or <code class="docutils literal notranslate"><span class="pre">-n</span></code> flag:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit --no-verify &lt;...&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>--no-verify<span class="w"> </span>&lt;...&gt;
 </pre></div>
 </div>
 <p>All checks will run during CI build, so skipping checks on commit will not allow you to merge your code with failing checks. You can uninstall the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks by running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make uninstall-pre-commit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>uninstall-pre-commit
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> will still be used by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code>, but will not install the git hooks.</p>
@@ -1486,7 +1496,7 @@
 </pre></div>
 </div>
 <p>The sign-off can be added automatically to your commit message using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -s -m <span class="s2">&quot;This is my commit message&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-s<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;This is my commit message&quot;</span>
 </pre></div>
 </div>
 <p>To avoid needing to remember the <code class="docutils literal notranslate"><span class="pre">-s</span></code> flag on every commit, you might like to set up a <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">git alias</a> for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-s</span></code>. Alternatively, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">sign-off</span></code> to setup a <a class="reference external" href="https://git-scm.com/docs/githooks#_commit_msg"><code class="docutils literal notranslate"><span class="pre">commit-msg</span></code> Git hook</a> that automatically signs off all commits (including merge commits) you make while working on the Kedro repository.</p>

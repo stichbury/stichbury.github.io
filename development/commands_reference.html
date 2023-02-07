@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1320,14 +1329,14 @@
 <div class="section" id="autocompletion-optional">
 <h2>Autocompletion (optional)<a class="headerlink" href="#autocompletion-optional" title="Permalink to this headline">¶</a></h2>
 <p>If you are using macOS or Linux, you can set up your shell to autocomplete <code class="docutils literal notranslate"><span class="pre">kedro</span></code> commands. If you don’t know the type of shell you are using, first type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
 </pre></div>
 </div>
 <details>
 <summary>If you are using Bash (click to expand)</summary>
 <br/>
 Add the following to your <code>~/.bashrc</code> (or just run it on the command line):
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span><span class="nb">source</span> kedro<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span><span class="nb">source</span><span class="w"> </span>kedro<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </details>
@@ -1335,7 +1344,7 @@ Add the following to your <code>~/.bashrc</code> (or just run it on the command 
 <summary>If you are using Z shell (ZSh) (click to expand)</summary>
 <br/>
 Add the following to <code>~/.zshrc</code>:
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span>source_zsh kedro<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span>source_zsh<span class="w"> </span>kedro<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </details>
@@ -1343,7 +1352,7 @@ Add the following to <code>~/.zshrc</code>:
 <summary>If you are using Fish (click to expand)</summary>
 <br/>
 Add the following to <code>~/.config/fish/completions/foo-bar.fish</code>:
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="o">(</span>env <span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span>source_fish kedro<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="w"> </span><span class="o">(</span>env<span class="w"> </span><span class="nv">_KEDRO_COMPLETE</span><span class="o">=</span>source_fish<span class="w"> </span>kedro<span class="o">)</span>
 </pre></div>
 </div>
 </details>
@@ -1351,7 +1360,7 @@ Add the following to <code>~/.config/fish/completions/foo-bar.fish</code>:
 <div class="section" id="invoke-kedro-cli-from-python-optional">
 <h2>Invoke Kedro CLI from Python (optional)<a class="headerlink" href="#invoke-kedro-cli-from-python-optional" title="Permalink to this headline">¶</a></h2>
 <p>You can invoke the Kedro CLI as a Python module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m kedro
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>kedro
 </pre></div>
 </div>
 </div>
@@ -1403,21 +1412,21 @@ Add the following to <code>~/.config/fish/completions/foo-bar.fish</code>:
 <div class="section" id="get-help-on-kedro-commands">
 <h3>Get help on Kedro commands<a class="headerlink" href="#get-help-on-kedro-commands" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro
-kedro -h
-kedro --help
+kedro<span class="w"> </span>-h
+kedro<span class="w"> </span>--help
 </pre></div>
 </div>
 </div>
 <div class="section" id="confirm-the-kedro-version">
 <h3>Confirm the Kedro version<a class="headerlink" href="#confirm-the-kedro-version" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro -V
-kedro --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>-V
+kedro<span class="w"> </span>--version
 </pre></div>
 </div>
 </div>
 <div class="section" id="confirm-kedro-information">
 <h3>Confirm Kedro information<a class="headerlink" href="#confirm-kedro-information" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>info
 </pre></div>
 </div>
 <p>Returns output similar to the following, depending on the version of Kedro used and plugins installed.</p>
@@ -1440,13 +1449,13 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 </div>
 <div class="section" id="create-a-new-kedro-project">
 <h3>Create a new Kedro project<a class="headerlink" href="#create-a-new-kedro-project" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new
 </pre></div>
 </div>
 </div>
 <div class="section" id="open-the-kedro-documentation-in-your-browser">
 <h3>Open the Kedro documentation in your browser<a class="headerlink" href="#open-the-kedro-documentation-in-your-browser" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro docs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>docs
 </pre></div>
 </div>
 </div>
@@ -1467,6 +1476,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <span class="kn">from</span> <span class="nn">kedro.framework.cli.project</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ASYNC_ARG_HELP</span><span class="p">,</span>
     <span class="n">CONFIG_FILE_HELP</span><span class="p">,</span>
+    <span class="n">CONF_SOURCE_HELP</span><span class="p">,</span>
     <span class="n">FROM_INPUTS_HELP</span><span class="p">,</span>
     <span class="n">FROM_NODES_HELP</span><span class="p">,</span>
     <span class="n">LOAD_VERSION_HELP</span><span class="p">,</span>
@@ -1487,6 +1497,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
     <span class="n">_split_params</span><span class="p">,</span>
     <span class="n">env_option</span><span class="p">,</span>
     <span class="n">split_string</span><span class="p">,</span>
+    <span class="n">split_node_names</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">kedro.framework.session</span> <span class="kn">import</span> <span class="n">KedroSession</span>
 <span class="kn">from</span> <span class="nn">kedro.utils</span> <span class="kn">import</span> <span class="n">load_obj</span>
@@ -1494,7 +1505,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="vm">__file__</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Command line tools for manipulating a Kedro project.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line tools for manipulating a Kedro project.&quot;&quot;&quot;</span>
 
 
 <span class="nd">@project_group</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
@@ -1505,10 +1516,10 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
     <span class="s2">&quot;--to-outputs&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">TO_OUTPUTS_HELP</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">split_string</span>
 <span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-    <span class="s2">&quot;--from-nodes&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">FROM_NODES_HELP</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">split_string</span>
+    <span class="s2">&quot;--from-nodes&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">FROM_NODES_HELP</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">split_node_names</span>
 <span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-    <span class="s2">&quot;--to-nodes&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">TO_NODES_HELP</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">split_string</span>
+    <span class="s2">&quot;--to-nodes&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">TO_NODES_HELP</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">split_node_names</span>
 <span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--node&quot;</span><span class="p">,</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;node_names&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">NODE_ARG_HELP</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
@@ -1534,6 +1545,11 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
     <span class="n">callback</span><span class="o">=</span><span class="n">_config_file_callback</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--conf-source&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">exists</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">file_okay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resolve_path</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="n">CONF_SOURCE_HELP</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
     <span class="s2">&quot;--params&quot;</span><span class="p">,</span>
     <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">UNPROCESSED</span><span class="p">,</span>
     <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
@@ -1554,9 +1570,10 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
     <span class="n">load_version</span><span class="p">,</span>
     <span class="n">pipeline</span><span class="p">,</span>
     <span class="n">config</span><span class="p">,</span>
+    <span class="n">conf_source</span><span class="p">,</span>
     <span class="n">params</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Run the pipeline.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run the pipeline.&quot;&quot;&quot;</span>
 
     <span class="c1">##### ADD YOUR CUSTOM RUN COMMAND CODE HERE #####</span>
     <span class="n">runner</span> <span class="o">=</span> <span class="n">load_obj</span><span class="p">(</span><span class="n">runner</span> <span class="ow">or</span> <span class="s2">&quot;SequentialRunner&quot;</span><span class="p">,</span> <span class="s2">&quot;kedro.runner&quot;</span><span class="p">)</span>
@@ -1564,7 +1581,9 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
     <span class="n">tag</span> <span class="o">=</span> <span class="n">_get_values_as_tuple</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="k">if</span> <span class="n">tag</span> <span class="k">else</span> <span class="n">tag</span>
     <span class="n">node_names</span> <span class="o">=</span> <span class="n">_get_values_as_tuple</span><span class="p">(</span><span class="n">node_names</span><span class="p">)</span> <span class="k">if</span> <span class="n">node_names</span> <span class="k">else</span> <span class="n">node_names</span>
 
-    <span class="k">with</span> <span class="n">KedroSession</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">extra_params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">KedroSession</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">conf_source</span><span class="o">=</span><span class="n">conf_source</span><span class="p">,</span> <span class="n">extra_params</span><span class="o">=</span><span class="n">params</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
         <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
             <span class="n">tags</span><span class="o">=</span><span class="n">tag</span><span class="p">,</span>
             <span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">(</span><span class="n">is_async</span><span class="o">=</span><span class="n">is_async</span><span class="p">),</span>
@@ -1589,7 +1608,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p class="admonition-title">Note</p>
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro build-reqs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>build-reqs
 </pre></div>
 </div>
 <p>This command runs <a class="reference external" href="https://github.com/jazzband/pip-tools#example-usage-for-pip-compile"><code class="docutils literal notranslate"><span class="pre">pip-compile</span></code></a> on the project’s <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> file and will create <code class="docutils literal notranslate"><span class="pre">src/requirements.lock</span></code> with the compiled requirements.</p>
@@ -1599,7 +1618,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="install-all-package-dependencies">
 <h4>Install all package dependencies<a class="headerlink" href="#install-all-package-dependencies" title="Permalink to this headline">¶</a></h4>
 <p>The following runs <a class="reference external" href="https://github.com/pypa/pip"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a> to install all package dependencies specified in <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
 </pre></div>
 </div>
 <p>For further information, see the <a class="reference internal" href="../kedro_project_setup/dependencies.html#install-project-specific-dependencies"><span class="std std-doc">documentation on installing project-specific dependencies</span></a>.</p>
@@ -1608,79 +1627,77 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="run-the-project">
 <h3>Run the project<a class="headerlink" href="#run-the-project" title="Permalink to this headline">¶</a></h3>
 <p>Call the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">KedroSession</span></code> defined in <code class="docutils literal notranslate"><span class="pre">kedro.framework.session</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">KedroContext</span></code> can be extended in <code class="docutils literal notranslate"><span class="pre">run.py</span></code> (<code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/run.py</span></code>). In order to use the extended <code class="docutils literal notranslate"><span class="pre">KedroContext</span></code>, you need to set <code class="docutils literal notranslate"><span class="pre">context_path</span></code> in the <a class="reference internal" href="../faq/architecture_overview.html#kedro-project"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> configuration file</span></a>.</p>
 <div class="section" id="modifying-a-kedro-run">
 <h4>Modifying a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code><a class="headerlink" href="#modifying-a-kedro-run" title="Permalink to this headline">¶</a></h4>
-<p>Kedro has options to modify pipeline runs. Here is a list of CLI arguments supported out of the box:</p>
+<p>Kedro has options to modify pipeline runs. Below is a list of CLI arguments supported out of the box. Note that the names inside angular brackets (<code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>) are placeholders, and you should replace these values with the
+the names of relevant nodes, datasets, envs, etc. in your project.</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>CLI command</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Multiple instances allowed?</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--from-inputs</span> <span class="pre">dataset1,dataset2</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--from-inputs=&lt;dataset_name1&gt;,&lt;dataset_name2&gt;</span></code></p></td>
 <td><p>A list of dataset names which should be used as a starting point</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--from-nodes</span> <span class="pre">node1,node2</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--to-outputs=&lt;dataset_name1&gt;,&lt;dataset_name2&gt;</span></code></p></td>
+<td><p>A list of dataset names which should be used as an end point</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--from-nodes=&lt;node_name1&gt;,&lt;node_name2&gt;</span></code></p></td>
 <td><p>A list of node names which should be used as a starting point</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--to-nodes</span> <span class="pre">node3,node4</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--to-nodes=&lt;node_name1&gt;,&lt;node_name1&gt;</span></code></p></td>
 <td><p>A list of node names which should be used as an end point</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--node</span> <span class="pre">debug_me,debug_me_too</span></code></p></td>
-<td><p>Run only nodes with specified names</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--node=&lt;node_name1&gt;,&lt;node_name2&gt;</span></code></p></td>
+<td><p>Run only nodes with specified names. <br /> Multiple instances allowed.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--runner</span> <span class="pre">runner_name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--runner=&lt;runner_name&gt;</span></code></p></td>
 <td><p>Run the pipeline with a specific runner</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--env</span> <span class="pre">env_name</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--async</span></code></p></td>
+<td><p>Load and save node inputs and outputs asynchronously with threads</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--env=&lt;env_name&gt;</span></code></p></td>
 <td><p>Run the pipeline in the env_name environment. Defaults to local if not provided</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--tag</span> <span class="pre">some_tag1,some_tag2</span></code></p></td>
-<td><p>Run only nodes which have any of these tags attached</p></td>
-<td><p>Yes</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--tag=&lt;tag_name1&gt;,&lt;tag_name2&gt;</span></code></p></td>
+<td><p>Run only nodes which have any of these tags attached. <br /> Multiple instances allowed.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--load-version=&quot;some_dataset:YYYY-MM-DDThh.mm.ss.sssZ&quot;</span></code></p></td>
-<td><p>Specify a particular dataset version (timestamp) for loading</p></td>
-<td><p>Yes</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--load-version=&lt;dataset_name&gt;:YYYY-MM-DDThh.mm.ss.sssZ</span></code></p></td>
+<td><p>Specify a particular dataset version (timestamp) for loading. <br /> Multiple instances allowed.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--pipeline</span> <span class="pre">de</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--pipeline=&lt;pipeline_name&gt;</span></code></p></td>
 <td><p>Run the whole pipeline by its name</p></td>
-<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--config</span> <span class="pre">config.yml</span></code></p></td>
-<td><p>Specify all command line options in a configuration file called config.yml</p></td>
-<td><p>No</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--config=&lt;config_file_name&gt;.yml</span></code></p></td>
+<td><p>Specify all command line options in a named YAML configuration file</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--params</span> <span class="pre">param_key1:value1,param_key2:2.0</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--conf-source=&lt;path_to_config_directory&gt;</span></code></p></td>
+<td><p>Specify a new source directory for configuration files</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--params=&lt;param_key1&gt;:&lt;value1&gt;,&lt;param_key2&gt;:&lt;value2&gt;</span></code></p></td>
 <td><p>Does a parametrised kedro run with <code class="docutils literal notranslate"><span class="pre">{&quot;param_key1&quot;:</span> <span class="pre">&quot;value1&quot;,</span> <span class="pre">&quot;param_key2&quot;:</span> <span class="pre">2}</span></code>. These will take precedence over parameters defined in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> directory. Additionally, dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) syntax can be used to address nested keys like <code class="docutils literal notranslate"><span class="pre">parent.child:value</span></code></p></td>
-<td><p>Yes</p></td>
 </tr>
 </tbody>
 </table>
 <p>You can also combine these options together, so the following command runs all the nodes from <code class="docutils literal notranslate"><span class="pre">split</span></code> to <code class="docutils literal notranslate"><span class="pre">predict</span></code> and <code class="docutils literal notranslate"><span class="pre">report</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --from-nodes split --to-nodes predict,report
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--from-nodes<span class="o">=</span>split<span class="w"> </span>--to-nodes<span class="o">=</span>predict,report
 </pre></div>
 </div>
-<p>This functionality is extended to the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--config</span> <span class="pre">config.yml</span></code> command, which allows you to <a class="reference internal" href="../kedro_project_setup/configuration.html#configure-kedro-run-arguments"><span class="std std-doc">specify run commands in a configuration file</span></a>.</p>
+<p>This functionality is extended to the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--config=config.yml</span></code> command, which allows you to <a class="reference internal" href="../kedro_project_setup/configuration.html#configure-kedro-run-arguments"><span class="std std-doc">specify run commands in a configuration file</span></a>.</p>
 <p>A parameterised run is best used for dynamic parameters, i.e. running the same pipeline with different inputs, for static parameters that do not change we recommend following the <a class="reference internal" href="../kedro_project_setup/configuration.html#parameters"><span class="std std-doc">Kedro project setup methodology</span></a>.</p>
 </div>
 </div>
 <div class="section" id="deploy-the-project">
 <h3>Deploy the project<a class="headerlink" href="#deploy-the-project" title="Permalink to this headline">¶</a></h3>
 <p>The following packages your application as one <code class="docutils literal notranslate"><span class="pre">.egg</span></code> file  and one <code class="docutils literal notranslate"><span class="pre">.whl</span></code> file within the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder of your project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro package
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>package
 </pre></div>
 </div>
 <p>See <a class="reference external" href="https://packaging.python.org/overview/">the Python documentation for further information about packaging</a>.</p>
@@ -1688,7 +1705,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="pull-a-micro-package">
 <h3>Pull a micro-package<a class="headerlink" href="#pull-a-micro-package" title="Permalink to this headline">¶</a></h3>
 <p>Since Kedro 0.17.7 you can pull a micro-package into your Kedro project as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro micropkg pull &lt;link-to-micro-package-sdist-file&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>micropkg<span class="w"> </span>pull<span class="w"> </span>&lt;link-to-micro-package-sdist-file&gt;
 </pre></div>
 </div>
 <p>The above command will take the bundled <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> file and do the following:</p>
@@ -1712,7 +1729,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p class="admonition-title">Note</p>
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro build-docs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>build-docs
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">build-docs</span></code> command builds <a class="reference internal" href="../tutorial/package_a_project.html#add-documentation-to-your-project"><span class="std std-doc">project documentation</span></a> using the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> framework. To further customise your documentation, please refer to <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> and the <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a>.</p>
@@ -1723,7 +1740,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p class="admonition-title">Note</p>
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro lint
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>lint
 </pre></div>
 </div>
 <p>Your project is linted with <a class="reference external" href="https://github.com/psf/black"><code class="docutils literal notranslate"><span class="pre">black</span></code></a>, <a class="reference external" href="https://gitlab.com/pycqa/flake8"><code class="docutils literal notranslate"><span class="pre">flake8</span></code></a> and <a class="reference external" href="https://github.com/PyCQA/isort"><code class="docutils literal notranslate"><span class="pre">isort</span></code></a>.</p>
@@ -1735,7 +1752,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
 <p>The following runs all <code class="docutils literal notranslate"><span class="pre">pytest</span></code> unit tests found in <code class="docutils literal notranslate"><span class="pre">src/tests</span></code>, including coverage (see the file <code class="docutils literal notranslate"><span class="pre">.coveragerc</span></code>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro <span class="nb">test</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
 </div>
@@ -1746,14 +1763,14 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <h4>Modular pipelines<a class="headerlink" href="#modular-pipelines" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="create-a-new-modular-pipeline-in-your-project">
 <h5>Create a new <a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html"><span class="doc std std-doc">modular pipeline</span></a> in your project<a class="headerlink" href="#create-a-new-modular-pipeline-in-your-project" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create &lt;pipeline_name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>pipeline<span class="w"> </span>create<span class="w"> </span>&lt;pipeline_name&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="package-a-micro-package">
 <h5>Package a micro-package<a class="headerlink" href="#package-a-micro-package" title="Permalink to this headline">¶</a></h5>
 <p>The following command packages all the files related to a micro-package, e.g. a modular pipeline, into a <a class="reference external" href="https://packaging.python.org/overview/#python-source-distributions">Python source distribution file</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro micropkg package &lt;package_module_path&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>micropkg<span class="w"> </span>package<span class="w"> </span>&lt;package_module_path&gt;
 </pre></div>
 </div>
 <p>Further information is available in the <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">micro-packaging documentation</span></a>.</p>
@@ -1761,7 +1778,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="pull-a-micro-package-in-your-project">
 <h5>Pull a micro-package in your project<a class="headerlink" href="#pull-a-micro-package-in-your-project" title="Permalink to this headline">¶</a></h5>
 <p>The following command pulls all the files related to a micro-package, e.g. a modular pipeline, from either <a class="reference external" href="https://pypi.org/">Pypi</a> or a storage location of a <a class="reference external" href="https://packaging.python.org/overview/#python-source-distributions">Python source distribution file</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro micropkg pull &lt;package_name&gt; <span class="o">(</span>or path to a sdist file<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>micropkg<span class="w"> </span>pull<span class="w"> </span>&lt;package_name&gt;<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>sdist<span class="w"> </span>file<span class="o">)</span>
 </pre></div>
 </div>
 <p>Further information is available in <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">the micro-packaging documentation</span></a>.</p>
@@ -1769,7 +1786,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="delete-a-modular-pipeline">
 <h5>Delete a modular pipeline<a class="headerlink" href="#delete-a-modular-pipeline" title="Permalink to this headline">¶</a></h5>
 <p>The following command deletes all the files related to a modular pipeline in your Kedro project.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline delete &lt;pipeline_name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>pipeline<span class="w"> </span>delete<span class="w"> </span>&lt;pipeline_name&gt;
 </pre></div>
 </div>
 <p>Further information is available in <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">the micro-packaging documentation</span></a>.</p>
@@ -1779,14 +1796,14 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <h4>Registered pipelines<a class="headerlink" href="#registered-pipelines" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="describe-a-registered-pipeline">
 <h5>Describe a registered pipeline<a class="headerlink" href="#describe-a-registered-pipeline" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro registry describe &lt;pipeline_name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>registry<span class="w"> </span>describe<span class="w"> </span>&lt;pipeline_name&gt;
 </pre></div>
 </div>
 <p>The output includes all the nodes in the pipeline. If no pipeline name is provided, this command returns all nodes in the <code class="docutils literal notranslate"><span class="pre">__default__</span></code> pipeline.</p>
 </div>
 <div class="section" id="list-all-registered-pipelines-in-your-project">
 <h5>List all registered pipelines in your project<a class="headerlink" href="#list-all-registered-pipelines-in-your-project" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro registry list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>registry<span class="w"> </span>list
 </pre></div>
 </div>
 </div>
@@ -1795,12 +1812,12 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <h4>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="list-datasets-per-pipeline-per-type">
 <h5>List datasets per pipeline per type<a class="headerlink" href="#list-datasets-per-pipeline-per-type" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro catalog list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>catalog<span class="w"> </span>list
 </pre></div>
 </div>
 <p>The results include datasets that are/aren’t used by a specific pipeline.</p>
 <p>The command also accepts an optional <code class="docutils literal notranslate"><span class="pre">--pipeline</span></code> argument that allows you to specify the pipeline name(s) (comma-separated values) in order to filter datasets used only by those named pipeline(s). For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro catalog list --pipeline <span class="s2">&quot;ds,de&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>catalog<span class="w"> </span>list<span class="w"> </span>--pipeline<span class="o">=</span>ds,de
 </pre></div>
 </div>
 </div>
@@ -1810,7 +1827,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="create-a-data-catalog-yaml-configuration-file">
 <h5>Create a Data Catalog YAML configuration file<a class="headerlink" href="#create-a-data-catalog-yaml-configuration-file" title="Permalink to this headline">¶</a></h5>
 <p>The following command creates a Data Catalog YAML configuration file with <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> datasets for each dataset in a registered pipeline, if it is missing from the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro catalog create --pipeline &lt;pipeline_name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>catalog<span class="w"> </span>create<span class="w"> </span>--pipeline<span class="o">=</span>&lt;pipeline_name&gt;
 </pre></div>
 </div>
 <p>The command also accepts an optional <code class="docutils literal notranslate"><span class="pre">--env</span></code> argument that allows you to specify a configuration environment (defaults to <code class="docutils literal notranslate"><span class="pre">base</span></code>).</p>
@@ -1820,15 +1837,15 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <div class="section" id="notebooks">
 <h4>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h4>
 <p>To start a Jupyter Notebook:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro jupyter notebook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>jupyter<span class="w"> </span>notebook
 </pre></div>
 </div>
 <p>To start JupyterLab:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro jupyter lab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>To start an IPython shell:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro ipython
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>ipython
 </pre></div>
 </div>
 <p>The <a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#a-custom-kedro-kernel"><span class="std std-doc">Kedro IPython extension</span></a> makes the following variables available in your IPython or Jupyter session:</p>
@@ -1846,7 +1863,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
 <p>To copy the code from <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/changelog.html#cell-tags">cells tagged</a> with a <code class="docutils literal notranslate"><span class="pre">node</span></code> tag into Python files under <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/nodes/</span></code> in a Kedro project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro jupyter convert --all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>jupyter<span class="w"> </span>convert<span class="w"> </span>--all
 </pre></div>
 </div>
 </div>
@@ -1857,7 +1874,7 @@ kedro_viz: 4.4.0 (hooks:global,line_magic)
 <p><em>This command will be deprecated from Kedro version 0.19.0.</em></p>
 </div>
 <p>Output cells of Jupyter Notebook should not be tracked by git, especially if they contain sensitive information. To strip them out:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro activate-nbstripout
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>activate-nbstripout
 </pre></div>
 </div>
 <p>This command adds a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hook</span></code> which clears all notebook output cells before committing anything to <code class="docutils literal notranslate"><span class="pre">git</span></code>. It needs to run only once per local repository.</p>

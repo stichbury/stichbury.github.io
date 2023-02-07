@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1351,22 +1360,22 @@ isort # Used for linting code
 </div>
 <p>To install all the project-specific dependencies, including the linting tools, navigate to the root directory of the
 project and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
 </pre></div>
 </div>
 <p>Alternatively, you can individually install the linting tools using the following shell commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install black
-pip install flake8
-pip install isort
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>black
+pip<span class="w"> </span>install<span class="w"> </span>flake8
+pip<span class="w"> </span>install<span class="w"> </span>isort
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-linting-tools">
 <h3>Run linting tools<a class="headerlink" href="#run-linting-tools" title="Permalink to this headline">¶</a></h3>
 <p>Use the following commands to run lint checks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black --check &lt;project_root&gt;
-flake8 &lt;project_root&gt;
-isort --profile black --check &lt;project_root&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>--check<span class="w"> </span>&lt;project_root&gt;
+flake8<span class="w"> </span>&lt;project_root&gt;
+isort<span class="w"> </span>--profile<span class="w"> </span>black<span class="w"> </span>--check<span class="w"> </span>&lt;project_root&gt;
 </pre></div>
 </div>
 <p>You can also have <code class="docutils literal notranslate"><span class="pre">black</span></code> and <code class="docutils literal notranslate"><span class="pre">isort</span></code> automatically format your code by omitting the <code class="docutils literal notranslate"><span class="pre">--check</span></code> flag. Since <code class="docutils literal notranslate"><span class="pre">isort</span></code> and
@@ -1386,7 +1395,7 @@ Kedro project by adding the following line:</p>
 </pre></div>
 </div>
 <p>You can also install <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pre-commit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
 </pre></div>
 </div>
 </div>
@@ -1395,31 +1404,31 @@ Kedro project by adding the following line:</p>
 <p>Create a file named <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> in your Kedro project root directory. You can add entries for the hooks
 you want to run before each <code class="docutils literal notranslate"><span class="pre">commit</span></code>.
 Below is a sample <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file with entries for <code class="docutils literal notranslate"><span class="pre">black</span></code>,<code class="docutils literal notranslate"><span class="pre">flake8</span></code>, and <code class="docutils literal notranslate"><span class="pre">isort</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycqa/isort</span><span class="w"></span>
-<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.10.1</span><span class="w"></span>
-<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span><span class="w"></span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort (python)</span><span class="w"></span>
-<span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;--profile&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycqa/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.10.1</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort (python)</span>
+<span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;--profile&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p p-Indicator">]</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycqa/flake8</span><span class="w"></span>
-<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">  </span><span class="c1"># pick a git hash / tag to point to</span><span class="w"></span>
-<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycqa/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">  </span><span class="c1"># pick a git hash / tag to point to</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/psf/black</span><span class="w"></span>
-<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22.8.0</span><span class="w"></span>
-<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span><span class="w"></span>
-<span class="w">        </span><span class="nt">language_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3.9</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/psf/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22.8.0</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">        </span><span class="nt">language_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3.9</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-git-hook-scripts">
 <h3>Install git hook scripts<a class="headerlink" href="#install-git-hook-scripts" title="Permalink to this headline">¶</a></h3>
 <p>Run the following command to complete installation:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
 <p>This enables <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks to run automatically every time you execute <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>

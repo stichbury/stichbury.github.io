@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1327,16 +1336,16 @@
 It uses the python requests library: <a class="reference external" href="https://requests.readthedocs.io/en/latest/">https://requests.readthedocs.io/en/latest/</a></p>
 <p>Example adding a catalog entry with
 <a class="reference external" href="https://kedro.readthedocs.io/en/stable/data/data_catalog.html#use-the-data-catalog-with-the-yaml-api">YAML API</a>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">usda</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://quickstats.nass.usda.gov</span><span class="w"></span>
-<span class="w">  </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SOME_TOKEN,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">commodity_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORN,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">statisticcat_des</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YIELD,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">agg_level_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STATE,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">year</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">usda</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://quickstats.nass.usda.gov</span>
+<span class="w">  </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SOME_TOKEN,</span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON,</span>
+<span class="w">    </span><span class="nt">commodity_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORN,</span>
+<span class="w">    </span><span class="nt">statisticcat_des</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YIELD,</span>
+<span class="w">    </span><span class="nt">agg_level_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STATE,</span>
+<span class="w">    </span><span class="nt">year</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span>
 </pre></div>
 </div>
 <p>Example using Python API:</p>

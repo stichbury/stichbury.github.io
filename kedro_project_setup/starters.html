@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1327,7 +1336,7 @@
 <div class="section" id="how-to-use-kedro-starters">
 <h2>How to use Kedro starters<a class="headerlink" href="#how-to-use-kedro-starters" title="Permalink to this headline">¶</a></h2>
 <p>To create a Kedro project using a starter, apply the <code class="docutils literal notranslate"><span class="pre">--starter</span></code> flag to <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>&lt;path-to-starter&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>&lt;path-to-starter&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1335,18 +1344,18 @@
 <p><code class="docutils literal notranslate"><span class="pre">path-to-starter</span></code> could be a local directory or a VCS repository, as long as <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.2/usage.html">Cookiecutter</a> supports it.</p>
 </div>
 <p>To create a project using the <code class="docutils literal notranslate"><span class="pre">PySpark</span></code> starter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>pyspark
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>pyspark
 </pre></div>
 </div>
 </div>
 <div class="section" id="starter-aliases">
 <h2>Starter aliases<a class="headerlink" href="#starter-aliases" title="Permalink to this headline">¶</a></h2>
 <p>We provide aliases for common starters maintained by the Kedro team so that users don’t have to specify the full path. For example, to use the <code class="docutils literal notranslate"><span class="pre">PySpark</span></code> starter to create a project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>pyspark
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>pyspark
 </pre></div>
 </div>
 <p>To list all the aliases we support:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro starter list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>starter<span class="w"> </span>list
 </pre></div>
 </div>
 </div>
@@ -1365,7 +1374,7 @@
 <div class="section" id="starter-versioning">
 <h2>Starter versioning<a class="headerlink" href="#starter-versioning" title="Permalink to this headline">¶</a></h2>
 <p>By default, Kedro will use the latest version available in the repository, but if you want to use a specific version of a starter, you can pass a <code class="docutils literal notranslate"><span class="pre">--checkout</span></code> argument to the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>pyspark --checkout<span class="o">=</span><span class="m">0</span>.1.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>pyspark<span class="w"> </span>--checkout<span class="o">=</span><span class="m">0</span>.1.0
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--checkout</span></code> value points to a branch, tag or commit in the starter repository.</p>
@@ -1375,7 +1384,7 @@
 <h2>Use a starter with a configuration file<a class="headerlink" href="#use-a-starter-with-a-configuration-file" title="Permalink to this headline">¶</a></h2>
 <p>By default, when you create a new project using a starter, <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code> asks you to enter the <code class="docutils literal notranslate"><span class="pre">project_name</span></code>, which it uses to set the <code class="docutils literal notranslate"><span class="pre">repo_name</span></code> and <code class="docutils literal notranslate"><span class="pre">python_package</span></code> name. This is the same behavior as when you <a class="reference internal" href="../get_started/new_project.html#create-a-new-empty-project"><span class="std std-doc">create a new empty project</span></a></p>
 <p>However, Kedro also allows you to <a class="reference internal" href="../get_started/new_project.html#create-a-new-project-from-a-configuration-file"><span class="std std-doc">specify a configuration file</span></a> when you create a project using a Kedro starter. Use the <code class="docutils literal notranslate"><span class="pre">--config</span></code> flag alongside the starter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --config<span class="o">=</span>my_kedro_pyspark_project.yml --starter<span class="o">=</span>pyspark
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--config<span class="o">=</span>my_kedro_pyspark_project.yml<span class="w"> </span>--starter<span class="o">=</span>pyspark
 </pre></div>
 </div>
 <p>This option is useful when the starter requires more configuration than the default mode requires.</p>
@@ -1386,7 +1395,7 @@
 <p>A Kedro starter is a <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.2/">Cookiecutter</a> template that contains the boilerplate code for a Kedro project.</p>
 <p>To create a Kedro starter, you need a base project to convert to a <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code> template, which forms the boilerplate for all projects that use the Kedro starter.</p>
 <p>Install <code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code> as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install cookiecutter
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cookiecutter
 </pre></div>
 </div>
 <p>You then need to decide which are:</p>
@@ -1408,11 +1417,11 @@
 </ul>
 <p>See the configuration for this basic configuration in <a class="reference external" href="https://github.com/kedro-org/kedro/blob/main/kedro/templates/project/prompts.yml">the default starter setup</a>.</p>
 <p>As the creator of the Kedro starter you can customise the prompts triggered by <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">new</span></code> by adding your own prompts in <code class="docutils literal notranslate"><span class="pre">prompts.yml</span></code>. This is an example of a custom prompt:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">custom_prompt</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Prompt</span><span class="nv"> </span><span class="s">title&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">      </span><span class="no">Prompt description that explains to the user what</span><span class="w"></span>
-<span class="w">      </span><span class="no">information they should provide.</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">custom_prompt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Prompt</span><span class="nv"> </span><span class="s">title&quot;</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">Prompt description that explains to the user what</span>
+<span class="w">      </span><span class="no">information they should provide.</span>
 </pre></div>
 </div>
 <p>At the very least, the prompt <code class="docutils literal notranslate"><span class="pre">title</span></code> must be defined for the prompt to be valid. After Kedro gets the user’s input for each prompt, we pass the value to <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.2/"><code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code></a>, so every key in your <code class="docutils literal notranslate"><span class="pre">prompts.yml</span></code> must have a corresponding key in <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.2/tutorial1.html#cookiecutter-json"><code class="docutils literal notranslate"><span class="pre">cookiecutter.json</span></code></a>.</p>

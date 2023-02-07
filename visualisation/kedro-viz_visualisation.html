@@ -222,7 +222,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1318,37 +1327,39 @@
 <h1>Get started with Kedro-Viz<a class="headerlink" href="#get-started-with-kedro-viz" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/kedro-org/kedro-viz">Kedro-Viz</a> is a key part of Kedro. It visualises the pipelines in a Kedro project by showing data, nodes, and the connections between them.</p>
 <p>This section assumes you are familiar with the basic Kedro concepts described in the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a>. If you have not yet worked through the tutorial, you can still follow this example.</p>
+<p>If you haven’t installed Kedro <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">follow the documentation to get set up</span></a>.</p>
+<p>Then, in your terminal window, navigate to the folder you want to store the project.</p>
 <p>Generate a copy of the spaceflights tutorial project with all the code in place by using the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/tree/main/spaceflights">Kedro starter for the spaceflights tutorial</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>spaceflights
 </pre></div>
 </div>
-<p>When prompted for a project name, you can enter any name, but we will assume <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code> throughout.</p>
+<p>When prompted for a project name, you can enter anything, but we will assume <code class="docutils literal notranslate"><span class="pre">Kedro</span> <span class="pre">Tutorial</span></code> throughout.</p>
 <p>When your project is ready, navigate to the root directory of the project and install the dependencies for the project, which include Kedro-Viz:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r src/requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
 </pre></div>
 </div>
-<p>Then run the full set of pipelines for the tutorial project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<p>The next step is optional, but useful to check that all is working. Run the full set of pipelines for the tutorial project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <div class="section" id="visualise-the-spaceflights-project">
 <h2>Visualise the spaceflights project<a class="headerlink" href="#visualise-the-spaceflights-project" title="Permalink to this headline">¶</a></h2>
-<p>To start Kedro-Viz, type the following into your terminal from the project directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro viz
+<p>The Kedro-Viz package needs to be installed separately as it is not part of the standard Kedro installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>kedro-viz
 </pre></div>
 </div>
-<p>The command automatically opens a browser tab to serve the visualisation at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:4141/</span></code>.</p>
+<p>To start Kedro-Viz, type the following into your terminal from the project directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>viz
+</pre></div>
+</div>
+<p>The command opens a browser tab to serve the visualisation at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:4141/</span></code>.</p>
 <p>You should see the following:</p>
 <p><img alt="" src="../_images/pipeline_visualisation1.png" /></p>
-<p>If a visualisation panel opens up and a pipeline is not visible, then please check that your tutorial project code is complete if you’ve not generated it from the starter template.</p>
-<div class="section" id="need-help">
-<h3>Need help?<a class="headerlink" href="#need-help" title="Permalink to this headline">¶</a></h3>
-<p>If you still can’t see the visualisation, the Kedro community can help!</p>
+<p>If a visualisation panel opens up and a pipeline is not visible, refresh the view, and check that your tutorial project code is complete if you’ve not generated it from the starter template. If you still don’t see the visualisation, the Kedro community can help:</p>
 <ul class="simple">
 <li><p>use the <a class="reference external" href="https://slack.kedro.org/">#questions channel</a> on our Slack channel (which replaces our Discord server) to ask the community for help</p></li>
 <li><p>search the <a class="reference external" href="https://linen-discord.kedro.org/">searchable archive of Discord discussions</a></p></li>
 </ul>
-</div>
 <div class="section" id="exit-an-open-visualisation">
 <h3>Exit an open visualisation<a class="headerlink" href="#exit-an-open-visualisation" title="Permalink to this headline">¶</a></h3>
 <p>To exit the visualisation, close the browser tab. To regain control of the terminal, enter <code class="docutils literal notranslate"><span class="pre">⌘+c</span></code> on Mac or <code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code> on Windows or Linux machines.</p>
@@ -1357,7 +1368,7 @@
 <div class="section" id="automatic-visualisation-updates">
 <h2>Automatic visualisation updates<a class="headerlink" href="#automatic-visualisation-updates" title="Permalink to this headline">¶</a></h2>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">--autoreload</span></code> flag to autoreload Kedro-Viz when a <code class="docutils literal notranslate"><span class="pre">Python</span></code> or <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file changes in the project. Add the flag to the command you use to start Kedro-Viz:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro viz --autoreload
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>viz<span class="w"> </span>--autoreload
 </pre></div>
 </div>
 <p><img alt="" src="../_images/kedro_viz_autoreload.gif" /></p>
@@ -1370,41 +1381,41 @@
 <p>For example, the <a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention"><span class="std std-doc">data engineering convention</span></a> labels datasets according to the stage of the pipeline (e.g. whether the data has been cleaned).</p>
 <p>You can add a <code class="docutils literal notranslate"><span class="pre">layer</span></code> attribute to the datasets in the Data Catalog, which is reflected in the Kedro-Viz visualisation.</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> for the completed spaceflights tutorial and replace the existing code with the following:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span>
 
-<span class="nt">reviews</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span><span class="w"></span>
+<span class="nt">reviews</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span>
 
-<span class="nt">shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span><span class="w"></span>
+<span class="nt">shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw</span>
 
-<span class="nt">preprocessed_companies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intermediate</span><span class="w"></span>
+<span class="nt">preprocessed_companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intermediate</span>
 
-<span class="nt">preprocessed_shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_shuttles.pq</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intermediate</span><span class="w"></span>
+<span class="nt">preprocessed_shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_shuttles.pq</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intermediate</span>
 
-<span class="nt">model_input_table</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primary</span><span class="w"></span>
+<span class="nt">model_input_table</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primary</span>
 
-<span class="nt">regressor</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/regressor.pickle</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">models</span><span class="w"></span>
+<span class="nt">regressor</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/regressor.pickle</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">models</span>
 </pre></div>
 </div>
 <p>The visualisation now includes the layers:</p>
@@ -1412,13 +1423,13 @@
 </div>
 <div class="section" id="share-a-pipeline-visualisation">
 <h2>Share a pipeline visualisation<a class="headerlink" href="#share-a-pipeline-visualisation" title="Permalink to this headline">¶</a></h2>
-<p>You can share a Kedro-Viz visualisation as a JSON file from the terminal. :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro viz --save-file my_shareable_pipeline.json
+<p>You can share a the pipeline structure within a Kedro-Viz visualisation as a JSON file from the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>viz<span class="w"> </span>--save-file<span class="o">=</span>my_shareable_pipeline.json
 </pre></div>
 </div>
-<p>This command will save a visualisation of the <code class="docutils literal notranslate"><span class="pre">__default__</span></code> pipeline as a JSON file called <code class="docutils literal notranslate"><span class="pre">my_shareable_pipeline.json</span></code>.</p>
-<p>To visualise the JSON file, type the following to load it from the terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro viz --load-file my_shareable_pipeline.json
+<p>This command will save a visualisation of the <code class="docutils literal notranslate"><span class="pre">__default__</span></code> pipeline as a JSON file called <code class="docutils literal notranslate"><span class="pre">my_shareable_pipeline.json</span></code>. It doesn’t share data, such as that in the code panel, nor can you share images or charts.</p>
+<p>To visualise the shared file, type the following to load it from the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>viz<span class="w"> </span>--load-file<span class="o">=</span>my_shareable_pipeline.json
 </pre></div>
 </div>
 </div>

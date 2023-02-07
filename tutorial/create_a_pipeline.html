@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1337,7 +1346,7 @@
 <div class="section" id="generate-a-new-pipeline-template">
 <h3>Generate a new pipeline template<a class="headerlink" href="#generate-a-new-pipeline-template" title="Permalink to this headline">¶</a></h3>
 <p>In the terminal, run the following command to generate a new pipeline for data processing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro pipeline create data_processing
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>pipeline<span class="w"> </span>create<span class="w"> </span>data_processing
 </pre></div>
 </div>
 <p>This command generates all the files you need for the pipeline:</p>
@@ -1378,7 +1387,7 @@
 
 
 <span class="k">def</span> <span class="nf">preprocess_companies</span><span class="p">(</span><span class="n">companies</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Preprocesses the data for companies.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocesses the data for companies.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        companies: Raw data.</span>
@@ -1392,7 +1401,7 @@
 
 
 <span class="k">def</span> <span class="nf">preprocess_shuttles</span><span class="p">(</span><span class="n">shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Preprocesses the data for shuttles.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocesses the data for shuttles.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        shuttles: Raw data.</span>
@@ -1445,44 +1454,44 @@
 <div class="section" id="test-the-example">
 <h3>Test the example<a class="headerlink" href="#test-the-example" title="Permalink to this headline">¶</a></h3>
 <p>Run the following command in your terminal window to test the node named <code class="docutils literal notranslate"><span class="pre">preprocess_companies_node</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --node<span class="o">=</span>preprocess_companies_node
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--node<span class="o">=</span>preprocess_companies_node
 </pre></div>
 </div>
 <p>You should see output similar to the below:</p>
 <details>
 <summary><b>Click to expand</b></summary>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22 <span class="m">16</span>:43:10<span class="o">]</span> INFO     Kedro project kedro-tutorial                                         session.py:346
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">16</span>:43:11<span class="o">]</span> INFO     Loading data from <span class="s1">&#39;companies&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                   data_catalog.py:343
-                    INFO     Running node: preprocess_companies_node:                                node.py:327
-                             preprocess_companies<span class="o">([</span>companies<span class="o">])</span> -&gt; <span class="o">[</span>preprocessed_companies<span class="o">]</span>
-                    INFO     Saving data to <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...      data_catalog.py:382
-                    INFO     Completed <span class="m">1</span> out of <span class="m">1</span> tasks                                  sequential_runner.py:85
-                    INFO     Pipeline execution completed successfully.                             runner.py:89
-                    INFO     Loading data from <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...   data_catalog.py:343
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">16</span>:43:10<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Kedro<span class="w"> </span>project<span class="w"> </span>kedro-tutorial<span class="w">                                         </span>session.py:346
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">16</span>:43:11<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;companies&#39;</span><span class="w"> </span><span class="o">(</span>CSVDataSet<span class="o">)</span>...<span class="w">                   </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>preprocess_companies_node:<span class="w">                                </span>node.py:327
+<span class="w">                             </span>preprocess_companies<span class="o">([</span>companies<span class="o">])</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span>preprocessed_companies<span class="o">]</span>
+<span class="w">                    </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">      </span>data_catalog.py:382
+<span class="w">                    </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">1</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Pipeline<span class="w"> </span>execution<span class="w"> </span>completed<span class="w"> </span>successfully.<span class="w">                             </span>runner.py:89
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">   </span>data_catalog.py:343
 </pre></div>
 </div>
 </details>
 <p>You can run the <code class="docutils literal notranslate"><span class="pre">preprocess_shuttles</span></code> node similarly. To test both nodes together as the complete data processing pipeline:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p>You should see output similar to the following:</p>
 <details>
 <summary><b>Click to expand</b></summary>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22 <span class="m">16</span>:45:46<span class="o">]</span> INFO     Kedro project kedro-tutorial                                         session.py:346
-                    INFO     Loading data from <span class="s1">&#39;companies&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                   data_catalog.py:343
-                    INFO     Running node: preprocess_companies_node:                                node.py:327
-                             preprocess_companies<span class="o">([</span>companies<span class="o">])</span> -&gt; <span class="o">[</span>preprocessed_companies<span class="o">]</span>
-                    INFO     Saving data to <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...      data_catalog.py:382
-                    INFO     Completed <span class="m">1</span> out of <span class="m">2</span> tasks                                  sequential_runner.py:85
-                    INFO     Loading data from <span class="s1">&#39;shuttles&#39;</span> <span class="o">(</span>ExcelDataSet<span class="o">)</span>...                  data_catalog.py:343
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">16</span>:46:08<span class="o">]</span> INFO     Running node: preprocess_shuttles_node: preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span> node.py:327
-                             -&gt; <span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
-                    INFO     Saving data to <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...       data_catalog.py:382
-                    INFO     Completed <span class="m">2</span> out of <span class="m">2</span> tasks                                  sequential_runner.py:85
-                    INFO     Pipeline execution completed successfully.                             runner.py:89
-                    INFO     Loading data from <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...   data_catalog.py:343
-                    INFO     Loading data from <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...    data_catalog.py:343
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">16</span>:45:46<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Kedro<span class="w"> </span>project<span class="w"> </span>kedro-tutorial<span class="w">                                         </span>session.py:346
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;companies&#39;</span><span class="w"> </span><span class="o">(</span>CSVDataSet<span class="o">)</span>...<span class="w">                   </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>preprocess_companies_node:<span class="w">                                </span>node.py:327
+<span class="w">                             </span>preprocess_companies<span class="o">([</span>companies<span class="o">])</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span>preprocessed_companies<span class="o">]</span>
+<span class="w">                    </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">      </span>data_catalog.py:382
+<span class="w">                    </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">1</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">2</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;shuttles&#39;</span><span class="w"> </span><span class="o">(</span>ExcelDataSet<span class="o">)</span>...<span class="w">                  </span>data_catalog.py:343
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">16</span>:46:08<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>preprocess_shuttles_node:<span class="w"> </span>preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span><span class="w"> </span>node.py:327
+<span class="w">                             </span>-&gt;<span class="w"> </span><span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
+<span class="w">                    </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;preprocessed_shuttles&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">       </span>data_catalog.py:382
+<span class="w">                    </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">2</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">2</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Pipeline<span class="w"> </span>execution<span class="w"> </span>completed<span class="w"> </span>successfully.<span class="w">                             </span>runner.py:89
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">   </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;preprocessed_shuttles&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">    </span>data_catalog.py:343
 </pre></div>
 </div>
 </details>
@@ -1492,13 +1501,13 @@
 <p>Each of the nodes outputs a new dataset (<code class="docutils literal notranslate"><span class="pre">preprocessed_companies</span></code> and <code class="docutils literal notranslate"><span class="pre">preprocessed_shuttles</span></code>).</p>
 <p>When Kedro runs the pipeline, it determines that neither dataset is registered in the data catalog, so it stores these as temporary datasets in memory as Python objects using the <a class="reference internal" href="../kedro.io.MemoryDataSet.html"><span class="doc std std-doc">MemoryDataSet</span></a> class. Once all nodes that depend on an temporary dataset have executed, the dataset is cleared and the Python garbage collector releases the memory.</p>
 <p>If you prefer to save the preprocessed data to file, add the following to the end of <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> (If you are using the tutorial created by the spaceflights starter, you can omit the copy/paste):</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preprocessed_companies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">preprocessed_companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span>
 
-<span class="nt">preprocessed_shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_shuttles.pq</span><span class="w"></span>
+<span class="nt">preprocessed_shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_shuttles.pq</span>
 </pre></div>
 </div>
 <p>Adding the data to the catalog declares explicitly that Kedro should use <a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html"><span class="doc std std-doc">pandas.ParquetDataSet</span></a> instead of <a class="reference internal" href="../kedro.io.MemoryDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></span></a>. The <a class="reference internal" href="../resources/glossary.html#data-catalog"><span class="std std-doc">Data Catalog</span></a> automatically saves the datasets (in Parquet format) to the path specified next time the pipeline is run. There is no need to change any code in your preprocessing functions to accommodate this change.</p>
@@ -1517,7 +1526,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_model_input_table</span><span class="p">(</span>
     <span class="n">shuttles</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">companies</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">reviews</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Combines all data to create a model input table.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combines all data to create a model input table.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        shuttles: Preprocessed data for shuttles.</span>
@@ -1553,44 +1562,44 @@
 <div class="section" id="optional-save-the-model-input-table">
 <h3>Optional: save the model input table<a class="headerlink" href="#optional-save-the-model-input-table" title="Permalink to this headline">¶</a></h3>
 <p>If you want the model input table data to be saved to file (in <code class="docutils literal notranslate"><span class="pre">data/03_primary</span></code>) rather than used in memory, add an entry to <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_input_table</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_input_table</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
 <h3>Test the example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>To test the progress of the example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p>You should see output similar to the following:</p>
 <details>
 <summary><b>Click to expand</b></summary>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22 <span class="m">17</span>:00:54<span class="o">]</span> INFO     Kedro project kedro-tutorial                                         session.py:346
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">17</span>:01:10<span class="o">]</span> INFO     Reached after_catalog_created hook                                     plugin.py:17
-                    INFO     Loading data from <span class="s1">&#39;companies&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                   data_catalog.py:343
-                    INFO     Running node: preprocess_companies_node:                                node.py:327
-                             preprocess_companies<span class="o">([</span>companies<span class="o">])</span> -&gt; <span class="o">[</span>preprocessed_companies<span class="o">]</span>
-                    INFO     Saving data to <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...      data_catalog.py:382
-                    INFO     Completed <span class="m">1</span> out of <span class="m">3</span> tasks                                  sequential_runner.py:85
-                    INFO     Loading data from <span class="s1">&#39;shuttles&#39;</span> <span class="o">(</span>ExcelDataSet<span class="o">)</span>...                  data_catalog.py:343
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">17</span>:01:25<span class="o">]</span> INFO     Running node: preprocess_shuttles_node: preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span> node.py:327
-                             -&gt; <span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">17</span>:00:54<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Kedro<span class="w"> </span>project<span class="w"> </span>kedro-tutorial<span class="w">                                         </span>session.py:346
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">17</span>:01:10<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Reached<span class="w"> </span>after_catalog_created<span class="w"> </span>hook<span class="w">                                     </span>plugin.py:17
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;companies&#39;</span><span class="w"> </span><span class="o">(</span>CSVDataSet<span class="o">)</span>...<span class="w">                   </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>preprocess_companies_node:<span class="w">                                </span>node.py:327
+<span class="w">                             </span>preprocess_companies<span class="o">([</span>companies<span class="o">])</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span>preprocessed_companies<span class="o">]</span>
+<span class="w">                    </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">      </span>data_catalog.py:382
+<span class="w">                    </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">1</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;shuttles&#39;</span><span class="w"> </span><span class="o">(</span>ExcelDataSet<span class="o">)</span>...<span class="w">                  </span>data_catalog.py:343
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">17</span>:01:25<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>preprocess_shuttles_node:<span class="w"> </span>preprocess_shuttles<span class="o">([</span>shuttles<span class="o">])</span><span class="w"> </span>node.py:327
+<span class="w">                             </span>-&gt;<span class="w"> </span><span class="o">[</span>preprocessed_shuttles<span class="o">]</span>
 
-                    INFO     Saving data to <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...       data_catalog.py:382
-                    INFO     Completed <span class="m">2</span> out of <span class="m">3</span> tasks                                  sequential_runner.py:85
-                    INFO     Loading data from <span class="s1">&#39;preprocessed_shuttles&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...    data_catalog.py:343
-                    INFO     Loading data from <span class="s1">&#39;preprocessed_companies&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...   data_catalog.py:343
-                    INFO     Loading data from <span class="s1">&#39;reviews&#39;</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...                     data_catalog.py:343
-                    INFO     Running node: create_model_input_table_node:                            node.py:327
-                             create_model_input_table<span class="o">([</span>preprocessed_shuttles,preprocessed_companies,
-                             reviews<span class="o">])</span> -&gt; <span class="o">[</span>model_input_table<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">17</span>:01:28<span class="o">]</span> INFO     Saving data to <span class="s1">&#39;model_input_table&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...           data_catalog.py:382
-<span class="o">[</span><span class="m">08</span>/09/22 <span class="m">17</span>:01:29<span class="o">]</span> INFO     Completed <span class="m">3</span> out of <span class="m">3</span> tasks                                  sequential_runner.py:85
-                    INFO     Pipeline execution completed successfully.                             runner.py:89
-                    INFO     Loading data from <span class="s1">&#39;model_input_table&#39;</span> <span class="o">(</span>MemoryDataSet<span class="o">)</span>...        data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;preprocessed_shuttles&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">       </span>data_catalog.py:382
+<span class="w">                    </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">2</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;preprocessed_shuttles&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">    </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;preprocessed_companies&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">   </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;reviews&#39;</span><span class="w"> </span><span class="o">(</span>CSVDataSet<span class="o">)</span>...<span class="w">                     </span>data_catalog.py:343
+<span class="w">                    </span>INFO<span class="w">     </span>Running<span class="w"> </span>node:<span class="w"> </span>create_model_input_table_node:<span class="w">                            </span>node.py:327
+<span class="w">                             </span>create_model_input_table<span class="o">([</span>preprocessed_shuttles,preprocessed_companies,
+<span class="w">                             </span>reviews<span class="o">])</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span>model_input_table<span class="o">]</span>
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">17</span>:01:28<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Saving<span class="w"> </span>data<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;model_input_table&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">           </span>data_catalog.py:382
+<span class="o">[</span><span class="m">08</span>/09/22<span class="w"> </span><span class="m">17</span>:01:29<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Completed<span class="w"> </span><span class="m">3</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">3</span><span class="w"> </span>tasks<span class="w">                                  </span>sequential_runner.py:85
+<span class="w">                    </span>INFO<span class="w">     </span>Pipeline<span class="w"> </span>execution<span class="w"> </span>completed<span class="w"> </span>successfully.<span class="w">                             </span>runner.py:89
+<span class="w">                    </span>INFO<span class="w">     </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;model_input_table&#39;</span><span class="w"> </span><span class="o">(</span>MemoryDataSet<span class="o">)</span>...<span class="w">        </span>data_catalog.py:343
 </pre></div>
 </div>
 </details>

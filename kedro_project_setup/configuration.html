@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1323,6 +1332,10 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONF_SOURCE</span> <span class="o">=</span> <span class="s2">&quot;new_conf&quot;</span>
 </pre></div>
 </div>
+<p>You can also specify a source directory for the configuration files at run time using the <a class="reference internal" href="../development/commands_reference.html#modifying-a-kedro-run"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> CLI command</span></a> with the <code class="docutils literal notranslate"><span class="pre">--conf-source</span></code> flag as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--conf-source<span class="o">=</span>&lt;path-to-new-conf-directory&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="local-and-base-configuration-environments">
 <h2>Local and base configuration environments<a class="headerlink" href="#local-and-base-configuration-environments" title="Permalink to this headline">¶</a></h2>
@@ -1364,23 +1377,34 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>You can also bypass the configuration patterns and set configuration directly on the instance of a config loader class. You can bypass the default configuration (catalog, parameters, credentials, and logging) as well as additional configuration.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">ConfigLoader</span>
+<span class="kn">from</span> <span class="nn">kedro.framework.project</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="n">conf_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_path</span> <span class="o">/</span> <span class="n">settings</span><span class="o">.</span><span class="n">CONF_SOURCE</span><span class="p">)</span>
+<span class="n">conf_loader</span> <span class="o">=</span> <span class="n">ConfigLoader</span><span class="p">(</span><span class="n">conf_source</span><span class="o">=</span><span class="n">conf_path</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="s2">&quot;local&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bypass configuration patterns by setting the key and values directly on the config loader instance.</span>
+<span class="n">conf_loader</span><span class="p">[</span><span class="s2">&quot;catalog&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;catalog_config&quot;</span><span class="p">:</span> <span class="s2">&quot;something_new&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Configuration information from files stored in <code class="docutils literal notranslate"><span class="pre">base</span></code> or <code class="docutils literal notranslate"><span class="pre">local</span></code> that match these rules is merged at runtime and returned as a config dictionary:</p>
 <ul class="simple">
 <li><p>If any two configuration files located inside the same environment path (<code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> or <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code> in this example) contain the same top-level key, <code class="docutils literal notranslate"><span class="pre">load_config</span></code> will raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> indicating that the duplicates are not allowed.</p></li>
 <li><p>If two configuration files have duplicate top-level keys but are in different environment paths (one in <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code>, another in <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code>, for example) then the last loaded path (<code class="docutils literal notranslate"><span class="pre">conf/local/</span></code> in this case) takes precedence and overrides that key value. <code class="docutils literal notranslate"><span class="pre">ConfigLoader.get</span></code> will not raise any errors - however, a <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level log message will be emitted with information on the overridden keys.</p></li>
 </ul>
-<p>Any top-level keys that start with <code class="docutils literal notranslate"><span class="pre">_</span></code> are considered hidden (or reserved) and are ignored after the config is loaded. Those keys will neither trigger a key duplication error nor appear in the resulting configuration dictionary. However, you can still use such keys, for example, as <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/">YAML anchors and aliases</a>.</p>
+<p>Any top-level keys that start with <code class="docutils literal notranslate"><span class="pre">_</span></code> are considered hidden (or reserved) and are ignored after the config is loaded. Those keys will neither trigger a key duplication error nor appear in the resulting configuration dictionary. However, you can still use such keys, for example, as <a class="reference external" href="https://www.educative.io/blog/advanced-yaml-syntax-cheatsheet#anchors">YAML anchors and aliases</a>.</p>
 </div>
 <div class="section" id="additional-configuration-environments">
 <h2>Additional configuration environments<a class="headerlink" href="#additional-configuration-environments" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the two built-in local and base configuration environments, you can create your own. Your project loads <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> as the bottom-level configuration environment but allows you to overwrite it with any other environments that you create, such as <code class="docutils literal notranslate"><span class="pre">conf/server/</span></code> or <code class="docutils literal notranslate"><span class="pre">conf/test/</span></code>. To use additional configuration environments, run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --env<span class="o">=</span><span class="nb">test</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--env<span class="o">=</span><span class="nb">test</span>
 </pre></div>
 </div>
 <p>If no <code class="docutils literal notranslate"><span class="pre">env</span></code> option is specified, this will default to using the <code class="docutils literal notranslate"><span class="pre">local</span></code> environment to overwrite <code class="docutils literal notranslate"><span class="pre">conf/base</span></code>.</p>
 <p>If, for some reason, your project does not have any other environments apart from <code class="docutils literal notranslate"><span class="pre">base</span></code>, i.e. no <code class="docutils literal notranslate"><span class="pre">local</span></code> environment to default to, you must customise <code class="docutils literal notranslate"><span class="pre">KedroContext</span></code> to take <code class="docutils literal notranslate"><span class="pre">env=&quot;base&quot;</span></code> in the constructor and then specify your custom <code class="docutils literal notranslate"><span class="pre">KedroContext</span></code> subclass in <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code> under the <code class="docutils literal notranslate"><span class="pre">CONTEXT_CLASS</span></code> key.</p>
 <p>If you set the <code class="docutils literal notranslate"><span class="pre">KEDRO_ENV</span></code> environment variable to the name of your environment, Kedro will load that environment for your <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">ipython</span></code>, <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code> and <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">lab</span></code> sessions:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">KEDRO_ENV</span><span class="o">=</span><span class="nb">test</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KEDRO_ENV</span><span class="o">=</span><span class="nb">test</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1400,18 +1424,18 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 <h3>Globals<a class="headerlink" href="#globals" title="Permalink to this headline">¶</a></h3>
 <p>When using the <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> you can provide values in the configuration template through a <code class="docutils literal notranslate"><span class="pre">globals</span></code> file or dictionary.</p>
 <p>Let’s assume the project contains a <code class="docutils literal notranslate"><span class="pre">conf/base/globals.yml</span></code> file with the following contents:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bucket_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_s3_bucket&quot;</span><span class="w"></span>
-<span class="nt">key_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my/key/prefix/&quot;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bucket_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_s3_bucket&quot;</span>
+<span class="nt">key_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my/key/prefix/&quot;</span>
 
-<span class="nt">datasets</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">csv</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pandas.CSVDataSet&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">spark</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;spark.SparkDataSet&quot;</span><span class="w"></span>
+<span class="nt">datasets</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">csv</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pandas.CSVDataSet&quot;</span>
+<span class="w">    </span><span class="nt">spark</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;spark.SparkDataSet&quot;</span>
 
-<span class="nt">folders</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">raw</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;01_raw&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">int</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;02_intermediate&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">pri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;03_primary&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">fea</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;04_feature&quot;</span><span class="w"></span>
+<span class="nt">folders</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">raw</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;01_raw&quot;</span>
+<span class="w">    </span><span class="nt">int</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;02_intermediate&quot;</span>
+<span class="w">    </span><span class="nt">pri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;03_primary&quot;</span>
+<span class="w">    </span><span class="nt">fea</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;04_feature&quot;</span>
 </pre></div>
 </div>
 <p>To point your <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> to the globals file, add it to the the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code> variable in <a class="reference internal" href="settings.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
@@ -1452,14 +1476,14 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 </div>
 <p>If you specify both <code class="docutils literal notranslate"><span class="pre">globals_pattern</span></code> and <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> in <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code>, the contents of the dictionary resulting from <code class="docutils literal notranslate"><span class="pre">globals_pattern</span></code> are merged with the <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> dictionary. In case of conflicts, the keys from the <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> dictionary take precedence.</p>
 <p>Now the templating can be applied to the configuration. Here is an example of a templated <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">raw_boat_data</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${datasets.spark}&quot;</span><span class="w">  </span><span class="c1"># nested paths into global dict are allowed</span><span class="w"></span>
-<span class="w">    </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;s3a://${bucket_name}/${key_prefix}/${folders.raw}/boats.csv&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">raw_boat_data</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${datasets.spark}&quot;</span><span class="w">  </span><span class="c1"># nested paths into global dict are allowed</span>
+<span class="w">    </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;s3a://${bucket_name}/${key_prefix}/${folders.raw}/boats.csv&quot;</span>
+<span class="w">    </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
 
-<span class="nt">raw_car_data</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${datasets.csv}&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;s3://${bucket_name}/data/${key_prefix}/${folders.raw}/${filename|cars.csv}&quot;</span><span class="w">  </span><span class="c1"># default to &#39;cars.csv&#39; if the &#39;filename&#39; key is not found in the global dict</span><span class="w"></span>
+<span class="nt">raw_car_data</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${datasets.csv}&quot;</span>
+<span class="w">    </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;s3://${bucket_name}/data/${key_prefix}/${folders.raw}/${filename|cars.csv}&quot;</span><span class="w">  </span><span class="c1"># default to &#39;cars.csv&#39; if the &#39;filename&#39; key is not found in the global dict</span>
 </pre></div>
 </div>
 <p>Under the hood, <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> uses <a class="reference external" href="https://github.com/jmespath/jmespath.py"><code class="docutils literal notranslate"><span class="pre">JMESPath</span></code> syntax</a> to extract elements from the globals dictionary.</p>
@@ -1509,6 +1533,54 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
+<div class="section" id="configuration-with-omegaconf">
+<h2>Configuration with OmegaConf<a class="headerlink" href="#configuration-with-omegaconf" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://omegaconf.readthedocs.io/">OmegaConf</a> is a Python library for configuration. It is a YAML-based hierarchical configuration system with support for merging configurations from multiple sources.
+From Kedro 0.18.5 you can use the <a class="reference internal" href="../kedro.config.OmegaConfLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code></span></a> which uses <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> under the hood to load data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> is under active development and will be available from Kedro 0.18.5. New features will be added in future releases. Let us know if you have any feedback about the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> or ideas for new features.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> can load <code class="docutils literal notranslate"><span class="pre">YAML</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files. Acceptable file extensions are <code class="docutils literal notranslate"><span class="pre">.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>, and <code class="docutils literal notranslate"><span class="pre">.json</span></code>. By default, any configuration files used by the config loaders in Kedro are <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files.</p>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="settings.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfLoader</span>  <span class="c1"># new import</span>
+
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfLoader</span>
+</pre></div>
+</div>
+<div class="section" id="templating-for-parameters">
+<h3>Templating for parameters<a class="headerlink" href="#templating-for-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Templating or <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/usage.html#variable-interpolation">variable interpolation</a>, as it’s called in <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code>, for parameters works out of the box if one condition is met: the name of the file that contains the template values must follow the same config pattern specified for parameters.
+By default, the config pattern for parameters is: <code class="docutils literal notranslate"><span class="pre">[&quot;parameters*&quot;,</span> <span class="pre">&quot;parameters*/**&quot;,</span> <span class="pre">&quot;**/parameters*&quot;]</span></code>.
+Suppose you have one parameters file called <code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> containing parameters with <code class="docutils literal notranslate"><span class="pre">omegaconf</span></code> placeholders like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_options</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${data.size}</span>
+<span class="w">  </span><span class="nt">random_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+<p>and a file containing the template values called <code class="docutils literal notranslate"><span class="pre">parameters_globals.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+</pre></div>
+</div>
+<p>Since both of the file names (<code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters_globals.yml</span></code>) match the config pattern for parameters, the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> will load the files and resolve the placeholders correctly.</p>
+</div>
+<div class="section" id="environment-variables-for-credentials">
+<h3>Environment variables for credentials<a class="headerlink" href="#environment-variables-for-credentials" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../kedro.config.OmegaConfLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code></span></a> enables you to load credentials from environment variables. To achieve this you have to use the <code class="docutils literal notranslate"><span class="pre">omegaconf</span></code> <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/custom_resolvers.html#oc-env"><code class="docutils literal notranslate"><span class="pre">oc.env</span></code> resolver</a>.
+This is an example of how you can access credentials from environment variables in <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">aws_access_key_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${oc.env:AWS_ACCESS_KEY_ID}</span>
+<span class="w">    </span><span class="nt">aws_secret_access_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${oc.env:AWS_SECRET_ACCESS_KEY}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that you can only use the resolver in <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> and not in catalog or parameter files. This is because we do not encourage the usage of environment variables for anything other than credentials.</p>
+</div>
+</div>
+</div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-parameters">
@@ -1550,30 +1622,30 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 <h3>Specify parameters at runtime<a class="headerlink" href="#specify-parameters-at-runtime" title="Permalink to this headline">¶</a></h3>
 <p>Kedro also allows you to specify runtime parameters for the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> CLI command. To do so, use the <code class="docutils literal notranslate"><span class="pre">--params</span></code> command line option and specify a comma-separated list of key-value pairs that will be added to <a class="reference internal" href="../kedro.framework.context.KedroContext.html"><span class="doc std std-doc">KedroContext</span></a> parameters and made available to pipeline nodes.
 Each key-value pair is split on the first colon or equals sign. Following examples are both valid commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --params param_key1:value1,param_key2:2.0  <span class="c1"># this will add {&quot;param_key1&quot;: &quot;value1&quot;, &quot;param_key2&quot;: 2} to parameters dictionary</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="o">=</span>param_key1:value1,param_key2:2.0<span class="w">  </span><span class="c1"># this will add {&quot;param_key1&quot;: &quot;value1&quot;, &quot;param_key2&quot;: 2} to parameters dictionary</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --params <span class="nv">param_key1</span><span class="o">=</span>value1,param_key2<span class="o">=</span><span class="m">2</span>.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="o">=</span><span class="nv">param_key1</span><span class="o">=</span>value1,param_key2<span class="o">=</span><span class="m">2</span>.0
 </pre></div>
 </div>
 <p>Values provided in the CLI take precedence and overwrite parameters specified in configuration files. Parameter keys are <em>always</em> treated as strings. Parameter values are converted to a float or an integer number if the corresponding conversion succeeds; otherwise, they are also treated as string.</p>
 <p>If any extra parameter key and/or value contains spaces, wrap the whole option contents in quotes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --params <span class="s2">&quot;key1=value with spaces,key2=value&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="o">=</span><span class="s2">&quot;key1=value with spaces,key2=value&quot;</span>
 </pre></div>
 </div>
 <p>Since key-value pairs are split on the first colon or equals sign, values can contain colons/equals signs, but keys cannot. These are valid CLI commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --params endpoint_url:https://endpoint.example.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="o">=</span>endpoint_url:https://endpoint.example.com
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --params <span class="nv">endpoint_url</span><span class="o">=</span>https://endpoint.example.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="o">=</span><span class="nv">endpoint_url</span><span class="o">=</span>https://endpoint.example.com
 </pre></div>
 </div>
 </div>
 <div class="section" id="use-parameters">
 <h3>Use parameters<a class="headerlink" href="#use-parameters" title="Permalink to this headline">¶</a></h3>
 <p>Say you have a set of parameters you’re playing around with that specify modelling hyperparameters. You can declare these in one place, for instance <code class="docutils literal notranslate"><span class="pre">conf/base/parameters.yml</span></code>, so that you isolate your changes in one central location.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">step_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="nt">learning_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">step_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">learning_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
 </pre></div>
 </div>
 <p>You can now use the <code class="docutils literal notranslate"><span class="pre">params:</span></code> prefix to reference these parameters in the <code class="docutils literal notranslate"><span class="pre">node</span></code> definition:</p>
@@ -1590,11 +1662,11 @@ Each key-value pair is split on the first colon or equals sign. Following exampl
 </pre></div>
 </div>
 <p>You can also group your parameters into nested structures and, using the same method above, load them by top-level key:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">step_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="nt">model_params</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">learning_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
-<span class="w">    </span><span class="nt">test_data_ratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">number_of_train_iterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">step_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">model_params</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">learning_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">test_data_ratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+<span class="w">    </span><span class="nt">number_of_train_iterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
@@ -1674,23 +1746,30 @@ Each key-value pair is split on the first colon or equals sign. Following exampl
 <div class="section" id="configure-kedro-run-arguments">
 <h2>Configure <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> arguments<a class="headerlink" href="#configure-kedro-run-arguments" title="Permalink to this headline">¶</a></h2>
 <p>An extensive list of CLI options for a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> is available in the <a class="reference internal" href="../development/commands_reference.html#run-the-project"><span class="std std-doc">Kedro CLI documentation</span></a>. However, instead of specifying all the command line options in a <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> via the CLI, you can specify a config file that contains the arguments, say <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> and run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro run --config config.yml
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro<span class="w"> </span>run<span class="w"> </span>--config<span class="o">=</span>config.yml
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> is formatted as below (for example):</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag1</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag2</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag3</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipeline1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">parallel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">node_names</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node1</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node2</span><span class="w"></span>
-<span class="w">  </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">env1</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag3</span>
+<span class="w">  </span><span class="nt">pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipeline1</span>
+<span class="w">  </span><span class="nt">parallel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">node_names</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node2</span>
+<span class="w">  </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">env1</span>
 </pre></div>
 </div>
+<p>The syntax for the options is different when you’re using the CLI compared to the configuration file. In the CLI you use dashes, for example for <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span> <span class="pre">--from-nodes=...</span></code>, but you have to use an underscore in the configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">from_nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>This is because the configuration file gets parsed by <a class="reference external" href="https://click.palletsprojects.com/en/8.1.x/">Click</a>, a Python package to handle command line interfaces. Click passes the options defined in the configuration file to a Python function. The option names need to match the argument names in that function.</p>
+<p>Variable names and arguments in Python may only contain alpha-numeric characters and underscores, so it’s not possible to have a dash in the option names when using the configuration file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you provide both a configuration file and a CLI option that clashes with the configuration file, the CLI option will take precedence.</p>

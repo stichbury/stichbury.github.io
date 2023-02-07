@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1325,7 +1334,7 @@
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>New or existing <a class="reference external" href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">AWS account</a> with administrative privileges</p></li>
-<li><p>Active <a class="reference external" href="https://docs.databricks.com/getting-started/account-setup.html">Databricks deployment</a> on AWS (Databricks Community Edition won’t suffice as it doesn’t allow you to provision personal tokens)</p></li>
+<li><p>Active <a class="reference external" href="https://docs.databricks.com/getting-started/index.html">Databricks deployment</a> on AWS (Databricks Community Edition won’t suffice as it doesn’t allow you to provision personal tokens)</p></li>
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">Conda installed</a> on your local machine</p></li>
 <li><p>An account on <a class="reference external" href="https://github.com/">GitHub</a> (free tier or above)</p></li>
 <li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git installed</a> on your local machine</p></li>
@@ -1341,13 +1350,13 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create fresh virtual env</span>
 <span class="c1"># NOTE: minor Python version of the environment</span>
 <span class="c1"># must match the version on the Databricks cluster</span>
-conda create --name iris_databricks <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 -y
-conda activate iris_databricks
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>iris_databricks<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>iris_databricks
 
 <span class="c1"># install Kedro and create a new project</span>
-pip install <span class="s2">&quot;kedro~=0.18.4&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;kedro~=0.18.4&quot;</span>
 <span class="c1"># name your project Iris Databricks when prompted for it</span>
-kedro new --starter pyspark-iris
+kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>pyspark-iris
 </pre></div>
 </div>
 </div>
@@ -1355,11 +1364,11 @@ kedro new --starter pyspark-iris
 <h3>2. Install dependencies and run locally<a class="headerlink" href="#install-dependencies-and-run-locally" title="Permalink to this headline">¶</a></h3>
 <p>Now, as the project has been successfully created, we should move into the project root directory, install project dependencies, and then start a local test run using <a class="reference external" href="https://stackoverflow.com/a/54064507/3364156">Spark local execution mode</a>, which means that all Spark jobs will be executed in a single JVM locally, rather than in a cluster. <code class="docutils literal notranslate"><span class="pre">pyspark-iris</span></code> Kedro starter used to generate the project already has all necessary configuration for it to work, you just need to have <code class="docutils literal notranslate"><span class="pre">pyspark</span></code> Python package installed, which is done for you by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">src/requirements.txt</span></code> command below.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the directory to the project root</span>
-<span class="nb">cd</span> iris-databricks/
+<span class="nb">cd</span><span class="w"> </span>iris-databricks/
 <span class="c1"># compile and install the project dependencies, this may take a few minutes</span>
-pip install -r src/requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
 <span class="c1"># start a local run</span>
-kedro run
+kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p>You should get a similar output:</p>
@@ -1412,30 +1421,30 @@ kedro run
 <h3>6. Push Kedro project to the GitHub repository<a class="headerlink" href="#push-kedro-project-to-the-github-repository" title="Permalink to this headline">¶</a></h3>
 <p>We will use a CLI to push the newly created Kedro project to GitHub. First, you need to initialise Git in your project root directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the directory to the project root</span>
-<span class="nb">cd</span> iris-databricks/
+<span class="nb">cd</span><span class="w"> </span>iris-databricks/
 <span class="c1"># initialise git</span>
-git init
+git<span class="w"> </span>init
 </pre></div>
 </div>
 <p>Then, create the first commit:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add all files to git staging area</span>
-git add .
+git<span class="w"> </span>add<span class="w"> </span>.
 <span class="c1"># create the first commit</span>
-git commit -m <span class="s2">&quot;first commit&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;first commit&quot;</span>
 </pre></div>
 </div>
 <p>Finally, push the commit to GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># configure a new remote</span>
 <span class="c1"># for HTTPS run:</span>
-git remote add origin https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git
 <span class="c1"># or for SSH run:</span>
-git remote add origin git@github.com:&lt;username&gt;/&lt;repo-name&gt;.git
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:&lt;username&gt;/&lt;repo-name&gt;.git
 
 <span class="c1"># verify the new remote URL</span>
-git remote -v
+git<span class="w"> </span>remote<span class="w"> </span>-v
 
 <span class="c1"># push the first commit</span>
-git push --set-upstream origin main
+git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 </div>
@@ -1466,13 +1475,13 @@ git push --set-upstream origin main
 <ul class="simple">
 <li><p>Clone your project from GitHub</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>sh rm -rf ~/projects/iris-databricks <span class="o">&amp;&amp;</span> git clone --single-branch --branch main https://<span class="si">${</span><span class="nv">GITHUB_USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">GITHUB_TOKEN</span><span class="si">}</span>@github.com/<span class="si">${</span><span class="nv">GITHUB_USER</span><span class="si">}</span>/&lt;your-repo-name&gt;.git ~/projects/iris-databricks
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>sh<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>~/projects/iris-databricks<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--single-branch<span class="w"> </span>--branch<span class="w"> </span>main<span class="w"> </span>https://<span class="si">${</span><span class="nv">GITHUB_USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">GITHUB_TOKEN</span><span class="si">}</span>@github.com/<span class="si">${</span><span class="nv">GITHUB_USER</span><span class="si">}</span>/&lt;your-repo-name&gt;.git<span class="w"> </span>~/projects/iris-databricks
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Install Kedro and the latest compatible version of Kedro-Datasets.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>pip install <span class="s2">&quot;kedro==0.18.4&quot;</span> <span class="s2">&quot;kedro-datasets[spark.SparkDataSet]~=1.0.0&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;kedro==0.18.4&quot;</span><span class="w"> </span><span class="s2">&quot;kedro-datasets[spark.SparkDataSet]~=1.0.0&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1533,7 +1542,7 @@ git push --set-upstream origin main
 </pre></div>
 </div>
 <p>You must explicitly upgrade your <code class="docutils literal notranslate"><span class="pre">pip</span></code> version by doing the below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%pip install -U pip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
 </pre></div>
 </div>
 <p>After this, you can reload Kedro by running the line magic command <code class="docutils literal notranslate"><span class="pre">%reload_kedro</span> <span class="pre">&lt;project_root&gt;</span></code>.</p>

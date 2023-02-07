@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1329,11 +1338,11 @@
 <li><p>the resource-consuming steps require most of a scarce resource (e.g., significant RAM, disk memory or CPU)</p></li>
 </ul>
 <p>Kedro uses <code class="docutils literal notranslate"><span class="pre">SequentialRunner</span></code> by default, so to execute the pipeline sequentially:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p>You can also explicitly use <code class="docutils literal notranslate"><span class="pre">SequentialRunner</span></code> as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --runner<span class="o">=</span>SequentialRunner
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--runner<span class="o">=</span>SequentialRunner
 </pre></div>
 </div>
 </div>
@@ -1342,14 +1351,14 @@
 <div class="section" id="multiprocessing">
 <h4>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h4>
 <p>You can alternatively run the nodes within the pipeline concurrently, using a <code class="docutils literal notranslate"><span class="pre">ParallelRunner</span></code> as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --runner<span class="o">=</span>ParallelRunner
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--runner<span class="o">=</span>ParallelRunner
 </pre></div>
 </div>
 </div>
 <div class="section" id="multithreading">
 <h4>Multithreading<a class="headerlink" href="#multithreading" title="Permalink to this headline">¶</a></h4>
 <p>While <code class="docutils literal notranslate"><span class="pre">ParallelRunner</span></code> uses multiprocessing, you can also run the pipeline with multithreading for concurrent execution by specifying <code class="docutils literal notranslate"><span class="pre">ThreadRunner</span></code> as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --runner<span class="o">=</span>ThreadRunner
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--runner<span class="o">=</span>ThreadRunner
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1369,15 +1378,16 @@
 <span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span><span class="p">,</span> <span class="n">DataCatalog</span><span class="p">,</span> <span class="n">MemoryDataSet</span>
 <span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">kedro.runner.runner</span> <span class="kn">import</span> <span class="n">AbstractRunner</span>
+<span class="kn">from</span> <span class="nn">pluggy</span> <span class="kn">import</span> <span class="n">PluginManager</span>
 
 
 <span class="k">class</span> <span class="nc">DryRunner</span><span class="p">(</span><span class="n">AbstractRunner</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;``DryRunner`` is an ``AbstractRunner`` implementation. It can be used to list which</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;``DryRunner`` is an ``AbstractRunner`` implementation. It can be used to list which</span>
 <span class="sd">    nodes would be run without actually executing anything.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">create_default_data_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractDataSet</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Factory method for creating the default data set for the runner.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Factory method for creating the default data set for the runner.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            ds_name: Name of the missing data set</span>
@@ -1389,9 +1399,13 @@
         <span class="k">return</span> <span class="n">MemoryDataSet</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_run</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">catalog</span><span class="p">:</span> <span class="n">DataCatalog</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pipeline</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">,</span>
+        <span class="n">catalog</span><span class="p">:</span> <span class="n">DataCatalog</span><span class="p">,</span>
+        <span class="n">hook_manager</span><span class="p">:</span> <span class="n">PluginManager</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;The method implementing dry pipeline running.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The method implementing dry pipeline running.</span>
 <span class="sd">        Example logs output using this implementation:</span>
 
 <span class="sd">            kedro.runner.dry_runner - INFO - Actual run would execute 3 nodes:</span>
@@ -1402,6 +1416,7 @@
 <span class="sd">        Args:</span>
 <span class="sd">            pipeline: The ``Pipeline`` to run.</span>
 <span class="sd">            catalog: The ``DataCatalog`` from which to fetch data.</span>
+<span class="sd">            hook_manager: The ``PluginManager`` to activate hooks.</span>
 <span class="sd">            session_id: The id of the session.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1415,7 +1430,7 @@
 </div>
 </details>
 <p>And use it with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> through the <code class="docutils literal notranslate"><span class="pre">--runner</span></code> flag:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro run --runner<span class="o">=</span>&lt;package_name&gt;.runner.DryRunner
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro<span class="w"> </span>run<span class="w"> </span>--runner<span class="o">=</span>&lt;package_name&gt;.runner.DryRunner
 </pre></div>
 </div>
 </div>
@@ -1432,10 +1447,10 @@
 <li><p>Save the output(s)</p></li>
 </ol>
 <p>If a node has multiple inputs or outputs (e.g., <code class="docutils literal notranslate"><span class="pre">node(func,</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;],</span> <span class="pre">[&quot;d&quot;,</span> <span class="pre">&quot;e&quot;,</span> <span class="pre">&quot;f&quot;])</span></code>), you can reduce load and save time by using asynchronous mode. You can enable it by passing an <code class="docutils literal notranslate"><span class="pre">--async</span></code> flag to the run command as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ kedro run --async
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kedro<span class="w"> </span>run<span class="w"> </span>--async
 ...
-<span class="m">2020</span>-03-24 <span class="m">09</span>:20:01,482 - kedro.runner.sequential_runner - INFO - Asynchronous mode is enabled <span class="k">for</span> loading and saving data
-<span class="m">2020</span>-03-24 <span class="m">09</span>:20:01,483 - kedro.io.data_catalog - INFO - Loading data from <span class="sb">`</span>example_iris_data<span class="sb">`</span> <span class="o">(</span>CSVDataSet<span class="o">)</span>...
+<span class="m">2020</span>-03-24<span class="w"> </span><span class="m">09</span>:20:01,482<span class="w"> </span>-<span class="w"> </span>kedro.runner.sequential_runner<span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Asynchronous<span class="w"> </span>mode<span class="w"> </span>is<span class="w"> </span>enabled<span class="w"> </span><span class="k">for</span><span class="w"> </span>loading<span class="w"> </span>and<span class="w"> </span>saving<span class="w"> </span>data
+<span class="m">2020</span>-03-24<span class="w"> </span><span class="m">09</span>:20:01,483<span class="w"> </span>-<span class="w"> </span>kedro.io.data_catalog<span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Loading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span><span class="sb">`</span>example_iris_data<span class="sb">`</span><span class="w"> </span><span class="o">(</span>CSVDataSet<span class="o">)</span>...
 ...
 </pre></div>
 </div>
@@ -1450,7 +1465,7 @@
 <details>
 <summary><b>Click to expand</b></summary>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">register_pipelines</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Register the project&#39;s pipelines.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Register the project&#39;s pipelines.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A mapping from pipeline names to ``Pipeline`` objects.</span>
@@ -1468,7 +1483,7 @@
 </div>
 </details>
 <p>Then, from the command line, execute the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --pipeline my_pipeline
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--pipeline<span class="o">=</span>my_pipeline
 </pre></div>
 </div>
 <div class="admonition note">

@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1343,9 +1352,9 @@
 <ul class="simple">
 <li><p>In this tutorial, we will also be using <a class="reference external" href="https://aws.amazon.com/cdk/">AWS Cloud Development Kit (CDK)</a> to write our deployment script. To install the <code class="docutils literal notranslate"><span class="pre">cdk</span></code> command, please consult <a class="reference external" href="https://docs.aws.amazon.com/cdk/latest/guide/cli.html">AWS guide</a>. The official method of installation is using <a class="reference external" href="https://www.npmjs.com/">npm</a>:</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>npm install -g aws-cdk
-<span class="gp"># </span>to verify that the cdk <span class="nb">command</span> has been installed
-<span class="gp">$ </span>cdk -h
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk
+<span class="gp"># </span>to<span class="w"> </span>verify<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>cdk<span class="w"> </span><span class="nb">command</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>installed
+<span class="gp">$ </span>cdk<span class="w"> </span>-h
 </pre></div>
 </div>
 </div>
@@ -1371,50 +1380,50 @@
 </ul>
 <details>
 <summary><b>Click to expand</b></summary>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/companies.csv</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/companies.csv</span>
 
-<span class="nt">reviews</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/reviews.csv</span><span class="w"></span>
+<span class="nt">reviews</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/reviews.csv</span>
 
-<span class="nt">shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/shuttles.xlsx</span><span class="w"></span>
+<span class="nt">shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/shuttles.xlsx</span>
 
-<span class="nt">preprocessed_companies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/preprocessed_companies.csv</span><span class="w"></span>
+<span class="nt">preprocessed_companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/preprocessed_companies.csv</span>
 
-<span class="nt">preprocessed_shuttles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/preprocessed_shuttles.csv</span><span class="w"></span>
+<span class="nt">preprocessed_shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/preprocessed_shuttles.csv</span>
 
-<span class="nt">model_input_table</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/model_input_table.csv</span><span class="w"></span>
+<span class="nt">model_input_table</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/model_input_table.csv</span>
 
-<span class="nt">regressor</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/regressor.pickle</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="nt">regressor</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/regressor.pickle</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="nt">X_train</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/X_train.pickle</span><span class="w"></span>
+<span class="nt">X_train</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/X_train.pickle</span>
 
-<span class="nt">X_test</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/X_test.pickle</span><span class="w"></span>
+<span class="nt">X_test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/X_test.pickle</span>
 
-<span class="nt">y_train</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/y_train.pickle</span><span class="w"></span>
+<span class="nt">y_train</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/y_train.pickle</span>
 
-<span class="nt">y_test</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/y_test.pickle</span><span class="w"></span>
+<span class="nt">y_test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://&lt;your-bucket&gt;/y_test.pickle</span>
 </pre></div>
 </div>
 </details>
@@ -1429,7 +1438,7 @@
 <ul class="simple">
 <li><p><strong>Step 2.1</strong>: Package the Kedro pipeline as a Python package so you can install it into the container later on:</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro package
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kedro<span class="w"> </span>package
 </pre></div>
 </div>
 <p>For more information, please visit the guide on <a class="reference internal" href="../tutorial/package_a_project.html"><span class="doc std std-doc">packaging Kedro as a Python package</span></a>.</p>
@@ -1470,29 +1479,29 @@
 <span class="k">FROM</span><span class="w"> </span><span class="s">python:${RUNTIME_VERSION}-buster</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">build-image</span>
 
 <span class="c"># Install aws-lambda-cpp build dependencies</span>
-<span class="k">RUN</span><span class="w"> </span>apt-get update <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  apt-get install -y <span class="se">\</span>
-  g++ <span class="se">\</span>
-  make <span class="se">\</span>
-  cmake <span class="se">\</span>
-  unzip <span class="se">\</span>
-  libcurl4-openssl-dev
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>g++<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libcurl4-openssl-dev
 
 <span class="c"># Include global args in this stage of the build</span>
 <span class="k">ARG</span><span class="w"> </span>FUNCTION_DIR
 <span class="k">ARG</span><span class="w"> </span>RUNTIME_VERSION
 <span class="c"># Create the function directory</span>
-<span class="k">RUN</span><span class="w"> </span>mkdir -p <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
-<span class="k">RUN</span><span class="w"> </span>mkdir -p <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>/<span class="o">{</span>conf,logs<span class="o">}</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>/<span class="o">{</span>conf,logs<span class="o">}</span>
 <span class="c"># Add handler function</span>
-<span class="k">COPY</span><span class="w"> </span>lambda_handler.py <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
+<span class="k">COPY</span><span class="w"> </span>lambda_handler.py<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
 <span class="c"># Add conf/ directory</span>
-<span class="k">COPY</span><span class="w"> </span>conf <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>/conf
+<span class="k">COPY</span><span class="w"> </span>conf<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>/conf
 <span class="c"># Install Kedro pipeline</span>
-<span class="k">COPY</span><span class="w"> </span>dist/spaceflights_step_functions-0.1-py3-none-any.whl .
-<span class="k">RUN</span><span class="w"> </span>python<span class="si">${</span><span class="nv">RUNTIME_VERSION</span><span class="si">}</span> -m pip install --no-cache-dir spaceflights_step_functions-0.1-py3-none-any.whl --target <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
+<span class="k">COPY</span><span class="w"> </span>dist/spaceflights_step_functions-0.1-py3-none-any.whl<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>python<span class="si">${</span><span class="nv">RUNTIME_VERSION</span><span class="si">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>spaceflights_step_functions-0.1-py3-none-any.whl<span class="w"> </span>--target<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
 <span class="c"># Install Lambda Runtime Interface Client for Python</span>
-<span class="k">RUN</span><span class="w"> </span>python<span class="si">${</span><span class="nv">RUNTIME_VERSION</span><span class="si">}</span> -m pip install --no-cache-dir awslambdaric --target <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="si">${</span><span class="nv">RUNTIME_VERSION</span><span class="si">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>awslambdaric<span class="w"> </span>--target<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
 
 <span class="c"># Stage 3 - final runtime image</span>
 <span class="c"># Grab a fresh copy of the Python image</span>
@@ -1502,7 +1511,7 @@
 <span class="c"># Set working directory to function root directory</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">${FUNCTION_DIR}</span>
 <span class="c"># Copy in the built dependencies</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build-image <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span> <span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build-image<span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">FUNCTION_DIR</span><span class="si">}</span>
 <span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;/usr/local/bin/python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;awslambdaric&quot;</span><span class="w"> </span><span class="p">]</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;lambda_handler.handler&quot;</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
@@ -1511,13 +1520,13 @@
 <ul class="simple">
 <li><p><strong>Step 2.4</strong>: Build the Docker image and push it to AWS Elastic Container Registry (ECR):</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>build and tag the image
-<span class="gp">$ </span>docker build -t spaceflights-step-functions .
-<span class="gp">$ </span>docker tag spaceflights-step-functions:latest &lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com/spaceflights-step-functions:latest
-<span class="gp"># </span>login to ECR
-<span class="gp">$ </span>aws ecr get-login-password <span class="p">|</span> docker login --username AWS --password-stdin &lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com
-<span class="gp"># </span>push the image to ECR
-<span class="gp">$ </span>docker push &lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com/spaceflights-step-functions:latest
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>build<span class="w"> </span>and<span class="w"> </span>tag<span class="w"> </span>the<span class="w"> </span>image
+<span class="gp">$ </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>spaceflights-step-functions<span class="w"> </span>.
+<span class="gp">$ </span>docker<span class="w"> </span>tag<span class="w"> </span>spaceflights-step-functions:latest<span class="w"> </span>&lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com/spaceflights-step-functions:latest
+<span class="gp"># </span>login<span class="w"> </span>to<span class="w"> </span>ECR
+<span class="gp">$ </span>aws<span class="w"> </span>ecr<span class="w"> </span>get-login-password<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>AWS<span class="w"> </span>--password-stdin<span class="w"> </span>&lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com
+<span class="gp"># </span>push<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>to<span class="w"> </span>ECR
+<span class="gp">$ </span>docker<span class="w"> </span>push<span class="w"> </span>&lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-aws-region&gt;.amazonaws.com/spaceflights-step-functions:latest
 </pre></div>
 </div>
 </div>
@@ -1536,7 +1545,7 @@
 </pre></div>
 </div>
 <p>Then install these dependencies with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install -r deploy_requirements.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>deploy_requirements.txt
 </pre></div>
 </div>
 <ul class="simple">
@@ -1557,7 +1566,7 @@
 
 
 <span class="k">def</span> <span class="nf">_clean_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reformat a name to be compliant with AWS requirements for their resources.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reformat a name to be compliant with AWS requirements for their resources.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        name: formatted name.</span>
@@ -1566,7 +1575,7 @@
 
 
 <span class="k">class</span> <span class="nc">KedroStepFunctionsStack</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Stack</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A CDK Stack to deploy a Kedro pipeline to AWS Step Functions.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A CDK Stack to deploy a Kedro pipeline to AWS Step Functions.&quot;&quot;&quot;</span>
 
     <span class="n">env</span> <span class="o">=</span> <span class="s2">&quot;aws&quot;</span>
     <span class="n">project_path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
@@ -1585,30 +1594,30 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_kedro_pipeline_to_step_functions_state_machine</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_parse_kedro_pipeline</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Extract the Kedro pipeline from the project&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract the Kedro pipeline from the project&quot;&quot;&quot;</span>
         <span class="n">metadata</span> <span class="o">=</span> <span class="n">bootstrap_project</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">project_path</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">project_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipelines</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;__default__&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_set_ecr_repository</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Set the ECR repository for the Lambda base image&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the ECR repository for the Lambda base image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">aws_ecr</span><span class="o">.</span><span class="n">Repository</span><span class="o">.</span><span class="n">from_repository_name</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ECR&quot;</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">erc_repository_name</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_set_ecr_image</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Set the Lambda base image&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the Lambda base image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ecr_image</span> <span class="o">=</span> <span class="n">aws_lambda</span><span class="o">.</span><span class="n">EcrImageCode</span><span class="p">(</span><span class="n">repository</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ecr_repository</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_set_s3_data_bucket</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Set the S3 bucket containing the raw data&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the S3 bucket containing the raw data&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s3_bucket</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;RawDataBucket&quot;</span><span class="p">,</span> <span class="n">bucket_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">s3_data_bucket_name</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_convert_kedro_node_to_lambda_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IFunction</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Convert a Kedro node into an AWS Lambda function&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a Kedro node into an AWS Lambda function&quot;&quot;&quot;</span>
         <span class="n">func</span> <span class="o">=</span> <span class="n">aws_lambda</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="nb">id</span><span class="o">=</span><span class="n">_clean_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_fn&quot;</span><span class="p">),</span>
@@ -1626,7 +1635,7 @@
         <span class="k">return</span> <span class="n">func</span>
 
     <span class="k">def</span> <span class="nf">_convert_kedro_node_to_sfn_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LambdaInvoke</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Convert a Kedro node into an AWS Step Functions Task&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a Kedro node into an AWS Step Functions Task&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">LambdaInvoke</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">_clean_name</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
@@ -1635,7 +1644,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_convert_kedro_pipeline_to_step_functions_state_machine</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Convert Kedro pipeline into an AWS Step Functions State Machine&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Kedro pipeline into an AWS Step Functions State Machine&quot;&quot;&quot;</span>
         <span class="n">definition</span> <span class="o">=</span> <span class="n">sfn</span><span class="o">.</span><span class="n">Pass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">grouped_nodes</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -1661,9 +1670,9 @@
 </pre></div>
 </div>
 <p>This script contains the logic to convert a Kedro pipeline into an AWS Step Functions State Machine with each Kedro node defined as a Lambda function using the Docker image in Step 2. You will then need to register it with CDK by creating a <code class="docutils literal notranslate"><span class="pre">cdk.json</span></code> with the following content:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python3 deploy.py&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python3 deploy.py&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>And that’s it! You are now ready to deploy and run the Kedro pipeline on AWS Step Functions.</p>
@@ -1671,7 +1680,7 @@
 <div class="section" id="step-4-deploy-the-pipeline">
 <h3>Step 4. Deploy the pipeline<a class="headerlink" href="#step-4-deploy-the-pipeline" title="Permalink to this headline">¶</a></h3>
 <p>Deploying with CDK is very straightforward. You just need to run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cdk deploy
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cdk<span class="w"> </span>deploy
 </pre></div>
 </div>
 <p>After the deployment finishes, when you log into AWS Management Console, you should be able to see an AWS Step Functions State Machine created for your pipeline:</p>

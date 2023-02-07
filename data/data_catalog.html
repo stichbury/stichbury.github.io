@@ -222,7 +222,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1362,34 +1371,34 @@ resource using gcsfs (in development).</p></li>
 All the top-level parameters of <code class="docutils literal notranslate"><span class="pre">fs_args</span></code> (except <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code>) will be passed in an underlying filesystem class.</p>
 <div class="section" id="example-1-provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">
 <h3>Example 1: Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)<a class="headerlink" href="#example-1-provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test_project</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test_project</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
 </div>
 <div class="section" id="example-2-load-data-from-a-local-binary-file-using-utf-8-encoding">
 <h3>Example 2: Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#example-2-load-data-from-a-local-binary-file-using-utf-8-encoding" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">open_args_load</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rb&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">open_args_load</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rb&quot;</span>
+<span class="w">      </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> configure how a third-party library (e.g. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for <code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code>) loads/saves data from/to a file.</p>
 </div>
 <div class="section" id="example-3-save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">
 <h3>Example 3: Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#example-3-save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1400,206 +1409,206 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <p>Here are some examples of data configuration in a <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>:</p>
 <div class="section" id="example-1-loads-saves-a-csv-file-from-to-a-local-file-system">
 <h3>Example 1: Loads / saves a CSV file from / to a local file system<a class="headerlink" href="#example-1-loads-saves-a-csv-file-from-to-a-local-file-system" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bikes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/bikes.csv</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bikes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/bikes.csv</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-2-loads-and-saves-a-csv-on-a-local-file-system-using-specified-load-and-save-arguments">
 <h3>Example 2: Loads and saves a CSV on a local file system, using specified load and save arguments<a class="headerlink" href="#example-2-loads-and-saves-a-csv-on-a-local-file-system-using-specified-load-and-save-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">date_format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">decimal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">date_format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M&#39;</span>
+<span class="w">    </span><span class="nt">decimal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-3-loads-and-saves-a-compressed-csv-on-a-local-file-system">
 <h3>Example 3: Loads and saves a compressed CSV on a local file system<a class="headerlink" href="#example-3-loads-and-saves-a-compressed-csv-on-a-local-file-system" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/boats.csv.gz</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gzip&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">open_args_load</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;rb&#39;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/boats.csv.gz</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+<span class="w">    </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gzip&#39;</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">open_args_load</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;rb&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-4-loads-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">
 <h3>Example 4: Loads a CSV file from a specific S3 bucket, using credentials and load arguments<a class="headerlink" href="#example-4-loads-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">motorbikes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/data/02_intermediate/company/motorbikes.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">skiprows</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
-<span class="w">    </span><span class="nt">skipfooter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">    </span><span class="nt">na_values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;#NA&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">NA</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">motorbikes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/data/02_intermediate/company/motorbikes.csv</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+<span class="w">    </span><span class="nt">skiprows</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">skipfooter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">na_values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;#NA&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">NA</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-5-loads-saves-a-pickle-file-from-to-a-local-file-system">
 <h3>Example 5: Loads / saves a pickle file from / to a local file system<a class="headerlink" href="#example-5-loads-saves-a-pickle-file-from-to-a-local-file-system" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">airplanes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/airplanes.pkl</span><span class="w"></span>
-<span class="w">  </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">airplanes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/airplanes.pkl</span>
+<span class="w">  </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-6-loads-an-excel-file-from-google-cloud-storage">
 <h3>Example 6: Loads an Excel file from Google Cloud Storage<a class="headerlink" href="#example-6-loads-an-excel-file-from-google-cloud-storage" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rockets</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/02_intermediate/company/motorbikes.xlsx</span><span class="w"></span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_gcp_credentials</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sheet_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sheet1</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rockets</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/02_intermediate/company/motorbikes.xlsx</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_gcp_credentials</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sheet_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sheet1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-7-loads-a-multi-sheet-excel-file-from-a-local-file-system">
 <h3>Example 7: Loads a multi-sheet Excel file from a local file system<a class="headerlink" href="#example-7-loads-a-multi-sheet-excel-file-from-a-local-file-system" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trains</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/company/trains.xlsx</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sheet_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Sheet1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Sheet2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Sheet3</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trains</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/company/trains.xlsx</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sheet_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Sheet1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Sheet2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Sheet3</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-8-saves-an-image-created-with-matplotlib-on-google-cloud-storage">
 <h3>Example 8: Saves an image created with Matplotlib on Google Cloud Storage<a class="headerlink" href="#example-8-saves-an-image-created-with-matplotlib-on-google-cloud-storage" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">results_plot</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/08_results/plots/output_1.jpeg</span><span class="w"></span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_gcp_credentials</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">results_plot</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/08_results/plots/output_1.jpeg</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_gcp_credentials</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-9-loads-saves-an-hdf-file-on-local-file-system-storage-using-specified-load-and-save-arguments">
 <h3>Example 9: Loads / saves an HDF file on local file system storage, using specified load and save arguments<a class="headerlink" href="#example-9-loads-saves-an-hdf-file-on-local-file-system-storage-using-specified-load-and-save-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">skateboards</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.HDFDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/skateboards.hdf</span><span class="w"></span>
-<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">brand</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">length</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">w</span><span class="w">  </span><span class="c1"># Overwrite even when the file already exists</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dropna</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">skateboards</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.HDFDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/skateboards.hdf</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">brand</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">length</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">w</span><span class="w">  </span><span class="c1"># Overwrite even when the file already exists</span>
+<span class="w">    </span><span class="nt">dropna</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-10-loads-saves-a-parquet-file-on-local-file-system-storage-using-specified-load-and-save-arguments">
 <h3>Example 10: Loads / saves a parquet file on local file system storage, using specified load and save arguments<a class="headerlink" href="#example-10-loads-saves-a-parquet-file-on-local-file-system-storage-using-specified-load-and-save-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trucks</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/trucks.parquet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gear</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">disp</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">wt</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span><span class="w"></span>
-<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GZIP</span><span class="w"></span>
-<span class="w">    </span><span class="nt">file_scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hive</span><span class="w"></span>
-<span class="w">    </span><span class="nt">has_nulls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">partition_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trucks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/trucks.parquet</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gear</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">disp</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">wt</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">list</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GZIP</span>
+<span class="w">    </span><span class="nt">file_scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hive</span>
+<span class="w">    </span><span class="nt">has_nulls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">partition_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-11-loads-saves-a-spark-table-on-s3-using-specified-load-and-save-arguments">
 <h3>Example 11: Loads / saves a Spark table on S3, using specified load and save arguments<a class="headerlink" href="#example-11-loads-saves-a-spark-table-on-s3-using-specified-load-and-save-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span><span class="w"></span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;|&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;|&#39;</span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-12-loads-saves-a-sql-table-using-credentials-a-database-connection-using-specified-load-and-save-arguments">
 <h3>Example 12: Loads / saves a SQL table using credentials, a database connection, using specified load and save arguments<a class="headerlink" href="#example-12-loads-saves-a-sql-table-using-credentials-a-database-connection-using-specified-load-and-save-arguments" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLTableDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span><span class="w"></span>
-<span class="w">  </span><span class="nt">table_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">index_col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gear</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">if_exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replace</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLTableDataSet</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
+<span class="w">  </span><span class="nt">table_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">index_col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gear</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">if_exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replace</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-13-loads-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table">
 <h3>Example 13: Loads an SQL table with credentials, a database connection, and applies a SQL query to the table<a class="headerlink" href="#example-13-loads-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters_query</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLQueryDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span><span class="w"></span>
-<span class="w">  </span><span class="nt">sql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">select * from cars where gear=4</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">index_col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters_query</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLQueryDataSet</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
+<span class="w">  </span><span class="nt">sql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">select * from cars where gear=4</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">index_col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>When you use <a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code></span></a> or <a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLQueryDataSet</span></code></span></a>, you must provide a database connection string. In the above example, we pass it using the <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> key from the credentials (see the details in the <a class="reference internal" href="#feeding-in-credentials"><span class="std std-doc">Feeding in credentials</span></a> section below). <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> must have a top-level key <code class="docutils literal notranslate"><span class="pre">con</span></code> containing a <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls">SQLAlchemy compatible</a> connection string. As an alternative to credentials, you could explicitly put <code class="docutils literal notranslate"><span class="pre">con</span></code> into <code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> (<code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code> only).</p>
 </div>
 <div class="section" id="example-14-loads-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda">
 <h3>Example 14: Loads data from an API endpoint, example US corn yield data from USDA<a class="headerlink" href="#example-14-loads-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">us_corn_yield_data</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://quickstats.nass.usda.gov</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usda_credentials</span><span class="w"></span>
-<span class="w">  </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SOME_TOKEN</span><span class="w"></span>
-<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON</span><span class="w"></span>
-<span class="w">    </span><span class="nt">commodity_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORN</span><span class="w"></span>
-<span class="w">    </span><span class="nt">statisticcat_des</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YIELD</span><span class="w"></span>
-<span class="w">    </span><span class="nt">agg_level_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STATE</span><span class="w"></span>
-<span class="w">    </span><span class="nt">year</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">us_corn_yield_data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://quickstats.nass.usda.gov</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usda_credentials</span>
+<span class="w">  </span><span class="nt">params</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SOME_TOKEN</span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON</span>
+<span class="w">    </span><span class="nt">commodity_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CORN</span>
+<span class="w">    </span><span class="nt">statisticcat_des</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YIELD</span>
+<span class="w">    </span><span class="nt">agg_level_desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STATE</span>
+<span class="w">    </span><span class="nt">year</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000</span>
 </pre></div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">usda_credientials</span></code> will be passed as the <code class="docutils literal notranslate"><span class="pre">auth</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. Specify the username and password as a list in your <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> file as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">usda_credentials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">usda_credentials</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-15-loads-data-from-minio-s3-api-compatible-storage">
 <h3>Example 15: Loads data from Minio (S3 API Compatible Storage)<a class="headerlink" href="#example-15-loads-data-from-minio-s3-api-compatible-storage" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/test.csv</span><span class="w"> </span><span class="c1"># assume `test.csv` is uploaded to the Minio server.</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_minio</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/test.csv</span><span class="w"> </span><span class="c1"># assume `test.csv` is uploaded to the Minio server.</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_minio</span>
 </pre></div>
 </div>
 <p>In <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code>, define the <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">secret</span></code> and the <code class="docutils literal notranslate"><span class="pre">endpoint_url</span></code> as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_minio</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token</span><span class="w"></span>
-<span class="w">  </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span><span class="w"></span>
-<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">endpoint_url </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://localhost:9000&#39;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_minio</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token</span>
+<span class="w">  </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span>
+<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">endpoint_url </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://localhost:9000&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1610,17 +1619,17 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </div>
 <div class="section" id="example-16-loads-a-model-saved-as-a-pickle-from-azure-blob-storage">
 <h3>Example 16: Loads a model saved as a pickle from Azure Blob Storage<a class="headerlink" href="#example-16-loads-a-model-saved-as-a-pickle-from-azure-blob-storage" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ml_model</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abfs://models/ml_models.pickle&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_abs</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ml_model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abfs://models/ml_models.pickle&quot;</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_abs</span>
 </pre></div>
 </div>
 <p>In the <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> file, define the <code class="docutils literal notranslate"><span class="pre">account_name</span></code> and <code class="docutils literal notranslate"><span class="pre">account_key</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_abs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">account_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accountname</span><span class="w"></span>
-<span class="w">  </span><span class="nt">account_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_abs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">account_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accountname</span>
+<span class="w">  </span><span class="nt">account_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span>
 </pre></div>
 </div>
 </div>
@@ -1630,18 +1639,18 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <p class="admonition-title">Note</p>
 <p>This example requires <a class="reference external" href="https://www.paramiko.org">Paramiko</a> to be installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">paramiko</span></code>).</p>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cool_dataset</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sftp:///path/to/remote_cluster/cool_data.csv&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster_credentials</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cool_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sftp:///path/to/remote_cluster/cool_data.csv&quot;</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster_credentials</span>
 </pre></div>
 </div>
 <p>All parameters required to establish the SFTP connection can be defined through <code class="docutils literal notranslate"><span class="pre">fs_args</span></code> or in the <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> file as follows:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cluster_credentials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_username</span><span class="w"></span>
-<span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host_address</span><span class="w"></span>
-<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
-<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cluster_credentials</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_username</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host_address</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
 </pre></div>
 </div>
 <p>The list of all available parameters is given in the <a class="reference external" href="https://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient.connect">Paramiko documentation</a>.</p>
@@ -1651,11 +1660,11 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <h2>Create a Data Catalog YAML configuration file via CLI<a class="headerlink" href="#create-a-data-catalog-yaml-configuration-file-via-cli" title="Permalink to this headline">¶</a></h2>
 <p>You can use the <a class="reference internal" href="../development/commands_reference.html#create-a-data-catalog-yaml-configuration-file"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">create</span></code> command to create a Data Catalog YAML configuration</span></a>.</p>
 <p>This creates a <code class="docutils literal notranslate"><span class="pre">&lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span></code> configuration file with <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> datasets for each dataset in a registered pipeline if it is missing from the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span><span class="w"></span>
-<span class="nt">rockets</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span><span class="w"></span>
-<span class="nt">scooters</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span>
+<span class="nt">rockets</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span>
+<span class="nt">scooters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span>
 </pre></div>
 </div>
 </div>
@@ -1667,16 +1676,16 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <h2>Feeding in credentials<a class="headerlink" href="#feeding-in-credentials" title="Permalink to this headline">¶</a></h2>
 <p>Before instantiating the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>, Kedro will first attempt to read <a class="reference internal" href="../kedro_project_setup/configuration.html#aws-credentials"><span class="std std-doc">the credentials from the project configuration</span></a>. The resulting dictionary is then passed into <code class="docutils literal notranslate"><span class="pre">DataCatalog.from_config()</span></code> as the <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument.</p>
 <p>Let’s assume that the project contains the file <code class="docutils literal notranslate"><span class="pre">conf/local/credentials.yml</span></code> with the following contents:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">aws_access_key_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span><span class="w"></span>
-<span class="w">    </span><span class="nt">aws_secret_access_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">aws_access_key_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span>
+<span class="w">    </span><span class="nt">aws_secret_access_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret</span>
 
-<span class="nt">scooters_credentials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">con</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite:///kedro.db</span><span class="w"></span>
+<span class="nt">scooters_credentials</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">con</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite:///kedro.db</span>
 
-<span class="nt">my_gcp_credentials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">id_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span><span class="w"></span>
+<span class="nt">my_gcp_credentials</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">id_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span>
 </pre></div>
 </div>
 <p>In the example above, the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file contains references to credentials keys <code class="docutils literal notranslate"><span class="pre">dev_s3</span></code> and <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code>. This means that when it instantiates the <code class="docutils literal notranslate"><span class="pre">motorbikes</span></code> dataset, for example, the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> will attempt to read top-level key <code class="docutils literal notranslate"><span class="pre">dev_s3</span></code> from the received <code class="docutils literal notranslate"><span class="pre">credentials</span></code> dictionary, and then will pass its values into the dataset <code class="docutils literal notranslate"><span class="pre">__init__</span></code> as a <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument. This is essentially equivalent to calling this:</p>
@@ -1692,28 +1701,28 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <h2>Load multiple datasets with similar configuration<a class="headerlink" href="#load-multiple-datasets-with-similar-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Different datasets might use the same file format, load and save arguments, and be stored in the same folder. <a class="reference external" href="https://yaml.org/spec/1.2.1/#Syntax">YAML has a built-in syntax</a> for factorising parts of a YAML file, which means that you can decide what is generalisable across your datasets, so that you need not spend time copying and pasting dataset configurations in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file.</p>
 <p>You can see this in the following example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_csv</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">na_values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;#NA&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">NA</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_csv</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+<span class="w">    </span><span class="nt">na_values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;#NA&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">NA</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="nt">cars</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/cars.csv</span><span class="w"></span>
+<span class="nt">cars</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/cars.csv</span>
 
-<span class="nt">trucks</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/trucks.csv</span><span class="w"></span>
+<span class="nt">trucks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/trucks.csv</span>
 
-<span class="nt">bikes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/bikes.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">bikes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/bikes.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>The syntax <code class="docutils literal notranslate"><span class="pre">&amp;csv</span></code> names the following block <code class="docutils literal notranslate"><span class="pre">csv</span></code> and the syntax <code class="docutils literal notranslate"><span class="pre">&lt;&lt;:</span> <span class="pre">*csv</span></code> inserts the contents of the block named <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Locally declared keys entirely override inserted ones as seen in <code class="docutils literal notranslate"><span class="pre">bikes</span></code>.</p>
@@ -1722,19 +1731,19 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <p>It’s important that the name of the template entry starts with a <code class="docutils literal notranslate"><span class="pre">_</span></code> so Kedro knows not to try and instantiate it as a dataset.</p>
 </div>
 <p>You can also nest reuseable YAML syntax:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_csv</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv_load_args</span><span class="w"></span>
-<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_csv</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv_load_args</span>
+<span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">inferSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="nt">airplanes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/airplanes.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv_load_args</span><span class="w"></span>
-<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">;</span><span class="w"></span>
+<span class="nt">airplanes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://data/01_raw/airplanes.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*csv_load_args</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">;</span>
 </pre></div>
 </div>
 <p>In this example, the default <code class="docutils literal notranslate"><span class="pre">csv</span></code> configuration is inserted into <code class="docutils literal notranslate"><span class="pre">airplanes</span></code> and then the <code class="docutils literal notranslate"><span class="pre">load_args</span></code> block is overridden. Normally, that would replace the whole dictionary. In order to extend <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, the defaults for that block are then re-inserted.</p>
@@ -1746,14 +1755,14 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <h3>A typical example of transcoding<a class="headerlink" href="#a-typical-example-of-transcoding" title="Permalink to this headline">¶</a></h3>
 <p>For instance, parquet files can not only be loaded via the <code class="docutils literal notranslate"><span class="pre">ParquetDataSet</span></code> using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but also directly by <code class="docutils literal notranslate"><span class="pre">SparkDataSet</span></code>. This conversion is typical when coordinating a <code class="docutils literal notranslate"><span class="pre">Spark</span></code> to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> workflow.</p>
 <p>To enable transcoding, define two <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> entries for the same dataset in a common format (Parquet, JSON, CSV, etc.) in your <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_dataframe@spark</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_dataframe@spark</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
 
-<span class="nt">my_dataframe@pandas</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span><span class="w"></span>
+<span class="nt">my_dataframe@pandas</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span>
 </pre></div>
 </div>
 <p>These entries are used in the pipeline like this:</p>
@@ -1777,15 +1786,15 @@ for loading, so the first node should output a <code class="docutils literal not
 <h2>Version datasets and ML models<a class="headerlink" href="#version-datasets-and-ml-models" title="Permalink to this headline">¶</a></h2>
 <p>Making a simple addition to your Data Catalog allows you to perform versioning of datasets and machine learning models.</p>
 <p>Consider the following versioned dataset defined in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars.csv</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> will create a versioned <code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code> called <code class="docutils literal notranslate"><span class="pre">cars.csv</span></code>. The actual csv file location will look like <code class="docutils literal notranslate"><span class="pre">data/01_raw/company/cars.csv/&lt;version&gt;/cars.csv</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> corresponds to a global save version string formatted as <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDThh.mm.ss.sssZ</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> will create a versioned <code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code> called <code class="docutils literal notranslate"><span class="pre">cars</span></code>. The actual csv file location will look like <code class="docutils literal notranslate"><span class="pre">data/01_raw/company/cars.csv/&lt;version&gt;/cars.csv</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> corresponds to a global save version string formatted as <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDThh.mm.ss.sssZ</span></code>.</p>
 <p>You can run the pipeline with a particular versioned data set with <code class="docutils literal notranslate"><span class="pre">--load-version</span></code> flag as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run --load-version<span class="o">=</span><span class="s2">&quot;cars.csv:YYYY-MM-DDThh.mm.ss.sssZ&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--load-version<span class="o">=</span>cars:YYYY-MM-DDThh.mm.ss.sssZ
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">--load-version</span></code> is dataset name and version timestamp separated by <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>

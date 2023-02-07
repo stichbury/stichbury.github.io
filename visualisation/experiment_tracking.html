@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Set up experiment tracking &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>Experiment tracking in Kedro-Viz &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -222,7 +222,6 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -238,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -245,20 +245,29 @@
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -324,6 +333,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -590,7 +604,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -609,16 +627,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1069,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1268,7 +1277,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Set up experiment tracking</li>
+      <li>Experiment tracking in Kedro-Viz</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1314,31 +1323,67 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="set-up-experiment-tracking">
-<h1>Set up experiment tracking<a class="headerlink" href="#set-up-experiment-tracking" title="Permalink to this headline">¶</a></h1>
-<p>Experiment tracking is the process of saving all machine-learning related experiment information so you can compare different runs.</p>
-<p><a class="reference external" href="https://github.com/kedro-org/kedro-viz">Kedro-Viz</a> supports native experiment tracking from <a class="reference external" href="https://github.com/kedro-org/kedro-viz/releases/tag/v4.1.1">version 4.1.1</a> onwards. When experiment tracking is enabled in your Kedro project, you will be able to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-your-metrics-timeline"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
-<p><img alt="" src="../_images/experiment-tracking_demo_small.gif" /></p>
-<p>Enabling experiment tracking features on Kedro-Viz relies on:</p>
+<div class="section" id="experiment-tracking-in-kedro-viz">
+<h1>Experiment tracking in Kedro-Viz<a class="headerlink" href="#experiment-tracking-in-kedro-viz" title="Permalink to this headline">¶</a></h1>
+<p>Experiment tracking is the process of saving all the metadata related to an experiment each time you run it. It enables you to compare different runs of a machine-learning model as part of the experimentation process.</p>
+<p>The metadata you store may include:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#set-up-the-session-store"><span class="std std-doc">setting up a session store to capture experiment metadata</span></a>,</p></li>
-<li><p><a class="reference internal" href="#set-up-tracking-datasets"><span class="std std-doc">experiment tracking datasets to let Kedro know what metrics should be tracked</span></a></p></li>
-<li><p><a class="reference internal" href="#set-up-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">modifying your nodes and pipelines to output those metrics</span></a>.</p></li>
+<li><p>Scripts used for running the experiment</p></li>
+<li><p>Environment configuration files</p></li>
+<li><p>Versions of the data used for training and evaluation</p></li>
+<li><p>Evaluation metrics</p></li>
+<li><p>Model weights</p></li>
+<li><p>Plots and other visualisations</p></li>
 </ul>
-<p>This page describes the steps necessary to set up experiment tracking and access logged metrics, using the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a>.</p>
-<p><a class="reference internal" href="../logging/experiment_tracking.html"><span class="doc std std-doc">Further information is available in the experiment tracking section</span></a> for your Kedro project.</p>
-<p>You can also access a more detailed <a class="reference external" href="https://kedro-viz-live-demo.hfa4c8ufrmn4u.eu-west-2.cs.amazonlightsail.com/">Kedro-Viz live demo</a>.</p>
+<p>Early versions of Kedro supported parameter versioning (as part of your codebase with a version control system like <code class="docutils literal notranslate"><span class="pre">git</span></code>) and Kedro’s dataset versioning capabilities enabled you to <a class="reference internal" href="../data/data_catalog.html#version-datasets-and-ml-models"><span class="std std-doc">snapshot models, datasets and plots</span></a>.</p>
+<p>Later versions of Kedro and Kedro-Viz introduced metadata capture, visualisation, discovery and comparison, enabling you to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-and-compare-metrics-data"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
+<blockquote>
+<div><p>View a detailed <a class="reference external" href="https://demo.kedro.org/experiment-tracking">Kedro-Viz experiment tracking demo</a>.</p>
+</div></blockquote>
+<p><img alt="" src="../_images/experiment-tracking_demo.gif" /></p>
+<div class="section" id="when-should-i-use-experiment-tracking-in-kedro">
+<h2>When should I use experiment tracking in Kedro?<a class="headerlink" href="#when-should-i-use-experiment-tracking-in-kedro" title="Permalink to this headline">¶</a></h2>
+<p>The choice of experiment tracking tool depends on your use case and choice of complementary tools, such as MLflow and Neptune:</p>
+<ul class="simple">
+<li><p><strong>Kedro</strong> - If you need experiment tracking, are looking for improved metrics visualisation and want a lightweight tool to work alongside existing functionality in Kedro. Kedro does not support a model registry.</p></li>
+<li><p><strong>MLflow</strong> - You can combine MLFlow with Kedro by using <a class="reference external" href="https://kedro-mlflow.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">kedro-mlflow</span></code></a> if you require experiment tracking, model registry and/or model serving capabilities or have access to Managed MLflow within the Databricks ecosystem.</p></li>
+<li><p><strong>Neptune</strong> - If you require experiment tracking and model registry functionality, improved visualisation of metrics and support for collaborative data science, you may consider <a class="reference external" href="https://docs.neptune.ai/integrations/kedro/"><code class="docutils literal notranslate"><span class="pre">kedro-neptune</span></code></a> for your workflow.</p></li>
+</ul>
+<p>We support <a class="reference internal" href="../extend_kedro/plugins.html"><span class="doc std std-doc">a growing list of integrations</span></a>.</p>
+</div>
 <div class="section" id="set-up-a-project">
 <h2>Set up a project<a class="headerlink" href="#set-up-a-project" title="Permalink to this headline">¶</a></h2>
-<p>We assume that you have already <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">installed Kedro</span></a> and <a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Kedro-Viz</span></a>. To set up a new project using the spaceflights starter, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro new --starter<span class="o">=</span>spaceflights
+<p>This section describes the steps necessary to set up experiment tracking and access logged metrics, using the <a class="reference internal" href="../tutorial/spaceflights_tutorial.html"><span class="doc std std-doc">spaceflights tutorial</span></a> with a version of Kedro equal to or higher than 0.18.4, and a version of Kedro-Viz equal to or higher than 5.2.</p>
+<p>There are three steps to enable experiment tracking features with Kedro-Viz. We will illustrate how to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#set-up-the-session-store"><span class="std std-doc">set up a session store to capture experiment metadata</span></a></p></li>
+<li><p><a class="reference internal" href="#set-up-experiment-tracking-datasets"><span class="std std-doc">set up experiment tracking datasets to list the metrics to track</span></a></p></li>
+<li><p><a class="reference internal" href="#modify-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">modify your nodes and pipelines to output those metrics</span></a></p></li>
+</ul>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>We assume that you have already <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">installed Kedro</span></a> and <a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Kedro-Viz</span></a>. Before proceeding, ensure you’re using Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code> (you can confirm your Kedro-Viz version by running <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">info</span></code>).</p>
+<p>Create a new project using the spaceflights starter. From the terminal run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>spaceflights
 </pre></div>
 </div>
 <p>Feel free to name your project as you like, but this guide will assume the project is named <strong>Kedro Experiment Tracking Tutorial</strong>.</p>
 </div>
+<div class="section" id="install-the-dependencies-for-the-project">
+<h3>Install the dependencies for the project<a class="headerlink" href="#install-the-dependencies-for-the-project" title="Permalink to this headline">¶</a></h3>
+<p>Once you have created the project, to run project-specific Kedro commands, you must navigate to the directory in which it has been created:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>kedro-experiment-tracking-tutorial
+</pre></div>
+</div>
+<p>Install the project’s dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="set-up-the-session-store">
 <h2>Set up the session store<a class="headerlink" href="#set-up-the-session-store" title="Permalink to this headline">¶</a></h2>
-<p>In the domain of experiment tracking, each pipeline run is considered a session. A session store records all related metadata for each pipeline run, from logged metrics to other run-related data such as timestamp, git username and branch. The session store is a <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> database that is generated during your first pipeline run after it has been set up in your project.</p>
+<p>In the domain of experiment tracking, each pipeline run is considered a session. A session store records all related metadata for each pipeline run, from logged metrics to other run-related data such as timestamp, <code class="docutils literal notranslate"><span class="pre">git</span></code> username and branch. The session store is a <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> database that is generated during your first pipeline run after it has been set up in your project.</p>
 <p>To set up the session store, go to the <code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/settings.py</span></code> file and add the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro_viz.integrations.kedro.sqlite_store</span> <span class="kn">import</span> <span class="n">SQLiteStore</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -1347,39 +1392,35 @@
 <span class="n">SESSION_STORE_ARGS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span><span class="p">)}</span>
 </pre></div>
 </div>
-<p>This will specify the creation of the <code class="docutils literal notranslate"><span class="pre">SQLiteStore</span></code> under the <code class="docutils literal notranslate"><span class="pre">/data</span></code> subfolder, using the <code class="docutils literal notranslate"><span class="pre">SQLiteStore</span></code> setup from your installed Kedro-Viz plugin.</p>
-<p>Please ensure that your installed version of Kedro-Viz is at least version 4.1.1 onwards. This step is crucial to enable experiment tracking features on Kedro-Viz, as it is the database used to serve all run data to the Kedro-Viz front-end. Once this step is complete, you can either proceed to <a class="reference internal" href="#set-up-tracking-datasets"><span class="std std-doc">set up the tracking datasets</span></a> or <a class="reference internal" href="#set-up-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">set up your nodes and pipelines to log metrics</span></a>; these two activities are interchangeable, but both should be completed to get a working experiment tracking setup.</p>
+<p>This will specify the creation of the <code class="docutils literal notranslate"><span class="pre">SQLiteStore</span></code> under the <code class="docutils literal notranslate"><span class="pre">data/</span></code> subfolder, using the <code class="docutils literal notranslate"><span class="pre">SQLiteStore</span></code> setup from your installed Kedro-Viz plugin.</p>
+<p>Please ensure that your installed version of Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code>. This step is crucial to enable experiment tracking features on Kedro-Viz, as it is the database used to serve all run data to the Kedro-Viz front-end. Once this step is complete, you can either proceed to <a class="reference internal" href="#set-up-experiment-tracking-datasets"><span class="std std-doc">set up the tracking datasets</span></a> or <a class="reference internal" href="#modify-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">set up your nodes and pipelines to log metrics</span></a>; these two activities are interchangeable, but both should be completed to get a working experiment tracking setup.</p>
 </div>
-<div class="section" id="set-up-tracking-datasets">
-<h2>Set up tracking datasets<a class="headerlink" href="#set-up-tracking-datasets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-experiment-tracking-datasets">
+<h2>Set up experiment tracking datasets<a class="headerlink" href="#set-up-experiment-tracking-datasets" title="Permalink to this headline">¶</a></h2>
 <p>There are two types of tracking datasets: <a class="reference internal" href="../kedro.extras.datasets.tracking.MetricsDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">tracking.MetricsDataSet</span></code></span></a> and <a class="reference internal" href="../kedro.extras.datasets.tracking.JSONDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">tracking.JSONDataSet</span></code></span></a>. The <code class="docutils literal notranslate"><span class="pre">tracking.MetricsDataSet</span></code> should be used for tracking numerical metrics, and the <code class="docutils literal notranslate"><span class="pre">tracking.JSONDataSet</span></code> can be used for tracking any other JSON-compatible data like boolean or text-based data.</p>
-<p>Set up two datasets to log <code class="docutils literal notranslate"><span class="pre">r2</span> <span class="pre">scores</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters</span></code> for each run by adding the following in the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_science.active_modelling_pipeline.metrics</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracking.MetricsDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/metrics.json</span><span class="w"></span>
+<p>Set up two datasets to log the columns used in the companies dataset (<code class="docutils literal notranslate"><span class="pre">companies_columns</span></code>) and experiment metrics for the data science pipeline (<code class="docutils literal notranslate"><span class="pre">metrics</span></code>) like the coefficient of determination (<code class="docutils literal notranslate"><span class="pre">r2</span> <span class="pre">score</span></code>), max error (<code class="docutils literal notranslate"><span class="pre">me</span></code>) and mean absolute error (<code class="docutils literal notranslate"><span class="pre">mae</span></code>) by adding the following in the <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">metrics</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracking.MetricsDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/metrics.json</span>
 
-<span class="nt">data_processing.companies_columns</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracking.JSONDataSet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/companies_columns.json</span><span class="w"></span>
+<span class="nt">companies_columns</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracking.JSONDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/companies_columns.json</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These two datasets include namespaces to correspond to the pipeline setup. If you have a project without namespaces, you can still use experiment tracking.</p>
 </div>
-</div>
-<div class="section" id="set-up-your-nodes-and-pipelines-to-log-metrics">
-<h2>Set up your nodes and pipelines to log metrics<a class="headerlink" href="#set-up-your-nodes-and-pipelines-to-log-metrics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modify-your-nodes-and-pipelines-to-log-metrics">
+<h2>Modify your nodes and pipelines to log metrics<a class="headerlink" href="#modify-your-nodes-and-pipelines-to-log-metrics" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have set up the tracking datasets to log experiment tracking data, next ensure that the data is returned from your nodes.</p>
-<p>Set up the data to be logged for the metrics dataset - under <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> of your <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">/src/kedro-experiment-tracking-tutorial/pipelines/data_science/nodes.py</span></code>), add three different metrics to your <code class="docutils literal notranslate"><span class="pre">evaluate_model</span></code> function: <code class="docutils literal notranslate"><span class="pre">score</span></code> to log your r2 score, <code class="docutils literal notranslate"><span class="pre">mae</span></code> to log your mean absolute error, and <code class="docutils literal notranslate"><span class="pre">me</span></code> to log your max error, and returning those 3 metrics as a key value pair.</p>
-<p>The new <code class="docutils literal notranslate"><span class="pre">evaluate_model</span></code> function would look like this:</p>
+<p>Set up the data to be logged for the metrics dataset - under <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> of your <code class="docutils literal notranslate"><span class="pre">data_science</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_science/nodes.py</span></code>), add three different metrics to your <code class="docutils literal notranslate"><span class="pre">evaluate_model</span></code> function to log <code class="docutils literal notranslate"><span class="pre">r2_score</span></code>, <code class="docutils literal notranslate"><span class="pre">mae</span></code> and <code class="docutils literal notranslate"><span class="pre">me</span></code> and return these 3 metrics as key-value pairs.</p>
+<p>The new <code class="docutils literal notranslate"><span class="pre">evaluate_model</span></code> function should look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">max_error</span>
 
 
 <span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span>
     <span class="n">regressor</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">,</span> <span class="n">X_test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y_test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Calculates and logs the coefficient of determination.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates and logs the coefficient of determination.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        regressor: Trained model.</span>
@@ -1405,12 +1446,12 @@
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Repeat the same steps to set up the <code class="docutils literal notranslate"><span class="pre">companies_column</span></code> dataset. For this dataset, log the column that contains the list of companies as outlined in the <code class="docutils literal notranslate"><span class="pre">companies.csv</span></code> file under the <code class="docutils literal notranslate"><span class="pre">/data/01_raw</span></code> directory. Modify the <code class="docutils literal notranslate"><span class="pre">preprocess_companies</span></code> node under the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_processing/nodes.py</span></code>) to return the data under a key value pair, as shown below:</p>
+<p>Repeat the same steps to set up the <code class="docutils literal notranslate"><span class="pre">companies_column</span></code> dataset. For this dataset, log the column that contains the list of companies as outlined in the <code class="docutils literal notranslate"><span class="pre">companies.csv</span></code> file under the <code class="docutils literal notranslate"><span class="pre">data/01_raw</span></code> directory. Modify the <code class="docutils literal notranslate"><span class="pre">preprocess_companies</span></code> node under the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_processing/nodes.py</span></code>) to return the data under a key-value pair, as shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span>
 
 
 <span class="k">def</span> <span class="nf">preprocess_companies</span><span class="p">(</span><span class="n">companies</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Preprocesses the data for companies.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocesses the data for companies.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        companies: Raw data.</span>
@@ -1437,28 +1478,44 @@
 <div class="section" id="generate-the-run-data">
 <h2>Generate the run data<a class="headerlink" href="#generate-the-run-data" title="Permalink to this headline">¶</a></h2>
 <p>The beauty of native experiment tracking in Kedro is that all tracked data is generated and stored each time you do a Kedro run. Hence, to generate the data, you need only execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run
 </pre></div>
 </div>
 <p>After the run completes, under <code class="docutils literal notranslate"><span class="pre">data/09_tracking</span></code>, you will now see two folders, <code class="docutils literal notranslate"><span class="pre">companies_column.json</span></code> and <code class="docutils literal notranslate"><span class="pre">metrics.json</span></code>. On performing a pipeline run after setting up the tracking datasets, Kedro will generate a folder with the dataset name for each tracked dataset. Each folder of the tracked dataset will contain folders named by the timestamp of each pipeline run to store the saved metrics of the dataset, and each future pipeline run will generate a new timestamp folder with the JSON file of the saved metrics under the folder of its subsequent tracked dataset.</p>
 <p>You will also see the <code class="docutils literal notranslate"><span class="pre">session_store.db</span></code> generated from your first pipeline run after enabling experiment tracking, which is used to store all the generated run metadata, alongside the tracking dataset, to be used for exposing experiment tracking to Kedro-Viz.</p>
-<p><img alt="" src="../_images/experiment-tracking_folder.png" /></p>
-<p>Try to execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> a few times to generate a larger set of experiment data. You can also play around with setting up different tracking datasets, and check the logged data via the generated JSON data files.</p>
+<p><img alt="" src="../_images/experiment-tracking-folder.png" /></p>
+<p>Execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> a few times in a row to generate a larger set of experiment data. You can also play around with setting up different tracking datasets, and check the logged data via the generated JSON data files.</p>
 </div>
 <div class="section" id="access-run-data-and-compare-runs">
 <h2>Access run data and compare runs<a class="headerlink" href="#access-run-data-and-compare-runs" title="Permalink to this headline">¶</a></h2>
-<p>Here comes the fun part of accessing your run data on Kedro-Viz. Having ensured that you are using Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=4.1.1</span></code> (you can confirm your Kedro-Viz version by running <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">info</span></code>), run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro viz
+<p>Here comes the fun part of accessing your run data on Kedro-Viz. Having generated some run data, execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>viz
 </pre></div>
 </div>
-<p>When you open the Kedro-Viz web app, you will see an experiment tracking icon <img alt="" src="../_images/experiment-tracking-icon.png" /> on your left. Click the icon to go to the experiment tracking page (you can also access the page via <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:4141/runsList</span></code>), where you will now see the set of experiment data generated from your previous runs:</p>
-<p><img alt="" src="../_images/experiment-tracking_runsList.png" /></p>
+<p>When you open the Kedro-Viz web app, you will see an experiment tracking icon on your left.</p>
+<p><img alt="" src="../_images/experiment-tracking-icon.png" /></p>
+<p>Click the icon to go to the experiment tracking page (you can also access the page via <a class="reference external" href="http://127.0.0.1:4141/experiment-tracking">http://127.0.0.1:4141/experiment-tracking</a>), where you can see the sets of experiment data generated from all previous runs:</p>
+<p><img alt="" src="../_images/experiment-tracking-runs-list.png" /></p>
 <p>You can now access, compare and pin your runs by toggling the <code class="docutils literal notranslate"><span class="pre">Compare</span> <span class="pre">runs</span></code> button:</p>
-<p><img alt="" src="../_images/experiment-tracking_demo.gif" /></p>
+<p><img alt="" src="../_images/experiment-tracking-compare-runs.png" /></p>
 </div>
-<div class="section" id="view-and-compare-plot-data">
-<h2>View and compare plot data<a class="headerlink" href="#view-and-compare-plot-data" title="Permalink to this headline">¶</a></h2>
-<p>From Kedro-Viz version 5.0.0 experiment tracking also supports the display and comparison of plots, such as Plotly and Matplotlib.</p>
+<div class="section" id="view-and-compare-plots">
+<h2>View and compare plots<a class="headerlink" href="#view-and-compare-plots" title="Permalink to this headline">¶</a></h2>
+<p>From Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.0.0</span></code> experiment tracking also supports the <a class="reference internal" href="visualise_charts_with_plotly.html"><span class="doc std std-doc">display and comparison of plots, such as Plotly and Matplotlib</span></a>. In this section, we illustrate how to compare Matplotlib plots across experimental runs.</p>
+<div class="section" id="update-the-dependencies">
+<h3>Update the dependencies<a class="headerlink" href="#update-the-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>You must update the <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> file in your Kedro project by adding the following dataset to enable Matplotlib for your project:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kedro-datasets[matplotlib.MatplotlibWriter]~=1.0.0
+seaborn~=0.12.1
+</pre></div>
+</div>
+<p>And install the requirements with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>src/requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-plotting-node">
+<h3>Add a plotting node<a class="headerlink" href="#add-a-plotting-node" title="Permalink to this headline">¶</a></h3>
 <p>Add a new node to the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> nodes (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_processing/nodes.py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sn</span>
@@ -1476,34 +1533,38 @@
     <span class="k">return</span> <span class="n">plt</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>You might have to execute <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">seaborn</span></code> if the <a class="reference external" href="https://seaborn.pydata.org/">seaborn library</a> is not installed yet.</p>
-</div></blockquote>
-<p>And now add this node to the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_processing/pipeline.py</span></code>)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">(</span>
+<p>And now add this node to the <code class="docutils literal notranslate"><span class="pre">data_processing</span></code> pipeline (<code class="docutils literal notranslate"><span class="pre">src/kedro-experiment-tracking-tutorial/pipelines/data_processing/pipeline.py</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.nodes</span> <span class="kn">import</span> <span class="n">create_confusion_matrix</span>
+
+<span class="n">node</span><span class="p">(</span>
     <span class="n">func</span><span class="o">=</span><span class="n">create_confusion_matrix</span><span class="p">,</span>
     <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;companies&quot;</span><span class="p">,</span>
     <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;confusion_matrix&quot;</span><span class="p">,</span>
 <span class="p">),</span>
 </pre></div>
 </div>
-<p>In the catalog add the <code class="docutils literal notranslate"><span class="pre">confusion_matrix</span></code> data definition, making sure to set the versioned flag to <code class="docutils literal notranslate"><span class="pre">true</span></code> within the project catalog to include the plot in experiment tracking.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># conf/base/catalog.yml</span><span class="w"></span>
-
-<span class="nt">data_processing.confusion_matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span><span class="w"></span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/confusion_matrix.png</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<p>In the catalog (<code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>) add the <code class="docutils literal notranslate"><span class="pre">confusion_matrix</span></code> data definition, making sure to set the versioned flag to <code class="docutils literal notranslate"><span class="pre">true</span></code> within the project catalog to include the plot in experiment tracking:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">confusion_matrix</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/09_tracking/confusion_matrix.png</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <p>After running the pipeline with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, the plot will be saved and you will be able to see the plot in the experiment tracking panel when you execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code>. Clicking on a plot will expand it. When in comparison view, expanding a plot will show all the plots in that view for them to be compared side-by-side.</p>
-<p><img alt="" src="../_images/expand-plot-comparison-view.gif" /></p>
+<p><img alt="" src="../_images/experiment-tracking-plots-comparison.png" />
+<img alt="" src="../_images/experiment-tracking-plots-comparison-expanded.png" /></p>
 </div>
-<div class="section" id="view-your-metrics-timeline">
-<h2>View your metrics timeline<a class="headerlink" href="#view-your-metrics-timeline" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="view-and-compare-metrics-data">
+<h2>View and compare metrics data<a class="headerlink" href="#view-and-compare-metrics-data" title="Permalink to this headline">¶</a></h2>
+<p>From Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code> experiment tracking also supports the display and comparison of metrics data through two chart types: time series and parallel coordinates.</p>
+<p>Time series displays one metric per graph, showing how the metric value has changed over time.</p>
+<p>Parallel coordinates displays all metrics on a single graph, with each vertical line representing one metric with its own scale. The metric values are positioned along those vertical lines and connected across each axis.</p>
+<p>When in comparison view, comparing runs will highlight your selections on the respective chart types, improving readability even in the event there is a multitude of data points. The following graphic is taken from the <a class="reference external" href="https://demo.kedro.org/experiment-tracking">Kedro-Viz experiment tracking demo</a> (and is not a visualisation from the example code you created above).</p>
+<p><img alt="" src="../_images/experiment-tracking_metrics-comparison.gif" /></p>
 <p>Additionally, you can monitor the changes to metrics over time from the pipeline visualisation tab <img alt="" src="../_images/pipeline_visualisation_icon.png" />. Clicking on any MetricsDataset node will open a side panel displaying how the metric value has changed over time.</p>
 <p><img alt="" src="../_images/pipeline_show_metrics.gif" /></p>
-<p>Keep an eye out on the <a class="reference external" href="https://github.com/kedro-org/kedro-viz/releases">Kedro-Viz release page</a> for the upcoming releases on this experiment tracking functionality.</p>
+<p>This graphic is also taken from the <a class="reference external" href="https://demo.kedro.org/experiment-tracking">Kedro-Viz experiment tracking demo</a> (and is not a visualisation from the example code you created above).</p>
 </div>
 </div>
 

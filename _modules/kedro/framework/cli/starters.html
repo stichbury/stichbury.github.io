@@ -305,6 +305,9 @@
         <script >mermaid.initialize({startOnLoad:true});</script>
         <script >mermaid.initialize({startOnLoad:true});</script>
         <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
+        <script >mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -507,7 +510,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../visualisation/kedro-viz_visualisation.html">Get started with Kedro-Viz</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/kedro-viz_visualisation.html#visualise-the-spaceflights-project">Visualise the spaceflights project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/kedro-viz_visualisation.html#need-help">Need help?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/kedro-viz_visualisation.html#exit-an-open-visualisation">Exit an open visualisation</a></li>
 </ul>
 </li>
@@ -523,6 +525,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#create-the-template-reporting-pipeline">Create the template reporting pipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#add-the-plotly-reporting-nodes">Add the Plotly reporting nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#update-the-reporting-pipeline-code">Update the reporting pipeline code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#visualisation-with-matplotlib">Visualisation with Matplotlib</a><ul>
@@ -530,20 +533,29 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#id2">Configure the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#add-another-node">Add another node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#update-the-pipeline">Update the pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#run-the-pipeline">Run the pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/visualise_charts_with_plotly.html#id3">Run the pipeline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html">Set up experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#set-up-experiment-tracking-datasets">Set up experiment tracking datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#modify-your-nodes-and-pipelines-to-log-metrics">Modify your nodes and pipelines to log metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#generate-the-run-data">Generate the run data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#access-run-data-and-compare-runs">Access run data and compare runs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#view-and-compare-plot-data">View and compare plot data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#view-your-metrics-timeline">View your metrics timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#view-and-compare-plots">View and compare plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#update-the-dependencies">Update the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#add-a-plotting-node">Add a plotting node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visualisation/experiment_tracking.html#view-and-compare-metrics-data">View and compare metrics data</a></li>
 </ul>
 </li>
 </ul>
@@ -609,6 +621,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#template-configuration">Template configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#globals">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#jinja2-support">Jinja2 support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#configuration-with-omegaconf">Configuration with OmegaConf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#templating-for-parameters">Templating for parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#environment-variables-for-credentials">Environment variables for credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../kedro_project_setup/configuration.html#parameters">Parameters</a><ul>
@@ -875,7 +892,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../hooks/examples.html">Hooks examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#add-memory-consumption-tracking">Add memory consumption tracking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#add-data-validation">Add data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#add-data-validation">Add data validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../hooks/examples.html#v2-api">V2 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../hooks/examples.html#v3-api">V3 API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#add-observability-to-your-pipeline">Add observability to your pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#add-metrics-tracking-to-your-model">Add metrics tracking to your model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../hooks/examples.html#modify-node-inputs-using-before-node-run-hook">Modify node inputs using <code class="docutils literal notranslate"><span class="pre">before_node_run</span></code> hook</a></li>
@@ -894,16 +915,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../logging/logging.html#perform-logging-in-your-project">Perform logging in your project</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../logging/experiment_tracking.html">Experiment tracking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../logging/experiment_tracking.html#enable-experiment-tracking">Enable experiment tracking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../logging/experiment_tracking.html#set-up-the-session-store">Set up the session store</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../logging/experiment_tracking.html#set-up-tracking-datasets">Set up tracking datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../logging/experiment_tracking.html#set-up-your-nodes-and-pipelines-to-log-metrics">Set up your nodes and pipelines to log metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../logging/experiment_tracking.html#community-solutions">Community solutions</a></li>
 </ul>
 </li>
 </ul>
@@ -1346,6 +1357,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1611,7 +1623,7 @@
 
 <div class="viewcode-block" id="KedroStarterSpec"><a class="viewcode-back" href="../../../../kedro.framework.cli.starters.KedroStarterSpec.html#kedro.framework.cli.starters.KedroStarterSpec">[docs]</a><span class="nd">@define</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">KedroStarterSpec</span><span class="p">:</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
-    <span class="sd">&quot;&quot;&quot;Specification of custom kedro starter template</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Specification of custom kedro starter template</span>
 <span class="sd">    Args:</span>
 <span class="sd">        alias: alias of the starter which shows up on `kedro starter list` and is used</span>
 <span class="sd">        by the starter argument of `kedro new`</span>
@@ -1666,7 +1678,7 @@
 
 <span class="c1"># pylint: disable=unused-argument</span>
 <span class="k">def</span> <span class="nf">_remove_readonly</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">excinfo</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
-    <span class="sd">&quot;&quot;&quot;Remove readonly files on Windows</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove readonly files on Windows</span>
 <span class="sd">    See: https://docs.python.org/3/library/shutil.html?highlight=shutil#rmtree-example</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IWRITE</span><span class="p">)</span>
@@ -1674,7 +1686,7 @@
 
 
 <span class="k">def</span> <span class="nf">_get_starters_dict</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">KedroStarterSpec</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;This function lists all the starter aliases declared in</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function lists all the starter aliases declared in</span>
 <span class="sd">    the core repo and in plugins entry points.</span>
 
 <span class="sd">    For example, the output for official kedro starters looks like:</span>
@@ -1722,7 +1734,7 @@
 <span class="k">def</span> <span class="nf">_starter_spec_to_dict</span><span class="p">(</span>
     <span class="n">starter_specs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">KedroStarterSpec</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Convert a dictionary of starters spec to a nicely formatted dictionary&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a dictionary of starters spec to a nicely formatted dictionary&quot;&quot;&quot;</span>
     <span class="n">format_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">alias</span><span class="p">,</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">starter_specs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">format_dict</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Each dictionary represent 1 starter</span>
@@ -1750,7 +1762,7 @@
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--checkout&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">CHECKOUT_ARG_HELP</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--directory&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="n">DIRECTORY_ARG_HELP</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">starter_alias</span><span class="p">,</span> <span class="n">checkout</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a new kedro project.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a new kedro project.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">checkout</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">starter_alias</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">KedroCliError</span><span class="p">(</span><span class="s2">&quot;Cannot use the --checkout flag without a --starter value.&quot;</span><span class="p">)</span>
 
@@ -1810,12 +1822,12 @@
 
 <span class="nd">@create_cli</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">starter</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Commands for working with project starters.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Commands for working with project starters.&quot;&quot;&quot;</span>
 
 
 <span class="nd">@starter</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;list&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">list_starters</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;List all official project starters available.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;List all official project starters available.&quot;&quot;&quot;</span>
     <span class="n">starters_dict</span> <span class="o">=</span> <span class="n">_get_starters_dict</span><span class="p">()</span>
 
     <span class="c1"># Group all specs by origin as nested dict and sort it.</span>
@@ -1839,7 +1851,7 @@
 
 
 <span class="k">def</span> <span class="nf">_fetch_config_from_file</span><span class="p">(</span><span class="n">config_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Obtains configuration for a new kedro project non-interactively from a file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Obtains configuration for a new kedro project non-interactively from a file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config_path: The path of the config.yml which should contain the data required</span>
@@ -1873,7 +1885,7 @@
     <span class="n">checkout</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Creates a dictionary of arguments to pass to cookiecutter.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a dictionary of arguments to pass to cookiecutter.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config: Configuration for starting a new project. This is passed as</span>
@@ -1906,7 +1918,7 @@
 
 
 <span class="k">def</span> <span class="nf">_create_project</span><span class="p">(</span><span class="n">template_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cookiecutter_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a new kedro project using cookiecutter.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new kedro project using cookiecutter.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        template_path: The path to the cookiecutter template to create the project.</span>
@@ -1957,7 +1969,7 @@
 <span class="k">def</span> <span class="nf">_get_cookiecutter_dir</span><span class="p">(</span>
     <span class="n">template_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">checkout</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">:</span> <span class="nb">str</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Gives a path to the cookiecutter directory. If template_path is a repo then</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gives a path to the cookiecutter directory. If template_path is a repo then</span>
 <span class="sd">    clones it to ``tmpdir``; if template_path is a file path then directly uses that</span>
 <span class="sd">    path without copying anything.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1985,14 +1997,14 @@
         <span class="n">official_starters</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_OFFICIAL_STARTER_SPECS</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">KedroCliError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">error_message</span><span class="si">}</span><span class="s2">. The aliases for the official Kedro starters are: </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">official_starters</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">official_starters</span><span class="p">,</span><span class="w"> </span><span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
     <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">cookiecutter_dir</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_get_prompts_required</span><span class="p">(</span><span class="n">cookiecutter_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Finds the information a user must supply according to prompts.yml.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds the information a user must supply according to prompts.yml.&quot;&quot;&quot;</span>
     <span class="n">prompts_yml</span> <span class="o">=</span> <span class="n">cookiecutter_dir</span> <span class="o">/</span> <span class="s2">&quot;prompts.yml&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">prompts_yml</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
         <span class="k">return</span> <span class="kc">None</span>
@@ -2009,7 +2021,7 @@
 <span class="k">def</span> <span class="nf">_fetch_config_from_user_prompts</span><span class="p">(</span>
     <span class="n">prompts</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">cookiecutter_context</span><span class="p">:</span> <span class="n">OrderedDict</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Interactively obtains information from user prompts.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interactively obtains information from user prompts.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        prompts: Prompts from prompts.yml.</span>
@@ -2052,7 +2064,7 @@
 
 
 <span class="k">class</span> <span class="nc">_Prompt</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Represent a single CLI prompt for `kedro new`&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represent a single CLI prompt for `kedro new`&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
         <span class="k">try</span><span class="p">:</span>
@@ -2074,7 +2086,7 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">prompt_text</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
 
     <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_input</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Validate a given prompt value against the regex validator&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate a given prompt value against the regex validator&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regexp</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regexp</span><span class="p">,</span> <span class="n">user_input</span><span class="p">):</span>
             <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">user_input</span><span class="si">}</span><span class="s2">&#39; is an invalid value for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">.&quot;</span>
             <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2103,7 +2115,7 @@
 
 
 <span class="k">def</span> <span class="nf">_validate_config_file</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">prompts</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;Checks that the configuration file contains all needed variables.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks that the configuration file contains all needed variables.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config: The config as a dictionary.</span>
