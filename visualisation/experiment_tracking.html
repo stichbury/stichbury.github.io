@@ -251,9 +251,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Experiment tracking in Kedro-Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-a-project">Set up a project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-the-dependencies-for-the-project">Install the dependencies for the project</a></li>
 </ul>
 </li>
@@ -1335,10 +1337,17 @@
 <li><p>Model weights</p></li>
 <li><p>Plots and other visualisations</p></li>
 </ul>
-<p>Early versions of Kedro supported parameter versioning (as part of your codebase with a version control system like <code class="docutils literal notranslate"><span class="pre">git</span></code>) and Kedro’s dataset versioning capabilities enabled you to <a class="reference internal" href="../data/data_catalog.html#version-datasets-and-ml-models"><span class="std std-doc">snapshot models, datasets and plots</span></a>.</p>
-<p>More recent versions of Kedro and Kedro-Viz introduce metadata capture, visualisation, discovery and comparison, enabling you to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-and-compare-metrics-data"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
-<p>Take a look at the <a class="reference external" href="https://demo.kedro.org/experiment-tracking">Kedro-Viz experiment tracking demo</a> for further information.</p>
+<div class="section" id="kedro-versions-supporting-experiment-tracking">
+<h2>Kedro versions supporting experiment tracking<a class="headerlink" href="#kedro-versions-supporting-experiment-tracking" title="Permalink to this headline">¶</a></h2>
+<p>Kedro has always supported parameter versioning (as part of your codebase with a version control system like <code class="docutils literal notranslate"><span class="pre">git</span></code>) and Kedro’s dataset versioning capabilities enabled you to <a class="reference internal" href="../data/data_catalog.html#version-datasets-and-ml-models"><span class="std std-doc">snapshot models, datasets and plots</span></a>.</p>
+<p>Kedro-Viz version 4.1.1 introduced metadata capture, visualisation, discovery and comparison, enabling you to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-and-compare-metrics-data"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
+<p>Kedro-Viz version 5.0 also supports the <a class="reference internal" href="visualise_charts_with_plotly.html"><span class="doc std std-doc">display and comparison of plots, such as Plotly and Matplotlib</span></a>. Support for metric plots (timeseries and parellel coords) was added to Kedro-Viz version 5.2.1.</p>
+</div>
+<div class="section" id="experiment-tracking-demonstration-using-kedro-viz">
+<h2>Experiment tracking demonstration using Kedro-Viz<a class="headerlink" href="#experiment-tracking-demonstration-using-kedro-viz" title="Permalink to this headline">¶</a></h2>
+<p>We have made an <a class="reference external" href="https://demo.kedro.org/experiment-tracking">experiment tracking demo</a> to enable you to explore the capabilities of Kedro-Viz further.</p>
 <p><img alt="" src="../_images/experiment-tracking_demo.gif" /></p>
+</div>
 <div class="section" id="when-should-i-use-experiment-tracking-in-kedro">
 <h2>When should I use experiment tracking in Kedro?<a class="headerlink" href="#when-should-i-use-experiment-tracking-in-kedro" title="Permalink to this headline">¶</a></h2>
 <p>The choice of experiment tracking tool depends on your use case and choice of complementary tools, such as MLflow and Neptune:</p>
@@ -1358,9 +1367,13 @@
 <li><p><a class="reference internal" href="#set-up-experiment-tracking-datasets"><span class="std std-doc">Set up experiment tracking datasets to list the metrics to track</span></a></p></li>
 <li><p><a class="reference internal" href="#modify-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">Modify your nodes and pipelines to output those metrics</span></a></p></li>
 </ul>
-<div class="section" id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
-<p>We assume that you have already <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">installed Kedro</span></a> and <a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Kedro-Viz</span></a>. Before proceeding, ensure you’re using Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code> (you can confirm your Kedro-Viz version by running <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">info</span></code>).</p>
+<div class="section" id="install-kedro-and-kedro-viz">
+<h3>Install Kedro and Kedro-Viz<a class="headerlink" href="#install-kedro-and-kedro-viz" title="Permalink to this headline">¶</a></h3>
+<p>To use this tutorial code, you must already have <a class="reference internal" href="../get_started/install.html"><span class="doc std std-doc">installed Kedro</span></a> and <a class="reference internal" href="kedro-viz_visualisation.html"><span class="doc std std-doc">Kedro-Viz</span></a>. You can confirm the versions you have installed by running <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">info</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The example code uses a version of Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code>.</p>
+</div>
 <p>Create a new project using the spaceflights starter. From the terminal run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>new<span class="w"> </span>--starter<span class="o">=</span>spaceflights
 </pre></div>
@@ -1394,7 +1407,7 @@
 <p>This step is crucial to enable experiment tracking features on Kedro-Viz, as it is the database used to serve all run data to the Kedro-Viz front-end. Once this step is complete, you can either proceed to <a class="reference internal" href="#set-up-experiment-tracking-datasets"><span class="std std-doc">set up the tracking datasets</span></a> or <a class="reference internal" href="#modify-your-nodes-and-pipelines-to-log-metrics"><span class="std std-doc">set up your nodes and pipelines to log metrics</span></a>; these two activities are interchangeable, but both should be completed to get a working experiment tracking setup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please ensure that your installed version of Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code>.</p>
+<p>Please ensure that your installed version of Kedro-Viz is <code class="docutils literal notranslate"><span class="pre">&gt;=5.2.1</span></code>.</p>
 </div>
 </div>
 <div class="section" id="set-up-experiment-tracking-datasets">
@@ -1503,7 +1516,7 @@
 </div>
 <div class="section" id="view-and-compare-plots">
 <h2>View and compare plots<a class="headerlink" href="#view-and-compare-plots" title="Permalink to this headline">¶</a></h2>
-<p>From Kedro-Viz <code class="docutils literal notranslate"><span class="pre">&gt;=5.0.0</span></code> experiment tracking also supports the <a class="reference internal" href="visualise_charts_with_plotly.html"><span class="doc std std-doc">display and comparison of plots, such as Plotly and Matplotlib</span></a>. In this section, we illustrate how to compare Matplotlib plots across experimental runs.</p>
+<p>In this section, we illustrate how to compare Matplotlib plots across experimental runs (functionality available since Kedro-Viz version 5.0).</p>
 <div class="section" id="update-the-dependencies">
 <h3>Update the dependencies<a class="headerlink" href="#update-the-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Update the <code class="docutils literal notranslate"><span class="pre">src/requirements.txt</span></code> file in your Kedro project by adding the following dataset to enable Matplotlib for your project:</p>
@@ -1553,8 +1566,8 @@ seaborn~=0.12.1
 </pre></div>
 </div>
 <p>After running the pipeline with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, the plot is saved and you can see it in the experiment tracking panel when you execute <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">viz</span></code>. Clicking on a plot expands it. When in comparison view, expanding a plot shows all the plots in that view for side-by-side comparison.</p>
-<p><img alt="" src="../_images/experiment-tracking-plots-comparison.png" />
-<img alt="" src="../_images/experiment-tracking-plots-comparison-expanded.png" /></p>
+<p><img alt="" src="../_images/experiment-tracking-plots-comparison.png" /></p>
+<p><img alt="" src="../_images/experiment-tracking-plots-comparison-expanded.png" /></p>
 </div>
 </div>
 <div class="section" id="view-and-compare-metrics-data">
