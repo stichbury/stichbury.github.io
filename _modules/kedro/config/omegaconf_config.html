@@ -483,8 +483,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -834,6 +834,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../hooks/examples.html">Hooks examples</a><ul>
@@ -1303,7 +1304,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1549,7 +1550,7 @@
 <span class="n">_config_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="OmegaConfLoader"><a class="viewcode-back" href="../../../kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader">[docs]</a><span class="k">class</span> <span class="nc">OmegaConfLoader</span><span class="p">(</span><span class="n">AbstractConfigLoader</span><span class="p">):</span>
+<div class="viewcode-block" id="OmegaConfigLoader"><a class="viewcode-back" href="../../../kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader">[docs]</a><span class="k">class</span> <span class="nc">OmegaConfigLoader</span><span class="p">(</span><span class="n">AbstractConfigLoader</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Recursively scan directories (config paths) contained in ``conf_source`` for</span>
 <span class="sd">    configuration files with a ``yaml``, ``yml`` or ``json`` extension, load and merge</span>
 <span class="sd">    them through ``OmegaConf`` (https://omegaconf.readthedocs.io/)</span>
@@ -1570,11 +1571,11 @@
 <span class="sd">    ::</span>
 
 <span class="sd">        &gt;&gt;&gt; import logging.config</span>
-<span class="sd">        &gt;&gt;&gt; from kedro.config import OmegaConfLoader</span>
+<span class="sd">        &gt;&gt;&gt; from kedro.config import OmegaConfigLoader</span>
 <span class="sd">        &gt;&gt;&gt; from kedro.framework.project import settings</span>
 <span class="sd">        &gt;&gt;&gt;</span>
 <span class="sd">        &gt;&gt;&gt; conf_path = str(project_path / settings.CONF_SOURCE)</span>
-<span class="sd">        &gt;&gt;&gt; conf_loader = OmegaConfLoader(conf_source=conf_path, env=&quot;local&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; conf_loader = OmegaConfigLoader(conf_source=conf_path, env=&quot;local&quot;)</span>
 <span class="sd">        &gt;&gt;&gt;</span>
 <span class="sd">        &gt;&gt;&gt; conf_logging = conf_loader[&quot;logging&quot;]</span>
 <span class="sd">        &gt;&gt;&gt; logging.config.dictConfig(conf_logging)  # set logging conf</span>
@@ -1584,9 +1585,9 @@
 
 <span class="sd">    ``OmegaConf`` supports variable interpolation in configuration</span>
 <span class="sd">    https://omegaconf.readthedocs.io/en/2.2_branch/usage.html#merging-configurations. It is</span>
-<span class="sd">    recommended to use this instead of yaml anchors with the ``OmegaConfLoader``.</span>
+<span class="sd">    recommended to use this instead of yaml anchors with the ``OmegaConfigLoader``.</span>
 
-<span class="sd">    This version of the ``OmegaConfLoader`` does not support any of the built-in ``OmegaConf``</span>
+<span class="sd">    This version of the ``OmegaConfigLoader`` does not support any of the built-in ``OmegaConf``</span>
 <span class="sd">    resolvers. Support for resolvers might be added in future versions.</span>
 
 <span class="sd">    To use this class, change the setting for the `CONFIG_LOADER_CLASS` constant</span>
@@ -1596,13 +1597,13 @@
 <span class="sd">    ::</span>
 
 <span class="sd">        &gt;&gt;&gt; # in settings.py</span>
-<span class="sd">        &gt;&gt;&gt; from kedro.config import OmegaConfLoader</span>
+<span class="sd">        &gt;&gt;&gt; from kedro.config import OmegaConfigLoader</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-<span class="sd">        &gt;&gt;&gt; CONFIG_LOADER_CLASS = OmegaConfLoader</span>
+<span class="sd">        &gt;&gt;&gt; CONFIG_LOADER_CLASS = OmegaConfigLoader</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="OmegaConfLoader.__init__"><a class="viewcode-back" href="../../../kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="OmegaConfigLoader.__init__"><a class="viewcode-back" href="../../../kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">conf_source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">env</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1612,7 +1613,7 @@
         <span class="n">base_env</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span>
         <span class="n">default_run_env</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Instantiates a ``OmegaConfLoader``.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Instantiates a ``OmegaConfigLoader``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            conf_source: Path to use as root directory for loading configuration.</span>
@@ -1638,7 +1639,7 @@
         <span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">config_patterns</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">config_patterns</span> <span class="ow">or</span> <span class="p">{})</span>
 
-        <span class="c1"># In the first iteration of the OmegaConfLoader we&#39;ll keep the resolver turned-off.</span>
+        <span class="c1"># In the first iteration of the OmegaConfigLoader we&#39;ll keep the resolver turned-off.</span>
         <span class="c1"># It&#39;s easier to introduce them step by step, but removing them would be a breaking change.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_omegaconf_resolvers</span><span class="p">()</span>
 
@@ -1657,7 +1658,7 @@
 
 <span class="sd">        Raises:</span>
 <span class="sd">            KeyError: If key provided isn&#39;t present in the config_patterns of this</span>
-<span class="sd">               OmegaConfLoader instance.</span>
+<span class="sd">               ``OmegaConfigLoader`` instance.</span>
 <span class="sd">            MissingConfigException: If no configuration files exist matching the patterns</span>
 <span class="sd">                mapped to the provided key.</span>
 
@@ -1667,7 +1668,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># Allow bypassing of loading config from patterns if a key and value have been set</span>
-        <span class="c1"># explicitly on the ``OmegaConfLoader`` instance.</span>
+        <span class="c1"># explicitly on the ``OmegaConfigLoader`` instance.</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
@@ -1714,11 +1715,11 @@
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;OmegaConfLoader(conf_source=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">conf_source</span><span class="si">}</span><span class="s2">, env=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;OmegaConfigLoader(conf_source=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">conf_source</span><span class="si">}</span><span class="s2">, env=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="si">}</span><span class="s2">, &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;config_patterns=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">config_patterns</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="OmegaConfLoader.load_and_merge_dir_config"><a class="viewcode-back" href="../../../kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.load_and_merge_dir_config">[docs]</a>    <span class="k">def</span> <span class="nf">load_and_merge_dir_config</span><span class="p">(</span>
+<div class="viewcode-block" id="OmegaConfigLoader.load_and_merge_dir_config"><a class="viewcode-back" href="../../../kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.load_and_merge_dir_config">[docs]</a>    <span class="k">def</span> <span class="nf">load_and_merge_dir_config</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">conf_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">patterns</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>

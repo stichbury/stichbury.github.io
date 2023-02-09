@@ -251,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -602,6 +602,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
@@ -1071,7 +1072,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1331,17 +1332,15 @@
 <p>Kedro also has an advanced feature which supports packaging on a pipeline level allowing you share and reuse pipelines across projects! To read more about this please look at the <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">section on micro-packaging</span></a>.</p>
 <div class="section" id="add-documentation-to-your-project">
 <h2>Add documentation to your project<a class="headerlink" href="#add-documentation-to-your-project" title="Permalink to this headline">¶</a></h2>
-<p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> and creates a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory that builds a basic template for project-specific documentation. We recommend that you add your project-specific documentation as markdown in <code class="docutils literal notranslate"><span class="pre">docs/source</span></code></p>
-<p>If you want to customise your documentation beyond the basic template, refer to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a> for details of how to extend <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>.</p>
-<p>Once you have added any documentation you need, run the following from the project root directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>build-docs<span class="w"> </span>--open
+<p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> to build markdown documentation that you create about your project, in combination with any <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> that are defined in your code.</p>
+<p>Within the Kedro project structure there is a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory for Sphinx configuration files and to store project-specific markdown documentation.</p>
+<p>Add the documentation you need, and update <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code> to define a table of contents</p>
+<p>Next, run the following from the project root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-M<span class="w"> </span>html<span class="w"> </span>docs/source<span class="w"> </span>docs/build<span class="w"> </span>-a
 </pre></div>
 </div>
-<p>The HTML documention is built to <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> and opens automatically in a browser tab.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">build-docs</span></code> command creates documentation based on the code structure of your project. Documentation includes any <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> defined in your code.</p>
-</div>
+<p>The command is configured to build the documentation as HTML, taking <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> as the <code class="docutils literal notranslate"><span class="pre">sourcedir</span></code> and <code class="docutils literal notranslate"><span class="pre">/docs/build</span></code> as the <code class="docutils literal notranslate"><span class="pre">outputdir</span></code>.</p>
+<p>Consult the Sphinx project documentation for <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html">additional options to pass to <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code></a>. To customise your documentation beyond the basic template, you’ll need to adjust the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration settings</a> which are stored in <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.</p>
 </div>
 <div class="section" id="package-your-project">
 <h2>Package your project<a class="headerlink" href="#package-your-project" title="Permalink to this headline">¶</a></h2>

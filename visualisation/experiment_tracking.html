@@ -251,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -602,6 +602,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
@@ -1071,7 +1072,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1337,16 +1338,16 @@
 <li><p>Model weights</p></li>
 <li><p>Plots and other visualisations</p></li>
 </ul>
+<div class="section" id="experiment-tracking-demonstration-using-kedro-viz">
+<h2>Experiment tracking demonstration using Kedro-Viz<a class="headerlink" href="#experiment-tracking-demonstration-using-kedro-viz" title="Permalink to this headline">¶</a></h2>
+<p>We have made an <a class="reference external" href="https://demo.kedro.org/experiment-tracking">experiment tracking demo</a> to enable you to explore the capabilities of Kedro-Viz further.</p>
+<p><img alt="" src="../_images/experiment-tracking_demo.gif" /></p>
+</div>
 <div class="section" id="kedro-versions-supporting-experiment-tracking">
 <h2>Kedro versions supporting experiment tracking<a class="headerlink" href="#kedro-versions-supporting-experiment-tracking" title="Permalink to this headline">¶</a></h2>
 <p>Kedro has always supported parameter versioning (as part of your codebase with a version control system like <code class="docutils literal notranslate"><span class="pre">git</span></code>) and Kedro’s dataset versioning capabilities enabled you to <a class="reference internal" href="../data/data_catalog.html#version-datasets-and-ml-models"><span class="std std-doc">snapshot models, datasets and plots</span></a>.</p>
 <p>Kedro-Viz version 4.1.1 introduced metadata capture, visualisation, discovery and comparison, enabling you to access, edit and <a class="reference internal" href="#access-run-data-and-compare-runs"><span class="std std-doc">compare your experiments</span></a> and additionally <a class="reference internal" href="#view-and-compare-metrics-data"><span class="std std-doc">track how your metrics change over time</span></a>.</p>
 <p>Kedro-Viz version 5.0 also supports the <a class="reference internal" href="visualise_charts_with_plotly.html"><span class="doc std std-doc">display and comparison of plots, such as Plotly and Matplotlib</span></a>. Support for metric plots (timeseries and parellel coords) was added to Kedro-Viz version 5.2.1.</p>
-</div>
-<div class="section" id="experiment-tracking-demonstration-using-kedro-viz">
-<h2>Experiment tracking demonstration using Kedro-Viz<a class="headerlink" href="#experiment-tracking-demonstration-using-kedro-viz" title="Permalink to this headline">¶</a></h2>
-<p>We have made an <a class="reference external" href="https://demo.kedro.org/experiment-tracking">experiment tracking demo</a> to enable you to explore the capabilities of Kedro-Viz further.</p>
-<p><img alt="" src="../_images/experiment-tracking_demo.gif" /></p>
 </div>
 <div class="section" id="when-should-i-use-experiment-tracking-in-kedro">
 <h2>When should I use experiment tracking in Kedro?<a class="headerlink" href="#when-should-i-use-experiment-tracking-in-kedro" title="Permalink to this headline">¶</a></h2>

@@ -251,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -602,6 +602,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
@@ -1071,7 +1072,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1350,7 +1351,7 @@
 <div class="section" id="set-up-run-configurations">
 <h2>Set up Run configurations<a class="headerlink" href="#set-up-run-configurations" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.jetbrains.com/help/pycharm/creating-run-debug-configuration-for-tests.html">PyCharm Run configurations</a> allow you to execute preconfigured scripts rapidly in your IDE with a click of a button. This may be useful for testing, running and packaging your Kedro projects.</p>
-<p>Here we will walk you through an example of how to setup Run configuration for Kedro CLI <code class="docutils literal notranslate"><span class="pre">run</span></code> command, however it is also applicable to other Kedro commands: <code class="docutils literal notranslate"><span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">package</span></code>, <code class="docutils literal notranslate"><span class="pre">build-docs</span></code>.</p>
+<p>Here we will walk you through an example of how to set up Run configuration for the Kedro CLI <code class="docutils literal notranslate"><span class="pre">run</span></code> command. It is also applicable to other Kedro commands, such as <code class="docutils literal notranslate"><span class="pre">test</span></code> or <code class="docutils literal notranslate"><span class="pre">install</span></code>.</p>
 <p>Go to <strong>Run | Edit Configurations</strong>:</p>
 <p><img alt="" src="../_images/pycharm_edit_confs.png" /></p>
 <p>Add a new <strong>Python</strong> Run configuration:</p>

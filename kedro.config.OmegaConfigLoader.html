@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kedro.extras.datasets.pandas.HDFDataSet &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>kedro.config.OmegaConfigLoader &mdash; Kedro 0.18.4 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/qb1-sphinx-rtd.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="kedro.extras.datasets.pandas.JSONDataSet" href="kedro.extras.datasets.pandas.JSONDataSet.html" />
-    <link rel="prev" title="kedro.extras.datasets.pandas.GenericDataSet" href="kedro.extras.datasets.pandas.GenericDataSet.html" />
+    <link rel="next" title="kedro.config.MissingConfigException" href="kedro.config.MissingConfigException.html" />
+    <link rel="prev" title="kedro.config.TemplatedConfigLoader" href="kedro.config.TemplatedConfigLoader.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -1069,10 +1069,10 @@
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="kedro.html">kedro</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="kedro.config.html">kedro.config</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="kedro.config.html">kedro.config</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1105,8 +1105,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.yaml.YAMLDataSet.html">kedro.datasets.yaml.YAMLDataSet</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="kedro.extras.html">kedro.extras</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="kedro.extras.datasets.html">kedro.extras.datasets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kedro.extras.html">kedro.extras</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro.extras.datasets.html">kedro.extras.datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
@@ -1118,7 +1118,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ExcelDataSet.html">kedro.extras.datasets.pandas.ExcelDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.FeatherDataSet.html">kedro.extras.datasets.pandas.FeatherDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.GenericDataSet.html">kedro.extras.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">kedro.extras.datasets.pandas.HDFDataSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.HDFDataSet.html">kedro.extras.datasets.pandas.HDFDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.JSONDataSet.html">kedro.extras.datasets.pandas.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ParquetDataSet.html">kedro.extras.datasets.pandas.ParquetDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLQueryDataSet.html">kedro.extras.datasets.pandas.SQLQueryDataSet</a></li>
@@ -1282,11 +1282,9 @@
         
           <li><a href="kedro.html">kedro</a> &raquo;</li>
         
-          <li><a href="kedro.extras.html">kedro.extras</a> &raquo;</li>
+          <li><a href="kedro.config.html">kedro.config</a> &raquo;</li>
         
-          <li><a href="kedro.extras.datasets.html">kedro.extras.datasets</a> &raquo;</li>
-        
-      <li>kedro.extras.datasets.pandas.HDFDataSet</li>
+      <li>kedro.config.OmegaConfigLoader</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1332,51 +1330,52 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="kedro-extras-datasets-pandas-hdfdataset">
-<h1>kedro.extras.datasets.pandas.HDFDataSet<a class="headerlink" href="#kedro-extras-datasets-pandas-hdfdataset" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kedro-config-omegaconfigloader">
+<h1>kedro.config.OmegaConfigLoader<a class="headerlink" href="#kedro-config-omegaconfigloader" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet">
-<em class="property">class </em><code class="sig-prename descclassname">kedro.extras.datasets.pandas.</code><code class="sig-name descname">HDFDataSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">load_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">credentials</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fs_args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/extras/datasets/pandas/hdf_dataset.html#HDFDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">HDFDataSet</span></code> loads/saves data from/to a hdf file using an underlying
-filesystem (e.g. local, S3, GCS). It uses pandas.HDFStore to handle the hdf file.</p>
-<p>Example usage for the
-<a class="reference external" href="https://kedro.readthedocs.io/en/stable/data/data_catalog.html#use-the-data-catalog-with-the-yaml-api">YAML API</a>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">hdf_dataset</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.HDFDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://my_bucket/raw/sensor_reading.h5</span>
-<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_s3_creds</span>
-<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
+<dt id="kedro.config.OmegaConfigLoader">
+<em class="property">class </em><code class="sig-prename descclassname">kedro.config.</code><code class="sig-name descname">OmegaConfigLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_source</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">runtime_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">config_patterns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">base_env</span><span class="o">=</span><span class="default_value">'base'</span></em>, <em class="sig-param"><span class="n">default_run_env</span><span class="o">=</span><span class="default_value">'local'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/config/omegaconf_config.html#OmegaConfigLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.config.OmegaConfigLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively scan directories (config paths) contained in <code class="docutils literal notranslate"><span class="pre">conf_source</span></code> for
+configuration files with a <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">yml</span></code> or <code class="docutils literal notranslate"><span class="pre">json</span></code> extension, load and merge
+them through <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> (<a class="reference external" href="https://omegaconf.readthedocs.io/">https://omegaconf.readthedocs.io/</a>)
+and return them in the form of a config dictionary.</p>
+<p>The first processed config path is the <code class="docutils literal notranslate"><span class="pre">base</span></code> directory inside
+<code class="docutils literal notranslate"><span class="pre">conf_source</span></code>. The optional <code class="docutils literal notranslate"><span class="pre">env</span></code> argument can be used to specify a
+subdirectory of <code class="docutils literal notranslate"><span class="pre">conf_source</span></code> to process as a config path after <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p>When the same top-level key appears in any two config files located in
+the same (sub)directory, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised.</p>
+<p>When the same key appears in any two config files located in different
+(sub)directories, the last processed config path takes precedence
+and overrides this key and any sub-keys.</p>
+<p>You can access the different configurations as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging.config</span>
+<span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>
+<span class="kn">from</span> <span class="nn">kedro.framework.project</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="n">conf_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_path</span> <span class="o">/</span> <span class="n">settings</span><span class="o">.</span><span class="n">CONF_SOURCE</span><span class="p">)</span>
+<span class="n">conf_loader</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span><span class="p">(</span><span class="n">conf_source</span><span class="o">=</span><span class="n">conf_path</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="s2">&quot;local&quot;</span><span class="p">)</span>
+
+<span class="n">conf_logging</span> <span class="o">=</span> <span class="n">conf_loader</span><span class="p">[</span><span class="s2">&quot;logging&quot;</span><span class="p">]</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">conf_logging</span><span class="p">)</span>  <span class="c1"># set logging conf</span>
+
+<span class="n">conf_catalog</span> <span class="o">=</span> <span class="n">conf_loader</span><span class="p">[</span><span class="s2">&quot;catalog&quot;</span><span class="p">]</span>
+<span class="n">conf_params</span> <span class="o">=</span> <span class="n">conf_loader</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Example usage for the
-<a class="reference external" href="https://kedro.readthedocs.io/en/stable/data/data_catalog.html#use-the-data-catalog-with-the-code-api">Python API</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.extras.datasets.pandas</span> <span class="kn">import</span> <span class="n">HDFDataSet</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> supports variable interpolation in configuration
+<a class="reference external" href="https://omegaconf.readthedocs.io/en/2.2_branch/usage.html#merging-configurations">https://omegaconf.readthedocs.io/en/2.2_branch/usage.html#merging-configurations</a>. It is
+recommended to use this instead of yaml anchors with the <a class="reference internal" href="#kedro.config.OmegaConfigLoader" title="kedro.config.OmegaConfigLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a>.</p>
+<p>This version of the <a class="reference internal" href="#kedro.config.OmegaConfigLoader" title="kedro.config.OmegaConfigLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a> does not support any of the built-in <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code>
+resolvers. Support for resolvers might be added in future versions.</p>
+<p>To use this class, change the setting for the <cite>CONFIG_LOADER_CLASS</cite> constant
+in <cite>settings.py</cite>.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in settings.py</span>
+<span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;col1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;col2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-                     <span class="s1">&#39;col3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
-
-<span class="n">data_set</span> <span class="o">=</span> <span class="n">HDFDataSet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;test.h5&quot;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
-<span class="n">data_set</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">reloaded</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="k">assert</span> <span class="n">data</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">reloaded</span><span class="p">)</span>
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_LOAD_ARGS" title="kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_LOAD_ARGS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_LOAD_ARGS</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_SAVE_ARGS" title="kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_SAVE_ARGS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_SAVE_ARGS</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1384,199 +1383,155 @@ filesystem (e.g. local, S3, GCS). It uses pandas.HDFStore to handle the hdf file
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.exists" title="kedro.extras.datasets.pandas.HDFDataSet.exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exists</span></code></a>()</p></td>
-<td><p>Checks whether a data set’s output already exists by calling the provided _exists() method.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.clear" title="kedro.config.OmegaConfigLoader.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.from_config" title="kedro.extras.datasets.pandas.HDFDataSet.from_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_config</span></code></a>(name, config[, load_version, …])</p></td>
-<td><p>Create a data set instance using the configuration provided.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.copy" title="kedro.config.OmegaConfigLoader.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.load" title="kedro.extras.datasets.pandas.HDFDataSet.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>()</p></td>
-<td><p>Loads data by delegation to the provided load method.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.fromkeys" title="kedro.config.OmegaConfigLoader.fromkeys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromkeys</span></code></a>(iterable[, value])</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.release" title="kedro.extras.datasets.pandas.HDFDataSet.release"><code class="xref py py-obj docutils literal notranslate"><span class="pre">release</span></code></a>()</p></td>
-<td><p>Release any cached data.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.get" title="kedro.config.OmegaConfigLoader.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(k[,d])</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.resolve_load_version" title="kedro.extras.datasets.pandas.HDFDataSet.resolve_load_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_load_version</span></code></a>()</p></td>
-<td><p>Compute the version the dataset should be loaded with.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.items" title="kedro.config.OmegaConfigLoader.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.resolve_save_version" title="kedro.extras.datasets.pandas.HDFDataSet.resolve_save_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_save_version</span></code></a>()</p></td>
-<td><p>Compute the version the dataset should be saved with.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.keys" title="kedro.config.OmegaConfigLoader.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.extras.datasets.pandas.HDFDataSet.save" title="kedro.extras.datasets.pandas.HDFDataSet.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(data)</p></td>
-<td><p>Saves data by delegation to the provided save method.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.load_and_merge_dir_config" title="kedro.config.OmegaConfigLoader.load_and_merge_dir_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_and_merge_dir_config</span></code></a>(conf_path, patterns)</p></td>
+<td><p>Recursively load and merge all configuration files in a directory using OmegaConf, which satisfy a given list of glob patterns from a specific path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.pop" title="kedro.config.OmegaConfigLoader.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(k[,d])</p></td>
+<td><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.popitem" title="kedro.config.OmegaConfigLoader.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>()</p></td>
+<td><p>as a 2-tuple; but raise KeyError if D is empty.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.setdefault" title="kedro.config.OmegaConfigLoader.setdefault"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setdefault</span></code></a>(k[,d])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.update" title="kedro.config.OmegaConfigLoader.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([E, ]**F)</p></td>
+<td><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k] If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v In either case, this is followed by: for k, v in F.items(): D[k] = v</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.config.OmegaConfigLoader.values" title="kedro.config.OmegaConfigLoader.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>()</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py attribute">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_LOAD_ARGS">
-<code class="sig-name descname">DEFAULT_LOAD_ARGS</code><em class="property">: Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></em><em class="property"> = {}</em><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_LOAD_ARGS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_SAVE_ARGS">
-<code class="sig-name descname">DEFAULT_SAVE_ARGS</code><em class="property">: Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></em><em class="property"> = {}</em><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.DEFAULT_SAVE_ARGS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">load_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">credentials</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fs_args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/extras/datasets/pandas/hdf_dataset.html#HDFDataSet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new instance of <code class="docutils literal notranslate"><span class="pre">HDFDataSet</span></code> pointing to a concrete hdf file
-on a specific filesystem.</p>
+<dt id="kedro.config.OmegaConfigLoader.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_source</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">runtime_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">config_patterns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">base_env</span><span class="o">=</span><span class="default_value">'base'</span></em>, <em class="sig-param"><span class="n">default_run_env</span><span class="o">=</span><span class="default_value">'local'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/config/omegaconf_config.html#OmegaConfigLoader.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.config.OmegaConfigLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a <a class="reference internal" href="#kedro.config.OmegaConfigLoader" title="kedro.config.OmegaConfigLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filepath</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Filepath in POSIX format to a hdf file prefixed with a protocol like <cite>s3://</cite>.
-If prefix is not provided, <cite>file</cite> protocol (local filesystem) will be used.
-The prefix should be any protocol supported by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>.
-Note: <cite>http(s)</cite> doesn’t support versioning.</p></li>
-<li><p><strong>key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Identifier to the group in the HDF store.</p></li>
-<li><p><strong>load_args</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – PyTables options for loading hdf files.
-You can find all available arguments at:
-<a class="reference external" href="https://www.pytables.org/usersguide/libref/top_level.html#tables.open_file">https://www.pytables.org/usersguide/libref/top_level.html#tables.open_file</a>
-All defaults are preserved.</p></li>
-<li><p><strong>save_args</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – PyTables options for saving hdf files.
-You can find all available arguments at:
-<a class="reference external" href="https://www.pytables.org/usersguide/libref/top_level.html#tables.open_file">https://www.pytables.org/usersguide/libref/top_level.html#tables.open_file</a>
-All defaults are preserved.</p></li>
-<li><p><strong>version</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Version</span></code>]) – If specified, should be an instance of
-<code class="docutils literal notranslate"><span class="pre">kedro.io.core.Version</span></code>. If its <code class="docutils literal notranslate"><span class="pre">load</span></code> attribute is
-None, the latest version will be loaded. If its <code class="docutils literal notranslate"><span class="pre">save</span></code>
-attribute is None, save version will be autogenerated.</p></li>
-<li><p><strong>credentials</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – Credentials required to get access to the underlying filesystem.
-E.g. for <code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code> it should look like <cite>{“token”: None}</cite>.</p></li>
-<li><p><strong>fs_args</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – Extra arguments to pass into underlying filesystem class constructor
-(e.g. <cite>{“project”: “my-project”}</cite> for <code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>), as well as
-to pass to the filesystem’s <cite>open</cite> method through nested keys
-<cite>open_args_load</cite> and <cite>open_args_save</cite>.
-Here you can find all available arguments for <cite>open</cite>:
-<a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.spec.AbstractFileSystem.open">https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.spec.AbstractFileSystem.open</a>
-All defaults are preserved, except <cite>mode</cite>, which is set <cite>wb</cite> when saving.</p></li>
+<li><p><strong>conf_source</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to use as root directory for loading configuration.</p></li>
+<li><p><strong>env</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Environment that will take precedence over base.</p></li>
+<li><p><strong>runtime_params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – Extra parameters passed to a Kedro run.</p></li>
+<li><p><strong>config_patterns</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]) – Regex patterns that specify the naming convention for configuration
+files so they can be loaded. Can be customised by supplying config_patterns as
+in <cite>CONFIG_LOADER_ARGS</cite> in <cite>settings.py</cite>.</p></li>
+<li><p><strong>base_env</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the base environment. Defaults to <cite>“base”</cite>.
+This is used in the <cite>conf_paths</cite> property method to construct
+the configuration paths.</p></li>
+<li><p><strong>default_run_env</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the default run environment. Defaults to <cite>“local”</cite>.
+Can be overridden by supplying the <cite>env</cite> argument.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.exists">
-<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether a data set’s output already exists by calling
-the provided _exists() method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Flag indicating whether the output already exists.</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="kedro.io.DataSetError.html#kedro.io.DataSetError" title="kedro.io.DataSetError"><strong>DataSetError</strong></a> – when underlying exists method raises error.</p>
-</dd>
-</dl>
-</dd></dl>
+<dt id="kedro.config.OmegaConfigLoader.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#kedro.config.OmegaConfigLoader.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.from_config">
-<em class="property">classmethod </em><code class="sig-name descname">from_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">load_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_version</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.from_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a data set instance using the configuration provided.</p>
+<dt id="kedro.config.OmegaConfigLoader.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.config.OmegaConfigLoader.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.fromkeys">
+<em class="property">classmethod </em><code class="sig-name descname">fromkeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.config.OmegaConfigLoader.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#kedro.config.OmegaConfigLoader.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.items">
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#kedro.config.OmegaConfigLoader.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="headerlink" href="#kedro.config.OmegaConfigLoader.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.load_and_merge_dir_config">
+<code class="sig-name descname">load_and_merge_dir_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span></em>, <em class="sig-param"><span class="n">patterns</span></em>, <em class="sig-param"><span class="n">read_environment_variables</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/config/omegaconf_config.html#OmegaConfigLoader.load_and_merge_dir_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kedro.config.OmegaConfigLoader.load_and_merge_dir_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively load and merge all configuration files in a directory using OmegaConf,
+which satisfy a given list of glob patterns from a specific path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Data set name.</p></li>
-<li><p><strong>config</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Data set config dictionary.</p></li>
-<li><p><strong>load_version</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Version string to be used for <code class="docutils literal notranslate"><span class="pre">load</span></code> operation if
-the data set is versioned. Has no effect on the data set
-if versioning was not enabled.</p></li>
-<li><p><strong>save_version</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Version string to be used for <code class="docutils literal notranslate"><span class="pre">save</span></code> operation if
-the data set is versioned. Has no effect on the data set
-if versioning was not enabled.</p></li>
+<li><p><strong>conf_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to configuration directory.</p></li>
+<li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – List of glob patterns to match the filenames against.</p></li>
+<li><p><strong>read_environment_variables</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Whether to resolve environment variables.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An instance of an <a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> subclass.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="kedro.io.DataSetError.html#kedro.io.DataSetError" title="kedro.io.DataSetError"><strong>DataSetError</strong></a> – When the function fails to create the data set
-    from its config.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads data by delegation to the provided load method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>~_DO</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data returned by the provided load method.</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="kedro.io.DataSetError.html#kedro.io.DataSetError" title="kedro.io.DataSetError"><strong>DataSetError</strong></a> – When underlying load method raises error.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.release">
-<code class="sig-name descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.release" title="Permalink to this definition">¶</a></dt>
-<dd><p>Release any cached data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="kedro.io.DataSetError.html#kedro.io.DataSetError" title="kedro.io.DataSetError"><strong>DataSetError</strong></a> – when underlying release method raises error.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.resolve_load_version">
-<code class="sig-name descname">resolve_load_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.resolve_load_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the version the dataset should be loaded with.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.resolve_save_version">
-<code class="sig-name descname">resolve_save_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.resolve_save_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the version the dataset should be saved with.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kedro.extras.datasets.pandas.HDFDataSet.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.extras.datasets.pandas.HDFDataSet.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves data by delegation to the provided save method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>~_DI</em>) – the value to be saved by provided save method.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="kedro.io.DataSetError.html#kedro.io.DataSetError" title="kedro.io.DataSetError"><strong>DataSetError</strong></a> – when underlying save method raises error.</p></li>
-<li><p><strong>FileNotFoundError</strong> – when save method got file instead of dir, on Windows.</p></li>
-<li><p><strong>NotADirectoryError</strong> – when save method got file instead of dir, on Unix.</p></li>
+<li><p><a class="reference internal" href="kedro.config.MissingConfigException.html#kedro.config.MissingConfigException" title="kedro.config.MissingConfigException"><strong>MissingConfigException</strong></a> – If configuration path doesn’t exist or isn’t valid.</p></li>
+<li><p><strong>ValueError</strong> – If two or more configuration files contain the same key(s).</p></li>
+<li><p><strong>ParserError</strong> – If config file contains invalid YAML or JSON syntax.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting configuration dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#kedro.config.OmegaConfigLoader.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.popitem">
+<code class="sig-name descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; (k, v), remove and return some (key, value) pair<a class="headerlink" href="#kedro.config.OmegaConfigLoader.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>as a 2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.setdefault">
+<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D.get(k,d), also set D[k]=d if k not in D<a class="headerlink" href="#kedro.config.OmegaConfigLoader.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from mapping/iterable E and F.<a class="headerlink" href="#kedro.config.OmegaConfigLoader.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="kedro.config.OmegaConfigLoader.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#kedro.config.OmegaConfigLoader.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1586,8 +1541,8 @@ if versioning was not enabled.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kedro.extras.datasets.pandas.GenericDataSet.html" class="btn btn-neutral float-left" title="kedro.extras.datasets.pandas.GenericDataSet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kedro.extras.datasets.pandas.JSONDataSet.html" class="btn btn-neutral float-right" title="kedro.extras.datasets.pandas.JSONDataSet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kedro.config.TemplatedConfigLoader.html" class="btn btn-neutral float-left" title="kedro.config.TemplatedConfigLoader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kedro.config.MissingConfigException.html" class="btn btn-neutral float-right" title="kedro.config.MissingConfigException" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

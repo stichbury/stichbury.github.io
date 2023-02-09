@@ -476,8 +476,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -827,6 +827,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hooks/examples.html">Hooks examples</a><ul>
@@ -1296,7 +1297,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1565,7 +1566,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.__init__">__init__() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.__init__">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.__init__">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.__init__">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -1797,7 +1798,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.clear">clear() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.clear">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.clear">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.clear">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -1843,7 +1844,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.copy">copy() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.copy">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.copy">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.copy">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -2389,7 +2390,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.fromkeys">fromkeys() (kedro.config.ConfigLoader class method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.fromkeys">(kedro.config.OmegaConfLoader class method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.fromkeys">(kedro.config.OmegaConfigLoader class method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.fromkeys">(kedro.config.TemplatedConfigLoader class method)</a>
 </li>
@@ -2411,7 +2412,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.get">get() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.get">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.get">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.get">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -2481,7 +2482,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.items">items() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.items">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.items">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.items">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -2823,7 +2824,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.keys">keys() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.keys">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.keys">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.keys">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -2964,7 +2965,7 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.load_and_merge_dir_config">load_and_merge_dir_config() (kedro.config.OmegaConfLoader method)</a>
+      <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.load_and_merge_dir_config">load_and_merge_dir_config() (kedro.config.OmegaConfigLoader method)</a>
 </li>
       <li><a href="kedro.framework.session.session.KedroSession.html#kedro.framework.session.session.KedroSession.load_context">load_context() (kedro.framework.session.session.KedroSession method)</a>
 </li>
@@ -3113,7 +3114,7 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader">OmegaConfLoader (class in kedro.config)</a>
+      <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader">OmegaConfigLoader (class in kedro.config)</a>
 </li>
       <li><a href="kedro.framework.hooks.specs.NodeSpecs.html#kedro.framework.hooks.specs.NodeSpecs.on_node_error">on_node_error() (kedro.framework.hooks.specs.NodeSpecs method)</a>
 </li>
@@ -3190,7 +3191,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.pop">pop() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.pop">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.pop">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.pop">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -3198,7 +3199,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.popitem">popitem() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.popitem">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.popitem">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.popitem">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -3704,7 +3705,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.setdefault">setdefault() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.setdefault">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.setdefault">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.setdefault">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -3784,7 +3785,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.update">update() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.update">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.update">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.update">(kedro.config.TemplatedConfigLoader method)</a>
 </li>
@@ -3800,7 +3801,7 @@
       <li><a href="kedro.config.ConfigLoader.html#kedro.config.ConfigLoader.values">values() (kedro.config.ConfigLoader method)</a>
 
       <ul>
-        <li><a href="kedro.config.OmegaConfLoader.html#kedro.config.OmegaConfLoader.values">(kedro.config.OmegaConfLoader method)</a>
+        <li><a href="kedro.config.OmegaConfigLoader.html#kedro.config.OmegaConfigLoader.values">(kedro.config.OmegaConfigLoader method)</a>
 </li>
         <li><a href="kedro.config.TemplatedConfigLoader.html#kedro.config.TemplatedConfigLoader.values">(kedro.config.TemplatedConfigLoader method)</a>
 </li>

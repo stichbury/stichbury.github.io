@@ -251,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -602,6 +602,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
@@ -1071,7 +1072,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1538,16 +1539,16 @@ This example shows how to load <code class="docutils literal notranslate"><span 
 <div class="section" id="configuration-with-omegaconf">
 <h2>Configuration with OmegaConf<a class="headerlink" href="#configuration-with-omegaconf" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://omegaconf.readthedocs.io/">OmegaConf</a> is a Python library for configuration. It is a YAML-based hierarchical configuration system with support for merging configurations from multiple sources.
-From Kedro 0.18.5 you can use the <a class="reference internal" href="../kedro.config.OmegaConfLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code></span></a> which uses <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> under the hood to load data.</p>
+From Kedro 0.18.5 you can use the <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a> which uses <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> under the hood to load data.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> is under active development and will be available from Kedro 0.18.5. New features will be added in future releases. Let us know if you have any feedback about the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> or ideas for new features.</p>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> is under active development and will be available from Kedro 0.18.5. New features will be added in future releases. Let us know if you have any feedback about the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> or ideas for new features.</p>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> can load <code class="docutils literal notranslate"><span class="pre">YAML</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files. Acceptable file extensions are <code class="docutils literal notranslate"><span class="pre">.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>, and <code class="docutils literal notranslate"><span class="pre">.json</span></code>. By default, any configuration files used by the config loaders in Kedro are <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files.</p>
-<p>To use the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="settings.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfLoader</span>  <span class="c1"># new import</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> can load <code class="docutils literal notranslate"><span class="pre">YAML</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files. Acceptable file extensions are <code class="docutils literal notranslate"><span class="pre">.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>, and <code class="docutils literal notranslate"><span class="pre">.json</span></code>. By default, any configuration files used by the config loaders in Kedro are <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files.</p>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="settings.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>  <span class="c1"># new import</span>
 
-<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfLoader</span>
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
 </pre></div>
 </div>
 <div class="section" id="templating-for-parameters">
@@ -1565,11 +1566,11 @@ Suppose you have one parameters file called <code class="docutils literal notran
 <span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 </pre></div>
 </div>
-<p>Since both of the file names (<code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters_globals.yml</span></code>) match the config pattern for parameters, the <code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code> will load the files and resolve the placeholders correctly.</p>
+<p>Since both of the file names (<code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters_globals.yml</span></code>) match the config pattern for parameters, the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> will load the files and resolve the placeholders correctly.</p>
 </div>
 <div class="section" id="environment-variables-for-credentials">
 <h3>Environment variables for credentials<a class="headerlink" href="#environment-variables-for-credentials" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../kedro.config.OmegaConfLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfLoader</span></code></span></a> enables you to load credentials from environment variables. To achieve this you have to use the <code class="docutils literal notranslate"><span class="pre">omegaconf</span></code> <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/custom_resolvers.html#oc-env"><code class="docutils literal notranslate"><span class="pre">oc.env</span></code> resolver</a>.
+<p>The <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a> enables you to load credentials from environment variables. To achieve this you have to use the <code class="docutils literal notranslate"><span class="pre">omegaconf</span></code> <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/custom_resolvers.html#oc-env"><code class="docutils literal notranslate"><span class="pre">oc.env</span></code> resolver</a>.
 This is an example of how you can access credentials from environment variables in <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span>

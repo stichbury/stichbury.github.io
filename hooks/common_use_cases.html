@@ -251,8 +251,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../visualisation/experiment_tracking.html">Experiment tracking in Kedro-Viz</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#experiment-tracking-demonstration-using-kedro-viz">Experiment tracking demonstration using Kedro-Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#kedro-versions-supporting-experiment-tracking">Kedro versions supporting experiment tracking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#when-should-i-use-experiment-tracking-in-kedro">When should I use experiment tracking in Kedro?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/experiment_tracking.html#set-up-a-project">Set up a project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/experiment_tracking.html#install-kedro-and-kedro-viz">Install Kedro and Kedro-Viz</a></li>
@@ -602,6 +602,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Common use cases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Hooks examples</a><ul>
@@ -1071,7 +1072,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../kedro.config.html">kedro.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.ConfigLoader.html">kedro.config.ConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html">kedro.config.TemplatedConfigLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfLoader.html">kedro.config.OmegaConfLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kedro.config.OmegaConfigLoader.html">kedro.config.OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.config.MissingConfigException.html">kedro.config.MissingConfigException</a></li>
 </ul>
 </li>
@@ -1427,6 +1428,68 @@
     <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading dataset </span><span class="si">%s</span><span class="s2"> ended at </span><span class="si">%0.3f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dataset_name</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="use-hooks-to-load-external-credentials">
+<h2>Use Hooks to load external credentials<a class="headerlink" href="#use-hooks-to-load-external-credentials" title="Permalink to this headline">¶</a></h2>
+<p>We recommend using the <code class="docutils literal notranslate"><span class="pre">after_context_created</span></code> Hook to add credentials to the session’s config loader instance from any external credentials manager. In this example we show how to load credentials from <a class="reference external" href="https://learn.microsoft.com/en-us/azure/key-vault/general/">Azure KeyVault</a>.</p>
+<p>Here is the example KeyVault instance, note the KeyVault and secret names:</p>
+<p><img alt="" src="../_images/example_azure_keyvault.png" /></p>
+<p>These credentials will be used to access these datasets in the data catalog:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span>
+<span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w"> </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span>
+<span class="w"> </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w"> </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3_creds</span>
+
+<span class="nt">cars</span><span class="p">:</span>
+<span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w"> </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://your_data_store.blob.core.windows.net/data/01_raw/cars.csv</span>
+<span class="w"> </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w"> </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abs_creds</span>
+</pre></div>
+</div>
+<p>We can then use the following hook implementation to fetch and inject these credentials:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hooks.py</span>
+
+<span class="kn">from</span> <span class="nn">kedro.framework.hooks</span> <span class="kn">import</span> <span class="n">hook_impl</span>
+<span class="kn">from</span> <span class="nn">azure.keyvault.secrets</span> <span class="kn">import</span> <span class="n">SecretClient</span>
+<span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
+
+
+<span class="k">class</span> <span class="nc">AzureSecretsHook</span><span class="p">:</span>
+    <span class="nd">@hook_impl</span>
+    <span class="k">def</span> <span class="nf">after_context_created</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">keyVaultName</span> <span class="o">=</span> <span class="s2">&quot;keyvault-0542abb&quot;</span>  <span class="c1"># or os.environ[&quot;KEY_VAULT_NAME&quot;] if you would like to provide it through environment variables</span>
+        <span class="n">KVUri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">keyVaultName</span><span class="si">}</span><span class="s2">.vault.azure.net&quot;</span>
+
+        <span class="n">my_credential</span> <span class="o">=</span> <span class="n">DefaultAzureCredential</span><span class="p">()</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">SecretClient</span><span class="p">(</span><span class="n">vault_url</span><span class="o">=</span><span class="n">KVUri</span><span class="p">,</span> <span class="n">credential</span><span class="o">=</span><span class="n">my_credential</span><span class="p">)</span>
+
+        <span class="n">secrets</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;abs_creds&quot;</span><span class="p">:</span> <span class="s2">&quot;azure-blob-store&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;s3_creds&quot;</span><span class="p">:</span> <span class="s2">&quot;s3-bucket-creds&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">azure_creds</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">cred_name</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">get_secret</span><span class="p">(</span><span class="n">secret_name</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+            <span class="k">for</span> <span class="n">cred_name</span><span class="p">,</span> <span class="n">secret_name</span> <span class="ow">in</span> <span class="n">secrets</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="n">context</span><span class="o">.</span><span class="n">config_loader</span><span class="p">[</span><span class="s2">&quot;credentials&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="o">**</span><span class="n">context</span><span class="o">.</span><span class="n">config_loader</span><span class="p">[</span><span class="s2">&quot;credentials&quot;</span><span class="p">],</span>
+            <span class="o">**</span><span class="n">azure_creds</span><span class="p">,</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>Finally, <a class="reference external" href="https://kedro.readthedocs.io/en/stable/hooks/introduction.html#registering-your-hook-implementations-with-kedro">register the hook</a> in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_project.hooks</span> <span class="kn">import</span> <span class="n">AzureSecretsHook</span>
+
+<span class="n">HOOKS</span> <span class="o">=</span> <span class="p">(</span><span class="n">AzureSecretsHook</span><span class="p">(),)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">DefaultAzureCredential()</span></code> is Azure’s recommended approach to authorise access to data in your storage accounts. For more information, consult the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python">documentation about how to authenticate to Azure and authorize access to blob data</a>.</p>
 </div>
 </div>
 </div>
