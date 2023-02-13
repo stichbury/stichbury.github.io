@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/package_a_project.html">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -464,6 +469,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -1080,25 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
@@ -1110,25 +1098,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.CSVDataSet.html">kedro.extras.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ExcelDataSet.html">kedro.extras.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.FeatherDataSet.html">kedro.extras.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.GenericDataSet.html">kedro.extras.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.HDFDataSet.html">kedro.extras.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.JSONDataSet.html">kedro.extras.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ParquetDataSet.html">kedro.extras.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLQueryDataSet.html">kedro.extras.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.text.TextDataSet.html">kedro.extras.datasets.text.TextDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.tracking.JSONDataSet.html">kedro.extras.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.tracking.MetricsDataSet.html">kedro.extras.datasets.tracking.MetricsDataSet</a></li>
@@ -1348,62 +1318,8 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.json.JSONDataSet.html#kedro.datasets.json.JSONDataSet" title="kedro.datasets.json.JSONDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.json.JSONDataSet</span></code></a>(filepath[, …])</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">JSONDataSet</span></code> loads/saves data from/to a JSON file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.matplotlib.MatplotlibWriter.html#kedro.datasets.matplotlib.MatplotlibWriter" title="kedro.datasets.matplotlib.MatplotlibWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.matplotlib.MatplotlibWriter</span></code></a>(…)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">MatplotlibWriter</span></code> saves one or more Matplotlib objects as image files to an underlying filesystem (e.g.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.networkx.GMLDataSet.html#kedro.datasets.networkx.GMLDataSet" title="kedro.datasets.networkx.GMLDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.networkx.GMLDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">GMLDataSet</span></code> loads and saves graphs to a GML file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.networkx.GraphMLDataSet.html#kedro.datasets.networkx.GraphMLDataSet" title="kedro.datasets.networkx.GraphMLDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.networkx.GraphMLDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">GraphMLDataSet</span></code> loads and saves graphs to a GraphML file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.networkx.JSONDataSet.html#kedro.datasets.networkx.JSONDataSet" title="kedro.datasets.networkx.JSONDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.networkx.JSONDataSet</span></code></a>(filepath)</p></td>
-<td><p>NetworkX <code class="docutils literal notranslate"><span class="pre">JSONDataSet</span></code> loads and saves graphs to a JSON file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pandas.CSVDataSet.html#kedro.datasets.pandas.CSVDataSet" title="kedro.datasets.pandas.CSVDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.CSVDataSet</span></code></a>(filepath[, …])</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code> loads/saves data from/to a CSV file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pandas.ExcelDataSet.html#kedro.datasets.pandas.ExcelDataSet" title="kedro.datasets.pandas.ExcelDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.ExcelDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">ExcelDataSet</span></code> loads/saves data from/to a Excel file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pandas.FeatherDataSet.html#kedro.datasets.pandas.FeatherDataSet" title="kedro.datasets.pandas.FeatherDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.FeatherDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">FeatherDataSet</span></code> loads and saves data to a feather file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pandas.GenericDataSet.html#kedro.datasets.pandas.GenericDataSet" title="kedro.datasets.pandas.GenericDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.GenericDataSet</span></code></a>(…[, …])</p></td>
-<td><p><cite>pandas.GenericDataSet</cite> loads/saves data from/to a data file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pandas.HDFDataSet.html#kedro.datasets.pandas.HDFDataSet" title="kedro.datasets.pandas.HDFDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.HDFDataSet</span></code></a>(filepath, key)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">HDFDataSet</span></code> loads/saves data from/to a hdf file using an underlying filesystem (e.g.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pandas.JSONDataSet.html#kedro.datasets.pandas.JSONDataSet" title="kedro.datasets.pandas.JSONDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.JSONDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">JSONDataSet</span></code> loads/saves data from/to a JSON file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pandas.ParquetDataSet.html#kedro.datasets.pandas.ParquetDataSet" title="kedro.datasets.pandas.ParquetDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.ParquetDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">ParquetDataSet</span></code> loads/saves data from/to a Parquet file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pandas.SQLQueryDataSet.html#kedro.datasets.pandas.SQLQueryDataSet" title="kedro.datasets.pandas.SQLQueryDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.SQLQueryDataSet</span></code></a>([sql, …])</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SQLQueryDataSet</span></code> loads data from a provided SQL query.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pandas.SQLTableDataSet.html#kedro.datasets.pandas.SQLTableDataSet" title="kedro.datasets.pandas.SQLTableDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.SQLTableDataSet</span></code></a>(…[, …])</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SQLTableDataSet</span></code> loads data from a SQL table and saves a pandas dataframe to a table.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pandas.XMLDataSet.html#kedro.datasets.pandas.XMLDataSet" title="kedro.datasets.pandas.XMLDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pandas.XMLDataSet</span></code></a>(filepath[, …])</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">XMLDataSet</span></code> loads/saves data from/to a XML file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.pickle.PickleDataSet.html#kedro.datasets.pickle.PickleDataSet" title="kedro.datasets.pickle.PickleDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pickle.PickleDataSet</span></code></a>(filepath)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">PickleDataSet</span></code> loads/saves data from/to a Pickle file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.pillow.ImageDataSet.html#kedro.datasets.pillow.ImageDataSet" title="kedro.datasets.pillow.ImageDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.pillow.ImageDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">ImageDataSet</span></code> loads/saves image data as <cite>numpy</cite> from an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.plotly.JSONDataSet.html#kedro.datasets.plotly.JSONDataSet" title="kedro.datasets.plotly.JSONDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.plotly.JSONDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">JSONDataSet</span></code> loads/saves a plotly figure from/to a JSON file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.plotly.PlotlyDataSet.html#kedro.datasets.plotly.PlotlyDataSet" title="kedro.datasets.plotly.PlotlyDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.plotly.PlotlyDataSet</span></code></a>(…[, …])</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">PlotlyDataSet</span></code> generates a plot from a pandas DataFrame and saves it to a JSON file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.datasets.svmlight.SVMLightDataSet.html#kedro.datasets.svmlight.SVMLightDataSet" title="kedro.datasets.svmlight.SVMLightDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.svmlight.SVMLightDataSet</span></code></a>(filepath)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SVMLightDataSet</span></code> loads/saves data from/to a svmlight/libsvm file using an underlying filesystem (e.g.: local, S3, GCS).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="kedro.datasets.text.TextDataSet.html#kedro.datasets.text.TextDataSet" title="kedro.datasets.text.TextDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.datasets.text.TextDataSet</span></code></a>(filepath[, …])</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">TextDataSet</span></code> loads/saves data from/to a text file using an underlying filesystem (e.g.: local, S3, GCS)</p></td>

@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/package_a_project.html">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -464,6 +469,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-run-a-node">How to run a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pipeline_introduction.html">Pipelines</a><ul>
@@ -1080,25 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
@@ -1110,25 +1098,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.CSVDataSet.html">kedro.extras.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.ExcelDataSet.html">kedro.extras.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.FeatherDataSet.html">kedro.extras.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.GenericDataSet.html">kedro.extras.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.HDFDataSet.html">kedro.extras.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.JSONDataSet.html">kedro.extras.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.ParquetDataSet.html">kedro.extras.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLQueryDataSet.html">kedro.extras.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.text.TextDataSet.html">kedro.extras.datasets.text.TextDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.tracking.JSONDataSet.html">kedro.extras.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.tracking.MetricsDataSet.html">kedro.extras.datasets.tracking.MetricsDataSet</a></li>
@@ -1522,6 +1492,154 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also call a node as a regular Python function: <code class="docutils literal notranslate"><span class="pre">adder_node(dict(a=2,</span> <span class="pre">b=3))</span></code>. This will call <code class="docutils literal notranslate"><span class="pre">adder_node.run(dict(a=2,</span> <span class="pre">b=3))</span></code> behind the scenes.</p>
+</div>
+</div>
+<div class="section" id="how-to-use-generator-functions-in-a-node">
+<h2>How to use generator functions in a node<a class="headerlink" href="#how-to-use-generator-functions-in-a-node" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://learnpython.org/en/Generators">Generator functions</a> were introduced with <a class="reference external" href="https://www.python.org/dev/peps/pep-0255">PEP 255</a>. They are a special kind of function that returns lazy iterators but do not store their entire contents in memory all at once.</p>
+<p>The following code uses a <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">chunksize</span></code> generator to process large datasets within the <a class="reference internal" href="../kedro_project_setup/starters.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas-iris</span></code> starter</span></a>. First set up a project by following the <a class="reference internal" href="../get_started/new_project.html#create-the-example-project"><span class="std std-doc">get started guide</span></a> to create a Kedro project with the <code class="docutils literal notranslate"><span class="pre">pandas-iris</span></code> starter example code.</p>
+<p>Create a <a class="reference internal" href="../extend_kedro/custom_datasets.html"><span class="doc std std-doc">custom dataset</span></a> called <code class="docutils literal notranslate"><span class="pre">ChunkWiseCSVDataSet</span></code> in <code class="docutils literal notranslate"><span class="pre">src/YOUR_PROJECT_NAME/extras/datasets/chunkwise_dataset.py</span></code> for your <code class="docutils literal notranslate"><span class="pre">pandas-iris</span></code> project. This dataset is a simplified version of the <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code> where the main change is to the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method which should save the data in append-or-create mode, <code class="docutils literal notranslate"><span class="pre">a+</span></code>.</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PurePosixPath</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="kn">import</span> <span class="nn">fsspec</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AbstractVersionedDataSet</span><span class="p">,</span>
+    <span class="n">Version</span><span class="p">,</span>
+    <span class="n">get_filepath_str</span><span class="p">,</span>
+    <span class="n">get_protocol_and_path</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ChunkWiseCSVDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataSet</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;``ChunkWiseCSVDataSet`` loads/saves data from/to a CSV file using an underlying</span>
+<span class="sd">    filesystem. It uses pandas to handle the CSV file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">DEFAULT_LOAD_ARGS</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, Any]</span>
+    <span class="n">DEFAULT_SAVE_ARGS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>  <span class="c1"># type: Dict[str, Any]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">load_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">Version</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">credentials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fs_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a new instance of ``ChunkWiseCSVDataSet`` pointing to a concrete CSV file</span>
+<span class="sd">        on a specific filesystem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_fs_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">fs_args</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="n">_credentials</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">credentials</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+
+        <span class="n">protocol</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">get_protocol_and_path</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;file&quot;</span><span class="p">:</span>
+            <span class="n">_fs_args</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;auto_mkdir&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span> <span class="o">=</span> <span class="n">protocol</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_storage_options</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">_credentials</span><span class="p">,</span> <span class="o">**</span><span class="n">_fs_args</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_storage_options</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">filepath</span><span class="o">=</span><span class="n">PurePosixPath</span><span class="p">(</span><span class="n">path</span><span class="p">),</span>
+            <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span>
+            <span class="n">exists_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">exists</span><span class="p">,</span>
+            <span class="n">glob_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">glob</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Handle default load and save arguments</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_LOAD_ARGS</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">load_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">load_args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_SAVE_ARGS</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">save_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">save_args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;filepath&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span><span class="p">,</span>
+            <span class="s2">&quot;protocol&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="p">,</span>
+            <span class="s2">&quot;save_args&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">load_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_load_path</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">load_path</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">save_path</span> <span class="o">=</span> <span class="n">get_filepath_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_save_path</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
+
+        <span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path_or_buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_save_args</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a+&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fs_file</span><span class="p">:</span>
+            <span class="n">fs_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+</pre></div>
+</div>
+</details>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">example_iris_data</span></code> in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> by changing <code class="docutils literal notranslate"><span class="pre">type</span></code> to the custom dataset you created above. Add <code class="docutils literal notranslate"><span class="pre">chunksize:</span> <span class="pre">100</span></code> to <code class="docutils literal notranslate"><span class="pre">load_args</span></code> which will return an iterable object. The <code class="docutils literal notranslate"><span class="pre">chunksize</span></code> parameter refers to the number of rows in each chunk.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">example_iris_data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PROJECT_NAME.extras.datasets.chunkwise_dataset.ChunkWiseCSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/iris.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">chunksize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+</pre></div>
+</div>
+<p>Next, in <code class="docutils literal notranslate"><span class="pre">nodes.py</span></code> we repurpose the <a class="reference external" href="https://github.com/kedro-org/kedro-starters/blob/dacdd56f1c1afde00a03a1e342fc0f44e1567a1e/pandas-iris/%7B%7B%20cookiecutter.repo_name%20%7D%7D/src/%7B%7B%20cookiecutter.python_package%20%7D%7D/nodes.py#L13"><code class="docutils literal notranslate"><span class="pre">split_data</span></code></a> function to process chunk-wise data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split_data</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Splits data into features and target training and test sets.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: Data containing features and target.</span>
+<span class="sd">        parameters: Parameters defined in parameters.yml.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Split data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Loop through data in chunks building up the training and test sets</span>
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>  <span class="c1"># Iterate over the chunks from data</span>
+        <span class="n">full_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">chunk</span><span class="p">]</span>
+        <span class="p">)</span>  <span class="c1"># Converts the TextFileReader object into list of DataFrames</span>
+        <span class="n">data_train</span> <span class="o">=</span> <span class="n">full_data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="n">frac</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;train_fraction&quot;</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;random_state&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">data_test</span> <span class="o">=</span> <span class="n">full_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">data_train</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">data_train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;target_column&quot;</span><span class="p">])</span>
+        <span class="n">X_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;target_column&quot;</span><span class="p">])</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">data_train</span><span class="p">[</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;target_column&quot;</span><span class="p">]]</span>
+        <span class="n">y_test</span> <span class="o">=</span> <span class="n">data_test</span><span class="p">[</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;target_column&quot;</span><span class="p">]]</span>
+        <span class="k">yield</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>  <span class="c1"># Use yield instead of return to get the generator object</span>
+</pre></div>
+</div>
+<p>We can now <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> in the terminal. The output shows <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, <code class="docutils literal notranslate"><span class="pre">X_test</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_test</span></code> saved in chunks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span><span class="mi">02</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">23</span> <span class="mi">12</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;example_iris_data&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataSet</span><span class="p">)</span><span class="o">...</span>                 <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">343</span>
+                    <span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;parameters&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                              <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">343</span>
+                    <span class="n">INFO</span>     <span class="n">Running</span> <span class="n">node</span><span class="p">:</span> <span class="n">split</span><span class="p">:</span> <span class="n">split_data</span><span class="p">([</span><span class="n">example_iris_data</span><span class="p">,</span><span class="n">parameters</span><span class="p">])</span> <span class="o">-&gt;</span>                     <span class="n">node</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">329</span>
+                             <span class="p">[</span><span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span><span class="p">]</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;X_train&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;X_test&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                     <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_train&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_test&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                     <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;X_train&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;X_test&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                     <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_train&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_test&#39;</span> <span class="p">(</span><span class="n">MemoryDataSet</span><span class="p">)</span><span class="o">...</span>                                     <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">382</span>
+                    <span class="n">INFO</span>     <span class="n">Completed</span> <span class="mi">1</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">3</span> <span class="n">tasks</span>                                                 <span class="n">sequential_runner</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">85</span>
+<span class="o">...</span>
+</pre></div>
 </div>
 </div>
 </div>

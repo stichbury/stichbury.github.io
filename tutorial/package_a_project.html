@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -464,6 +469,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -1080,25 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.email.EmailMessageDataSet.html">kedro.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
@@ -1110,25 +1098,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.CSVDataSet.html">kedro.extras.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.ExcelDataSet.html">kedro.extras.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.FeatherDataSet.html">kedro.extras.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.GenericDataSet.html">kedro.extras.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.HDFDataSet.html">kedro.extras.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.JSONDataSet.html">kedro.extras.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.ParquetDataSet.html">kedro.extras.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLQueryDataSet.html">kedro.extras.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.text.TextDataSet.html">kedro.extras.datasets.text.TextDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.tracking.JSONDataSet.html">kedro.extras.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.extras.datasets.tracking.MetricsDataSet.html">kedro.extras.datasets.tracking.MetricsDataSet</a></li>
@@ -1332,15 +1302,72 @@
 <p>Kedro also has an advanced feature which supports packaging on a pipeline level allowing you share and reuse pipelines across projects! To read more about this please look at the <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">section on micro-packaging</span></a>.</p>
 <div class="section" id="add-documentation-to-your-project">
 <h2>Add documentation to your project<a class="headerlink" href="#add-documentation-to-your-project" title="Permalink to this headline">¶</a></h2>
-<p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> to build markdown documentation that you create about your project, in combination with any <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> that are defined in your code.</p>
-<p>Within the Kedro project structure there is a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory for Sphinx configuration files and to store project-specific markdown documentation.</p>
-<p>Add the documentation you need, and update <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code> to define a table of contents</p>
-<p>Next, run the following from the project root directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-M<span class="w"> </span>html<span class="w"> </span>docs/source<span class="w"> </span>docs/build<span class="w"> </span>-a
+<p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> to build any documentation that you create about your project.</p>
+<p>To install a compatible version of Sphinx, run the following from the project root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx
 </pre></div>
 </div>
-<p>The command is configured to build the documentation as HTML, taking <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> as the <code class="docutils literal notranslate"><span class="pre">sourcedir</span></code> and <code class="docutils literal notranslate"><span class="pre">/docs/build</span></code> as the <code class="docutils literal notranslate"><span class="pre">outputdir</span></code>.</p>
+<div class="section" id="set-up-the-sphinx-project-files">
+<h3>Set up the Sphinx project files<a class="headerlink" href="#set-up-the-sphinx-project-files" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory of your Kedro project. Before Kedro version 0.19, the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> subdirectory was pre-populated with two Sphinx configuration files (<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>) which the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">build-docs</span></code> command needed.</p>
+<p>From Kedro version 0.19 that command is deprecated, and those files will no longer exist. If you have used an earlier version of Kedro to create your project, and want to follow the following instructions to build the documentation without using <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">build-docs</span></code>, you should delete the two files and the <code class="docutils literal notranslate"><span class="pre">source</span></code> subdirectory so that your project’s <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory is empty.</p>
+<p>Navigate to the empty <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory in the terminal, and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart
+</pre></div>
+</div>
+<p>Sphinx will ask a series of configuration questions. The first is as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>You have two options for placing the build directory for Sphinx output. 
+Either, you use a directory &quot;_build&quot; within the root path, 
+or you separate &quot;source&quot; and &quot;build&quot; directories within the root path.
+
+&gt; Separate source and build directories (y/n)? [n]: 
+</pre></div>
+</div>
+<p>In the following instructions, we assume that you select <code class="docutils literal notranslate"><span class="pre">y</span></code> to separate the built files from the source files, but you can choose either option safely and continue to follow the process.</p>
+<p>Enter any additional information that Sphinx requests such as the project name and the documentation language (which defaults to English).</p>
+</div>
+<div class="section" id="build-html-documentation">
+<h3>Build HTML documentation<a class="headerlink" href="#build-html-documentation" title="Permalink to this headline">¶</a></h3>
+<p>When the quickstart process is complete, you may add project-specific markdown documentation within the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> folder of your Kedro project and update <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code> to add it to the table of contents.</p>
+<p>To build the documentation, run the following <strong>from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Your project documentation is built to the <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> directory.</p>
+</div>
+<div class="section" id="documentation-from-docstrings">
+<h3>Documentation from docstrings<a class="headerlink" href="#documentation-from-docstrings" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to add documentation built from <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> within your project, you need to make the following changes to the Sphinx configuration files found in the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory to use <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html">automatic documentation generation from code</a>.</p>
+<p>Add the following to the beginning of the <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Also in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, add the following to ensure that the <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autosummary</span></code> extensions are specified, and <code class="docutils literal notranslate"><span class="pre">autosummary_generate</span></code> is enabled:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">]</span>
+<span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Finally, to ensure that you include the autodoc modules in your build, create a separate file called <code class="docutils literal notranslate"><span class="pre">api.rst</span></code> in <code class="docutils literal notranslate"><span class="pre">docs/source</span></code>. You must replace <code class="docutils literal notranslate"><span class="pre">project_name</span></code> with the name of your project:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. autosummary::
+   :toctree: generated
+
+   &lt;project_name&gt;
+</pre></div>
+</div>
+<p>Add the new file to <code class="docutils literal notranslate"><span class="pre">docs/src/index.rst</span></code> to include the automatically built documentation in the table of contents:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. toctree::
+
+   api
+</pre></div>
+</div>
+<p><strong>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder</strong> to build a full set of documentation that automatically includes docstrings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Consult the Sphinx project documentation for <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html">additional options to pass to <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code></a>. To customise your documentation beyond the basic template, you’ll need to adjust the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration settings</a> which are stored in <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.</p>
+</div>
+</div>
 </div>
 <div class="section" id="package-your-project">
 <h2>Package your project<a class="headerlink" href="#package-your-project" title="Permalink to this headline">¶</a></h2>

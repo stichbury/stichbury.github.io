@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/package_a_project.html">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial/package_a_project.html#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -464,6 +469,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -1080,25 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.api.APIDataSet.html">kedro.datasets.api.APIDataSet</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kedro.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.json.JSONDataSet.html">kedro.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.matplotlib.MatplotlibWriter.html">kedro.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GMLDataSet.html">kedro.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.GraphMLDataSet.html">kedro.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.networkx.JSONDataSet.html">kedro.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.CSVDataSet.html">kedro.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ExcelDataSet.html">kedro.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.FeatherDataSet.html">kedro.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.GenericDataSet.html">kedro.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.HDFDataSet.html">kedro.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.JSONDataSet.html">kedro.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.ParquetDataSet.html">kedro.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLQueryDataSet.html">kedro.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.SQLTableDataSet.html">kedro.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pandas.XMLDataSet.html">kedro.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pickle.PickleDataSet.html">kedro.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.pillow.ImageDataSet.html">kedro.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.JSONDataSet.html">kedro.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.plotly.PlotlyDataSet.html">kedro.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.datasets.svmlight.SVMLightDataSet.html">kedro.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.text.TextDataSet.html">kedro.datasets.text.TextDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.JSONDataSet.html">kedro.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.datasets.tracking.MetricsDataSet.html">kedro.datasets.tracking.MetricsDataSet</a></li>
@@ -1110,25 +1098,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.api.APIDataSet.html">kedro.extras.datasets.api.APIDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.email.EmailMessageDataSet.html">kedro.extras.datasets.email.EmailMessageDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.json.JSONDataSet.html">kedro.extras.datasets.json.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.matplotlib.MatplotlibWriter.html">kedro.extras.datasets.matplotlib.MatplotlibWriter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GMLDataSet.html">kedro.extras.datasets.networkx.GMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.GraphMLDataSet.html">kedro.extras.datasets.networkx.GraphMLDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.networkx.JSONDataSet.html">kedro.extras.datasets.networkx.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.CSVDataSet.html">kedro.extras.datasets.pandas.CSVDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ExcelDataSet.html">kedro.extras.datasets.pandas.ExcelDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.FeatherDataSet.html">kedro.extras.datasets.pandas.FeatherDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.GenericDataSet.html">kedro.extras.datasets.pandas.GenericDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.HDFDataSet.html">kedro.extras.datasets.pandas.HDFDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.JSONDataSet.html">kedro.extras.datasets.pandas.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.ParquetDataSet.html">kedro.extras.datasets.pandas.ParquetDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLQueryDataSet.html">kedro.extras.datasets.pandas.SQLQueryDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.SQLTableDataSet.html">kedro.extras.datasets.pandas.SQLTableDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pandas.XMLDataSet.html">kedro.extras.datasets.pandas.XMLDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pickle.PickleDataSet.html">kedro.extras.datasets.pickle.PickleDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.pillow.ImageDataSet.html">kedro.extras.datasets.pillow.ImageDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.JSONDataSet.html">kedro.extras.datasets.plotly.JSONDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.plotly.PlotlyDataSet.html">kedro.extras.datasets.plotly.PlotlyDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.svmlight.SVMLightDataSet.html">kedro.extras.datasets.svmlight.SVMLightDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.text.TextDataSet.html">kedro.extras.datasets.text.TextDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.tracking.JSONDataSet.html">kedro.extras.datasets.tracking.JSONDataSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kedro.extras.datasets.tracking.MetricsDataSet.html">kedro.extras.datasets.tracking.MetricsDataSet</a></li>
