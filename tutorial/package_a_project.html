@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -1297,16 +1302,68 @@
 <p>Kedro also has an advanced feature which supports packaging on a pipeline level allowing you share and reuse pipelines across projects! To read more about this please look at the <a class="reference internal" href="../nodes_and_pipelines/micro_packaging.html"><span class="doc std std-doc">section on micro-packaging</span></a>.</p>
 <div class="section" id="add-documentation-to-your-project">
 <h2>Add documentation to your project<a class="headerlink" href="#add-documentation-to-your-project" title="Permalink to this headline">¶</a></h2>
-<p>Kedro uses the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx framework</a> and creates a <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory that builds a basic template for project-specific documentation. We recommend that you add your project-specific documentation as markdown in <code class="docutils literal notranslate"><span class="pre">docs/source</span></code></p>
-<p>If you want to customise your documentation beyond the basic template, refer to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx documentation</a> for details of how to extend <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code>.</p>
-<p>Once you have added any documentation you need, run the following from the project root directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>build-docs<span class="w"> </span>--open
+<p>There are several documentation frameworks for Python projects. This section describes how to use <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> to build the documentation of your Kedro project.</p>
+<p>To install Sphinx, run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx
 </pre></div>
 </div>
-<p>The HTML documention is built to <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> and opens automatically in a browser tab.</p>
+<div class="section" id="set-up-the-sphinx-project-files">
+<h3>Set up the Sphinx project files<a class="headerlink" href="#set-up-the-sphinx-project-files" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently, Kedro projects are created with a <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> subdirectory, which gets pre-populated with two Sphinx configuration files (<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>), needed by the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">build-docs</span> <span class="pre">command</span></code>. This command is deprecated; it will be removed in Kedro version 0.19, along with those dummy files.</p>
+<p>Before proceeding with these instructions, back up the contents of <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code> and remove both <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> and <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code>.</p>
+</div>
+<p>First, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart<span class="w"> </span>docs
+</pre></div>
+</div>
+<p>Sphinx will ask a series of configuration questions. The first is as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path,
+or you separate &quot;source&quot; and &quot;build&quot; directories within the root path.
+
+&gt; Separate source and build directories (y/n)? [n]:
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">y</span></code> to separate the built files from the source files, and enter any additional information that Sphinx requests such as the project name and the documentation language, which defaults to English.</p>
+</div>
+<div class="section" id="build-html-documentation">
+<h3>Build HTML documentation<a class="headerlink" href="#build-html-documentation" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you previously backed up the contents of <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>, restore them before proceeding.</p>
+</div>
+<p>After the quickstart process is complete, you can build the documentation by <strong>navigating to the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory</strong> and running the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Your project documentation will be written to the <code class="docutils literal notranslate"><span class="pre">docs/build/html</span></code> directory.</p>
+<p>You may want to add project-specific Markdown documentation within the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> folder of your Kedro project. To be able to build it, follow the <a class="reference external" href="https://myst-parser.readthedocs.io/en/stable/intro.html">introduction instructions of MyST-Parser</a> and update your <code class="docutils literal notranslate"><span class="pre">docs/source/index.rst</span></code> file to add the markdown files to the table of contents.</p>
+</div>
+<div class="section" id="documentation-from-docstrings">
+<h3>Documentation from docstrings<a class="headerlink" href="#documentation-from-docstrings" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to add documentation built from <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> within your project, you need to make some changes to the Sphinx configuration files found in the <code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory to use <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html">automatic documentation generation from code</a>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, add the following to ensure that the <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autosummary</span></code> extensions are specified, and <code class="docutils literal notranslate"><span class="pre">autosummary_generate</span></code> is enabled:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span> <span class="s2">&quot;sphinx.ext.autosummary&quot;</span><span class="p">]</span>
+<span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Finally, to ensure that you include the autodoc modules in your build, run the following command once:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-apidoc<span class="w"> </span>--module-first<span class="w"> </span>-o<span class="w"> </span>docs/source<span class="w"> </span>./src/&lt;project_name&gt;
+</pre></div>
+</div>
+<p>This will generate a <code class="docutils literal notranslate"><span class="pre">docs/src/modules.rst</span></code> file, as well as other files containing references to your docstrings. To include those in your documentation, make sure your <code class="docutils literal notranslate"><span class="pre">docs/src/index.rst</span></code> has a <code class="docutils literal notranslate"><span class="pre">modules</span></code> entry in the table of contents:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. toctree::
+
+   modules
+</pre></div>
+</div>
+<p><strong>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder</strong> to build a full set of documentation that automatically includes docstrings.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">build-docs</span></code> command creates documentation based on the code structure of your project. Documentation includes any <a class="reference external" href="https://datacamp.com/community/tutorials/docstrings-python"><code class="docutils literal notranslate"><span class="pre">docstrings</span></code></a> defined in your code.</p>
+<p>Consult the Sphinx project documentation for <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html">additional options to pass to <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code></a>. To customise your documentation beyond the basic template, you’ll need to adjust the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration settings</a> which are stored in <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.</p>
+</div>
 </div>
 </div>
 <div class="section" id="package-your-project">

@@ -196,7 +196,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/package_a_project.html">Package an entire Kedro project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#add-documentation-to-your-project">Add documentation to your project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#set-up-the-sphinx-project-files">Set up the Sphinx project files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#build-html-documentation">Build HTML documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#documentation-from-docstrings">Documentation from docstrings</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/package_a_project.html#package-your-project">Package your project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#package-recipients">Package recipients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/package_a_project.html#docker-airflow-and-other-deployment-targets">Docker, Airflow and other deployment targets</a></li>
@@ -1316,7 +1321,7 @@
 <div class="section" id="set-up-run-configurations">
 <h2>Set up Run configurations<a class="headerlink" href="#set-up-run-configurations" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.jetbrains.com/help/pycharm/creating-run-debug-configuration-for-tests.html">PyCharm Run configurations</a> allow you to execute preconfigured scripts rapidly in your IDE with a click of a button. This may be useful for testing, running and packaging your Kedro projects.</p>
-<p>Here we will walk you through an example of how to setup Run configuration for Kedro CLI <code class="docutils literal notranslate"><span class="pre">run</span></code> command, however it is also applicable to other Kedro commands: <code class="docutils literal notranslate"><span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">package</span></code>, <code class="docutils literal notranslate"><span class="pre">build-docs</span></code>.</p>
+<p>Here we will walk you through an example of how to set up Run configuration for the Kedro CLI <code class="docutils literal notranslate"><span class="pre">run</span></code> command. It is also applicable to other Kedro commands, such as <code class="docutils literal notranslate"><span class="pre">test</span></code> or <code class="docutils literal notranslate"><span class="pre">install</span></code>.</p>
 <p>Go to <strong>Run | Edit Configurations</strong>:</p>
 <p><img alt="" src="../_images/pycharm_edit_confs.png" /></p>
 <p>Add a new <strong>Python</strong> Run configuration:</p>
