@@ -1349,8 +1349,8 @@ or you separate &quot;source&quot; and &quot;build&quot; directories within the 
 <span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>Finally, to ensure that you include the autodoc modules in your build, run the following command once:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-apidoc<span class="w"> </span>--module-first<span class="w"> </span>-o<span class="w"> </span>docs/source<span class="w"> </span>./src/&lt;project_name&gt;
+<p>Finally, to ensure that you include the autodoc modules in your build, run the following command once <strong>from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-apidoc<span class="w"> </span>--module-first<span class="w"> </span>-o<span class="w"> </span><span class="nb">source</span><span class="w"> </span>../src/&lt;project_name&gt;
 </pre></div>
 </div>
 <p>This will generate a <code class="docutils literal notranslate"><span class="pre">docs/src/modules.rst</span></code> file, as well as other files containing references to your docstrings. To include those in your documentation, make sure your <code class="docutils literal notranslate"><span class="pre">docs/src/index.rst</span></code> has a <code class="docutils literal notranslate"><span class="pre">modules</span></code> entry in the table of contents:</p>
@@ -1359,7 +1359,14 @@ or you separate &quot;source&quot; and &quot;build&quot; directories within the 
    modules
 </pre></div>
 </div>
-<p><strong>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder</strong> to build a full set of documentation that automatically includes docstrings.</p>
+<p><strong>From the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder</strong> run the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip install -e ../src
+</pre></div>
+</div>
+<p>Finally, <strong>from the <code class="docutils literal notranslate"><span class="pre">docs</span> <span class="pre">folder</span></code></strong>, run this command to build a full set of documentation that automatically includes docstrings:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make html
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Consult the Sphinx project documentation for <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html">additional options to pass to <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code></a>. To customise your documentation beyond the basic template, you’ll need to adjust the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration settings</a> which are stored in <code class="docutils literal notranslate"><span class="pre">docs/source/conf.py</span></code> file.</p>
