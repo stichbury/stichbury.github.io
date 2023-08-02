@@ -1,0 +1,36 @@
+﻿kedro\_datasets.pandas.XMLDataSet
+=================================
+
+.. currentmodule:: kedro_datasets.pandas
+
+.. autoclass:: XMLDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~XMLDataSet.DEFAULT_LOAD_ARGS
+      ~XMLDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~XMLDataSet.exists
+      ~XMLDataSet.from_config
+      ~XMLDataSet.load
+      ~XMLDataSet.release
+      ~XMLDataSet.resolve_load_version
+      ~XMLDataSet.resolve_save_version
+      ~XMLDataSet.save
+   
+   

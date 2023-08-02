@@ -1,0 +1,25 @@
+﻿kedro.runner.ParallelRunner
+===========================
+
+.. currentmodule:: kedro.runner
+
+.. autoclass:: ParallelRunner
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ParallelRunner.create_default_data_set
+      ~ParallelRunner.run
+      ~ParallelRunner.run_only_missing
+   
+   

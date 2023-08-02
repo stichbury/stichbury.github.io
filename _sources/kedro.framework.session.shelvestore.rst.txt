@@ -1,0 +1,29 @@
+kedro.framework.session.shelvestore
+===================================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.session.shelvestore
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      ShelveStore
+   
+   
+
+   
+   
+   
+
+
+

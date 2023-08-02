@@ -1,0 +1,38 @@
+kedro.framework.cli
+===================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   kedro.framework.cli.catalog
+   kedro.framework.cli.cli
+   kedro.framework.cli.hooks
+   kedro.framework.cli.jupyter
+   kedro.framework.cli.micropkg
+   kedro.framework.cli.pipeline
+   kedro.framework.cli.project
+   kedro.framework.cli.registry
+   kedro.framework.cli.starters
+   kedro.framework.cli.utils
+

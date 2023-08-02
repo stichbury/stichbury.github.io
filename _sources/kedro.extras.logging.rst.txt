@@ -1,0 +1,29 @@
+﻿kedro.extras.logging
+====================
+
+.. rubric:: Description
+
+.. automodule:: kedro.extras.logging
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   kedro.extras.logging.color_logger
+

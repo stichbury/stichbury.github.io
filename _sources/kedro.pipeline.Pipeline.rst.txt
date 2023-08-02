@@ -1,0 +1,48 @@
+﻿kedro.pipeline.Pipeline
+=======================
+
+.. currentmodule:: kedro.pipeline
+
+.. autoclass:: Pipeline
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Pipeline.grouped_nodes
+      ~Pipeline.node_dependencies
+      ~Pipeline.nodes
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Pipeline.all_inputs
+      ~Pipeline.all_outputs
+      ~Pipeline.data_sets
+      ~Pipeline.describe
+      ~Pipeline.filter
+      ~Pipeline.from_inputs
+      ~Pipeline.from_nodes
+      ~Pipeline.inputs
+      ~Pipeline.only_nodes
+      ~Pipeline.only_nodes_with_inputs
+      ~Pipeline.only_nodes_with_namespace
+      ~Pipeline.only_nodes_with_outputs
+      ~Pipeline.only_nodes_with_tags
+      ~Pipeline.outputs
+      ~Pipeline.tag
+      ~Pipeline.to_json
+      ~Pipeline.to_nodes
+      ~Pipeline.to_outputs
+   
+   

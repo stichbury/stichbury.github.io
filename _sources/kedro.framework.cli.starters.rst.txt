@@ -1,0 +1,29 @@
+kedro.framework.cli.starters
+============================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.starters
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      KedroStarterSpec
+   
+   
+
+   
+   
+   
+
+
+

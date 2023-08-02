@@ -1,0 +1,6 @@
+kedro.ipython.reload\_kedro
+===========================
+
+.. currentmodule:: kedro.ipython
+
+.. autofunction:: reload_kedro

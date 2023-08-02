@@ -1,0 +1,17 @@
+kedro.framework.session.session.KedroSessionError
+=================================================
+
+.. currentmodule:: kedro.framework.session.session
+
+.. autoclass:: KedroSessionError
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

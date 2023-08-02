@@ -1,0 +1,45 @@
+﻿kedro
+=====
+
+.. rubric:: Description
+
+.. automodule:: kedro
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      KedroPythonVersionWarning
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   kedro.config
+   kedro.extras
+   kedro.framework
+   kedro.io
+   kedro.ipython
+   kedro.logging
+   kedro.pipeline
+   kedro.runner
+   kedro.utils
+

@@ -1,0 +1,27 @@
+﻿kedro.extras.datasets.spark.DeltaTableDataSet
+=============================================
+
+.. currentmodule:: kedro.extras.datasets.spark
+
+.. autoclass:: DeltaTableDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DeltaTableDataSet.exists
+      ~DeltaTableDataSet.from_config
+      ~DeltaTableDataSet.load
+      ~DeltaTableDataSet.release
+      ~DeltaTableDataSet.save
+   
+   

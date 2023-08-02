@@ -1,0 +1,36 @@
+﻿kedro\_datasets.pandas.ParquetDataSet
+=====================================
+
+.. currentmodule:: kedro_datasets.pandas
+
+.. autoclass:: ParquetDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ParquetDataSet.DEFAULT_LOAD_ARGS
+      ~ParquetDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ParquetDataSet.exists
+      ~ParquetDataSet.from_config
+      ~ParquetDataSet.load
+      ~ParquetDataSet.release
+      ~ParquetDataSet.resolve_load_version
+      ~ParquetDataSet.resolve_save_version
+      ~ParquetDataSet.save
+   
+   

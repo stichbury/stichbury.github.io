@@ -1,0 +1,34 @@
+﻿kedro\_datasets.spark.SparkStreamingDataSet
+===========================================
+
+.. currentmodule:: kedro_datasets.spark
+
+.. autoclass:: SparkStreamingDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SparkStreamingDataSet.DEFAULT_LOAD_ARGS
+      ~SparkStreamingDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SparkStreamingDataSet.exists
+      ~SparkStreamingDataSet.from_config
+      ~SparkStreamingDataSet.load
+      ~SparkStreamingDataSet.release
+      ~SparkStreamingDataSet.save
+   
+   

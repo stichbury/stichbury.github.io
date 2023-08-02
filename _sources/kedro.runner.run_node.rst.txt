@@ -1,0 +1,6 @@
+﻿kedro.runner.run\_node
+======================
+
+.. currentmodule:: kedro.runner
+
+.. autofunction:: run_node

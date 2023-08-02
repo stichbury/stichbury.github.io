@@ -1,0 +1,25 @@
+kedro.framework.hooks.specs.PipelineSpecs
+=========================================
+
+.. currentmodule:: kedro.framework.hooks.specs
+
+.. autoclass:: PipelineSpecs
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PipelineSpecs.after_pipeline_run
+      ~PipelineSpecs.before_pipeline_run
+      ~PipelineSpecs.on_pipeline_error
+   
+   

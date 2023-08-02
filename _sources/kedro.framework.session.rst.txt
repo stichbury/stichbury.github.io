@@ -1,0 +1,31 @@
+kedro.framework.session
+=======================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.session
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   kedro.framework.session.session
+   kedro.framework.session.shelvestore
+   kedro.framework.session.store
+

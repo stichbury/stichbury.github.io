@@ -1,0 +1,36 @@
+kedro.framework.startup
+=======================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.startup
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      bootstrap_project
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      ProjectMetadata
+   
+   
+
+   
+   
+   
+
+
+

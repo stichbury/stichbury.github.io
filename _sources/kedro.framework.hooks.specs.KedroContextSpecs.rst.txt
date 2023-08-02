@@ -1,0 +1,23 @@
+kedro.framework.hooks.specs.KedroContextSpecs
+=============================================
+
+.. currentmodule:: kedro.framework.hooks.specs
+
+.. autoclass:: KedroContextSpecs
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~KedroContextSpecs.after_context_created
+   
+   

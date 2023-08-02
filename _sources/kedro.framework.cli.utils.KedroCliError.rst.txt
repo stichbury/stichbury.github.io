@@ -1,0 +1,17 @@
+﻿kedro.framework.cli.utils.KedroCliError
+=======================================
+
+.. currentmodule:: kedro.framework.cli.utils
+
+.. autoclass:: KedroCliError
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

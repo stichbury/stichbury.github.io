@@ -1,0 +1,29 @@
+kedro.framework.cli.hooks.specs
+===============================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.hooks.specs
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      CLICommandSpecs
+   
+   
+
+   
+   
+   
+
+
+

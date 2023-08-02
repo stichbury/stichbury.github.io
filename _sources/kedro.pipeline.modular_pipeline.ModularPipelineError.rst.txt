@@ -1,0 +1,17 @@
+﻿kedro.pipeline.modular\_pipeline.ModularPipelineError
+=====================================================
+
+.. currentmodule:: kedro.pipeline.modular_pipeline
+
+.. autoclass:: ModularPipelineError
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

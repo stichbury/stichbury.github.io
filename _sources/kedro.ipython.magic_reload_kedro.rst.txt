@@ -1,0 +1,6 @@
+kedro.ipython.magic\_reload\_kedro
+==================================
+
+.. currentmodule:: kedro.ipython
+
+.. autofunction:: magic_reload_kedro

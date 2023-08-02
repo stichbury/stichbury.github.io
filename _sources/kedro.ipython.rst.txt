@@ -1,0 +1,30 @@
+kedro.ipython
+=============
+
+.. rubric:: Description
+
+.. automodule:: kedro.ipython
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      load_ipython_extension
+      magic_reload_kedro
+      reload_kedro
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,33 @@
+﻿kedro.io.DataCatalog
+====================
+
+.. currentmodule:: kedro.io
+
+.. autoclass:: DataCatalog
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataCatalog.add
+      ~DataCatalog.add_all
+      ~DataCatalog.add_feed_dict
+      ~DataCatalog.confirm
+      ~DataCatalog.exists
+      ~DataCatalog.from_config
+      ~DataCatalog.list
+      ~DataCatalog.load
+      ~DataCatalog.release
+      ~DataCatalog.save
+      ~DataCatalog.shallow_copy
+   
+   

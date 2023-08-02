@@ -1,0 +1,34 @@
+﻿kedro.extras.datasets.pandas.GBQTableDataSet
+============================================
+
+.. currentmodule:: kedro.extras.datasets.pandas
+
+.. autoclass:: GBQTableDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GBQTableDataSet.DEFAULT_LOAD_ARGS
+      ~GBQTableDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GBQTableDataSet.exists
+      ~GBQTableDataSet.from_config
+      ~GBQTableDataSet.load
+      ~GBQTableDataSet.release
+      ~GBQTableDataSet.save
+   
+   

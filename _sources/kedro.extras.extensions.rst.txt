@@ -1,0 +1,29 @@
+﻿kedro.extras.extensions
+=======================
+
+.. rubric:: Description
+
+.. automodule:: kedro.extras.extensions
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   kedro.extras.extensions.ipython
+

@@ -1,0 +1,21 @@
+kedro.framework.cli.registry
+============================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.registry
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

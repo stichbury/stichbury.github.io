@@ -1,0 +1,33 @@
+﻿kedro.extras.datasets.spark.SparkHiveDataSet
+============================================
+
+.. currentmodule:: kedro.extras.datasets.spark
+
+.. autoclass:: SparkHiveDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SparkHiveDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SparkHiveDataSet.exists
+      ~SparkHiveDataSet.from_config
+      ~SparkHiveDataSet.load
+      ~SparkHiveDataSet.release
+      ~SparkHiveDataSet.save
+   
+   

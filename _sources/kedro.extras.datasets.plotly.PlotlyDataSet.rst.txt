@@ -1,0 +1,36 @@
+﻿kedro.extras.datasets.plotly.PlotlyDataSet
+==========================================
+
+.. currentmodule:: kedro.extras.datasets.plotly
+
+.. autoclass:: PlotlyDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PlotlyDataSet.DEFAULT_LOAD_ARGS
+      ~PlotlyDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PlotlyDataSet.exists
+      ~PlotlyDataSet.from_config
+      ~PlotlyDataSet.load
+      ~PlotlyDataSet.release
+      ~PlotlyDataSet.resolve_load_version
+      ~PlotlyDataSet.resolve_save_version
+      ~PlotlyDataSet.save
+   
+   

@@ -1,0 +1,17 @@
+﻿kedro.io.DataSetError
+=====================
+
+.. currentmodule:: kedro.io
+
+.. autoclass:: DataSetError
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

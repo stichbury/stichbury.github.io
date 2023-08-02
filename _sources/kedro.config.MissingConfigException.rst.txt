@@ -1,0 +1,17 @@
+﻿kedro.config.MissingConfigException
+===================================
+
+.. currentmodule:: kedro.config
+
+.. autoclass:: MissingConfigException
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

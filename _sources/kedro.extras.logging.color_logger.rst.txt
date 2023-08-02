@@ -1,0 +1,29 @@
+kedro.extras.logging.color\_logger
+==================================
+
+.. rubric:: Description
+
+.. automodule:: kedro.extras.logging.color_logger
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      ColorHandler
+   
+   
+
+   
+   
+   
+
+
+
