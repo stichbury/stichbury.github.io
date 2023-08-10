@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Kedro Data Catalog" href="../data/index.html" />
-    <link rel="prev" title="Parameters" href="parameters.html" />
+    <link rel="prev" title="Migration guide for config loaders" href="config_loader_migration.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -294,8 +294,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">FAQs and resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">FAQs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#visualisation">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#working-with-jupyter">Working with Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#kedro-project-development">Kedro project development</a></li>
@@ -305,6 +305,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources/glossary.html">Kedro glossary</a><ul>
@@ -404,6 +405,18 @@
 <li class="toctree-l3"><a class="reference internal" href="parameters.html#how-to-specify-parameters-at-runtime">How to specify parameters at runtime</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="config_loader_migration.html">Migration guide for config loaders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config_loader_migration.html#configloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#install-the-required-library">1. Install the Required Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#use-the-omegaconfigloader">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#import-statements">3. Import Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#file-format-support">4. File Format Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#load-configuration">5. Load Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#provide-template-values-through-globals">Provide template values through globals</a></li>
@@ -416,7 +429,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-use-custom-resolvers-in-the-omegaconfigloader">How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></li>
 </ul>
 </li>
@@ -427,19 +440,25 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../data/index.html">The Kedro Data Catalog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data/data_catalog.html">Introduction to the Kedro Data Catalog</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog.html#specify-the-location-of-the-dataset">Specify the location of the dataset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html">Data Catalog YAML examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_basic_how_to.html">Data Catalog how to guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_catalog.html">Introduction to the Data Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog.html#the-basics-of-catalog-yml">The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog.html#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog.html#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog.html#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog.html#load-and-save-arguments">Load and save arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog.html#dataset-access-credentials">Dataset access credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog.html#dataset-versioning">Dataset versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/data_catalog_yaml_examples.html">Data Catalog YAML examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-save-a-csv-file-from-to-a-local-file-system">Load / save a CSV file from / to a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load / save a CSV on a local file system, using specified load / save arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-save-a-compressed-csv-on-a-local-file-system">Load / save a compressed CSV on a local file system</a></li>
@@ -458,42 +477,32 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-dataset-factories">Load multiple datasets with similar configuration using dataset factories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../data/data_catalog_basic_how_to.html">Data Catalog how to guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#how-to-version-datasets-and-ml-models">How to version datasets and ML models</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#supported-datasets">Supported datasets</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#how-to-create-a-data-catalog-yaml-configuration-file-via-the-cli">How to create a Data Catalog YAML configuration file via the CLI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#how-to-access-a-dataset-that-needs-credentials">How to access a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/data_catalog_basic_how_to.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-definition">Partitioned dataset definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-loads-with-incrementaldataset">Incremental loads with <code class="docutils literal notranslate"><span class="pre">IncrementalDataSet</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-dataset-load">Incremental dataset load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-datasets">Incremental datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-dataset-loads">Incremental dataset loads</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-dataset-save">Incremental dataset save</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#incremental-dataset-confirm">Incremental dataset confirm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#checkpoint-configuration">Checkpoint configuration</a></li>
@@ -502,24 +511,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#load-datasets">Load datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#behind-the-scenes">Behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data">Save data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data-to-memory">Save data to memory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data-to-a-sql-database-for-querying">Save data to a SQL database for querying</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data-in-parquet">Save data in Parquet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#load-datasets">Load datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data">Save data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
@@ -554,7 +563,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#set-up-the-project">Set up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#loading-data-with-generators">Loading data with Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#saving-data-with-generators">Saving data with Generators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -2127,7 +2141,7 @@ Each of these classes are alternatives for the default <code class="docutils lit
 <li><p><a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></p></li>
 <li><p><a class="reference internal" href="#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></p></li>
 <li><p><a class="reference internal" href="#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
-<li><p><a class="reference internal" href="#how-to-use-custom-resolvers-in-the-omegaconfigloader">How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
 <li><p><a class="reference internal" href="#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></p></li>
 </ul>
 <div class="section" id="how-to-change-which-configuration-files-are-loaded">
@@ -2255,51 +2269,73 @@ By default, the config pattern for catalogs is: <code class="docutils literal no
 <p>It’s also possible to use variable interpolation in configuration files other than parameters and catalog, such as custom spark or mlflow configuration. This works in the same way as variable interpolation in parameter files. You can still use the underscore for the templated values if you want, but it’s not mandatory like it is for catalog files.</p>
 </div>
 </div>
-<div class="section" id="how-to-use-custom-resolvers-in-the-omegaconfigloader">
-<h3>How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code><a class="headerlink" href="#how-to-use-custom-resolvers-in-the-omegaconfigloader" title="Permalink to this heading">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Omegaconf</span></code> provides functionality to <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/usage.html#resolvers">register custom resolvers</a> for templated values. You can use these custom resolves within Kedro by extending the <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a> class.
+<div class="section" id="how-to-use-resolvers-in-the-omegaconfigloader">
+<h3>How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code><a class="headerlink" href="#how-to-use-resolvers-in-the-omegaconfigloader" title="Permalink to this heading">¶</a></h3>
+<p>Instead of hard-coding values in your configuration files, you can also dynamically compute them using <a class="reference external" href="https://omegaconf.readthedocs.io/en/2.3_branch/custom_resolvers.html#resolvers"><code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code>’s
+resolvers functionality</a>. You use resolvers to define custom
+logic to calculate values of parameters or catalog entries, or inject these values from elsewhere. To use this feature with Kedro, pass a
+<code class="docutils literal notranslate"><span class="pre">dict</span></code> of custom resolvers to <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> through <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code> in your project’s <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code>.
 The example below illustrates this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>
-<span class="kn">from</span> <span class="nn">omegaconf</span> <span class="kn">import</span> <span class="n">OmegaConf</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>
+
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
 
 
-<span class="k">class</span> <span class="nc">CustomOmegaConfigLoader</span><span class="p">(</span><span class="n">OmegaConfigLoader</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">conf_source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">env</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">runtime_params</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="n">conf_source</span><span class="o">=</span><span class="n">conf_source</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">runtime_params</span><span class="o">=</span><span class="n">runtime_params</span>
-        <span class="p">)</span>
+<span class="k">def</span> <span class="nf">date_today</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 
-        <span class="c1"># Register a customer resolver that adds up numbers.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">register_custom_resolver</span><span class="p">(</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">numbers</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
 
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">register_custom_resolver</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Helper method that checks if the resolver has already been registered and registers the</span>
-<span class="sd">        resolver if it&#39;s new. The check is needed, because omegaconf will throw an error</span>
-<span class="sd">        if a resolver with the same name is registered twice.</span>
-<span class="sd">        Alternatively, you can call `register_new_resolver()` with  `replace=True`.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">has_resolver</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-            <span class="n">OmegaConf</span><span class="o">.</span><span class="n">register_new_resolver</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span>
+<span class="n">CONFIG_LOADER_ARGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;custom_resolvers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;add&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">my_list</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span>
+        <span class="s2">&quot;polars&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span>
+        <span class="s2">&quot;today&quot;</span><span class="p">:</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">date_today</span><span class="p">(),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>In order to use this custom configuration loader, you will need to set it as the project configuration loader in <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">package_name.custom_configloader</span> <span class="kn">import</span> <span class="n">CustomOmegaConfigLoader</span>
-
-<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">CustomOmegaConfigLoader</span>
-</pre></div>
-</div>
-<p>You can then use the custom “add” resolver in your <code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> as follows:</p>
+<p>These custom resolvers are then registered using <code class="docutils literal notranslate"><span class="pre">OmegaConf.register_new_resolver()</span></code> under the hood and can be used in any of the
+configuration files in your project. For example, you can use the <code class="docutils literal notranslate"><span class="pre">add</span></code> or the <code class="docutils literal notranslate"><span class="pre">today</span></code> resolver defined above in your <code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_options</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${add:1,2,3}</span>
+<span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${add:1,2,3}&quot;</span>
 <span class="w">  </span><span class="nt">random_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${today:}&quot;</span>
+</pre></div>
+</div>
+<p>The values of these parameters will be computed at access time and will be passed on to your nodes.
+Resolvers can also be used in your <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>. In the example below, we use the <code class="docutils literal notranslate"><span class="pre">polars</span></code> resolver defined above to pass non-primitive
+types to the catalog entry.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_polars_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">polars.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/my_dataset.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dtypes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">product_age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${polars:Float64}&quot;</span>
+<span class="w">      </span><span class="nt">group_identifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${polars:Utf8}&quot;</span>
+<span class="w">    </span><span class="nt">try_parse_dates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> also comes with some <a class="reference external" href="https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html#built-in-resolvers">built-in resolvers</a>
+that you can use with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> in Kedro. All built-in resolvers except for <a class="reference external" href="https://omegaconf.readthedocs.io/en/latest/custom_resolvers.html#oc-env"><code class="docutils literal notranslate"><span class="pre">oc.env</span></code></a>
+are enabled by default. <code class="docutils literal notranslate"><span class="pre">oc.env</span></code> is only turned on for loading credentials. You can, however, turn this on for all configurations through your project’s <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code> in a similar way:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced feature and should be used with caution. We do not recommend using environment variables for configurations other than credentials.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">omegaconf.resolvers</span> <span class="kn">import</span> <span class="n">oc</span>
+<span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>
+
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
+
+<span class="n">CONFIG_LOADER_ARGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;custom_resolvers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;oc.env&quot;</span><span class="p">:</span> <span class="n">oc</span><span class="o">.</span><span class="n">env</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2331,7 +2367,7 @@ To use the <code class="docutils literal notranslate"><span class="pre">OmegaCon
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="parameters.html" class="btn btn-neutral float-left" title="Parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config_loader_migration.html" class="btn btn-neutral float-left" title="Migration guide for config loaders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../data/index.html" class="btn btn-neutral float-right" title="The Kedro Data Catalog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

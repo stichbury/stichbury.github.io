@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction to the Kedro Data Catalog &mdash; kedro 0.18.12 documentation</title>
+  <title>Introduction to the Data Catalog &mdash; kedro 0.18.12 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -294,8 +294,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">FAQs and resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">FAQs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#visualisation">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#working-with-jupyter">Working with Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#kedro-project-development">Kedro project development</a></li>
@@ -305,6 +305,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources/glossary.html">Kedro glossary</a><ul>
@@ -404,6 +405,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuration/parameters.html#how-to-specify-parameters-at-runtime">How to specify parameters at runtime</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/config_loader_migration.html">Migration guide for config loaders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/config_loader_migration.html#configloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#install-the-required-library">1. Install the Required Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#use-the-omegaconfigloader">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#import-statements">3. Import Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#file-format-support">4. File Format Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#load-configuration">5. Load Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/advanced_configuration.html">Advanced configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/advanced_configuration.html#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#provide-template-values-through-globals">Provide template values through globals</a></li>
@@ -416,7 +429,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-custom-resolvers-in-the-omegaconfigloader">How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></li>
 </ul>
 </li>
@@ -427,19 +440,25 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">The Kedro Data Catalog</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to the Kedro Data Catalog</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#specify-the-location-of-the-dataset">Specify the location of the dataset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html">Data Catalog YAML examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html">Data Catalog how to guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to the Data Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-basics-of-catalog-yml">The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load-and-save-arguments">Load and save arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset-access-credentials">Dataset access credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataset-versioning">Dataset versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data_catalog_yaml_examples.html">Data Catalog YAML examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-save-a-csv-file-from-to-a-local-file-system">Load / save a CSV file from / to a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load / save a CSV on a local file system, using specified load / save arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-save-a-compressed-csv-on-a-local-file-system">Load / save a compressed CSV on a local file system</a></li>
@@ -458,42 +477,32 @@
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-dataset-factories">Load multiple datasets with similar configuration using dataset factories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_yaml_examples.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_catalog_basic_how_to.html">Data Catalog how to guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-version-datasets-and-ml-models">How to version datasets and ML models</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#supported-datasets">Supported datasets</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-create-a-data-catalog-yaml-configuration-file-via-the-cli">How to create a Data Catalog YAML configuration file via the CLI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-access-a-dataset-that-needs-credentials">How to access a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-definition">Partitioned dataset definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-loads-with-incrementaldataset">Incremental loads with <code class="docutils literal notranslate"><span class="pre">IncrementalDataSet</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-load">Incremental dataset load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-datasets">Incremental datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-loads">Incremental dataset loads</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-save">Incremental dataset save</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-confirm">Incremental dataset confirm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#checkpoint-configuration">Checkpoint configuration</a></li>
@@ -502,24 +511,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#load-datasets">Load datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#behind-the-scenes">Behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data">Save data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-to-memory">Save data to memory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-to-a-sql-database-for-querying">Save data to a SQL database for querying</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-in-parquet">Save data in Parquet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#load-datasets">Load datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data">Save data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
@@ -554,7 +563,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#set-up-the-project">Set up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#loading-data-with-generators">Loading data with Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#saving-data-with-generators">Saving data with Generators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -1998,7 +2012,7 @@
         
           <li><a href="index.html">The Kedro Data Catalog</a> &raquo;</li>
         
-      <li>Introduction to the Kedro Data Catalog</li>
+      <li>Introduction to the Data Catalog</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -2020,29 +2034,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="introduction-to-the-kedro-data-catalog">
-<h1>Introduction to the Kedro Data Catalog<a class="headerlink" href="#introduction-to-the-kedro-data-catalog" title="Permalink to this heading">¶</a></h1>
-<p>This section introduces <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>, the project-shareable Data Catalog. The file is located in <code class="docutils literal notranslate"><span class="pre">conf/base</span></code> and is a registry of all data sources available for use by a project; it manages loading and saving of data.</p>
-<p>All supported data connectors are available in <a class="reference internal" href="../kedro_datasets.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">kedro-datasets</span></code></span></a>.</p>
-<div class="section" id="use-the-data-catalog-within-kedro-configuration">
-<h2>Use the Data Catalog within Kedro configuration<a class="headerlink" href="#use-the-data-catalog-within-kedro-configuration" title="Permalink to this heading">¶</a></h2>
-<p>Kedro uses configuration to make your code reproducible when it has to reference datasets in different locations and/or in different environments.</p>
-<p>You can copy this file and reference additional locations for the same datasets. For instance, you can use the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file in <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> to register the locations of datasets that would run in production, while copying and updating a second version of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> in <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code> to register the locations of sample datasets that you are using for prototyping your data pipeline(s).</p>
-<p>Built-in functionality for <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code> to overwrite <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> is <a class="reference internal" href="../configuration/configuration_basics.html"><span class="std std-doc">described in the documentation about configuration</span></a>. This means that a dataset called <code class="docutils literal notranslate"><span class="pre">cars</span></code> could exist in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> files in <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> and <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code>. In code, in <code class="docutils literal notranslate"><span class="pre">src</span></code>, you would only call a dataset named <code class="docutils literal notranslate"><span class="pre">cars</span></code> and Kedro would detect which definition of <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset to use to run your pipeline - <code class="docutils literal notranslate"><span class="pre">cars</span></code> definition from <code class="docutils literal notranslate"><span class="pre">conf/local/catalog.yml</span></code> would take precedence in this case.</p>
-<p>The Data Catalog also works with the <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> file in <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code>, allowing you to specify usernames and passwords required to load certain datasets.</p>
-<p>You can define a Data Catalog in two ways - through YAML configuration, or programmatically using an API. Both methods allow you to specify:</p>
-<ul class="simple">
-<li><p>Dataset name</p></li>
-<li><p>Dataset type</p></li>
-<li><p>Location of the dataset using <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, detailed in the next section</p></li>
-<li><p>Credentials needed to access the dataset</p></li>
-<li><p>Load and saving arguments</p></li>
-<li><p>Whether you want a <a class="reference internal" href="#kedro_io.md#versioning"><span class="xref myst">dataset or ML model to be versioned</span></a> when you run your data pipeline</p></li>
-</ul>
+  <div class="section" id="introduction-to-the-data-catalog">
+<h1>Introduction to the Data Catalog<a class="headerlink" href="#introduction-to-the-data-catalog" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="the-basics-of-catalog-yml">
+<h2>The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code><a class="headerlink" href="#the-basics-of-catalog-yml" title="Permalink to this heading">¶</a></h2>
+<p>A separate page of <a class="reference internal" href="data_catalog_yaml_examples.html"><span class="std std-doc">Data Catalog YAML examples</span></a>  gives further examples of how to work with <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>, but here we revisit the <a class="reference internal" href="../tutorial/set_up_data.html"><span class="std std-doc">basic <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> introduced by the spaceflights tutorial</span></a>.</p>
+<p>The example below registers two <code class="docutils literal notranslate"><span class="pre">csv</span></code> datasets, and an <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> dataset. The minimum details needed to load and save a file within a local file system are the key, which is name of the dataset, the type of data to indicate the dataset to use (<code class="docutils literal notranslate"><span class="pre">type</span></code>) and the file’s location (<code class="docutils literal notranslate"><span class="pre">filepath</span></code>).</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
+
+<span class="nt">reviews</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span>
+
+<span class="nt">shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine (the default since Kedro 0.18.0)</span>
+</pre></div>
 </div>
-<div class="section" id="specify-the-location-of-the-dataset">
-<h2>Specify the location of the dataset<a class="headerlink" href="#specify-the-location-of-the-dataset" title="Permalink to this heading">¶</a></h2>
-<p>Kedro relies on <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a> to read and save data from a variety of data stores including local file systems, network file systems, cloud object stores, and Hadoop. When specifying a storage location in <code class="docutils literal notranslate"><span class="pre">filepath:</span></code>, you should provide a URL using the general form <code class="docutils literal notranslate"><span class="pre">protocol://path/to/data</span></code>.  If no protocol is provided, the local file system is assumed (same as <code class="docutils literal notranslate"><span class="pre">file://</span></code>).</p>
+<div class="section" id="dataset-type">
+<h3>Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#dataset-type" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="dataset-filepath">
+<h3>Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code><a class="headerlink" href="#dataset-filepath" title="Permalink to this heading">¶</a></h3>
+<p>Kedro relies on <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a> to read and save data from a variety of data stores including local file systems, network file systems, cloud object stores, and Hadoop. When specifying a storage location in <code class="docutils literal notranslate"><span class="pre">filepath:</span></code>, you should provide a URL using the general form <code class="docutils literal notranslate"><span class="pre">protocol://path/to/data</span></code>.  If no protocol is provided, the local file system is assumed (which is the same as <code class="docutils literal notranslate"><span class="pre">file://</span></code>).</p>
 <p>The following prepends are available:</p>
 <ul class="simple">
 <li><p><strong>Local or Network File System</strong>: <code class="docutils literal notranslate"><span class="pre">file://</span></code> - the local file system is default in the absence of any protocol, it also permits relative paths.</p></li>
@@ -2056,15 +2074,120 @@ resource using gcsfs (in development).</p></li>
 <li><p><strong>HTTP(s)</strong>: <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> for reading data directly from HTTP web servers.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">fsspec</span></code> also provides other file systems, such as SSH, FTP and WebHDFS. <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#implementations">See the fsspec documentation for more information</a>.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data_catalog_yaml_examples.html">Data Catalog YAML examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_catalog_basic_how_to.html">Data Catalog how to guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a></li>
-</ul>
 </div>
+</div>
+<div class="section" id="additional-settings-in-catalog-yml">
+<h2>Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code><a class="headerlink" href="#additional-settings-in-catalog-yml" title="Permalink to this heading">¶</a></h2>
+<p>This section explains the additional settings available within <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>.</p>
+<div class="section" id="load-and-save-arguments">
+<h3>Load and save arguments<a class="headerlink" href="#load-and-save-arguments" title="Permalink to this heading">¶</a></h3>
+<p>The Kedro Data Catalog also accepts two different groups of <code class="docutils literal notranslate"><span class="pre">*_args</span></code> parameters that serve different purposes:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code></strong>: Configures how a third-party library loads/saves data from/to a file. In the spaceflights example above, <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, is passed to the excel file read method (<code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>) as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html">keyword argument</a>. Although not specified here, the equivalent output is <code class="docutils literal notranslate"><span class="pre">save_args</span></code> and the value would be passed to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_excel</span></code> method</a>.</p></li>
+</ul>
+<p>For example, to load or save a CSV on a local file system, using specified load/save arguments:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">date_format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M&#39;</span>
+<span class="w">    </span><span class="nt">decimal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fs_args</span></code></strong>: Configures the interaction with a filesystem.
+All the top-level parameters of <code class="docutils literal notranslate"><span class="pre">fs_args</span></code> (except <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code>) will be passed to an underlying filesystem class.</p></li>
+</ul>
+<p>For example, to provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test_project</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
+<p>For example, to load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">open_args_load</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rb&quot;</span>
+<span class="w">      </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dataset-access-credentials">
+<h3>Dataset access credentials<a class="headerlink" href="#dataset-access-credentials" title="Permalink to this heading">¶</a></h3>
+<p>The Data Catalog also works with the <code class="docutils literal notranslate"><span class="pre">credentials.yml</span></code> file in <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code>, allowing you to specify usernames and passwords required to load certain datasets.</p>
+<p>Before instantiating the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>, Kedro will first attempt to read <a class="reference internal" href="../configuration/credentials.html"><span class="std std-doc">the credentials from the project configuration</span></a>. The resulting dictionary is then passed into <code class="docutils literal notranslate"><span class="pre">DataCatalog.from_config()</span></code> as the <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument.</p>
+<p>Let’s assume that the project contains the file <code class="docutils literal notranslate"><span class="pre">conf/local/credentials.yml</span></code> with the following contents:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">aws_access_key_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key</span>
+<span class="w">    </span><span class="nt">aws_secret_access_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret</span>
+</pre></div>
+</div>
+<p>and the Data Catalog is specified in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> as follows:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">motorbikes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/data/02_intermediate/company/motorbikes.csv</span>
+<span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_s3</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sep</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;,&#39;</span>
+</pre></div>
+</div>
+<p>In the example above, the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file contains references to credentials keys <code class="docutils literal notranslate"><span class="pre">dev_s3</span></code>. The Data Catalog first reads <code class="docutils literal notranslate"><span class="pre">dev_s3</span></code> from the received <code class="docutils literal notranslate"><span class="pre">credentials</span></code> dictionary, and then passes its values into the dataset as a <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument to <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+</div>
+<div class="section" id="dataset-versioning">
+<h3>Dataset versioning<a class="headerlink" href="#dataset-versioning" title="Permalink to this heading">¶</a></h3>
+<p>Kedro enables dataset and ML model versioning through the <code class="docutils literal notranslate"><span class="pre">versioned</span></code> definition. For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
+<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">filepath</span></code> is used as the basis of a folder that stores versions of the <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset. Each time a new version is created by a pipeline run it is stored within <code class="docutils literal notranslate"><span class="pre">data/01_raw/company/cars.csv/&lt;version&gt;/cars.csv</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> corresponds to a version string formatted as <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDThh.mm.ss.sssZ</span></code>.</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> loads the latest version of the dataset. However, you can also specify a particular versioned data set with <code class="docutils literal notranslate"><span class="pre">--load-version</span></code> flag as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--load-version<span class="o">=</span>cars:YYYY-MM-DDThh.mm.ss.sssZ
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">--load-version</span></code> is dataset name and version timestamp separated by <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Currently, the following datasets support versioning:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.matplotlib.MatplotlibWriter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.holoviews.HoloviewsWriter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.networkx.NetworkXDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.CSVDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.ExcelDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.FeatherDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.HDFDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.JSONDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pandas.ParquetDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pickle.PickleDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.pillow.ImageDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.text.TextDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.spark.SparkDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.yaml.YAMLDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.api.APIDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.tensorflow.TensorFlowModelDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.json.JSONDataSet</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although HTTP(S) is a supported file system in the dataset implementations, it does not support versioning.</p>
+</div>
+</div>
+</div>
+<div class="section" id="use-the-data-catalog-within-kedro-configuration">
+<h2>Use the Data Catalog within Kedro configuration<a class="headerlink" href="#use-the-data-catalog-within-kedro-configuration" title="Permalink to this heading">¶</a></h2>
+<p>Kedro configuration enables you to organise your project for different stages of your data pipeline. For example, you might need different Data Catalog settings for development, testing, and production environments.</p>
+<p>By default, Kedro has a <code class="docutils literal notranslate"><span class="pre">base</span></code> and a <code class="docutils literal notranslate"><span class="pre">local</span></code> folder for configuration. The Data Catalog configuration is loaded using a configuration loader class which recursively scans for configuration files inside the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder, firstly in <code class="docutils literal notranslate"><span class="pre">conf/base</span></code> and then in <code class="docutils literal notranslate"><span class="pre">conf/local</span></code> (which is the designated overriding environment). Kedro merges the configuration information and returns a configuration dictionary according to rules set out in the <a class="reference internal" href="../configuration/configuration_basics.html"><span class="std std-doc">configuration documentation</span></a>.</p>
+<p>In summary, if you need to configure your datasets for different environments, you can create both <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">conf/local/catalog.yml</span></code>. For instance, you can use the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file in <code class="docutils literal notranslate"><span class="pre">conf/base/</span></code> to register the locations of datasets that would run in production, while adding a second version of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> in <code class="docutils literal notranslate"><span class="pre">conf/local/</span></code> to register the locations of sample datasets while you are using them for prototyping data pipeline(s).</p>
+<p>To illustrate this, if you include a dataset called <code class="docutils literal notranslate"><span class="pre">cars</span></code> in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> stored in both <code class="docutils literal notranslate"><span class="pre">conf/base</span></code> and <code class="docutils literal notranslate"><span class="pre">conf/local</span></code>, your pipeline code would use the <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset and rely on Kedro to detect which definition of <code class="docutils literal notranslate"><span class="pre">cars</span></code> dataset to use in your pipeline.</p>
 </div>
 </div>
 

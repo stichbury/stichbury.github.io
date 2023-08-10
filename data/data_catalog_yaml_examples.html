@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Catalog how to guide" href="data_catalog_basic_how_to.html" />
-    <link rel="prev" title="Introduction to the Kedro Data Catalog" href="data_catalog.html" />
+    <link rel="next" title="Kedro dataset factories" href="kedro_dataset_factories.html" />
+    <link rel="prev" title="Introduction to the Data Catalog" href="data_catalog.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -294,8 +294,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">FAQs and resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/faq.html">FAQs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#visualisation">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#working-with-jupyter">Working with Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#kedro-project-development">Kedro project development</a></li>
@@ -305,6 +305,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources/glossary.html">Kedro glossary</a><ul>
@@ -404,6 +405,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuration/parameters.html#how-to-specify-parameters-at-runtime">How to specify parameters at runtime</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/config_loader_migration.html">Migration guide for config loaders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/config_loader_migration.html#configloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#install-the-required-library">1. Install the Required Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#use-the-omegaconfigloader">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#import-statements">3. Import Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#file-format-support">4. File Format Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#load-configuration">5. Load Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/advanced_configuration.html">Advanced configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/advanced_configuration.html#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#provide-template-values-through-globals">Provide template values through globals</a></li>
@@ -416,7 +429,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-custom-resolvers-in-the-omegaconfigloader">How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></li>
 </ul>
 </li>
@@ -427,19 +440,25 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">The Kedro Data Catalog</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="data_catalog.html">Introduction to the Kedro Data Catalog</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="data_catalog.html#specify-the-location-of-the-dataset">Specify the location of the dataset</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Data Catalog YAML examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html">Data Catalog how to guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_catalog.html">Introduction to the Data Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog.html#the-basics-of-catalog-yml">The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_catalog.html#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_catalog.html#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog.html#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_catalog.html#load-and-save-arguments">Load and save arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_catalog.html#dataset-access-credentials">Dataset access credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_catalog.html#dataset-versioning">Dataset versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Data Catalog YAML examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-file-from-to-a-local-file-system">Load / save a CSV file from / to a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load / save a CSV on a local file system, using specified load / save arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-save-a-compressed-csv-on-a-local-file-system">Load / save a compressed CSV on a local file system</a></li>
@@ -458,42 +477,32 @@
 <li class="toctree-l3"><a class="reference internal" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-multiple-datasets-with-similar-configuration-using-dataset-factories">Load multiple datasets with similar configuration using dataset factories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_catalog_basic_how_to.html">Data Catalog how to guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-version-datasets-and-ml-models">How to version datasets and ML models</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#supported-datasets">Supported datasets</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-create-a-data-catalog-yaml-configuration-file-via-the-cli">How to create a Data Catalog YAML configuration file via the CLI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-access-a-dataset-that-needs-credentials">How to access a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_catalog_basic_how_to.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_catalog_basic_how_to.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-definition">Partitioned dataset definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
-<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-loads-with-incrementaldataset">Incremental loads with <code class="docutils literal notranslate"><span class="pre">IncrementalDataSet</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-load">Incremental dataset load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-datasets">Incremental datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-loads">Incremental dataset loads</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-save">Incremental dataset save</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#incremental-dataset-confirm">Incremental dataset confirm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#checkpoint-configuration">Checkpoint configuration</a></li>
@@ -502,24 +511,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#load-datasets">Load datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#behind-the-scenes">Behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data">Save data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-to-memory">Save data to memory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-to-a-sql-database-for-querying">Save data to a SQL database for querying</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data-in-parquet">Save data in Parquet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#load-datasets">Load datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#save-data">Save data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
@@ -554,7 +563,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#set-up-the-project">Set up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#loading-data-with-generators">Loading data with Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#saving-data-with-generators">Saving data with Generators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -1998,8 +2012,6 @@
         
           <li><a href="index.html">The Kedro Data Catalog</a> &raquo;</li>
         
-          <li><a href="data_catalog.html">Introduction to the Kedro Data Catalog</a> &raquo;</li>
-        
       <li>Data Catalog YAML examples</li>
     
     
@@ -2024,17 +2036,11 @@
              
   <div class="section" id="data-catalog-yaml-examples">
 <h1>Data Catalog YAML examples<a class="headerlink" href="#data-catalog-yaml-examples" title="Permalink to this heading">¶</a></h1>
+<p>TO REMOVE – Diataxis: How to guide (code example)</p>
+<p>TO DO: Add a set of anchor links</p>
 <p>You can configure your datasets in a YAML configuration file, <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">conf/local/catalog.yml</span></code>.</p>
-<p>Here are some examples of data configuration in a <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>:</p>
-<p>Data Catalog accepts two different groups of <code class="docutils literal notranslate"><span class="pre">*_args</span></code> parameters that serve different purposes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fs_args</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code></p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">fs_args</span></code> is used to configure the interaction with a filesystem.
-All the top-level parameters of <code class="docutils literal notranslate"><span class="pre">fs_args</span></code> (except <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code>) will be passed in an underlying filesystem class.</p>
-<p>**Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)
-**</p>
+<div class="section" id="provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">
+<h2>Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)<a class="headerlink" href="#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
@@ -2042,8 +2048,9 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
-<p>**Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding
-**</p>
+</div>
+<div class="section" id="load-data-from-a-local-binary-file-using-utf-8-encoding">
+<h2>Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#load-data-from-a-local-binary-file-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
@@ -2053,8 +2060,9 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> configure how a third-party library (e.g. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for <code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code>) loads/saves data from/to a file.</p>
-<p>**Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding
-**</p>
+</div>
+<div class="section" id="save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">
+<h2>Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -2062,6 +2070,7 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 <span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="w">    </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;utf-8&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="section" id="load-save-a-csv-file-from-to-a-local-file-system">
 <h2>Load / save a CSV file from / to a local file system<a class="headerlink" href="#load-save-a-csv-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
@@ -2362,217 +2371,16 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </div>
 <p>In this example, the default <code class="docutils literal notranslate"><span class="pre">csv</span></code> configuration is inserted into <code class="docutils literal notranslate"><span class="pre">airplanes</span></code> and then the <code class="docutils literal notranslate"><span class="pre">load_args</span></code> block is overridden. Normally, that would replace the whole dictionary. In order to extend <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, the defaults for that block are then re-inserted.</p>
 </div>
-<div class="section" id="load-multiple-datasets-with-similar-configuration-using-dataset-factories">
-<h2>Load multiple datasets with similar configuration using dataset factories<a class="headerlink" href="#load-multiple-datasets-with-similar-configuration-using-dataset-factories" title="Permalink to this heading">¶</a></h2>
-<p>For catalog entries that share configuration details, you can also use the dataset factories introduced in Kedro 0.18.12. This syntax allows you to generalise the configuration and
-reduce the number of similar catalog entries by matching datasets used in your project’s pipelines to dataset factory patterns.</p>
-<div class="section" id="generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">
-<h3>Generalise datasets with similar names and types into one dataset factory<a class="headerlink" href="#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory" title="Permalink to this heading">¶</a></h3>
-<p>Consider the following catalog entries:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">factory_data</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/factory_data.csv</span>
-
-
-<span class="nt">process_data</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/process_data.csv</span>
+<div class="section" id="create-a-data-catalog-yaml-configuration-file-via-the-cli">
+<h2>Create a Data Catalog YAML configuration file via the CLI<a class="headerlink" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli" title="Permalink to this heading">¶</a></h2>
+<p>You can use the <a class="reference internal" href="../development/commands_reference.html#create-a-data-catalog-yaml-configuration-file"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">create</span></code> command to create a Data Catalog YAML configuration</span></a>.</p>
+<p>This creates a <code class="docutils literal notranslate"><span class="pre">&lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span></code> configuration file with <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> datasets for each dataset in a registered pipeline if it is missing from the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span>
+<span class="nt">rockets</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span>
+<span class="nt">scooters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryDataSet</span>
 </pre></div>
-</div>
-<p>The datasets in this catalog can be generalised to the following dataset factory:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{name}_data&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/{name}_data.csv</span>
-</pre></div>
-</div>
-<p>When <code class="docutils literal notranslate"><span class="pre">factory_data</span></code> or <code class="docutils literal notranslate"><span class="pre">process_data</span></code> is used in your pipeline, it is matched to the factory pattern <code class="docutils literal notranslate"><span class="pre">{name}_data</span></code>. The factory pattern must always be enclosed in
-quotes to avoid YAML parsing errors.</p>
-</div>
-<div class="section" id="generalise-datasets-of-the-same-type-into-one-dataset-factory">
-<h3>Generalise datasets of the same type into one dataset factory<a class="headerlink" href="#generalise-datasets-of-the-same-type-into-one-dataset-factory" title="Permalink to this heading">¶</a></h3>
-<p>You can also combine all the datasets with the same type and configuration details. For example, consider the following
-catalog with three datasets named <code class="docutils literal notranslate"><span class="pre">boats</span></code>, <code class="docutils literal notranslate"><span class="pre">cars</span></code> and <code class="docutils literal notranslate"><span class="pre">planes</span></code> of the type <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.csv</span>
-
-<span class="nt">cars</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span>
-
-<span class="nt">planes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
-</pre></div>
-</div>
-<p>These datasets can be combined into the following dataset factory:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{dataset_name}#csv&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/{dataset_name}.csv</span>
-</pre></div>
-</div>
-<p>You will then have to update the pipelines in your project located at <code class="docutils literal notranslate"><span class="pre">src/&lt;project_name&gt;/&lt;pipeline_name&gt;/pipeline.py</span></code> to refer to these datasets as <code class="docutils literal notranslate"><span class="pre">boats#csv</span></code>,
-<code class="docutils literal notranslate"><span class="pre">cars#csv</span></code> and <code class="docutils literal notranslate"><span class="pre">planes#csv</span></code>. Adding a suffix or a prefix to the dataset names and the dataset factory patterns, like <code class="docutils literal notranslate"><span class="pre">#csv</span></code> here, ensures that the dataset
-names are matched with the intended pattern.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.nodes</span> <span class="kn">import</span> <span class="n">create_model_input_table</span><span class="p">,</span> <span class="n">preprocess_companies</span><span class="p">,</span> <span class="n">preprocess_shuttles</span>
-
-
-<span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">preprocess_boats</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;boats#csv&quot;</span><span class="p">,</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_boats&quot;</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;preprocess_boats_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">preprocess_cars</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;cars#csv&quot;</span><span class="p">,</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_cars&quot;</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;preprocess_cars_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">preprocess_planes</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;planes#csv&quot;</span><span class="p">,</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_planes&quot;</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;preprocess_planes_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">create_model_input_table</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span>
-                    <span class="s2">&quot;preprocessed_boats&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;preprocessed_planes&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;preprocessed_cars&quot;</span><span class="p">,</span>
-                <span class="p">],</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;model_input_table&quot;</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;create_model_input_table_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="generalise-datasets-using-namespaces-into-one-dataset-factory">
-<h3>Generalise datasets using namespaces into one dataset factory<a class="headerlink" href="#generalise-datasets-using-namespaces-into-one-dataset-factory" title="Permalink to this heading">¶</a></h3>
-<p>You can also generalise the catalog entries for datasets belonging to namespaced modular pipelines. Consider the
-following pipeline which takes in a <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code> and outputs two regressors belonging to the
-<code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline</span></code> and the <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline</span></code> namespaces:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">node</span>
-<span class="kn">from</span> <span class="nn">kedro.pipeline.modular_pipeline</span> <span class="kn">import</span> <span class="n">pipeline</span>
-
-<span class="kn">from</span> <span class="nn">.nodes</span> <span class="kn">import</span> <span class="n">evaluate_model</span><span class="p">,</span> <span class="n">split_data</span><span class="p">,</span> <span class="n">train_model</span>
-
-
-<span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
-    <span class="n">pipeline_instance</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">split_data</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;model_input_table&quot;</span><span class="p">,</span> <span class="s2">&quot;params:model_options&quot;</span><span class="p">],</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X_train&quot;</span><span class="p">,</span> <span class="s2">&quot;y_train&quot;</span><span class="p">],</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;split_data_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">node</span><span class="p">(</span>
-                <span class="n">func</span><span class="o">=</span><span class="n">train_model</span><span class="p">,</span>
-                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X_train&quot;</span><span class="p">,</span> <span class="s2">&quot;y_train&quot;</span><span class="p">],</span>
-                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;regressor&quot;</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;train_model_node&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">)</span>
-    <span class="n">ds_pipeline_1</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
-        <span class="n">pipe</span><span class="o">=</span><span class="n">pipeline_instance</span><span class="p">,</span>
-        <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;model_input_table&quot;</span><span class="p">,</span>
-        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;active_modelling_pipeline&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">ds_pipeline_2</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
-        <span class="n">pipe</span><span class="o">=</span><span class="n">pipeline_instance</span><span class="p">,</span>
-        <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;model_input_table&quot;</span><span class="p">,</span>
-        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;candidate_modelling_pipeline&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">ds_pipeline_1</span> <span class="o">+</span> <span class="n">ds_pipeline_2</span>
-</pre></div>
-</div>
-<p>You can now have one dataset factory pattern in your catalog instead of two separate entries for <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline.regressor</span></code>
-and <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline.regressor</span></code> as below:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="nv">namespace</span><span class="p p-Indicator">}</span><span class="nt">.regressor</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/regressor_{namespace}.pkl</span>
-<span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">
-<h3>Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders<a class="headerlink" href="#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders" title="Permalink to this heading">¶</a></h3>
-<p>You can use multiple placeholders in the same pattern. For example, consider the following catalog where the dataset
-entries share <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">file_format</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processing.factory_data</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/processing/factory_data.pq</span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overwrite</span>
-
-<span class="nt">processing.process_data</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/processing/process_data.pq</span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overwrite</span>
-
-<span class="nt">modelling.metrics</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/modelling/factory_data.pq</span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overwrite</span>
-</pre></div>
-</div>
-<p>This could be generalised to the following pattern:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{layer}.{dataset_name}&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/{layer}/{dataset_name}.pq</span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
-<span class="w">  </span><span class="nt">save_args</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overwrite</span>
-</pre></div>
-</div>
-<p>All the placeholders used in the catalog entry body must exist in the factory pattern name.</p>
-</div>
-<div class="section" id="generalise-datasets-using-multiple-dataset-factories">
-<h3>Generalise datasets using multiple dataset factories<a class="headerlink" href="#generalise-datasets-using-multiple-dataset-factories" title="Permalink to this heading">¶</a></h3>
-<p>You can have multiple dataset factories in your catalog. For example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{namespace}.{dataset_name}@spark&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/{namespace}/{dataset_name}.pq</span>
-<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
-
-<span class="s">&quot;{dataset_name}@csv&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/{dataset_name}.csv</span>
-</pre></div>
-</div>
-<p>Having multiple dataset factories in your catalog can lead to a situation where a dataset name from your pipeline might
-match multiple patterns. To overcome this, Kedro sorts all the potential matches for the dataset name in the pipeline and picks the best match.
-The matches are ranked according to the following criteria :</p>
-<ol class="arabic simple">
-<li><p>Number of exact character matches between the dataset name and the factory pattern. For example, a dataset named <code class="docutils literal notranslate"><span class="pre">factory_data$csv</span></code> would match <code class="docutils literal notranslate"><span class="pre">{dataset}_data$csv</span></code> over <code class="docutils literal notranslate"><span class="pre">{dataset_name}$csv</span></code>.</p></li>
-<li><p>Number of placeholders. For example, the dataset <code class="docutils literal notranslate"><span class="pre">preprocessing.shuttles+csv</span></code> would match <code class="docutils literal notranslate"><span class="pre">{namespace}.{dataset}+csv</span></code> over <code class="docutils literal notranslate"><span class="pre">{dataset}+csv</span></code>.</p></li>
-<li><p>Alphabetical order</p></li>
-</ol>
-</div>
-<div class="section" id="generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">
-<h3>Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code><a class="headerlink" href="#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset" title="Permalink to this heading">¶</a></h3>
-<p>You can use dataset factories to define a catch-all pattern which will overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> creation.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{default_dataset}&quot;</span><span class="p p-Indicator">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
-<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/{default_dataset}.csv</span>
-</pre></div>
-</div>
-<p>Kedro will now treat all the datasets mentioned in your project’s pipelines that do not appear as specific patterns or explicit entries in your catalog
-as <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code>.</p>
 </div>
 </div>
 </div>
@@ -2581,8 +2389,8 @@ as <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSe
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="data_catalog.html" class="btn btn-neutral float-left" title="Introduction to the Kedro Data Catalog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="data_catalog_basic_how_to.html" class="btn btn-neutral float-right" title="Data Catalog how to guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data_catalog.html" class="btn btn-neutral float-left" title="Introduction to the Data Catalog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kedro_dataset_factories.html" class="btn btn-neutral float-right" title="Kedro dataset factories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
