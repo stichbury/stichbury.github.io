@@ -405,6 +405,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuration/parameters.html#how-to-specify-parameters-at-runtime">How to specify parameters at runtime</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/config_loader_migration.html">Migration guide for config loaders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/config_loader_migration.html#configloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#install-the-required-library">1. Install the Required Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#use-the-omegaconfigloader">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#import-statements">3. Import Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#file-format-support">4. File Format Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#load-configuration">5. Load Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/advanced_configuration.html">Advanced configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/advanced_configuration.html#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../configuration/advanced_configuration.html#provide-template-values-through-globals">Provide template values through globals</a></li>
@@ -520,7 +532,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#set-up-the-project">Set up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#loading-data-with-generators">Loading data with Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/nodes.html#saving-data-with-generators">Saving data with Generators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -933,45 +950,7 @@
 <p class="caption" role="heading"><span class="caption-text">Contribute to Kedro</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contribution/index.html">Contribute to Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html">Guidelines for contributing developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#before-you-start-development-set-up">Before you start: development set up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#get-started-areas-of-contribution">Get started: areas of contribution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#create-a-pull-request">Create a pull request</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#pull-request-title-conventions">Pull request title conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#hints-on-pre-commit-usage">Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/backwards_compatibility.html">Backwards compatibility &amp; breaking changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/backwards_compatibility.html#when-should-i-make-a-breaking-change">When should I make a breaking change?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/backwards_compatibility.html#the-kedro-release-model">The Kedro release model</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html">Contribute to the Kedro documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#how-do-i-rebuild-the-documentation-after-i-make-changes-to-it">How do I rebuild the documentation after I make changes to it?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#set-up-to-build-kedro-documentation">Set up to build Kedro documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#build-the-documentation">Build the documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#extend-kedro-documentation">Extend Kedro documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#add-new-pages">Add new pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#move-or-remove-pages">Move or remove pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#create-a-pull-request">Create a pull request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#help">Help!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#kedro-documentation-style-guide">Kedro documentation style guide</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/technical_steering_committee.html">Join the Technical Steering Committee</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/technical_steering_committee.html">Kedro’s Technical Steering Committee</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#product-development">Product development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#community-management">Community management</a></li>
@@ -983,16 +962,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#other-issues-or-proposals">Other issues or proposals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#adding-or-removing-maintainers">Adding or removing maintainers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/development_for_databricks.html">Contribute changes to Kedro that are tested on Databricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-deploy-a-development-version-of-kedro-to-databricks">How to deploy a development version of Kedro to Databricks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-install-a-build-of-kedro-onto-databricks">How to install a build of Kedro onto Databricks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-set-up-the-databricks-cli-to-test-a-kedro-build">How to set up the Databricks CLI to test a Kedro build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-use-make-databricks-build-to-test-your-kedro-build">How to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">databricks-build</span></code> to test your Kedro build</a></li>
 </ul>
 </li>
 </ul>

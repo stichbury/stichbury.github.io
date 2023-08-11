@@ -456,23 +456,22 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Data Catalog YAML examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-file-from-to-a-local-file-system">Load / save a CSV file from / to a local file system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load / save a CSV on a local file system, using specified load / save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-compressed-csv-on-a-local-file-system">Load / save a compressed CSV on a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-file-from-to-a-local-file-system">Load/save a CSV file from/to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load/save a CSV on a local file system, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-compressed-csv-on-a-local-file-system">Load/save a compressed CSV on a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-pickle-file-from-to-a-local-file-system">Load / save a pickle file from / to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-pickle-file-from-to-a-local-file-system">Load/save a pickle file from/to a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-an-excel-file-from-google-cloud-storage">Load an Excel file from Google Cloud Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-multi-sheet-excel-file-from-a-local-file-system">Load a multi-sheet Excel file from a local file system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#save-an-image-created-with-matplotlib-on-google-cloud-storage">Save an image created with Matplotlib on Google Cloud Storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">Load / save an HDF file on local file system storage, using specified load / save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">Load / save a parquet file on local file system storage, using specified load / save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments">Load / save a Spark table on S3, using specified load / save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-a-sql-table-using-credentials-a-database-connection-using-specified-load-save-arguments">Load / save a SQL table using credentials, a database connection, using specified load / save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table">Load an SQL table with credentials, a database connection, and applies a SQL query to the table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda">Load data from an API endpoint, example US corn yield data from USDA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save an HDF file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save a parquet file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments">Load/save a Spark table on S3, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-data-from-an-api-endpoint">Load data from an API endpoint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-data-from-minio-s3-api-compatible-storage">Load data from Minio (S3 API Compatible Storage)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
@@ -481,12 +480,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
 </ul>
 </li>
 </ul>
@@ -512,7 +511,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
 </ul>
@@ -2039,18 +2038,9 @@
 <p>TO REMOVE – Diataxis: How to guide (code example)</p>
 <p>TO DO: Add a set of anchor links</p>
 <p>You can configure your datasets in a YAML configuration file, <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">conf/local/catalog.yml</span></code>.</p>
-<div class="section" id="provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">
-<h2>Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)<a class="headerlink" href="#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test_project</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
-</div>
 <div class="section" id="load-data-from-a-local-binary-file-using-utf-8-encoding">
 <h2>Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#load-data-from-a-local-binary-file-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">  </span><span class="nt">fs_args</span><span class="p">:</span>
@@ -2073,7 +2063,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-csv-file-from-to-a-local-file-system">
-<h2>Load / save a CSV file from / to a local file system<a class="headerlink" href="#load-save-a-csv-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a CSV file from/to a local file system<a class="headerlink" href="#load-save-a-csv-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bikes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/bikes.csv</span>
@@ -2081,7 +2071,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">
-<h2>Load / save a CSV on a local file system, using specified load / save arguments<a class="headerlink" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a CSV on a local file system, using specified load/save arguments<a class="headerlink" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
@@ -2095,7 +2085,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-compressed-csv-on-a-local-file-system">
-<h2>Load / save a compressed CSV on a local file system<a class="headerlink" href="#load-save-a-compressed-csv-on-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a compressed CSV on a local file system<a class="headerlink" href="#load-save-a-compressed-csv-on-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/boats.csv.gz</span>
@@ -2123,7 +2113,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-pickle-file-from-to-a-local-file-system">
-<h2>Load / save a pickle file from / to a local file system<a class="headerlink" href="#load-save-a-pickle-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a pickle file from/to a local file system<a class="headerlink" href="#load-save-a-pickle-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">airplanes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/airplanes.pkl</span>
@@ -2133,6 +2123,7 @@
 </div>
 <div class="section" id="load-an-excel-file-from-google-cloud-storage">
 <h2>Load an Excel file from Google Cloud Storage<a class="headerlink" href="#load-an-excel-file-from-google-cloud-storage" title="Permalink to this heading">¶</a></h2>
+<p>The example includes the <code class="docutils literal notranslate"><span class="pre">project</span></code> value for the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) within Google Cloud Storage (GCS)</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rockets</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/02_intermediate/company/motorbikes.xlsx</span>
@@ -2166,7 +2157,7 @@
 </div>
 </div>
 <div class="section" id="load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">
-<h2>Load / save an HDF file on local file system storage, using specified load / save arguments<a class="headerlink" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save an HDF file on local file system storage, using specified load/save arguments<a class="headerlink" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">skateboards</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.HDFDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/skateboards.hdf</span>
@@ -2180,7 +2171,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">
-<h2>Load / save a parquet file on local file system storage, using specified load / save arguments<a class="headerlink" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a parquet file on local file system storage, using specified load/save arguments<a class="headerlink" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trucks</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/trucks.parquet</span>
@@ -2197,7 +2188,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-spark-table-on-s3-using-specified-load-save-arguments">
-<h2>Load / save a Spark table on S3, using specified load / save arguments<a class="headerlink" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2>Load/save a Spark table on S3, using specified load/save arguments<a class="headerlink" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span>
@@ -2212,8 +2203,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="load-save-a-sql-table-using-credentials-a-database-connection-using-specified-load-save-arguments">
-<h2>Load / save a SQL table using credentials, a database connection, using specified load / save arguments<a class="headerlink" href="#load-save-a-sql-table-using-credentials-a-database-connection-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments">
+<h2>Load/save a SQL table using credentials, a database connection, and specified load/save arguments<a class="headerlink" href="#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLTableDataSet</span>
 <span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
@@ -2226,8 +2217,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="load-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table">
-<h2>Load an SQL table with credentials, a database connection, and applies a SQL query to the table<a class="headerlink" href="#load-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table">
+<h2>Load a SQL table with credentials and a database connection, and apply a SQL query to the table<a class="headerlink" href="#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters_query</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLQueryDataSet</span>
 <span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
@@ -2236,10 +2227,12 @@
 <span class="w">    </span><span class="nt">index_col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">name</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>When you use <a class="reference internal" href="../kedro_datasets.pandas.SQLTableDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code></span></a> or <a class="reference internal" href="../kedro_datasets.pandas.SQLQueryDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLQueryDataSet</span></code></span></a>, you must provide a database connection string. In the above example, we pass it using the <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> key from the credentials (see the details in the <a class="reference internal" href="#feeding-in-credentials"><span class="xref myst">Feeding in credentials</span></a> section below). <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> must have a top-level key <code class="docutils literal notranslate"><span class="pre">con</span></code> containing a <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls">SQLAlchemy compatible</a> connection string. As an alternative to credentials, you could explicitly put <code class="docutils literal notranslate"><span class="pre">con</span></code> into <code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> (<code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code> only).</p>
+<p>When you use <a class="reference internal" href="../kedro_datasets.pandas.SQLTableDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code></span></a> or <a class="reference internal" href="../kedro_datasets.pandas.SQLQueryDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pandas.SQLQueryDataSet</span></code></span></a>, you must provide a database connection string. In the above example, we pass it using the <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> key from the credentials.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> must have a top-level key <code class="docutils literal notranslate"><span class="pre">con</span></code> containing a <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls">SQLAlchemy compatible</a> connection string. As an alternative to credentials, you could explicitly put <code class="docutils literal notranslate"><span class="pre">con</span></code> into <code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> (<code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code> only).</p>
 </div>
-<div class="section" id="load-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda">
-<h2>Load data from an API endpoint, example US corn yield data from USDA<a class="headerlink" href="#load-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="load-data-from-an-api-endpoint">
+<h2>Load data from an API endpoint<a class="headerlink" href="#load-data-from-an-api-endpoint" title="Permalink to this heading">¶</a></h2>
+<p>This example uses US corn yield data from USDA.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">us_corn_yield_data</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span>
 <span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://quickstats.nass.usda.gov</span>
