@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join the Technical Steering Committee &mdash; kedro 0.18.12 documentation</title>
+  <title>Kedro’s Technical Steering Committee &mdash; kedro 0.18.12 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contribute changes to Kedro that are tested on Databricks" href="development_for_databricks.html" />
-    <link rel="prev" title="Contribute to the Kedro documentation" href="documentation_contributor_guidelines.html" />
+    <link rel="next" title="kedro" href="../kedro.html" />
+    <link rel="prev" title="Contribute to Kedro" href="index.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -490,6 +490,23 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
@@ -510,23 +527,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#load-datasets">Load datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data">Save data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
@@ -539,7 +539,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#versioning">Versioning</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#how-to-implement-versioning-in-your-dataset">How to implement versioning in your dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#version-namedtuple"><code class="docutils literal notranslate"><span class="pre">version</span></code> namedtuple</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#thread-safety">Thread-safety</a></li>
@@ -965,45 +964,7 @@
 <p class="caption" role="heading"><span class="caption-text">Contribute to Kedro</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Contribute to Kedro</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="developer_contributor_guidelines.html">Guidelines for contributing developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="developer_contributor_guidelines.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="developer_contributor_guidelines.html#before-you-start-development-set-up">Before you start: development set up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="developer_contributor_guidelines.html#get-started-areas-of-contribution">Get started: areas of contribution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer_contributor_guidelines.html#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_contributor_guidelines.html#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="developer_contributor_guidelines.html#create-a-pull-request">Create a pull request</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer_contributor_guidelines.html#pull-request-title-conventions">Pull request title conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_contributor_guidelines.html#hints-on-pre-commit-usage">Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer_contributor_guidelines.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="developer_contributor_guidelines.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="backwards_compatibility.html">Backwards compatibility &amp; breaking changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="backwards_compatibility.html#when-should-i-make-a-breaking-change">When should I make a breaking change?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backwards_compatibility.html#the-kedro-release-model">The Kedro release model</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="documentation_contributor_guidelines.html">Contribute to the Kedro documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="documentation_contributor_guidelines.html#how-do-i-rebuild-the-documentation-after-i-make-changes-to-it">How do I rebuild the documentation after I make changes to it?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#set-up-to-build-kedro-documentation">Set up to build Kedro documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#build-the-documentation">Build the documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="documentation_contributor_guidelines.html#extend-kedro-documentation">Extend Kedro documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#add-new-pages">Add new pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#move-or-remove-pages">Move or remove pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#create-a-pull-request">Create a pull request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="documentation_contributor_guidelines.html#help">Help!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="documentation_contributor_guidelines.html#kedro-documentation-style-guide">Kedro documentation style guide</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Join the Technical Steering Committee</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kedro’s Technical Steering Committee</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#product-development">Product development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#community-management">Community management</a></li>
@@ -1015,16 +976,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#other-issues-or-proposals">Other issues or proposals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-or-removing-maintainers">Adding or removing maintainers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="development_for_databricks.html">Contribute changes to Kedro that are tested on Databricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="development_for_databricks.html#how-to-deploy-a-development-version-of-kedro-to-databricks">How to deploy a development version of Kedro to Databricks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development_for_databricks.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development_for_databricks.html#how-to-install-a-build-of-kedro-onto-databricks">How to install a build of Kedro onto Databricks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="development_for_databricks.html#how-to-set-up-the-databricks-cli-to-test-a-kedro-build">How to set up the Databricks CLI to test a Kedro build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="development_for_databricks.html#how-to-use-make-databricks-build-to-test-your-kedro-build">How to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">databricks-build</span></code> to test your Kedro build</a></li>
 </ul>
 </li>
 </ul>
@@ -2011,7 +1962,7 @@
         
           <li><a href="index.html">Contribute to Kedro</a> &raquo;</li>
         
-      <li>Join the Technical Steering Committee</li>
+      <li>Kedro’s Technical Steering Committee</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -2033,11 +1984,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="join-the-technical-steering-committee">
-<h1>Join the Technical Steering Committee<a class="headerlink" href="#join-the-technical-steering-committee" title="Permalink to this heading">¶</a></h1>
-<p>In the Kedro project’s latest iteration it is an incubating project within <a class="reference external" href="https://lfaidata.foundation/">LF AI &amp; Data</a>.</p>
+  <div class="section" id="kedro-s-technical-steering-committee">
+<h1>Kedro’s Technical Steering Committee<a class="headerlink" href="#kedro-s-technical-steering-committee" title="Permalink to this heading">¶</a></h1>
+<p>Kedro is an incubating project within <a class="reference external" href="https://lfaidata.foundation/">LF AI &amp; Data</a>.</p>
 <p>The term “Technical Steering Committee” (TSC) describes the group of Kedro maintainers. We list <a class="reference internal" href="#kedro-maintainers">Kedro’s current and past maintainers</a> on this page.</p>
-<p>The TSC is responsible for the project’s future development; you can read about our duties in our <a class="reference external" href="https://github.com/kedro-org/kedro/blob/main/kedro_technical_charter.pdf">Technical Charter</a>. We are happy to accept new members into the TSC to fuel Kedro’s continued development.</p>
+<p>The TSC is responsible for the project’s future development; you can read about our duties in our <a class="reference external" href="https://github.com/kedro-org/kedro/blob/main/kedro_technical_charter.pdf">Technical Charter</a>. We accept new members into the TSC to fuel Kedro’s continued development.</p>
 <p>On this page we describe:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a></p></li>
@@ -2162,8 +2113,8 @@ and the <code class="docutils literal notranslate"><span class="pre">kedro-team<
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="documentation_contributor_guidelines.html" class="btn btn-neutral float-left" title="Contribute to the Kedro documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="development_for_databricks.html" class="btn btn-neutral float-right" title="Contribute changes to Kedro that are tested on Databricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Contribute to Kedro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../kedro.html" class="btn btn-neutral float-right" title="kedro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

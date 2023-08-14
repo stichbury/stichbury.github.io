@@ -516,13 +516,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#load-datasets">Load datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#save-data">Save data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 </ul>
@@ -2086,7 +2086,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">core</span></code> refers to the primary Kedro library. Read the <a class="reference internal" href="#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a> for details.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">extras</span></code> refers to features that could be added to <code class="docutils literal notranslate"><span class="pre">core</span></code> that do not introduce too many dependencies or require new Kedro CLI commands to be created. Read the <a class="reference internal" href="#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a> for more information.</p></li>
-<li><p><a class="reference internal" href="../extend_kedro/plugins.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">plugin</span></code></span></a> refers to new functionality that requires a Kedro CLI command e.g. adding in Airflow functionality and <a class="reference internal" href="#../extend_kedro/custom_datasets.md"><span class="xref myst">adding a new dataset</span></a> to the <code class="docutils literal notranslate"><span class="pre">kedro-datasets</span></code> package. The <a class="reference internal" href="../extend_kedro/plugins.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">plugin</span></code> development documentation</span></a> contains guidance on how to design and develop a Kedro <code class="docutils literal notranslate"><span class="pre">plugin</span></code>.</p></li>
+<li><p><a class="reference internal" href="../extend_kedro/plugins.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">plugin</span></code></span></a> refers to new functionality that requires a Kedro CLI command e.g. adding in Airflow functionality or adding a new dataset to the <code class="docutils literal notranslate"><span class="pre">kedro-datasets</span></code> package. The <a class="reference internal" href="../extend_kedro/plugins.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">plugin</span></code> development documentation</span></a> contains guidance on how to design and develop a Kedro <code class="docutils literal notranslate"><span class="pre">plugin</span></code>.</p></li>
 </ul>
 <div class="section" id="core-contribution-process">
 <h3><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process<a class="headerlink" href="#core-contribution-process" title="Permalink to this heading">¶</a></h3>

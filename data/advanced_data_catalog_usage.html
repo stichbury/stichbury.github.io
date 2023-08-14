@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Advanced: Tutorial to create a custom dataset" href="how_to_create_a_custom_dataset.html" />
-    <link rel="prev" title="Advanced: Partitioned and incremental datasets" href="partitioned_and_incremental_datasets.html" />
+    <link rel="next" title="Advanced: Partitioned and incremental datasets" href="partitioned_and_incremental_datasets.html" />
+    <link rel="prev" title="Kedro dataset factories" href="kedro_dataset_factories.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -490,6 +490,23 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Data Catalog usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-does-transcoding-work">How does transcoding work?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-save-data-programmatically">How to save data programmatically</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
@@ -510,23 +527,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-does-transcoding-work">How does transcoding work?</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#access-the-data-catalog-in-code">Access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#load-datasets">Load datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#save-data">Save data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#accessing-a-dataset-that-needs-credentials">Accessing a dataset that needs credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#versioning-using-the-code-api">Versioning using the Code API</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
@@ -539,7 +539,6 @@
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#versioning">Versioning</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="how_to_create_a_custom_dataset.html#how-to-implement-versioning-in-your-dataset">How to implement versioning in your dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="how_to_create_a_custom_dataset.html#version-namedtuple"><code class="docutils literal notranslate"><span class="pre">version</span></code> namedtuple</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="how_to_create_a_custom_dataset.html#thread-safety">Thread-safety</a></li>
@@ -965,45 +964,7 @@
 <p class="caption" role="heading"><span class="caption-text">Contribute to Kedro</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contribution/index.html">Contribute to Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html">Guidelines for contributing developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#before-you-start-development-set-up">Before you start: development set up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#get-started-areas-of-contribution">Get started: areas of contribution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#create-a-pull-request">Create a pull request</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#pull-request-title-conventions">Pull request title conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#hints-on-pre-commit-usage">Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/developer_contributor_guidelines.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/backwards_compatibility.html">Backwards compatibility &amp; breaking changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/backwards_compatibility.html#when-should-i-make-a-breaking-change">When should I make a breaking change?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/backwards_compatibility.html#the-kedro-release-model">The Kedro release model</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html">Contribute to the Kedro documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#how-do-i-rebuild-the-documentation-after-i-make-changes-to-it">How do I rebuild the documentation after I make changes to it?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#set-up-to-build-kedro-documentation">Set up to build Kedro documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#build-the-documentation">Build the documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#extend-kedro-documentation">Extend Kedro documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#add-new-pages">Add new pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#move-or-remove-pages">Move or remove pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#create-a-pull-request">Create a pull request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#help">Help!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/documentation_contributor_guidelines.html#kedro-documentation-style-guide">Kedro documentation style guide</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/technical_steering_committee.html">Join the Technical Steering Committee</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/technical_steering_committee.html">Kedro’s Technical Steering Committee</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#product-development">Product development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#community-management">Community management</a></li>
@@ -1015,16 +976,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#other-issues-or-proposals">Other issues or proposals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#adding-or-removing-maintainers">Adding or removing maintainers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/development_for_databricks.html">Contribute changes to Kedro that are tested on Databricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-deploy-a-development-version-of-kedro-to-databricks">How to deploy a development version of Kedro to Databricks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-install-a-build-of-kedro-onto-databricks">How to install a build of Kedro onto Databricks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-set-up-the-databricks-cli-to-test-a-kedro-build">How to set up the Databricks CLI to test a Kedro build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../contribution/development_for_databricks.html#how-to-use-make-databricks-build-to-test-your-kedro-build">How to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">databricks-build</span></code> to test your Kedro build</a></li>
 </ul>
 </li>
 </ul>
@@ -2037,10 +1988,10 @@
 <h1>Advanced Data Catalog usage<a class="headerlink" href="#advanced-data-catalog-usage" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="how-to-read-the-same-file-using-two-different-datasets">
 <h2>How to read the same file using two different datasets<a class="headerlink" href="#how-to-read-the-same-file-using-two-different-datasets" title="Permalink to this heading">¶</a></h2>
-<p>When you want to load and save the same file, via its specified <code class="docutils literal notranslate"><span class="pre">filepath</span></code>, using different <code class="docutils literal notranslate"><span class="pre">DataSet</span></code> implementations, you’ll need to use transcoding.</p>
+<p>Use transcoding to load and save a file via its specified <code class="docutils literal notranslate"><span class="pre">filepath</span></code> using more than one <code class="docutils literal notranslate"><span class="pre">DataSet</span></code> implementation.</p>
 <div class="section" id="a-typical-example-of-transcoding">
 <h3>A typical example of transcoding<a class="headerlink" href="#a-typical-example-of-transcoding" title="Permalink to this heading">¶</a></h3>
-<p>For instance, parquet files can not only be loaded via the <code class="docutils literal notranslate"><span class="pre">ParquetDataSet</span></code> using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but also directly by <code class="docutils literal notranslate"><span class="pre">SparkDataSet</span></code>. This conversion is typical when coordinating a <code class="docutils literal notranslate"><span class="pre">Spark</span></code> to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> workflow.</p>
+<p>Parquet files can not only be loaded via the <code class="docutils literal notranslate"><span class="pre">ParquetDataSet</span></code> using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but also directly by <code class="docutils literal notranslate"><span class="pre">SparkDataSet</span></code>. This conversion is typical when coordinating a <code class="docutils literal notranslate"><span class="pre">Spark</span></code> to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> workflow.</p>
 <p>To enable transcoding, define two <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> entries for the same dataset in a common format (Parquet, JSON, CSV, etc.) in your <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_dataframe@spark</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
@@ -2066,20 +2017,14 @@
 <h3>How does transcoding work?<a class="headerlink" href="#how-does-transcoding-work" title="Permalink to this heading">¶</a></h3>
 <p>In this example, Kedro understands that <code class="docutils literal notranslate"><span class="pre">my_dataframe</span></code> is the same dataset in its <code class="docutils literal notranslate"><span class="pre">spark.SparkDataSet</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.ParquetDataSet</span></code> formats and helps resolve the node execution order.</p>
 <p>In the pipeline, Kedro uses the <code class="docutils literal notranslate"><span class="pre">spark.SparkDataSet</span></code> implementation for saving and <code class="docutils literal notranslate"><span class="pre">pandas.ParquetDataSet</span></code>
-for loading, so the first node should output a <code class="docutils literal notranslate"><span class="pre">pyspark.sql.DataFrame</span></code>, while the second node would receive a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code>.</p>
+for loading, so the first node outputs a <code class="docutils literal notranslate"><span class="pre">pyspark.sql.DataFrame</span></code>, while the second node receives a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code>.</p>
 </div>
 </div>
-<div class="section" id="access-the-data-catalog-in-code">
-<h2>Access the Data Catalog in code<a class="headerlink" href="#access-the-data-catalog-in-code" title="Permalink to this heading">¶</a></h2>
-<p>TO REMOVE – Diataxis: How to</p>
-<p>You can define a Data Catalog in two ways - through YAML configuration, or programmatically using an API.</p>
-<p>The code API allows you to:</p>
-<ul class="simple">
-<li><p>configure data sources in code</p></li>
-<li><p>operate the IO module within notebooks</p></li>
-</ul>
-<div class="section" id="configure-a-data-catalog">
-<h3>Configure a Data Catalog<a class="headerlink" href="#configure-a-data-catalog" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="how-to-access-the-data-catalog-in-code">
+<h2>How to access the Data Catalog in code<a class="headerlink" href="#how-to-access-the-data-catalog-in-code" title="Permalink to this heading">¶</a></h2>
+<p>You can define a Data Catalog in two ways. Most use cases can be through a YAML configuration file as <a class="reference internal" href="data_catalog.html"><span class="std std-doc">illustrated previously</span></a>, but it is possible to access the Data Catalog programmatically through <a class="reference internal" href="../kedro.io.DataCatalog.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">kedro.io.DataCatalog</span></code></span></a> using an API that allows you to configure data sources in code and use the IO module within notebooks.</p>
+<div class="section" id="how-to-configure-a-data-catalog-using-the-datacatalog-api">
+<h3>How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API<a class="headerlink" href="#how-to-configure-a-data-catalog-using-the-datacatalog-api" title="Permalink to this heading">¶</a></h3>
 <p>In a file like <code class="docutils literal notranslate"><span class="pre">catalog.py</span></code>, you can construct a <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> object programmatically. In the following, we are using several pre-built data loaders documented in the <a class="reference internal" href="../kedro_datasets.html"><span class="doc std std-doc">API reference documentation</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
 <span class="kn">from</span> <span class="nn">kedro_datasets.pandas</span> <span class="kn">import</span> <span class="p">(</span>
@@ -2107,15 +2052,20 @@ for loading, so the first node should output a <code class="docutils literal not
 </div>
 <p>When using <code class="docutils literal notranslate"><span class="pre">SQLTableDataSet</span></code> or <code class="docutils literal notranslate"><span class="pre">SQLQueryDataSet</span></code> you must provide a <code class="docutils literal notranslate"><span class="pre">con</span></code> key containing <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls">SQLAlchemy compatible</a> database connection string. In the example above we pass it as part of <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument. Alternative to <code class="docutils literal notranslate"><span class="pre">credentials</span></code> is to put <code class="docutils literal notranslate"><span class="pre">con</span></code> into <code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> (<code class="docutils literal notranslate"><span class="pre">SQLTableDataSet</span></code> only).</p>
 </div>
-<div class="section" id="load-datasets">
-<h3>Load datasets<a class="headerlink" href="#load-datasets" title="Permalink to this heading">¶</a></h3>
-<p>You can access each dataset by its name.</p>
+<div class="section" id="how-to-view-the-available-data-sources-programmatically">
+<h3>How to view the available data sources programmatically<a class="headerlink" href="#how-to-view-the-available-data-sources-programmatically" title="Permalink to this heading">¶</a></h3>
+<p>To review the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">io</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-load-datasets-programmatically">
+<h3>How to load datasets programmatically<a class="headerlink" href="#how-to-load-datasets-programmatically" title="Permalink to this heading">¶</a></h3>
+<p>To access each dataset by its name:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;cars&quot;</span><span class="p">)</span>  <span class="c1"># data is now loaded as a DataFrame in &#39;cars&#39;</span>
 <span class="n">gear</span> <span class="o">=</span> <span class="n">cars</span><span class="p">[</span><span class="s2">&quot;gear&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
-<div class="section" id="behind-the-scenes">
-<h4>Behind the scenes<a class="headerlink" href="#behind-the-scenes" title="Permalink to this heading">¶</a></h4>
 <p>The following steps happened behind the scenes when <code class="docutils literal notranslate"><span class="pre">load</span></code> was called:</p>
 <ul class="simple">
 <li><p>The value <code class="docutils literal notranslate"><span class="pre">cars</span></code> was located in the Data Catalog</p></li>
@@ -2124,23 +2074,15 @@ for loading, so the first node should output a <code class="docutils literal not
 <li><p>This <code class="docutils literal notranslate"><span class="pre">load</span></code> method delegated the loading to the underlying pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> function</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="view-the-available-data-sources">
-<h3>View the available data sources<a class="headerlink" href="#view-the-available-data-sources" title="Permalink to this heading">¶</a></h3>
-<p>If you forget what data was assigned, you can always review the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">io</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="save-data">
-<h3>Save data<a class="headerlink" href="#save-data" title="Permalink to this heading">¶</a></h3>
-<p>You can save data using an API similar to that used to load data.</p>
+<div class="section" id="how-to-save-data-programmatically">
+<h3>How to save data programmatically<a class="headerlink" href="#how-to-save-data-programmatically" title="Permalink to this heading">¶</a></h3>
+<p>To save data using an API similar to that used to load data:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This use is not recommended unless you are prototyping in notebooks.</p>
 </div>
-<div class="section" id="save-data-to-memory">
-<h4>Save data to memory<a class="headerlink" href="#save-data-to-memory" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="how-to-save-data-to-memory">
+<h4>How to save data to memory<a class="headerlink" href="#how-to-save-data-to-memory" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">MemoryDataSet</span>
 
 <span class="n">memory</span> <span class="o">=</span> <span class="n">MemoryDataSet</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -2150,9 +2092,9 @@ for loading, so the first node should output a <code class="docutils literal not
 </pre></div>
 </div>
 </div>
-<div class="section" id="save-data-to-a-sql-database-for-querying">
-<h4>Save data to a SQL database for querying<a class="headerlink" href="#save-data-to-a-sql-database-for-querying" title="Permalink to this heading">¶</a></h4>
-<p>We might now want to put the data in a SQLite database to run queries on it. Let’s use that to rank scooters by their mpg.</p>
+<div class="section" id="how-to-save-data-to-a-sql-database-for-querying">
+<h4>How to save data to a SQL database for querying<a class="headerlink" href="#how-to-save-data-to-a-sql-database-for-querying" title="Permalink to this heading">¶</a></h4>
+<p>To put the data in a SQLite database:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="c1"># This cleans up the database in case it exists at this point</span>
@@ -2162,13 +2104,15 @@ for loading, so the first node should output a <code class="docutils literal not
     <span class="k">pass</span>
 
 <span class="n">io</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;cars_table&quot;</span><span class="p">,</span> <span class="n">cars</span><span class="p">)</span>
+
+<span class="c1"># rank scooters by their mpg</span>
 <span class="n">ranked</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;scooters_query&quot;</span><span class="p">)[[</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;mpg&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="save-data-in-parquet">
-<h4>Save data in Parquet<a class="headerlink" href="#save-data-in-parquet" title="Permalink to this heading">¶</a></h4>
-<p>Finally, we can save the processed data in Parquet format.</p>
+<div class="section" id="how-to-save-data-in-parquet">
+<h4>How to save data in Parquet<a class="headerlink" href="#how-to-save-data-in-parquet" title="Permalink to this heading">¶</a></h4>
+<p>To save the processed data in Parquet format:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">io</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;ranked&quot;</span><span class="p">,</span> <span class="n">ranked</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2178,8 +2122,8 @@ for loading, so the first node should output a <code class="docutils literal not
 </div>
 </div>
 </div>
-<div class="section" id="accessing-a-dataset-that-needs-credentials">
-<h3>Accessing a dataset that needs credentials<a class="headerlink" href="#accessing-a-dataset-that-needs-credentials" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="how-to-access-a-dataset-programmatically-with-credentials">
+<h3>How to access a dataset programmatically with credentials<a class="headerlink" href="#how-to-access-a-dataset-programmatically-with-credentials" title="Permalink to this heading">¶</a></h3>
 <p>Before instantiating the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>, Kedro will first attempt to read <a class="reference internal" href="../configuration/credentials.html"><span class="std std-doc">the credentials from the project configuration</span></a>. The resulting dictionary is then passed into <code class="docutils literal notranslate"><span class="pre">DataCatalog.from_config()</span></code> as the <code class="docutils literal notranslate"><span class="pre">credentials</span></code> argument.</p>
 <p>Let’s assume that the project contains the file <code class="docutils literal notranslate"><span class="pre">conf/local/credentials.yml</span></code> with the following contents:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dev_s3</span><span class="p">:</span>
@@ -2203,25 +2147,10 @@ for loading, so the first node should output a <code class="docutils literal not
 </pre></div>
 </div>
 </div>
-<div class="section" id="versioning-using-the-code-api">
-<h3>Versioning using the Code API<a class="headerlink" href="#versioning-using-the-code-api" title="Permalink to this heading">¶</a></h3>
-<p>In order to do that, pass a dictionary with exact load versions to <code class="docutils literal notranslate"><span class="pre">DataCatalog.from_config</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load_versions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cars&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-02-13T14.35.36.518Z&quot;</span><span class="p">}</span>
-<span class="n">io</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">catalog_config</span><span class="p">,</span> <span class="n">credentials</span><span class="p">,</span> <span class="n">load_versions</span><span class="o">=</span><span class="n">load_versions</span><span class="p">)</span>
-<span class="n">cars</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;cars&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The last row in the example above would attempt to load a CSV file from <code class="docutils literal notranslate"><span class="pre">data/01_raw/company/car_data.csv/2019-02-13T14.35.36.518Z/car_data.csv</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">load_versions</span></code> configuration has an effect only if a dataset versioning has been enabled in the catalog config file - see the example above.</p></li>
-<li><p>We recommend that you do not override <code class="docutils literal notranslate"><span class="pre">save_version</span></code> argument in <code class="docutils literal notranslate"><span class="pre">DataCatalog.from_config</span></code> unless strongly required to do so, since it may lead to inconsistencies between loaded and saved versions of the versioned datasets.</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> does not re-generate save versions between instantiations. Therefore, if you call <code class="docutils literal notranslate"><span class="pre">catalog.save('cars',</span> <span class="pre">some_data)</span></code> twice, then the second call will fail, since it tries to overwrite a versioned dataset using the same save version. To mitigate this, reload your data catalog by calling <code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> line magic. This limitation does not apply to <code class="docutils literal notranslate"><span class="pre">load</span></code> operation.</p>
-</div>
-<p>**** HOW DOES THE BELOW FIT WITH THE ABOVE??</p>
-<p>Should you require more control over load and save versions of a specific dataset, you can instantiate <code class="docutils literal notranslate"><span class="pre">Version</span></code> and pass it as a parameter to the dataset initialisation:</p>
+<div class="section" id="how-to-version-a-dataset-using-the-code-api">
+<h3>How to version a dataset using the Code API<a class="headerlink" href="#how-to-version-a-dataset-using-the-code-api" title="Permalink to this heading">¶</a></h3>
+<p>In an earlier section of the documentation we described how <a class="reference internal" href="data_catalog.html#dataset-versioning"><span class="std std-ref">Kedro enables dataset and ML model versioning</span></a>.</p>
+<p>If you require programmatic control over load and save versions of a specific dataset, you can instantiate <code class="docutils literal notranslate"><span class="pre">Version</span></code> and pass it as a parameter to the dataset initialisation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">DataCatalog</span><span class="p">,</span> <span class="n">Version</span>
 <span class="kn">from</span> <span class="nn">kedro_datasets.pandas</span> <span class="kn">import</span> <span class="n">CSVDataSet</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2248,10 +2177,7 @@ for loading, so the first node should output a <code class="docutils literal not
 <span class="k">assert</span> <span class="n">data2</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">reloaded</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the example above, we did not fix any versions. If we do, then the behaviour of load and save operations becomes slightly different:</p>
-</div>
+<p>In the example above, we do not fix any versions. The behaviour of load and save operations becomes slightly different when we set a version:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span>
     <span class="n">load</span><span class="o">=</span><span class="s2">&quot;my_exact_version&quot;</span><span class="p">,</span>  <span class="c1"># load exact version</span>
     <span class="n">save</span><span class="o">=</span><span class="s2">&quot;my_exact_version&quot;</span><span class="p">,</span>  <span class="c1"># save to exact version</span>
@@ -2302,8 +2228,8 @@ for loading, so the first node should output a <code class="docutils literal not
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="partitioned_and_incremental_datasets.html" class="btn btn-neutral float-left" title="Advanced: Partitioned and incremental datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="how_to_create_a_custom_dataset.html" class="btn btn-neutral float-right" title="Advanced: Tutorial to create a custom dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kedro_dataset_factories.html" class="btn btn-neutral float-left" title="Kedro dataset factories" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="partitioned_and_incremental_datasets.html" class="btn btn-neutral float-right" title="Advanced: Partitioned and incremental datasets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
