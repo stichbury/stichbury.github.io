@@ -1,6 +1,0 @@
-﻿kedro.framework.cli.utils.command\_with\_verbosity
-==================================================
-
-.. currentmodule:: kedro.framework.cli.utils
-
-.. autofunction:: command_with_verbosity

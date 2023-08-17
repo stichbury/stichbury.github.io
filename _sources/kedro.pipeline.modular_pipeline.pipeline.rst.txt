@@ -1,6 +1,0 @@
-﻿kedro.pipeline.modular\_pipeline.pipeline
-=========================================
-
-.. currentmodule:: kedro.pipeline.modular_pipeline
-
-.. autofunction:: pipeline

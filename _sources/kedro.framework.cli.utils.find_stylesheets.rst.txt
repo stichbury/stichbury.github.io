@@ -1,6 +1,0 @@
-﻿kedro.framework.cli.utils.find\_stylesheets
-===========================================
-
-.. currentmodule:: kedro.framework.cli.utils
-
-.. autofunction:: find_stylesheets

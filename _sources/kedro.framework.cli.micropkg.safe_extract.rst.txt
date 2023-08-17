@@ -1,6 +1,0 @@
-kedro.framework.cli.micropkg.safe\_extract
-==========================================
-
-.. currentmodule:: kedro.framework.cli.micropkg
-
-.. autofunction:: safe_extract

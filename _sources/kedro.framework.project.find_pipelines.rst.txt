@@ -1,6 +1,0 @@
-kedro.framework.project.find\_pipelines
-=======================================
-
-.. currentmodule:: kedro.framework.project
-
-.. autofunction:: find_pipelines

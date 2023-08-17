@@ -1,6 +1,0 @@
-﻿kedro.framework.cli.utils.forward\_command
-==========================================
-
-.. currentmodule:: kedro.framework.cli.utils
-
-.. autofunction:: forward_command

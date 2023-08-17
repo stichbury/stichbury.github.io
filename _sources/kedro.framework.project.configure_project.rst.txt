@@ -1,6 +1,0 @@
-kedro.framework.project.configure\_project
-==========================================
-
-.. currentmodule:: kedro.framework.project
-
-.. autofunction:: configure_project

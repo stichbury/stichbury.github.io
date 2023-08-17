@@ -1,6 +1,0 @@
-﻿kedro.framework.cli.utils.python\_call
-======================================
-
-.. currentmodule:: kedro.framework.cli.utils
-
-.. autofunction:: python_call

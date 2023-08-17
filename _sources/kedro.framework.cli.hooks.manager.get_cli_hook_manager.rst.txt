@@ -1,6 +1,0 @@
-kedro.framework.cli.hooks.manager.get\_cli\_hook\_manager
-=========================================================
-
-.. currentmodule:: kedro.framework.cli.hooks.manager
-
-.. autofunction:: get_cli_hook_manager

@@ -1,6 +1,0 @@
-kedro.utils.load\_obj
-=====================
-
-.. currentmodule:: kedro.utils
-
-.. autofunction:: load_obj

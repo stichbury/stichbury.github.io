@@ -1,6 +1,0 @@
-kedro.framework.cli.cli.main
-============================
-
-.. currentmodule:: kedro.framework.cli.cli
-
-.. autofunction:: main

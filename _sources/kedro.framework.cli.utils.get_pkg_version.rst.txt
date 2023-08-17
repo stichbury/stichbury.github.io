@@ -1,6 +1,0 @@
-﻿kedro.framework.cli.utils.get\_pkg\_version
-===========================================
-
-.. currentmodule:: kedro.framework.cli.utils
-
-.. autofunction:: get_pkg_version
