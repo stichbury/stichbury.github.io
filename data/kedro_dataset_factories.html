@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Advanced Data Catalog usage" href="advanced_data_catalog_usage.html" />
+    <link rel="next" title="Advanced: Access the Data Catalog in code" href="advanced_data_catalog_usage.html" />
     <link rel="prev" title="Data Catalog YAML examples" href="data_catalog_yaml_examples.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1988,8 +1980,8 @@
 <h1>Kedro dataset factories<a class="headerlink" href="#kedro-dataset-factories" title="Permalink to this heading">¶</a></h1>
 <p>You can load multiple datasets with similar configuration using dataset factories, introduced in Kedro 0.18.12.</p>
 <p>The syntax allows you to generalise the configuration and reduce the number of similar catalog entries by matching datasets used in your project’s pipelines to dataset factory patterns.</p>
-<div class="section" id="generalise-datasets-with-similar-names-and-types">
-<h2>Generalise datasets with similar names and types<a class="headerlink" href="#generalise-datasets-with-similar-names-and-types" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="how-to-generalise-datasets-with-similar-names-and-types">
+<h2>How to generalise datasets with similar names and types<a class="headerlink" href="#how-to-generalise-datasets-with-similar-names-and-types" title="Permalink to this heading">¶</a></h2>
 <p>Consider the following catalog entries:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">factory_data</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
@@ -2010,8 +2002,8 @@
 <p>When <code class="docutils literal notranslate"><span class="pre">factory_data</span></code> or <code class="docutils literal notranslate"><span class="pre">process_data</span></code> is used in your pipeline, it is matched to the factory pattern <code class="docutils literal notranslate"><span class="pre">{name}_data</span></code>. The factory pattern must always be enclosed in
 quotes to avoid YAML parsing errors.</p>
 </div>
-<div class="section" id="generalise-datasets-of-the-same-type">
-<h2>Generalise datasets of the same type<a class="headerlink" href="#generalise-datasets-of-the-same-type" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="how-to-generalise-datasets-of-the-same-type">
+<h2>How to generalise datasets of the same type<a class="headerlink" href="#how-to-generalise-datasets-of-the-same-type" title="Permalink to this heading">¶</a></h2>
 <p>You can also combine all the datasets with the same type and configuration details. For example, consider the following
 catalog with three datasets named <code class="docutils literal notranslate"><span class="pre">boats</span></code>, <code class="docutils literal notranslate"><span class="pre">cars</span></code> and <code class="docutils literal notranslate"><span class="pre">planes</span></code> of the type <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span>
@@ -2075,8 +2067,8 @@ names are matched with the intended pattern.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="generalise-datasets-using-namespaces">
-<h2>Generalise datasets using namespaces<a class="headerlink" href="#generalise-datasets-using-namespaces" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="how-to-generalise-datasets-using-namespaces">
+<h2>How to generalise datasets using namespaces<a class="headerlink" href="#how-to-generalise-datasets-using-namespaces" title="Permalink to this heading">¶</a></h2>
 <p>You can also generalise the catalog entries for datasets belonging to namespaced modular pipelines. Consider the
 following pipeline which takes in a <code class="docutils literal notranslate"><span class="pre">model_input_table</span></code> and outputs two regressors belonging to the
 <code class="docutils literal notranslate"><span class="pre">active_modelling_pipeline</span></code> and the <code class="docutils literal notranslate"><span class="pre">candidate_modelling_pipeline</span></code> namespaces:</p>
@@ -2126,8 +2118,8 @@ and <code class="docutils literal notranslate"><span class="pre">candidate_model
 </pre></div>
 </div>
 </div>
-<div class="section" id="generalise-datasets-of-the-same-type-in-different-layers">
-<h2>Generalise datasets of the same type in different layers<a class="headerlink" href="#generalise-datasets-of-the-same-type-in-different-layers" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="how-to-generalise-datasets-of-the-same-type-in-different-layers">
+<h2>How to generalise datasets of the same type in different layers<a class="headerlink" href="#how-to-generalise-datasets-of-the-same-type-in-different-layers" title="Permalink to this heading">¶</a></h2>
 <p>You can use multiple placeholders in the same pattern. For example, consider the following catalog where the dataset
 entries share <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">file_format</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">processing.factory_data</span><span class="p">:</span>
@@ -2162,8 +2154,9 @@ entries share <code class="docutils literal notranslate"><span class="pre">type<
 </pre></div>
 </div>
 <p>All the placeholders used in the catalog entry body must exist in the factory pattern name.</p>
-<div class="section" id="generalise-datasets-using-multiple-dataset-factories">
-<h3>Generalise datasets using multiple dataset factories<a class="headerlink" href="#generalise-datasets-using-multiple-dataset-factories" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="how-to-generalise-datasets-using-multiple-dataset-factories">
+<h2>How to generalise datasets using multiple dataset factories<a class="headerlink" href="#how-to-generalise-datasets-using-multiple-dataset-factories" title="Permalink to this heading">¶</a></h2>
 <p>You can have multiple dataset factories in your catalog. For example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{namespace}.{dataset_name}@spark&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
@@ -2184,8 +2177,8 @@ The matches are ranked according to the following criteria:</p>
 <li><p>Alphabetical order</p></li>
 </ol>
 </div>
-<div class="section" id="generalise-all-datasets-with-a-catch-all-dataset-factory">
-<h3>Generalise all datasets with a catch-all dataset factory<a class="headerlink" href="#generalise-all-datasets-with-a-catch-all-dataset-factory" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">
+<h2>How to generalise all datasets with a catch-all dataset factory<a class="headerlink" href="#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory" title="Permalink to this heading">¶</a></h2>
 <p>You can use dataset factories to define a catch-all pattern which will overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> creation.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{default_dataset}&quot;</span><span class="p p-Indicator">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
@@ -2195,6 +2188,147 @@ The matches are ranked according to the following criteria:</p>
 <p>Kedro will now treat all the datasets mentioned in your project’s pipelines that do not appear as specific patterns or explicit entries in your catalog
 as <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code>.</p>
 </div>
+<div class="section" id="cli-commands-for-dataset-factories">
+<h2>CLI commands for dataset factories<a class="headerlink" href="#cli-commands-for-dataset-factories" title="Permalink to this heading">¶</a></h2>
+<p>To manage your dataset factories, two new commands have been added to the Kedro CLI: <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code> (0.18.12) and <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code> (0.18.13).</p>
+<div class="section" id="how-to-use-kedro-catalog-rank">
+<h3>How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code><a class="headerlink" href="#how-to-use-kedro-catalog-rank" title="Permalink to this heading">¶</a></h3>
+<p>This command outputs a list of all dataset factories in the catalog, ranked in the order by which pipeline datasets are matched against them. The ordering is determined by the following criteria:</p>
+<ol class="arabic simple">
+<li><p>The number of non-placeholder characters in the pattern</p></li>
+<li><p>The number of placeholders in the pattern</p></li>
+<li><p>Alphabetic ordering</p></li>
+</ol>
+<p>Consider a catalog file with the following patterns:</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;{layer}.{dataset_name}&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/{layer}/{dataset_name}.csv</span>
+
+<span class="l l-Scalar l-Scalar-Plain">preprocessed_{dataset_name}</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_{dataset_name}.pq</span>
+
+<span class="l l-Scalar l-Scalar-Plain">processed_{dataset_name}</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/processed_{dataset_name}.pq</span>
+
+<span class="s">&quot;{dataset_name}_csv&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/{dataset_name}.csv</span>
+
+<span class="s">&quot;{namespace}.{dataset_name}_pq&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/{dataset_name}_{namespace}.pq</span>
+
+<span class="s">&quot;{default_dataset}&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/{default_dataset}.pickle</span>
+</pre></div>
+</div>
+</details>
+<p>Running <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code> will result in the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">preprocessed_</span><span class="p">{</span><span class="n">dataset_name</span><span class="p">}</span>
+<span class="o">-</span> <span class="n">processed_</span><span class="p">{</span><span class="n">dataset_name</span><span class="p">}</span>
+<span class="o">-</span> <span class="s1">&#39;</span><span class="si">{namespace}</span><span class="s1">.</span><span class="si">{dataset_name}</span><span class="s1">_pq&#39;</span>
+<span class="o">-</span> <span class="s1">&#39;</span><span class="si">{dataset_name}</span><span class="s1">_csv&#39;</span>
+<span class="o">-</span> <span class="s1">&#39;</span><span class="si">{layer}</span><span class="s1">.</span><span class="si">{dataset_name}</span><span class="s1">&#39;</span>
+<span class="o">-</span> <span class="s1">&#39;</span><span class="si">{default_dataset}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>As we can see, the entries are ranked firstly by how many non-placeholders are in the pattern, in descending order. Where two entries have the same number of non-placeholder characters, <code class="docutils literal notranslate"><span class="pre">{namespace}.{dataset_name}_pq</span></code> and <code class="docutils literal notranslate"><span class="pre">{dataset_name}_csv</span></code> with four each, they are then ranked by the number of placeholders, also in decreasing order. <code class="docutils literal notranslate"><span class="pre">{default_dataset}</span></code> is the least specific pattern possible, and will always be matched against last.</p>
+</div>
+<div class="section" id="how-to-use-kedro-catalog-resolve">
+<h3>How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code><a class="headerlink" href="#how-to-use-kedro-catalog-resolve" title="Permalink to this heading">¶</a></h3>
+<p>This command resolves dataset patterns in the catalog against any explicit dataset entries in the project pipeline. The resulting output contains all explicit dataset entries in the catalog and any dataset in the default pipeline that resolves some dataset pattern.</p>
+<p>To illustrate this, consider the following catalog file:</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
+
+<span class="nt">reviews</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span>
+
+<span class="nt">shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span><span class="w"> </span><span class="c1"># Use modern Excel engine, it is the default since Kedro 0.18.0</span>
+
+<span class="l l-Scalar l-Scalar-Plain">preprocessed_{name}</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_{name}.pq</span>
+
+<span class="s">&quot;{default}&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/{default}.pq</span>
+</pre></div>
+</div>
+</details>
+<p>and the following pipeline in <code class="docutils literal notranslate"><span class="pre">pipeline.py</span></code>:</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">pipeline</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">node</span><span class="p">(</span>
+                <span class="n">func</span><span class="o">=</span><span class="n">preprocess_companies</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;companies&quot;</span><span class="p">,</span>
+                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_companies&quot;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;preprocess_companies_node&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">node</span><span class="p">(</span>
+                <span class="n">func</span><span class="o">=</span><span class="n">preprocess_shuttles</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;shuttles&quot;</span><span class="p">,</span>
+                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;preprocessed_shuttles&quot;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;preprocess_shuttles_node&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">node</span><span class="p">(</span>
+                <span class="n">func</span><span class="o">=</span><span class="n">create_model_input_table</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;preprocessed_shuttles&quot;</span><span class="p">,</span> <span class="s2">&quot;preprocessed_companies&quot;</span><span class="p">,</span> <span class="s2">&quot;reviews&quot;</span><span class="p">],</span>
+                <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;model_input_table&quot;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;create_model_input_table_node&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</details>
+<p>The resolved catalog output by the command will be as follows:</p>
+<details>
+<summary><b>Click to expand</b></summary>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="nt">model_input_table</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/03_primary/model_input_table.pq</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="nt">preprocessed_companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_companies.pq</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="nt">preprocessed_shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/preprocessed_shuttles.pq</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="nt">reviews</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/reviews.csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="nt">shuttles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/shuttles.xlsx</span>
+<span class="w">  </span><span class="nt">load_args</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openpyxl</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
+</pre></div>
+</div>
+</details>
+<p>By default this is output to the terminal. However, if you wish to output the resolved catalog to a specific file, you can use the redirection operator <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>catalog<span class="w"> </span>resolve<span class="w"> </span>&gt;<span class="w"> </span>output_file.yaml
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -2203,7 +2337,7 @@ as <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSe
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="data_catalog_yaml_examples.html" class="btn btn-neutral float-left" title="Data Catalog YAML examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="advanced_data_catalog_usage.html" class="btn btn-neutral float-right" title="Advanced Data Catalog usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="advanced_data_catalog_usage.html" class="btn btn-neutral float-right" title="Advanced: Access the Data Catalog in code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1986,6 +1978,8 @@
              
   <div class="section" id="introduction-to-the-data-catalog">
 <h1>Introduction to the Data Catalog<a class="headerlink" href="#introduction-to-the-data-catalog" title="Permalink to this heading">¶</a></h1>
+<p>In a Kedro project, the Data Catalog is a registry of all data sources available for use by the project. It is specified with a YAML catalog file that maps the names of node inputs and outputs as keys in the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> class.</p>
+<p>This page introduces the basic sections of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>, which is the file used to register data sources for a Kedro project.</p>
 <div class="section" id="the-basics-of-catalog-yml">
 <h2>The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code><a class="headerlink" href="#the-basics-of-catalog-yml" title="Permalink to this heading">¶</a></h2>
 <p>A separate page of <a class="reference internal" href="data_catalog_yaml_examples.html"><span class="std std-doc">Data Catalog YAML examples</span></a>  gives further examples of how to work with <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code>, but here we revisit the <a class="reference internal" href="../tutorial/set_up_data.html"><span class="std std-doc">basic <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> introduced by the spaceflights tutorial</span></a>.</p>
@@ -2108,7 +2102,7 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">--load-version</span></code> is dataset name and version timestamp separated by <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
-<p>A dataset offers versioning support if it extends the <a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></span></a> class to accept a version keyword argument as part of the constructor and adapt the <code class="docutils literal notranslate"><span class="pre">_save</span></code> and <code class="docutils literal notranslate"><span class="pre">_load</span></code> method to use the versioned data path obtained from <code class="docutils literal notranslate"><span class="pre">_get_save_path</span></code> and <code class="docutils literal notranslate"><span class="pre">_get_load_path</span></code> respectively. In Kedro version 0.18.2, the following datasets support versioning:</p>
+<p>A dataset offers versioning support if it extends the <a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></span></a> class to accept a version keyword argument as part of the constructor and adapt the <code class="docutils literal notranslate"><span class="pre">_save</span></code> and <code class="docutils literal notranslate"><span class="pre">_load</span></code> method to use the versioned data path obtained from <code class="docutils literal notranslate"><span class="pre">_get_save_path</span></code> and <code class="docutils literal notranslate"><span class="pre">_get_load_path</span></code> respectively. In versions of Kedro from 0.18.2 onwards, the following datasets support versioning:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.api.APIDataSet</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">kedro_datasets.holoviews.HoloviewsWriter</span></code></p></li>
@@ -2130,7 +2124,7 @@ All the top-level parameters of <code class="docutils literal notranslate"><span
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Although HTTP(S) is a supported file system in the dataset implementations, it does not support versioning.</p>
+<p>Note that HTTP(S) is a supported file system in the dataset implementations, but if you it, you can’t also use versioning.</p>
 </div>
 </div>
 </div>

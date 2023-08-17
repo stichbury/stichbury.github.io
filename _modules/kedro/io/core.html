@@ -292,8 +292,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../resources/index.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../faq/faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources/index.html">FAQs and resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq/faq.html">FAQs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#visualisation">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#working-with-jupyter">Working with Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#kedro-project-development">Kedro project development</a></li>
@@ -301,8 +301,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../resources/glossary.html">Kedro glossary</a><ul>
@@ -402,6 +402,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration/parameters.html#how-to-specify-parameters-at-runtime">How to specify parameters at runtime</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration/config_loader_migration.html">Migration guide for config loaders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration/config_loader_migration.html#configloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#install-the-required-library">1. Install the Required Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#use-the-omegaconfigloader">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#import-statements">3. Import Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#file-format-support">4. File Format Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#load-configuration">5. Load Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../configuration/advanced_configuration.html">Advanced configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration/advanced_configuration.html#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#provide-template-values-through-globals">Provide template values through globals</a></li>
@@ -414,7 +426,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-use-custom-resolvers-in-the-omegaconfigloader">How to use custom resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration/advanced_configuration.html#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></li>
 </ul>
 </li>
@@ -424,82 +436,112 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Data Catalog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../data/data_catalog.html">The Data Catalog</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">The Kedro Data Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/data_catalog.html">Introduction to the Data Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#the-basics-of-catalog-yml">The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#load-and-save-arguments">Load and save arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#dataset-access-credentials">Dataset access credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#dataset-versioning">Dataset versioning</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#specify-the-location-of-the-dataset">Specify the location of the dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#data-catalog-args-parameters">Data Catalog <code class="docutils literal notranslate"><span class="pre">*_args</span></code> parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-1-provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Example 1: Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-2-load-data-from-a-local-binary-file-using-utf-8-encoding">Example 2: Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-3-save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Example 3: Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#use-the-data-catalog-with-the-yaml-api">Use the Data Catalog with the YAML API</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-1-loads-saves-a-csv-file-from-to-a-local-file-system">Example 1: Loads / saves a CSV file from / to a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-2-loads-and-saves-a-csv-on-a-local-file-system-using-specified-load-and-save-arguments">Example 2: Loads and saves a CSV on a local file system, using specified load and save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-3-loads-and-saves-a-compressed-csv-on-a-local-file-system">Example 3: Loads and saves a compressed CSV on a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-4-loads-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">Example 4: Loads a CSV file from a specific S3 bucket, using credentials and load arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-5-loads-saves-a-pickle-file-from-to-a-local-file-system">Example 5: Loads / saves a pickle file from / to a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-6-loads-an-excel-file-from-google-cloud-storage">Example 6: Loads an Excel file from Google Cloud Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-7-loads-a-multi-sheet-excel-file-from-a-local-file-system">Example 7: Loads a multi-sheet Excel file from a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-8-saves-an-image-created-with-matplotlib-on-google-cloud-storage">Example 8: Saves an image created with Matplotlib on Google Cloud Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-9-loads-saves-an-hdf-file-on-local-file-system-storage-using-specified-load-and-save-arguments">Example 9: Loads / saves an HDF file on local file system storage, using specified load and save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-10-loads-saves-a-parquet-file-on-local-file-system-storage-using-specified-load-and-save-arguments">Example 10: Loads / saves a parquet file on local file system storage, using specified load and save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-11-loads-saves-a-spark-table-on-s3-using-specified-load-and-save-arguments">Example 11: Loads / saves a Spark table on S3, using specified load and save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-12-loads-saves-a-sql-table-using-credentials-a-database-connection-using-specified-load-and-save-arguments">Example 12: Loads / saves a SQL table using credentials, a database connection, using specified load and save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-13-loads-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table">Example 13: Loads an SQL table with credentials, a database connection, and applies a SQL query to the table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-14-loads-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda">Example 14: Loads data from an API endpoint, example US corn yield data from USDA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-15-loads-data-from-minio-s3-api-compatible-storage">Example 15: Loads data from Minio (S3 API Compatible Storage)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-16-loads-a-model-saved-as-a-pickle-from-azure-blob-storage">Example 16: Loads a model saved as a pickle from Azure Blob Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-17-loads-a-csv-file-stored-in-a-remote-location-through-ssh">Example 17: Loads a CSV file stored in a remote location through SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html">Data Catalog YAML examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-csv-file-from-to-a-local-file-system">Load/save a CSV file from/to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load/save a CSV on a local file system, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-compressed-csv-on-a-local-file-system">Load/save a compressed CSV on a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-pickle-file-from-to-a-local-file-system">Load/save a pickle file from/to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-an-excel-file-from-google-cloud-storage">Load an Excel file from Google Cloud Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-a-multi-sheet-excel-file-from-a-local-file-system">Load a multi-sheet Excel file from a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#save-an-image-created-with-matplotlib-on-google-cloud-storage">Save an image created with Matplotlib on Google Cloud Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save an HDF file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save a parquet file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-spark-table-on-s3-using-specified-load-save-arguments">Load/save a Spark table on S3, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-data-from-an-api-endpoint">Load data from an API endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-data-from-minio-s3-api-compatible-storage">Load data from Minio (S3 API Compatible Storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#create-a-data-catalog-yaml-configuration-file-via-cli">Create a Data Catalog YAML configuration file via CLI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#adding-parameters">Adding parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#feeding-in-credentials">Feeding in credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#load-multiple-datasets-with-similar-configuration-using-dataset-factories">Load multiple datasets with similar configuration using dataset factories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-1-generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Example 1: Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-2-generalise-datasets-of-the-same-type-into-one-dataset-factory">Example 2: Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-3-generalise-datasets-using-namespaces-into-one-dataset-factory">Example 3: Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-4-generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Example 4: Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-5-generalise-datasets-using-multiple-dataset-factories">Example 5: Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#example-6-generalise-all-datasets-with-a-catch-all-dataset-factory-to-overwrite-the-default-memorydataset">Example 6: Generalise all datasets with a catch-all dataset factory to overwrite the default <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#transcode-datasets">Transcode datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#how-does-transcoding-work">How does transcoding work?</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#version-datasets-and-ml-models">Version datasets and ML models</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/data_catalog.html#use-the-data-catalog-with-the-code-api">Use the Data Catalog with the Code API</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#configure-a-data-catalog">Configure a Data Catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#load-datasets">Load datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#view-the-available-data-sources">View the available data sources</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/data_catalog.html#save-data">Save data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../data/kedro_io.html">Kedro IO</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_io.html#error-handling">Error handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_io.html#abstractdataset">AbstractDataSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_io.html#versioning">Versioning</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#version-namedtuple"><code class="docutils literal notranslate"><span class="pre">version</span></code> namedtuple</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#versioning-using-the-yaml-api">Versioning using the YAML API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#versioning-using-the-code-api">Versioning using the Code API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#supported-datasets">Supported datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data/kedro_io.html#partitioned-dataset">Partitioned dataset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#partitioned-dataset-definition">Partitioned dataset definition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#partitioned-dataset-load">Partitioned dataset load</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#partitioned-dataset-save">Partitioned dataset save</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../data/kedro_io.html#incremental-loads-with-incrementaldataset">Incremental loads with <code class="docutils literal notranslate"><span class="pre">IncrementalDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#incremental-datasets">Incremental datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-loads">Incremental dataset loads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-save">Incremental dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-confirm">Incremental dataset confirm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#checkpoint-configuration">Checkpoint configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/partitioned_and_incremental_datasets.html#special-checkpoint-config-keys">Special checkpoint config keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#the-anatomy-of-a-dataset">The anatomy of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#implement-the-load-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_load</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#implement-the-save-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#implement-the-describe-method">Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#the-complete-example">The complete example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#versioning">Versioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#how-to-implement-versioning-in-your-dataset">How to implement versioning in your dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#thread-safety">Thread-safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#how-to-handle-credentials-and-different-filesystems">How to handle credentials and different filesystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data/how_to_create_a_custom_dataset.html#how-to-contribute-a-custom-dataset-implementation">How to contribute a custom dataset implementation</a></li>
 </ul>
 </li>
 </ul>
@@ -517,7 +559,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#kwargs-only-node-functions"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>-only node functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#how-to-tag-a-node">How to tag a node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#how-to-run-a-node">How to run a node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#how-to-use-generator-functions-in-a-node">How to use generator functions in a node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#set-up-the-project">Set up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#loading-data-with-generators">Loading data with Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../nodes_and_pipelines/nodes.html#saving-data-with-generators">Saving data with Generators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nodes_and_pipelines/pipeline_introduction.html">Pipelines</a><ul>
@@ -600,21 +647,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/common_use_cases.html#use-case-2-how-to-integrate-kedro-with-additional-data-sources">Use Case 2: How to integrate Kedro with additional data sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/common_use_cases.html#use-case-3-how-to-add-or-modify-cli-commands">Use Case 3: How to add or modify CLI commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/common_use_cases.html#use-case-4-how-to-customise-the-initial-boilerplate-of-your-project">Use Case 4: How to customise the initial boilerplate of your project</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html">Custom datasets</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#scenario">Scenario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#project-setup">Project setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#the-anatomy-of-a-dataset">The anatomy of a dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#implement-the-load-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_load</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#implement-the-save-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#implement-the-describe-method">Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#the-complete-example">The complete example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#versioning">Versioning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#thread-safety">Thread-safety</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#how-to-handle-credentials-and-different-filesystems">How to handle credentials and different filesystems</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../extend_kedro/custom_datasets.html#how-to-contribute-a-custom-dataset-implementation">How to contribute a custom dataset implementation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../extend_kedro/plugins.html">Kedro plugins</a><ul>
@@ -930,45 +962,7 @@
 <p class="caption" role="heading"><span class="caption-text">Contribute to Kedro</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/index.html">Contribute to Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html">Guidelines for contributing developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#before-you-start-development-set-up">Before you start: development set up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#get-started-areas-of-contribution">Get started: areas of contribution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#create-a-pull-request">Create a pull request</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#pull-request-title-conventions">Pull request title conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#hints-on-pre-commit-usage">Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/developer_contributor_guidelines.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribution/backwards_compatibility.html">Backwards compatibility &amp; breaking changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/backwards_compatibility.html#when-should-i-make-a-breaking-change">When should I make a breaking change?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/backwards_compatibility.html#the-kedro-release-model">The Kedro release model</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html">Contribute to the Kedro documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#how-do-i-rebuild-the-documentation-after-i-make-changes-to-it">How do I rebuild the documentation after I make changes to it?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#set-up-to-build-kedro-documentation">Set up to build Kedro documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#build-the-documentation">Build the documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#extend-kedro-documentation">Extend Kedro documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#add-new-pages">Add new pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#move-or-remove-pages">Move or remove pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#create-a-pull-request">Create a pull request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#help">Help!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/documentation_contributor_guidelines.html#kedro-documentation-style-guide">Kedro documentation style guide</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribution/technical_steering_committee.html">Join the Technical Steering Committee</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribution/technical_steering_committee.html">Kedro’s Technical Steering Committee</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#product-development">Product development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#community-management">Community management</a></li>
@@ -980,16 +974,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#other-issues-or-proposals">Other issues or proposals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../contribution/technical_steering_committee.html#adding-or-removing-maintainers">Adding or removing maintainers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribution/development_for_databricks.html">Contribute changes to Kedro that are tested on Databricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/development_for_databricks.html#how-to-deploy-a-development-version-of-kedro-to-databricks">How to deploy a development version of Kedro to Databricks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/development_for_databricks.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../contribution/development_for_databricks.html#how-to-install-a-build-of-kedro-onto-databricks">How to install a build of Kedro onto Databricks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/development_for_databricks.html#how-to-set-up-the-databricks-cli-to-test-a-kedro-build">How to set up the Databricks CLI to test a Kedro build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../contribution/development_for_databricks.html#how-to-use-make-databricks-build-to-test-your-kedro-build">How to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">databricks-build</span></code> to test your Kedro build</a></li>
 </ul>
 </li>
 </ul>
@@ -1125,14 +1109,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -2031,13 +2007,15 @@
 <span class="n">DataSetError</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">DatasetError</span><span class="p">]</span>
 <span class="n">DataSetNotFoundError</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">DatasetNotFoundError</span><span class="p">]</span>
 <span class="n">DataSetAlreadyExistsError</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">DatasetAlreadyExistsError</span><span class="p">]</span>
+<span class="n">AbstractDataSet</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">AbstractDataset</span><span class="p">]</span>
+<span class="n">AbstractVersionedDataSet</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">AbstractVersionedDataset</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">DatasetError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;``DatasetError`` raised by ``AbstractDataSet`` implementations</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;``DatasetError`` raised by ``AbstractDataset`` implementations</span>
 <span class="sd">    in case of failure of input/output methods.</span>
 
-<span class="sd">    ``AbstractDataSet`` implementations should provide instructive</span>
+<span class="sd">    ``AbstractDataset`` implementations should provide instructive</span>
 <span class="sd">    information in case of failure.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -2060,28 +2038,8 @@
     <span class="k">pass</span>
 
 
-<span class="n">_DEPRECATED_ERROR_CLASSES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;DataSetError&quot;</span><span class="p">:</span> <span class="n">DatasetError</span><span class="p">,</span>
-    <span class="s2">&quot;DataSetNotFoundError&quot;</span><span class="p">:</span> <span class="n">DatasetNotFoundError</span><span class="p">,</span>
-    <span class="s2">&quot;DataSetAlreadyExistsError&quot;</span><span class="p">:</span> <span class="n">DatasetAlreadyExistsError</span><span class="p">,</span>
-<span class="p">}</span>
-
-
-<span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_DEPRECATED_ERROR_CLASSES</span><span class="p">:</span>
-        <span class="n">alias</span> <span class="o">=</span> <span class="n">_DEPRECATED_ERROR_CLASSES</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2"> has been renamed to </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">alias</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;and the alias will be removed in Kedro 0.19.0&quot;</span><span class="p">,</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">alias</span>
-    <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span><span class="si">}</span><span class="s2"> has no attribute </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
 <span class="k">class</span> <span class="nc">VersionNotFoundError</span><span class="p">(</span><span class="n">DatasetError</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;``VersionNotFoundError`` raised by ``AbstractVersionedDataSet`` implementations</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;``VersionNotFoundError`` raised by ``AbstractVersionedDataset`` implementations</span>
 <span class="sd">    in case of no load versions available for the data set.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -2092,8 +2050,8 @@
 <span class="n">_DO</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;_DO&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="AbstractDataSet"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet">[docs]</a><span class="k">class</span> <span class="nc">AbstractDataSet</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">_DI</span><span class="p">,</span> <span class="n">_DO</span><span class="p">]):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;``AbstractDataSet`` is the base class for all data set implementations.</span>
+<span class="k">class</span> <span class="nc">AbstractDataset</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">_DI</span><span class="p">,</span> <span class="n">_DO</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;``AbstractDataset`` is the base class for all data set implementations.</span>
 <span class="sd">    All data set implementations should extend this abstract class</span>
 <span class="sd">    and implement the methods marked as abstract.</span>
 <span class="sd">    If a specific dataset implementation cannot be used in conjunction with</span>
@@ -2104,10 +2062,10 @@
 
 <span class="sd">        &gt;&gt;&gt; from pathlib import Path, PurePosixPath</span>
 <span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
-<span class="sd">        &gt;&gt;&gt; from kedro.io import AbstractDataSet</span>
+<span class="sd">        &gt;&gt;&gt; from kedro.io import AbstractDataset</span>
 <span class="sd">        &gt;&gt;&gt;</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-<span class="sd">        &gt;&gt;&gt; class MyOwnDataset(AbstractDataSet[pd.DataFrame, pd.DataFrame]):</span>
+<span class="sd">        &gt;&gt;&gt; class MyOwnDataset(AbstractDataset[pd.DataFrame, pd.DataFrame]):</span>
 <span class="sd">        &gt;&gt;&gt;     def __init__(self, filepath, param1, param2=True):</span>
 <span class="sd">        &gt;&gt;&gt;         self._filepath = PurePosixPath(filepath)</span>
 <span class="sd">        &gt;&gt;&gt;         self._param1 = param1</span>
@@ -2135,14 +2093,14 @@
 <span class="sd">            # param2 will be True by default</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AbstractDataSet.from_config"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet.from_config">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
         <span class="n">load_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">save_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractDataSet</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractDataset</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a data set instance using the configuration provided.</span>
 
 <span class="sd">        Args:</span>
@@ -2156,7 +2114,7 @@
 <span class="sd">                if versioning was not enabled.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            An instance of an ``AbstractDataSet`` subclass.</span>
+<span class="sd">            An instance of an ``AbstractDataset`` subclass.</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            DatasetError: When the function fails to create the data set</span>
@@ -2185,13 +2143,13 @@
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">Failed to instantiate dataset &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
                 <span class="sa">f</span><span class="s2">&quot;of type &#39;</span><span class="si">{</span><span class="n">class_obj</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">class_obj</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
             <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-        <span class="k">return</span> <span class="n">data_set</span></div>
+        <span class="k">return</span> <span class="n">data_set</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractDataSet.load"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data by delegation to the provided load method.</span>
 
 <span class="sd">        Returns:</span>
@@ -2214,9 +2172,9 @@
             <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Failed while loading data from data set </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span></div>
+            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
-<div class="viewcode-block" id="AbstractDataSet.save"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves data by delegation to the provided save method.</span>
 
 <span class="sd">        Args:</span>
@@ -2240,7 +2198,7 @@
             <span class="k">raise</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Failed while saving data to data set </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span></div>
+            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">_to_str</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">is_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -2272,25 +2230,25 @@
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
     <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataSet and &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataset and &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;it must implement the &#39;_load&#39; method&quot;</span>
         <span class="p">)</span>
 
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
     <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataSet and &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataset and &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;it must implement the &#39;_save&#39; method&quot;</span>
         <span class="p">)</span>
 
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
     <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataSet and &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; is a subclass of AbstractDataset and &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;it must implement the &#39;_describe&#39; method&quot;</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractDataSet.exists"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet.exists">[docs]</a>    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks whether a data set&#39;s output already exists by calling</span>
 <span class="sd">        the provided _exists() method.</span>
 
@@ -2308,7 +2266,7 @@
             <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Failed during exists check for data set </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span></div>
+            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
     <span class="k">def</span> <span class="nf">_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
@@ -2317,7 +2275,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="AbstractDataSet.release"><a class="viewcode-back" href="../../../kedro.io.AbstractDataSet.html#kedro.extras.datasets.spark.AbstractDataSet.release">[docs]</a>    <span class="k">def</span> <span class="nf">release</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">release</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Release any cached data.</span>
 
 <span class="sd">        Raises:</span>
@@ -2329,16 +2287,16 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_release</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Failed during release for data set </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span></div>
+            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
     <span class="k">def</span> <span class="nf">_release</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">overwrite_params</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractDataSet</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">overwrite_params</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractDataset</span><span class="p">:</span>
         <span class="n">dataset_copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">overwrite_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="n">dataset_copy</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">dataset_copy</span></div>
+        <span class="k">return</span> <span class="n">dataset_copy</span>
 
 
 <span class="k">def</span> <span class="nf">generate_timestamp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -2377,7 +2335,7 @@
 
 <span class="k">def</span> <span class="nf">parse_dataset_definition</span><span class="p">(</span>
     <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">load_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">type</span><span class="p">[</span><span class="n">AbstractDataSet</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">type</span><span class="p">[</span><span class="n">AbstractDataset</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse and instantiate a dataset class using the configuration provided.</span>
 
 <span class="sd">    Args:</span>
@@ -2420,10 +2378,10 @@
                 <span class="sa">f</span><span class="s2">&quot;has not been installed.&quot;</span>
             <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">class_obj</span><span class="p">,</span> <span class="n">AbstractDataSet</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">class_obj</span><span class="p">,</span> <span class="n">AbstractDataset</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;Dataset type &#39;</span><span class="si">{</span><span class="n">class_obj</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">class_obj</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;is invalid: all data set types must extend &#39;AbstractDataSet&#39;.&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;is invalid: all data set types must extend &#39;AbstractDataset&#39;.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">VERSION_KEY</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
@@ -2479,9 +2437,9 @@
     <span class="k">return</span> <span class="n">filepath</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="n">filepath</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="AbstractVersionedDataSet"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet">[docs]</a><span class="k">class</span> <span class="nc">AbstractVersionedDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">_DI</span><span class="p">,</span> <span class="n">_DO</span><span class="p">],</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">AbstractVersionedDataset</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">_DI</span><span class="p">,</span> <span class="n">_DO</span><span class="p">],</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ``AbstractVersionedDataSet`` is the base class for all versioned data set</span>
+<span class="sd">    ``AbstractVersionedDataset`` is the base class for all versioned data set</span>
 <span class="sd">    implementations. All data sets that implement versioning should extend this</span>
 <span class="sd">    abstract class and implement the methods marked as abstract.</span>
 
@@ -2490,10 +2448,10 @@
 
 <span class="sd">        &gt;&gt;&gt; from pathlib import Path, PurePosixPath</span>
 <span class="sd">        &gt;&gt;&gt; import pandas as pd</span>
-<span class="sd">        &gt;&gt;&gt; from kedro.io import AbstractVersionedDataSet</span>
+<span class="sd">        &gt;&gt;&gt; from kedro.io import AbstractVersionedDataset</span>
 <span class="sd">        &gt;&gt;&gt;</span>
 <span class="sd">        &gt;&gt;&gt;</span>
-<span class="sd">        &gt;&gt;&gt; class MyOwnDataset(AbstractVersionedDataSet):</span>
+<span class="sd">        &gt;&gt;&gt; class MyOwnDataset(AbstractVersionedDataset):</span>
 <span class="sd">        &gt;&gt;&gt;     def __init__(self, filepath, version, param1, param2=True):</span>
 <span class="sd">        &gt;&gt;&gt;         super().__init__(PurePosixPath(filepath), version)</span>
 <span class="sd">        &gt;&gt;&gt;         self._param1 = param1</span>
@@ -2525,14 +2483,14 @@
 <span class="sd">            # param2 will be True by default</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.__init__"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">filepath</span><span class="p">:</span> <span class="n">PurePosixPath</span><span class="p">,</span>
         <span class="n">version</span><span class="p">:</span> <span class="n">Version</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">exists_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">glob_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a new instance of ``AbstractVersionedDataSet``.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a new instance of ``AbstractVersionedDataset``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filepath: Filepath in POSIX format to a file.</span>
@@ -2550,7 +2508,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_exists_function</span> <span class="o">=</span> <span class="n">exists_function</span> <span class="ow">or</span> <span class="n">_local_exists</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_glob_function</span> <span class="o">=</span> <span class="n">glob_function</span> <span class="ow">or</span> <span class="n">iglob</span>
         <span class="c1"># 1 entry for load version, 1 for save version</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_version_cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># type: Cache</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_version_cache</span> <span class="o">=</span> <span class="n">Cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># type: Cache</span>
 
     <span class="c1"># &#39;key&#39; is set to prevent cache key overlapping for load and save:</span>
     <span class="c1"># https://cachetools.readthedocs.io/en/stable/#cachetools.cachedmethod</span>
@@ -2582,13 +2540,13 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate and cache the current save version&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">generate_timestamp</span><span class="p">()</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.resolve_load_version"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.resolve_load_version">[docs]</a>    <span class="k">def</span> <span class="nf">resolve_load_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">resolve_load_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the version the dataset should be loaded with.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="o">.</span><span class="n">load</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="o">.</span><span class="n">load</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_latest_load_version</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_latest_load_version</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_get_load_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PurePosixPath</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">:</span>
@@ -2598,13 +2556,13 @@
         <span class="n">load_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_load_version</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_versioned_path</span><span class="p">(</span><span class="n">load_version</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.resolve_save_version"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.resolve_save_version">[docs]</a>    <span class="k">def</span> <span class="nf">resolve_save_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">resolve_save_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the version the dataset should be saved with.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="o">.</span><span class="n">save</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="o">.</span><span class="n">save</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_latest_save_version</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_latest_save_version</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_get_save_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PurePosixPath</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">:</span>
@@ -2625,10 +2583,10 @@
     <span class="k">def</span> <span class="nf">_get_versioned_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PurePosixPath</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span> <span class="o">/</span> <span class="n">version</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span><span class="o">.</span><span class="n">name</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.load"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>  <span class="c1"># noqa: useless-parent-delegation</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_DO</span><span class="p">:</span>  <span class="c1"># noqa: useless-parent-delegation</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.save"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">_DI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_version_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="n">save_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_save_version</span><span class="p">()</span>  <span class="c1"># Make sure last save version is set</span>
         <span class="k">try</span><span class="p">:</span>
@@ -2652,9 +2610,9 @@
         <span class="k">if</span> <span class="n">load_version</span> <span class="o">!=</span> <span class="n">save_version</span><span class="p">:</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
                 <span class="n">_CONSISTENCY_WARNING</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">save_version</span><span class="p">,</span> <span class="n">load_version</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
-            <span class="p">)</span></div>
+            <span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractVersionedDataSet.exists"><a class="viewcode-back" href="../../../kedro.io.AbstractVersionedDataSet.html#kedro.extras.datasets.spark.AbstractVersionedDataSet.exists">[docs]</a>    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks whether a data set&#39;s output already exists by calling</span>
 <span class="sd">        the provided _exists() method.</span>
 
@@ -2674,11 +2632,11 @@
             <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Failed during exists check for data set </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span></div>
+            <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
 
     <span class="k">def</span> <span class="nf">_release</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_release</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_version_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_version_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">_parse_filepath</span><span class="p">(</span><span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
@@ -2776,6 +2734,28 @@
             <span class="k">raise</span> <span class="n">DatasetError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Neither white-space nor semicolon are allowed in &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
             <span class="p">)</span>
+
+
+<span class="n">_DEPRECATED_CLASSES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;DataSetError&quot;</span><span class="p">:</span> <span class="n">DatasetError</span><span class="p">,</span>
+    <span class="s2">&quot;DataSetNotFoundError&quot;</span><span class="p">:</span> <span class="n">DatasetNotFoundError</span><span class="p">,</span>
+    <span class="s2">&quot;DataSetAlreadyExistsError&quot;</span><span class="p">:</span> <span class="n">DatasetAlreadyExistsError</span><span class="p">,</span>
+    <span class="s2">&quot;AbstractDataSet&quot;</span><span class="p">:</span> <span class="n">AbstractDataset</span><span class="p">,</span>
+    <span class="s2">&quot;AbstractVersionedDataSet&quot;</span><span class="p">:</span> <span class="n">AbstractVersionedDataset</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_DEPRECATED_CLASSES</span><span class="p">:</span>
+        <span class="n">alias</span> <span class="o">=</span> <span class="n">_DEPRECATED_CLASSES</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2"> has been renamed to </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">alias</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;and the alias will be removed in Kedro 0.19.0&quot;</span><span class="p">,</span>
+            <span class="ne">DeprecationWarning</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">alias</span>
+    <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span><span class="si">}</span><span class="s2"> has no attribute </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
            </div>

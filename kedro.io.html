@@ -24,7 +24,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="kedro.io.AbstractDataSet" href="kedro.io.AbstractDataSet.html" />
+    <link rel="next" title="kedro.io.CachedDataSet" href="kedro.io.CachedDataSet.html" />
     <link rel="prev" title="kedro.framework.startup.ProjectMetadata" href="kedro.framework.startup.ProjectMetadata.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1988,7 +1980,7 @@
 <h1>kedro.io<a class="headerlink" href="#kedro-io" title="Permalink to this heading">¶</a></h1>
 <p class="rubric">Description</p>
 <span class="target" id="module-kedro.io"></span><p><code class="docutils literal notranslate"><span class="pre">kedro.io</span></code> provides functionality to read and write to a
-number of data sets. At the core of the library is the <a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> class.</p>
+number of data sets. At the core of the library is the <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataset</span></code> class.</p>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
@@ -1996,11 +1988,11 @@ number of data sets. At the core of the library is the <a class="reference inter
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.AbstractDataSet</span></code></a>(*args, **kwds)</p></td>
-<td><p><a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> is the base class for all data set implementations. All data set implementations should extend this abstract class and implement the methods marked as abstract. If a specific dataset implementation cannot be used in conjunction with the <a class="reference internal" href="kedro.runner.ParallelRunner.html#kedro.runner.ParallelRunner" title="kedro.runner.ParallelRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParallelRunner</span></code></a>, such user-defined dataset should have the attribute <cite>_SINGLE_PROCESS = True</cite>. Example: ::.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.AbstractDataset</span></code>(*args, **kwds)</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataset</span></code> is the base class for all data set implementations. All data set implementations should extend this abstract class and implement the methods marked as abstract. If a specific dataset implementation cannot be used in conjunction with the <a class="reference internal" href="kedro.runner.ParallelRunner.html#kedro.runner.ParallelRunner" title="kedro.runner.ParallelRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParallelRunner</span></code></a>, such user-defined dataset should have the attribute <cite>_SINGLE_PROCESS = True</cite>. Example: ::.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet" title="kedro.io.AbstractVersionedDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.AbstractVersionedDataSet</span></code></a>(filepath, ...)</p></td>
-<td><p><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet" title="kedro.io.AbstractVersionedDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a> is the base class for all versioned data set implementations.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.AbstractVersionedDataset</span></code>(filepath, ...)</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractVersionedDataset</span></code> is the base class for all versioned data set implementations.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="kedro.io.CachedDataSet.html#kedro.io.CachedDataSet" title="kedro.io.CachedDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.CachedDataSet</span></code></a></p></td>
 <td><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CachedDataset</span></code></p></td>
@@ -2009,7 +2001,7 @@ number of data sets. At the core of the library is the <a class="reference inter
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CachedDataset</span></code> is a dataset wrapper which caches in memory the data saved, so that the user avoids io operations with slow storage media.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.DataCatalog</span></code></a>([data_sets, feed_dict, ...])</p></td>
-<td><p><a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCatalog</span></code></a> stores instances of <a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> implementations to provide <code class="docutils literal notranslate"><span class="pre">load</span></code> and <code class="docutils literal notranslate"><span class="pre">save</span></code> capabilities from anywhere in the program.</p></td>
+<td><p><a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCatalog</span></code></a> stores instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataset</span></code> implementations to provide <code class="docutils literal notranslate"><span class="pre">load</span></code> and <code class="docutils literal notranslate"><span class="pre">save</span></code> capabilities from anywhere in the program.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="kedro.io.IncrementalDataSet.html#kedro.io.IncrementalDataSet" title="kedro.io.IncrementalDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.IncrementalDataSet</span></code></a></p></td>
 <td><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalDataset</span></code></p></td>
@@ -2060,7 +2052,7 @@ number of data sets. At the core of the library is the <a class="reference inter
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetAlreadyExistsError</span></code> raised by <a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCatalog</span></code></a> class in case of trying to add a data set which already exists in the <a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCatalog</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.DatasetError</span></code></p></td>
-<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetError</span></code> raised by <a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> implementations in case of failure of input/output methods.</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetError</span></code> raised by <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataset</span></code> implementations in case of failure of input/output methods.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">kedro.io.DatasetNotFoundError</span></code></p></td>
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code> raised by <a class="reference internal" href="kedro.io.DataCatalog.html#kedro.io.DataCatalog" title="kedro.io.DataCatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataCatalog</span></code></a> class in case of trying to use a non-existing data set.</p></td>
@@ -2074,7 +2066,7 @@ number of data sets. At the core of the library is the <a class="reference inter
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="kedro.framework.startup.ProjectMetadata.html" class="btn btn-neutral float-left" title="kedro.framework.startup.ProjectMetadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kedro.io.AbstractDataSet.html" class="btn btn-neutral float-right" title="kedro.io.AbstractDataSet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kedro.io.CachedDataSet.html" class="btn btn-neutral float-right" title="kedro.io.CachedDataSet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

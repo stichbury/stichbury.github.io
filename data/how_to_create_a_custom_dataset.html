@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1989,7 +1981,7 @@
 <p><a class="reference internal" href="../kedro_datasets.html"><span class="doc std std-doc">Kedro supports many datasets</span></a> out of the box, but you may find that you need to create a custom dataset. For example, you may need to handle a proprietary data format or filesystem in your pipeline, or perhaps you have found a particular use case for a dataset that Kedro does not support. This tutorial explains how to create a custom dataset to read and save image data.</p>
 <div class="section" id="abstractdataset">
 <h2>AbstractDataSet<a class="headerlink" href="#abstractdataset" title="Permalink to this heading">¶</a></h2>
-<p>For contributors, if you would like to submit a new dataset, you must extend the <a class="reference internal" href="../kedro.io.AbstractDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code> interface</span></a>, which is the underlying interface that all datasets extend. It requires subclasses to override the <code class="docutils literal notranslate"><span class="pre">_load</span></code> and <code class="docutils literal notranslate"><span class="pre">_save</span></code> and provides <code class="docutils literal notranslate"><span class="pre">load</span></code> and <code class="docutils literal notranslate"><span class="pre">save</span></code> methods that enrich the corresponding private methods with uniform error handling. It also requires subclasses to override <code class="docutils literal notranslate"><span class="pre">_describe</span></code>, which is used in logging the internal information about the instances of your custom <code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code> implementation.</p>
+<p>For contributors, if you would like to submit a new dataset, you must extend the <a class="reference internal" href="../kedro.io.AbstractDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code> interface</span></a> or <a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code> interface</span></a> if you plan to support versioning. It requires subclasses to override the <code class="docutils literal notranslate"><span class="pre">_load</span></code> and <code class="docutils literal notranslate"><span class="pre">_save</span></code> and provides <code class="docutils literal notranslate"><span class="pre">load</span></code> and <code class="docutils literal notranslate"><span class="pre">save</span></code> methods that enrich the corresponding private methods with uniform error handling. It also requires subclasses to override <code class="docutils literal notranslate"><span class="pre">_describe</span></code>, which is used in logging the internal information about the instances of your custom <code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code> implementation.</p>
 </div>
 <div class="section" id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">¶</a></h2>
@@ -2008,13 +2000,13 @@
 </div>
 <div class="section" id="the-anatomy-of-a-dataset">
 <h2>The anatomy of a dataset<a class="headerlink" href="#the-anatomy-of-a-dataset" title="Permalink to this heading">¶</a></h2>
-<p>At the minimum, a valid Kedro dataset needs to subclass the base <a class="reference internal" href="../kedro.io.AbstractDataSet.html"><span class="doc std std-doc">AbstractDataSet</span></a> and provide an implementation for the following abstract methods:</p>
+<p>At the minimum, a valid Kedro dataset needs to subclass the base <a class="reference internal" href="#/kedro.io.AbstractDataset"><span class="xref myst">AbstractDataset</span></a> and provide an implementation for the following abstract methods:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">_load</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_save</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_describe</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code> is generically typed with an input data type for saving data, and an output data type for loading data.
+<p><code class="docutils literal notranslate"><span class="pre">AbstractDataset</span></code> is generically typed with an input data type for saving data, and an output data type for loading data.
 This typing is optional however, and defaults to <code class="docutils literal notranslate"><span class="pre">Any</span></code> type.</p>
 <p>Here is an example skeleton for <code class="docutils literal notranslate"><span class="pre">ImageDataSet</span></code>:</p>
 <details>
@@ -2023,10 +2015,10 @@ This typing is optional however, and defaults to <code class="docutils literal n
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span>
+<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataset</span>
 
 
-<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;``ImageDataSet`` loads / save image data from a given filepath as `numpy` array using Pillow.</span>
 
 <span class="sd">    Example:</span>
@@ -2083,11 +2075,11 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span>
+<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataset</span>
 <span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">get_filepath_str</span><span class="p">,</span> <span class="n">get_protocol_and_path</span>
 
 
-<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a new instance of ImageDataSet to load / save image data for given filepath.</span>
 
@@ -2138,7 +2130,7 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <div class="section" id="implement-the-save-method-with-fsspec">
 <h2>Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code><a class="headerlink" href="#implement-the-save-method-with-fsspec" title="Permalink to this heading">¶</a></h2>
 <p>Similarly, we can implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
     <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves image data to the specified filepath.&quot;&quot;&quot;</span>
         <span class="c1"># using get_filepath_str ensures that the protocol and path are appended correctly for different filesystems</span>
@@ -2158,7 +2150,7 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <div class="section" id="implement-the-describe-method">
 <h2>Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method<a class="headerlink" href="#implement-the-describe-method" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method is used for printing purposes. The convention in Kedro is for the method to return a dictionary describing the attributes of the dataset.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
     <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a dict that describes the attributes of the dataset.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_filepath</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_protocol</span><span class="p">)</span>
@@ -2177,11 +2169,11 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span>
+<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractDataset</span>
 <span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">get_filepath_str</span><span class="p">,</span> <span class="n">get_protocol_and_path</span>
 
 
-<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;``ImageDataSet`` loads / save image data from a given filepath as `numpy` array using Pillow.</span>
 
 <span class="sd">    Example:</span>
@@ -2276,11 +2268,11 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractVersionedDataSet</span>
+<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractVersionedDataset</span>
 <span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">get_filepath_str</span><span class="p">,</span> <span class="n">get_protocol_and_path</span><span class="p">,</span> <span class="n">Version</span>
 
 
-<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataset</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;``ImageDataSet`` loads / save image data from a given filepath as `numpy` array using Pillow.</span>
 
 <span class="sd">    Example:</span>
@@ -2344,14 +2336,14 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <span class="w"> </span>import numpy as np
 <span class="w"> </span>from PIL import Image
 
-<span class="gd">-from kedro.io import AbstractDataSet</span>
+<span class="gd">-from kedro.io import AbstractDataset</span>
 <span class="gd">-from kedro.io.core import get_filepath_str, get_protocol_and_path</span>
-<span class="gi">+from kedro.io import AbstractVersionedDataSet</span>
+<span class="gi">+from kedro.io import AbstractVersionedDataset</span>
 <span class="gi">+from kedro.io.core import get_filepath_str, get_protocol_and_path, Version</span>
 
 
-<span class="gd">-class ImageDataSet(AbstractDataSet[np.ndarray, np.ndarray]):</span>
-<span class="gi">+class ImageDataSet(AbstractVersionedDataSet[np.ndarray, np.ndarray]):</span>
+<span class="gd">-class ImageDataSet(AbstractDataset[np.ndarray, np.ndarray]):</span>
+<span class="gi">+class ImageDataSet(AbstractVersionedDataset[np.ndarray, np.ndarray]):</span>
 <span class="w"> </span>    &quot;&quot;&quot;``ImageDataSet`` loads / save image data from a given filepath as `numpy` array using Pillow.
 
 <span class="w"> </span>    Example:
@@ -2474,7 +2466,7 @@ This typing is optional however, and defaults to <code class="docutils literal n
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
 
 
-<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataSet</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ImageDataSet</span><span class="p">(</span><span class="n">AbstractVersionedDataset</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>

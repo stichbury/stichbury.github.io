@@ -24,8 +24,6 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="kedro.io.CachedDataSet" href="kedro.io.CachedDataSet.html" />
-    <link rel="prev" title="kedro.io.AbstractDataSet" href="kedro.io.AbstractDataSet.html" />
 <script type="text/javascript">
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
   heap.load(2164194004);
@@ -303,7 +301,6 @@
 <li class="toctree-l4"><a class="reference internal" href="faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +473,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -984,8 +982,8 @@
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="kedro.html">kedro</a><ul class="current">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kedro.html">kedro</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="kedro.KedroPythonVersionWarning.html">kedro.KedroPythonVersionWarning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro.KedroPythonVersionWarning.html#kedro.KedroPythonVersionWarning"><code class="docutils literal notranslate"><span class="pre">KedroPythonVersionWarning</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.KedroPythonVersionWarning.html#kedro.KedroPythonVersionWarning.args"><code class="docutils literal notranslate"><span class="pre">KedroPythonVersionWarning.args</span></code></a></li>
@@ -1110,15 +1108,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="kedro.io.html">kedro.io</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="kedro.io.html">kedro.io</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1960,10 +1950,6 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="kedro.html">kedro</a> &raquo;</li>
-        
-          <li><a href="kedro.io.html">kedro.io</a> &raquo;</li>
-        
       <li>kedro.io.AbstractVersionedDataSet</li>
     
     
@@ -1988,219 +1974,10 @@
              
   <div class="section" id="kedro-io-abstractversioneddataset">
 <h1>kedro.io.AbstractVersionedDataSet<a class="headerlink" href="#kedro-io-abstractversioneddataset" title="Permalink to this heading">¶</a></h1>
-<dl class="py class">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kedro.io.</span></span><span class="sig-name descname"><span class="pre">AbstractVersionedDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glob_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet" title="kedro.io.AbstractVersionedDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a> is the base class for all versioned data set
-implementations. All data sets that implement versioning should extend this
-abstract class and implement the methods marked as abstract.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">PurePosixPath</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">kedro.io</span> <span class="kn">import</span> <span class="n">AbstractVersionedDataSet</span>
-
-
-<span class="k">class</span> <span class="nc">MyOwnDataset</span><span class="p">(</span><span class="n">AbstractVersionedDataSet</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">PurePosixPath</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">version</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_param1</span> <span class="o">=</span> <span class="n">param1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_param2</span> <span class="o">=</span> <span class="n">param2</span>
-
-    <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="n">load_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_load_path</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">save_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_save_path</span><span class="p">()</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">save_path</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_load_path</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">())</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">_describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span> <span class="n">param1</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_param1</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_param2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Example catalog.yml specification:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_dataset</span><span class="p">:</span>
-    <span class="nb">type</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">my</span><span class="o">-</span><span class="n">own</span><span class="o">-</span><span class="n">dataset</span><span class="o">&gt;.</span><span class="n">MyOwnDataset</span>
-    <span class="n">filepath</span><span class="p">:</span> <span class="n">data</span><span class="o">/</span><span class="mi">01</span><span class="n">_raw</span><span class="o">/</span><span class="n">my_data</span><span class="o">.</span><span class="n">csv</span>
-    <span class="n">versioned</span><span class="p">:</span> <span class="n">true</span>
-    <span class="n">param1</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">param1</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span> <span class="c1"># param1 is a required argument</span>
-    <span class="c1"># param2 will be True by default</span>
-</pre></div>
-</div>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.exists" title="kedro.io.AbstractVersionedDataSet.exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exists</span></code></a>()</p></td>
-<td><p>Checks whether a data set's output already exists by calling the provided _exists() method.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.from_config" title="kedro.io.AbstractVersionedDataSet.from_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_config</span></code></a>(name, config[, load_version, ...])</p></td>
-<td><p>Create a data set instance using the configuration provided.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.load" title="kedro.io.AbstractVersionedDataSet.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>()</p></td>
-<td><p>Loads data by delegation to the provided load method.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.release" title="kedro.io.AbstractVersionedDataSet.release"><code class="xref py py-obj docutils literal notranslate"><span class="pre">release</span></code></a>()</p></td>
-<td><p>Release any cached data.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.resolve_load_version" title="kedro.io.AbstractVersionedDataSet.resolve_load_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_load_version</span></code></a>()</p></td>
-<td><p>Compute the version the dataset should be loaded with.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.resolve_save_version" title="kedro.io.AbstractVersionedDataSet.resolve_save_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_save_version</span></code></a>()</p></td>
-<td><p>Compute the version the dataset should be saved with.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.io.AbstractVersionedDataSet.save" title="kedro.io.AbstractVersionedDataSet.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(data)</p></td>
-<td><p>Saves data by delegation to the provided save method.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exists_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glob_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new instance of <a class="reference internal" href="#kedro.io.AbstractVersionedDataSet" title="kedro.io.AbstractVersionedDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filepath</strong> (<em>PurePosixPath</em>) – Filepath in POSIX format to a file.</p></li>
-<li><p><strong>version</strong> (<a class="reference internal" href="kedro.io.Version.html#kedro.io.Version" title="kedro.io.Version"><em>Version</em></a><em> | </em><em>None</em>) – If specified, should be an instance of
-<code class="docutils literal notranslate"><span class="pre">kedro.io.core.Version</span></code>. If its <code class="docutils literal notranslate"><span class="pre">load</span></code> attribute is
-None, the latest version will be loaded. If its <code class="docutils literal notranslate"><span class="pre">save</span></code>
-attribute is None, save version will be autogenerated.</p></li>
-<li><p><strong>exists_function</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>bool</em><em>]</em>) – Function that is used for determining whether
-a path exists in a filesystem.</p></li>
-<li><p><strong>glob_function</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>list</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Function that is used for finding all paths
-in a filesystem, which match a given pattern.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.exists">
-<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether a data set’s output already exists by calling
-the provided _exists() method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Flag indicating whether the output already exists.</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>DatasetError</strong> – when underlying exists method raises error.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.from_config">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.from_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a data set instance using the configuration provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> – Data set name.</p></li>
-<li><p><strong>config</strong> – Data set config dictionary.</p></li>
-<li><p><strong>load_version</strong> – Version string to be used for <code class="docutils literal notranslate"><span class="pre">load</span></code> operation if
-the data set is versioned. Has no effect on the data set
-if versioning was not enabled.</p></li>
-<li><p><strong>save_version</strong> – Version string to be used for <code class="docutils literal notranslate"><span class="pre">save</span></code> operation if
-the data set is versioned. Has no effect on the data set
-if versioning was not enabled.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An instance of an <a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet" title="kedro.io.AbstractDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a> subclass.</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>DatasetError</strong> – When the function fails to create the data set
-    from its config.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.load">
-<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.load" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads data by delegation to the provided load method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">_DO</span></code>)</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data returned by the provided load method.</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>DatasetError</strong> – When underlying load method raises error.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.release">
-<span class="sig-name descname"><span class="pre">release</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.release" title="Permalink to this definition">¶</a></dt>
-<dd><p>Release any cached data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>DatasetError</strong> – when underlying release method raises error.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.resolve_load_version">
-<span class="sig-name descname"><span class="pre">resolve_load_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.resolve_load_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.resolve_load_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the version the dataset should be loaded with.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str | None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.resolve_save_version">
-<span class="sig-name descname"><span class="pre">resolve_save_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.resolve_save_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.resolve_save_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the version the dataset should be saved with.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str | None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="kedro.io.AbstractVersionedDataSet.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/io/core.html#AbstractVersionedDataSet.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves data by delegation to the provided save method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">_DI</span></code>)) – the value to be saved by provided save method.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>DatasetError</strong> – when underlying save method raises error.</p></li>
-<li><p><strong>FileNotFoundError</strong> – when save method got file instead of dir, on Windows.</p></li>
-<li><p><strong>NotADirectoryError</strong> – when save method got file instead of dir, on Unix.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
+<span class="sig-prename descclassname"><span class="pre">kedro.io.</span></span><span class="sig-name descname"><span class="pre">AbstractVersionedDataSet</span></span><a class="headerlink" href="#kedro.io.AbstractVersionedDataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractVersionedDataset</span></code></p>
 </dd></dl>
 
 </div>
@@ -2208,10 +1985,7 @@ if versioning was not enabled.</p></li>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kedro.io.AbstractDataSet.html" class="btn btn-neutral float-left" title="kedro.io.AbstractDataSet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kedro.io.CachedDataSet.html" class="btn btn-neutral float-right" title="kedro.io.CachedDataSet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

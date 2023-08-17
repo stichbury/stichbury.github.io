@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1985,34 +1977,41 @@
            <div itemprop="articleBody">
              
   <div class="section" id="data-catalog-yaml-examples">
-<h1>Data Catalog YAML examples<a class="headerlink" href="#data-catalog-yaml-examples" title="Permalink to this heading">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Data Catalog YAML examples</a><a class="headerlink" href="#data-catalog-yaml-examples" title="Permalink to this heading">¶</a></h1>
 <p>This page contains a set of examples to help you structure your YAML configuration file in <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">conf/local/catalog.yml</span></code>.</p>
-<!-- To do: fix anchors -->
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using utf-8 encoding</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Save data to a CSV file without row names (index) using utf-8 encoding</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a CSV file from/to a local file system</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a CSV on a local file system, using specified load/save arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a compressed CSV on a local file system</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a pickle file from/to a local file system</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load an Excel file from Google Cloud Storage</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load a multi-sheet Excel file from a local file system</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Save an image created with Matplotlib on Google Cloud Storage</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save an HDF file on local file system storage, using specified load/save arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a parquet file on local file system storage, using specified load/save arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a Spark table on S3, using specified load/save arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from an API endpoint</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from Minio (S3 API Compatible Storage)</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load a model saved as a pickle from Azure Blob Storage</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load a CSV file stored in a remote location through SSH</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Load multiple datasets with similar configuration using YAML anchors</a></p></li>
-<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding">Create a Data Catalog YAML configuration file via the CLI</a></p></li>
+<li><p><a class="reference internal" href="#data-catalog-yaml-examples" id="id1">Data Catalog YAML examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#load-data-from-a-local-binary-file-using-utf-8-encoding" id="id2">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></p></li>
+<li><p><a class="reference internal" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding" id="id3">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-csv-file-from-to-a-local-file-system" id="id4">Load/save a CSV file from/to a local file system</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments" id="id5">Load/save a CSV on a local file system, using specified load/save arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-compressed-csv-on-a-local-file-system" id="id6">Load/save a compressed CSV on a local file system</a></p></li>
+<li><p><a class="reference internal" href="#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments" id="id7">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-pickle-file-from-to-a-local-file-system" id="id8">Load/save a pickle file from/to a local file system</a></p></li>
+<li><p><a class="reference internal" href="#load-an-excel-file-from-google-cloud-storage" id="id9">Load an Excel file from Google Cloud Storage</a></p></li>
+<li><p><a class="reference internal" href="#load-a-multi-sheet-excel-file-from-a-local-file-system" id="id10">Load a multi-sheet Excel file from a local file system</a></p></li>
+<li><p><a class="reference internal" href="#save-an-image-created-with-matplotlib-on-google-cloud-storage" id="id11">Save an image created with Matplotlib on Google Cloud Storage</a></p></li>
+<li><p><a class="reference internal" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments" id="id12">Load/save an HDF file on local file system storage, using specified load/save arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments" id="id13">Load/save a parquet file on local file system storage, using specified load/save arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments" id="id14">Load/save a Spark table on S3, using specified load/save arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments" id="id15">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a></p></li>
+<li><p><a class="reference internal" href="#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table" id="id16">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a></p></li>
+<li><p><a class="reference internal" href="#load-data-from-an-api-endpoint" id="id17">Load data from an API endpoint</a></p></li>
+<li><p><a class="reference internal" href="#load-data-from-minio-s3-api-compatible-storage" id="id18">Load data from Minio (S3 API Compatible Storage)</a></p></li>
+<li><p><a class="reference internal" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage" id="id19">Load a model saved as a pickle from Azure Blob Storage</a></p></li>
+<li><p><a class="reference internal" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh" id="id20">Load a CSV file stored in a remote location through SSH</a></p></li>
+<li><p><a class="reference internal" href="#load-multiple-datasets-with-similar-configuration-using-yaml-anchors" id="id21">Load multiple datasets with similar configuration using YAML anchors</a></p></li>
+<li><p><a class="reference internal" href="#read-the-same-file-using-two-different-datasets" id="id22">Read the same file using two different datasets</a></p></li>
+<li><p><a class="reference internal" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli" id="id23">Create a Data Catalog YAML configuration file via the CLI</a></p></li>
 </ul>
+</li>
+</ul>
+</div>
 <div class="section" id="load-data-from-a-local-binary-file-using-utf-8-encoding">
-<h2>Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#load-data-from-a-local-binary-file-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a><a class="headerlink" href="#load-data-from-a-local-binary-file-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">open_args_load</span></code> and <code class="docutils literal notranslate"><span class="pre">open_args_save</span></code> parameters are passed to the filesystem’s <code class="docutils literal notranslate"><span class="pre">open</span></code> method to configure how a dataset file (on a specific filesystem) is opened during a load or save operation, respectively.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -2025,7 +2024,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> configure how a third-party library (e.g. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for <code class="docutils literal notranslate"><span class="pre">CSVDataSet</span></code>) loads/saves data from/to a file.</p>
 </div>
 <div class="section" id="save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">
-<h2>Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding<a class="headerlink" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a><a class="headerlink" href="#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -2036,7 +2035,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-csv-file-from-to-a-local-file-system">
-<h2>Load/save a CSV file from/to a local file system<a class="headerlink" href="#load-save-a-csv-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Load/save a CSV file from/to a local file system</a><a class="headerlink" href="#load-save-a-csv-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">bikes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/bikes.csv</span>
@@ -2044,7 +2043,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">
-<h2>Load/save a CSV on a local file system, using specified load/save arguments<a class="headerlink" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Load/save a CSV on a local file system, using specified load/save arguments</a><a class="headerlink" href="#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cars</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/cars.csv</span>
@@ -2058,7 +2057,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-compressed-csv-on-a-local-file-system">
-<h2>Load/save a compressed CSV on a local file system<a class="headerlink" href="#load-save-a-compressed-csv-on-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Load/save a compressed CSV on a local file system</a><a class="headerlink" href="#load-save-a-compressed-csv-on-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">boats</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/company/boats.csv.gz</span>
@@ -2072,7 +2071,7 @@
 </div>
 </div>
 <div class="section" id="load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">
-<h2>Load a CSV file from a specific S3 bucket, using credentials and load arguments<a class="headerlink" href="#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a><a class="headerlink" href="#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">motorbikes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/data/02_intermediate/company/motorbikes.csv</span>
@@ -2086,7 +2085,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-pickle-file-from-to-a-local-file-system">
-<h2>Load/save a pickle file from/to a local file system<a class="headerlink" href="#load-save-a-pickle-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Load/save a pickle file from/to a local file system</a><a class="headerlink" href="#load-save-a-pickle-file-from-to-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">airplanes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/06_models/airplanes.pkl</span>
@@ -2095,7 +2094,7 @@
 </div>
 </div>
 <div class="section" id="load-an-excel-file-from-google-cloud-storage">
-<h2>Load an Excel file from Google Cloud Storage<a class="headerlink" href="#load-an-excel-file-from-google-cloud-storage" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Load an Excel file from Google Cloud Storage</a><a class="headerlink" href="#load-an-excel-file-from-google-cloud-storage" title="Permalink to this heading">¶</a></h2>
 <p>The example includes the <code class="docutils literal notranslate"><span class="pre">project</span></code> value for the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) within Google Cloud Storage (GCS)</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rockets</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
@@ -2109,7 +2108,7 @@
 </div>
 </div>
 <div class="section" id="load-a-multi-sheet-excel-file-from-a-local-file-system">
-<h2>Load a multi-sheet Excel file from a local file system<a class="headerlink" href="#load-a-multi-sheet-excel-file-from-a-local-file-system" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Load a multi-sheet Excel file from a local file system</a><a class="headerlink" href="#load-a-multi-sheet-excel-file-from-a-local-file-system" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trains</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ExcelDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/company/trains.xlsx</span>
@@ -2119,7 +2118,7 @@
 </div>
 </div>
 <div class="section" id="save-an-image-created-with-matplotlib-on-google-cloud-storage">
-<h2>Save an image created with Matplotlib on Google Cloud Storage<a class="headerlink" href="#save-an-image-created-with-matplotlib-on-google-cloud-storage" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Save an image created with Matplotlib on Google Cloud Storage</a><a class="headerlink" href="#save-an-image-created-with-matplotlib-on-google-cloud-storage" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">results_plot</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib.MatplotlibWriter</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs://your_bucket/data/08_results/plots/output_1.jpeg</span>
@@ -2130,7 +2129,7 @@
 </div>
 </div>
 <div class="section" id="load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">
-<h2>Load/save an HDF file on local file system storage, using specified load/save arguments<a class="headerlink" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Load/save an HDF file on local file system storage, using specified load/save arguments</a><a class="headerlink" href="#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">skateboards</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.HDFDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/skateboards.hdf</span>
@@ -2144,7 +2143,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">
-<h2>Load/save a parquet file on local file system storage, using specified load/save arguments<a class="headerlink" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Load/save a parquet file on local file system storage, using specified load/save arguments</a><a class="headerlink" href="#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trucks</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/trucks.parquet</span>
@@ -2161,7 +2160,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-spark-table-on-s3-using-specified-load-save-arguments">
-<h2>Load/save a Spark table on S3, using specified load/save arguments<a class="headerlink" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Load/save a Spark table on S3, using specified load/save arguments</a><a class="headerlink" href="#load-save-a-spark-table-on-s3-using-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">weather</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3a://your_bucket/data/01_raw/weather*</span>
@@ -2177,7 +2176,7 @@
 </div>
 </div>
 <div class="section" id="load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments">
-<h2>Load/save a SQL table using credentials, a database connection, and specified load/save arguments<a class="headerlink" href="#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a><a class="headerlink" href="#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLTableDataSet</span>
 <span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
@@ -2191,7 +2190,7 @@
 </div>
 </div>
 <div class="section" id="load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table">
-<h2>Load a SQL table with credentials and a database connection, and apply a SQL query to the table<a class="headerlink" href="#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a><a class="headerlink" href="#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scooters_query</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.SQLQueryDataSet</span>
 <span class="w">  </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scooters_credentials</span>
@@ -2204,7 +2203,7 @@
 <p>Note that <code class="docutils literal notranslate"><span class="pre">scooters_credentials</span></code> must have a top-level key <code class="docutils literal notranslate"><span class="pre">con</span></code> containing a <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls">SQLAlchemy compatible</a> connection string. As an alternative to credentials, you could explicitly put <code class="docutils literal notranslate"><span class="pre">con</span></code> into <code class="docutils literal notranslate"><span class="pre">load_args</span></code> and <code class="docutils literal notranslate"><span class="pre">save_args</span></code> (<code class="docutils literal notranslate"><span class="pre">pandas.SQLTableDataSet</span></code> only).</p>
 </div>
 <div class="section" id="load-data-from-an-api-endpoint">
-<h2>Load data from an API endpoint<a class="headerlink" href="#load-data-from-an-api-endpoint" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Load data from an API endpoint</a><a class="headerlink" href="#load-data-from-an-api-endpoint" title="Permalink to this heading">¶</a></h2>
 <p>This example uses US corn yield data from USDA.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">us_corn_yield_data</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.APIDataSet</span>
@@ -2227,7 +2226,7 @@
 </div>
 </div>
 <div class="section" id="load-data-from-minio-s3-api-compatible-storage">
-<h2>Load data from Minio (S3 API Compatible Storage)<a class="headerlink" href="#load-data-from-minio-s3-api-compatible-storage" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Load data from Minio (S3 API Compatible Storage)</a><a class="headerlink" href="#load-data-from-minio-s3-api-compatible-storage" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://your_bucket/test.csv</span><span class="w"> </span><span class="c1"># assume `test.csv` is uploaded to the Minio server.</span>
@@ -2249,7 +2248,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">9000:9000</span> <span class="pre">-e</span> <span class="pre">&quot;MINIO_ACCESS_KEY=token&quot;</span> <span class="pre">-e</span> <span class="pre">&quot;MINIO_SECRET_KEY=key&quot;</span> <span class="pre">minio/minio</span> <span class="pre">server</span> <span class="pre">/data</span></code></p>
 </div>
 <div class="section" id="load-a-model-saved-as-a-pickle-from-azure-blob-storage">
-<h2>Load a model saved as a pickle from Azure Blob Storage<a class="headerlink" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Load a model saved as a pickle from Azure Blob Storage</a><a class="headerlink" href="#load-a-model-saved-as-a-pickle-from-azure-blob-storage" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ml_model</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pickle.PickleDataSet</span>
 <span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abfs://models/ml_models.pickle&quot;</span>
@@ -2265,7 +2264,7 @@
 </div>
 </div>
 <div class="section" id="load-a-csv-file-stored-in-a-remote-location-through-ssh">
-<h2>Load a CSV file stored in a remote location through SSH<a class="headerlink" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Load a CSV file stored in a remote location through SSH</a><a class="headerlink" href="#load-a-csv-file-stored-in-a-remote-location-through-ssh" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example requires <a class="reference external" href="https://www.paramiko.org">Paramiko</a> to be installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">paramiko</span></code>).</p>
@@ -2287,7 +2286,7 @@
 <p>The list of all available parameters is given in the <a class="reference external" href="https://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient.connect">Paramiko documentation</a>.</p>
 </div>
 <div class="section" id="load-multiple-datasets-with-similar-configuration-using-yaml-anchors">
-<h2>Load multiple datasets with similar configuration using YAML anchors<a class="headerlink" href="#load-multiple-datasets-with-similar-configuration-using-yaml-anchors" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id21">Load multiple datasets with similar configuration using YAML anchors</a><a class="headerlink" href="#load-multiple-datasets-with-similar-configuration-using-yaml-anchors" title="Permalink to this heading">¶</a></h2>
 <p>Different datasets might use the same file format, load and save arguments, and be stored in the same folder. <a class="reference external" href="https://yaml.org/spec/1.2.1/#Syntax">YAML has a built-in syntax</a> for factorising parts of a YAML file, which means that you can decide what is generalisable across your datasets, so that you need not spend time copying and pasting dataset configurations in the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file.</p>
 <p>You can see this in the following example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_csv</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;csv</span>
@@ -2337,8 +2336,35 @@
 </div>
 <p>In this example, the default <code class="docutils literal notranslate"><span class="pre">csv</span></code> configuration is inserted into <code class="docutils literal notranslate"><span class="pre">airplanes</span></code> and then the <code class="docutils literal notranslate"><span class="pre">load_args</span></code> block is overridden. Normally, that would replace the whole dictionary. In order to extend <code class="docutils literal notranslate"><span class="pre">load_args</span></code>, the defaults for that block are then re-inserted.</p>
 </div>
+<div class="section" id="read-the-same-file-using-two-different-datasets">
+<h2><a class="toc-backref" href="#id22">Read the same file using two different datasets</a><a class="headerlink" href="#read-the-same-file-using-two-different-datasets" title="Permalink to this heading">¶</a></h2>
+<p>You might come across a situation where you would like to read the same file using two different dataset implementations (known as transcoding). For example, Parquet files can not only be loaded via the <code class="docutils literal notranslate"><span class="pre">ParquetDataSet</span></code> using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but also directly by <code class="docutils literal notranslate"><span class="pre">SparkDataSet</span></code>. This conversion is typical when coordinating a <code class="docutils literal notranslate"><span class="pre">Spark</span></code> to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> workflow.</p>
+<p>Define two <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> entries for the same dataset in a common format (Parquet, JSON, CSV, etc.) in your <code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_dataframe@spark</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark.SparkDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span>
+<span class="w">  </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parquet</span>
+
+<span class="nt">my_dataframe@pandas</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.ParquetDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/02_intermediate/data.parquet</span>
+</pre></div>
+</div>
+<p>These entries are used in the pipeline like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">my_func1</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;spark_input&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;my_dataframe@spark&quot;</span><span class="p">),</span>
+        <span class="n">node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">my_func2</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="s2">&quot;my_dataframe@pandas&quot;</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="s2">&quot;pipeline_output&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, Kedro understands that <code class="docutils literal notranslate"><span class="pre">my_dataframe</span></code> is the same dataset in its <code class="docutils literal notranslate"><span class="pre">spark.SparkDataSet</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.ParquetDataSet</span></code> formats and resolves the node execution order.</p>
+<p>In the pipeline, Kedro uses the <code class="docutils literal notranslate"><span class="pre">spark.SparkDataSet</span></code> implementation for saving and <code class="docutils literal notranslate"><span class="pre">pandas.ParquetDataSet</span></code>
+for loading, so the first node outputs a <code class="docutils literal notranslate"><span class="pre">pyspark.sql.DataFrame</span></code>, while the second node receives a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code>.</p>
+</div>
 <div class="section" id="create-a-data-catalog-yaml-configuration-file-via-the-cli">
-<h2>Create a Data Catalog YAML configuration file via the CLI<a class="headerlink" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">Create a Data Catalog YAML configuration file via the CLI</a><a class="headerlink" href="#create-a-data-catalog-yaml-configuration-file-via-the-cli" title="Permalink to this heading">¶</a></h2>
 <p>You can use the <a class="reference internal" href="../development/commands_reference.html#create-a-data-catalog-yaml-configuration-file"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">create</span></code> command to create a Data Catalog YAML configuration</span></a>.</p>
 <p>This creates a <code class="docutils literal notranslate"><span class="pre">&lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span></code> configuration file with <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> datasets for each dataset in a registered pipeline if it is missing from the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;conf_root&gt;/&lt;env&gt;/catalog/&lt;pipeline_name&gt;.yml</span>

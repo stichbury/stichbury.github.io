@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -1990,7 +1982,7 @@
 <h1>kedro.pipeline.Pipeline<a class="headerlink" href="#kedro-pipeline-pipeline" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kedro.pipeline.</span></span><span class="sig-name descname"><span class="pre">Pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kedro.pipeline.</span></span><span class="sig-name descname"><span class="pre">Pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> defined as a collection of <code class="docutils literal notranslate"><span class="pre">Node</span></code> objects. This class
 treats nodes as part of a graph representation and provides inputs,
 outputs and execution order.</p>
@@ -2001,13 +1993,13 @@ outputs and execution order.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">grouped_nodes</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.grouped_nodes" title="kedro.pipeline.Pipeline.grouped_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grouped_nodes</span></code></a></p></td>
 <td><p>Return a list of the pipeline nodes in topologically ordered groups, i.e. if node A needs to be run before node B, it will appear in an earlier group.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_dependencies</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.node_dependencies" title="kedro.pipeline.Pipeline.node_dependencies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_dependencies</span></code></a></p></td>
 <td><p>All dependencies of nodes where the first Node has a direct dependency on the second Node.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.nodes" title="kedro.pipeline.Pipeline.nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes</span></code></a></p></td>
 <td><p>Return a list of the pipeline nodes in topological order, i.e. if node A needs to be run before node B, it will appear earlier in the list.</p></td>
 </tr>
 </tbody>
@@ -2019,65 +2011,65 @@ outputs and execution order.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_inputs</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.all_inputs" title="kedro.pipeline.Pipeline.all_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_inputs</span></code></a>()</p></td>
 <td><p>All inputs for all nodes in the pipeline.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_outputs</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.all_outputs" title="kedro.pipeline.Pipeline.all_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_outputs</span></code></a>()</p></td>
 <td><p>All outputs of all nodes in the pipeline.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_sets</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.data_sets" title="kedro.pipeline.Pipeline.data_sets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_sets</span></code></a>()</p></td>
 <td><p>The names of all data sets used by the <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>, including inputs and outputs.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code>([names_only])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.describe" title="kedro.pipeline.Pipeline.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([names_only])</p></td>
 <td><p>Obtain the order of execution and expected free input variables in a loggable pre-formatted string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code>([tags, from_nodes, to_nodes, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.filter" title="kedro.pipeline.Pipeline.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a>([tags, from_nodes, to_nodes, ...])</p></td>
 <td><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes that meet all of the specified filtering conditions.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_inputs</span></code>(*inputs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.from_inputs" title="kedro.pipeline.Pipeline.from_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_inputs</span></code></a>(*inputs)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend directly or transitively on the provided inputs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_nodes</span></code>(*node_names)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.from_nodes" title="kedro.pipeline.Pipeline.from_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_nodes</span></code></a>(*node_names)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend directly or transitively on the provided nodes.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">inputs</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.inputs" title="kedro.pipeline.Pipeline.inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inputs</span></code></a>()</p></td>
 <td><p>The names of free inputs that must be provided at runtime so that the pipeline is runnable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes</span></code>(*node_names)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.only_nodes" title="kedro.pipeline.Pipeline.only_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes</span></code></a>(*node_names)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> which will contain only the specified nodes by name.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_inputs</span></code>(*inputs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.only_nodes_with_inputs" title="kedro.pipeline.Pipeline.only_nodes_with_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_inputs</span></code></a>(*inputs)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend directly on the provided inputs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_namespace</span></code>(node_namespace)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.only_nodes_with_namespace" title="kedro.pipeline.Pipeline.only_nodes_with_namespace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_namespace</span></code></a>(node_namespace)</p></td>
 <td><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> containing only nodes with the specified namespace.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_outputs</span></code>(*outputs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.only_nodes_with_outputs" title="kedro.pipeline.Pipeline.only_nodes_with_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_outputs</span></code></a>(*outputs)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which are directly required to produce the provided outputs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_tags</span></code>(*tags)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.only_nodes_with_tags" title="kedro.pipeline.Pipeline.only_nodes_with_tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">only_nodes_with_tags</span></code></a>(*tags)</p></td>
 <td><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which contain <em>any</em> of the provided tags.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">outputs</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.outputs" title="kedro.pipeline.Pipeline.outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outputs</span></code></a>()</p></td>
 <td><p>The names of outputs produced when the whole pipeline is run.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag</span></code>(tags)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.tag" title="kedro.pipeline.Pipeline.tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag</span></code></a>(tags)</p></td>
 <td><p>Tags all the nodes in the pipeline.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.to_json" title="kedro.pipeline.Pipeline.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>()</p></td>
 <td><p>Return a json representation of the pipeline.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_nodes</span></code>(*node_names)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.to_nodes" title="kedro.pipeline.Pipeline.to_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_nodes</span></code></a>(*node_names)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes required directly or transitively by the provided nodes.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_outputs</span></code>(*outputs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kedro.pipeline.Pipeline.to_outputs" title="kedro.pipeline.Pipeline.to_outputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_outputs</span></code></a>(*outputs)</p></td>
 <td><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which are directly or transitively required to produce the provided outputs.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialise <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> with a list of <code class="docutils literal notranslate"><span class="pre">Node</span></code> instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2127,7 +2119,7 @@ new pipeline.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.all_inputs">
-<span class="sig-name descname"><span class="pre">all_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.all_inputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">all_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.all_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.all_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>All inputs for all nodes in the pipeline.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2138,7 +2130,7 @@ new pipeline.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.all_outputs">
-<span class="sig-name descname"><span class="pre">all_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.all_outputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">all_outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.all_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.all_outputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>All outputs of all nodes in the pipeline.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2149,7 +2141,7 @@ new pipeline.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.data_sets">
-<span class="sig-name descname"><span class="pre">data_sets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.data_sets" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">data_sets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.data_sets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.data_sets" title="Permalink to this definition">¶</a></dt>
 <dd><p>The names of all data sets used by the <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>,
 including inputs and outputs.</p>
 <dl class="field-list simple">
@@ -2161,7 +2153,7 @@ including inputs and outputs.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.describe">
-<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.describe" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.describe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.describe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtain the order of execution and expected free input variables in
 a loggable pre-formatted string. The order of nodes matches the order
 of execution given by the topological sort.</p>
@@ -2204,7 +2196,7 @@ statement:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.filter">
-<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_outputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.filter" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_outputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes that meet all of the
 specified filtering conditions.</p>
 <p>The new pipeline object is the intersection of pipelines that meet each
@@ -2258,7 +2250,7 @@ nodes in the new <a class="reference internal" href="#kedro.pipeline.Pipeline" t
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.from_inputs">
-<span class="sig-name descname"><span class="pre">from_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.from_inputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">from_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.from_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.from_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend
 directly or transitively on the provided inputs.
 If provided a name, but no format, for a transcoded input, it
@@ -2290,7 +2282,7 @@ copied.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.from_nodes">
-<span class="sig-name descname"><span class="pre">from_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.from_nodes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">from_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.from_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.from_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend
 directly or transitively on the provided nodes.</p>
 <dl class="field-list simple">
@@ -2331,7 +2323,7 @@ earlier group.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.inputs">
-<span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.inputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>The names of free inputs that must be provided at runtime so that
 the pipeline is runnable. Does not include intermediate inputs which
 are produced and consumed by the inner pipeline nodes. Resolves
@@ -2371,7 +2363,7 @@ list.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.only_nodes">
-<span class="sig-name descname"><span class="pre">only_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">only_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.only_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> which will contain only the specified
 nodes by name.</p>
 <dl class="field-list simple">
@@ -2393,7 +2385,7 @@ will only contain these nodes.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.only_nodes_with_inputs">
-<span class="sig-name descname"><span class="pre">only_nodes_with_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_inputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">only_nodes_with_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.only_nodes_with_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which depend
 directly on the provided inputs.
 If provided a name, but no format, for a transcoded input, it
@@ -2424,7 +2416,7 @@ directly on the provided inputs are being copied.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.only_nodes_with_namespace">
-<span class="sig-name descname"><span class="pre">only_nodes_with_namespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_namespace" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">only_nodes_with_namespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_namespace</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.only_nodes_with_namespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_namespace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> containing only nodes with the specified
 namespace.</p>
 <dl class="field-list simple">
@@ -2445,7 +2437,7 @@ namespace.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.only_nodes_with_outputs">
-<span class="sig-name descname"><span class="pre">only_nodes_with_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_outputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">only_nodes_with_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.only_nodes_with_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_outputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which are directly
 required to produce the provided outputs.
 If provided a name, but no format, for a transcoded dataset, it
@@ -2473,7 +2465,7 @@ produce the provided outputs are being copied.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.only_nodes_with_tags">
-<span class="sig-name descname"><span class="pre">only_nodes_with_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_tags" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">only_nodes_with_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.only_nodes_with_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.only_nodes_with_tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which contain <em>any</em>
 of the provided tags. The resulting <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> is empty if no tags
 are provided.</p>
@@ -2498,7 +2490,7 @@ of the tags provided are being copied.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.outputs">
-<span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.outputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.outputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>The names of outputs produced when the whole pipeline is run.
 Does not include intermediate outputs that are consumed by
 other pipeline nodes. Resolves transcoded names where necessary.</p>
@@ -2511,7 +2503,7 @@ other pipeline nodes. Resolves transcoded names where necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.tag" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tags all the nodes in the pipeline.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2528,13 +2520,13 @@ other pipeline nodes. Resolves transcoded names where necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.to_json">
-<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.to_json" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a json representation of the pipeline.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.to_nodes">
-<span class="sig-name descname"><span class="pre">to_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.to_nodes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">node_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.to_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.to_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes required directly
 or transitively by the provided nodes.</p>
 <dl class="field-list simple">
@@ -2562,7 +2554,7 @@ transitively by the provided nodes are being copied.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kedro.pipeline.Pipeline.to_outputs">
-<span class="sig-name descname"><span class="pre">to_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kedro.pipeline.Pipeline.to_outputs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kedro/pipeline/pipeline.html#Pipeline.to_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kedro.pipeline.Pipeline.to_outputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#kedro.pipeline.Pipeline" title="kedro.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> object with the nodes which are directly
 or transitively required to produce the provided outputs.
 If provided a name, but no format, for a transcoded dataset, it

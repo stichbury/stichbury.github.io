@@ -303,7 +303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -476,35 +475,36 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types">Generalise datasets with similar names and types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type">Generalise datasets of the same type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-using-namespaces">Generalise datasets using namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers">Generalise datasets of the same type in different layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-datasets-using-multiple-dataset-factories">Generalise datasets using multiple dataset factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#generalise-all-datasets-with-a-catch-all-dataset-factory">Generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-datasets">How to read the same file using two different datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#a-typical-example-of-transcoding">A typical example of transcoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-does-transcoding-work">How does transcoding work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-the-data-catalog-in-code">How to access the Data Catalog in code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-configure-a-data-catalog-using-the-datacatalog-api">How to configure a Data Catalog using the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources-programmatically">How to view the available data sources programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-programmatically-with-credentials">How to access a dataset programmatically with credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
@@ -1111,14 +1111,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -2281,16 +2273,16 @@
 </pre></div>
 </div>
 </details>
-<p>The <code class="docutils literal notranslate"><span class="pre">ChunkWiseDataset</span></code> is a variant of the <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataset</span></code> where the main change is to the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method that appends data instead of overwriting it. You need to create a file <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/chunkwise.py</span></code> and put this class inside it. Below is an example of the <code class="docutils literal notranslate"><span class="pre">ChunkWiseCSVDataset</span></code> implementation:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ChunkWiseCSVDataset</span></code> is a variant of the <code class="docutils literal notranslate"><span class="pre">pandas.CSVDataSet</span></code> where the main change is to the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method that appends data instead of overwriting it. You need to create a file <code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/chunkwise.py</span></code> and put this class inside it. Below is an example of the <code class="docutils literal notranslate"><span class="pre">ChunkWiseCSVDataset</span></code> implementation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">get_filepath_str</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">kedro.extras.datasets.pandas</span> <span class="kn">import</span> <span class="n">CSVDataset</span>
+<span class="kn">from</span> <span class="nn">kedro.extras.datasets.pandas</span> <span class="kn">import</span> <span class="n">CSVDataSet</span>
 
 
-<span class="k">class</span> <span class="nc">ChunkWiseCSVDataset</span><span class="p">(</span><span class="n">CSVDataset</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ChunkWiseCSVDataset</span><span class="p">(</span><span class="n">CSVDataSet</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;``ChunkWiseCSVDataset`` loads/saves data from/to a CSV file using an underlying</span>
 <span class="sd">    filesystem. It uses pandas to handle the CSV file.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2309,19 +2301,19 @@
 </div>
 <p>After that, you need to update the <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> to use this new dataset.</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gi">+ y_pred:</span>
-<span class="gi">+  type: &lt;package_name&gt;.chunkwise.ChunkWiseCSVDataSet</span>
+<span class="gi">+  type: &lt;package_name&gt;.chunkwise.ChunkWiseCSVDataset</span>
 <span class="gi">+  filepath: data/07_model_output/y_pred.csv</span>
 </pre></div>
 </div>
-<p>With these changes, when you run <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> in your terminal, you should see `y_pred`` being saved multiple times in the logs as the generator lazily processes and saves the data in smaller chunks.</p>
+<p>With these changes, when you run <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> in your terminal, you should see <code class="docutils literal notranslate"><span class="pre">y_pred</span></code> being saved multiple times in the logs as the generator lazily processes and saves the data in smaller chunks.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
                     <span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;y_train&#39;</span> <span class="p">(</span><span class="n">MemoryDataset</span><span class="p">)</span><span class="o">...</span>                                                                                         <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">475</span>
                     <span class="n">INFO</span>     <span class="n">Running</span> <span class="n">node</span><span class="p">:</span> <span class="n">make_predictions</span><span class="p">:</span> <span class="n">make_predictions</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">y_pred</span><span class="p">]</span>                                                         <span class="n">node</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">331</span>
-                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataSet</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
-                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataSet</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
-                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataSet</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataset</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataset</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
+                    <span class="n">INFO</span>     <span class="n">Saving</span> <span class="n">data</span> <span class="n">to</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataset</span><span class="p">)</span><span class="o">...</span>                                                                                       <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">514</span>
                     <span class="n">INFO</span>     <span class="n">Completed</span> <span class="mi">2</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">3</span> <span class="n">tasks</span>                                                                                                         <span class="n">sequential_runner</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">85</span>
-                    <span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataSet</span><span class="p">)</span><span class="o">...</span>                                                                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">475</span>
+                    <span class="n">INFO</span>     <span class="n">Loading</span> <span class="n">data</span> <span class="kn">from</span> <span class="s1">&#39;y_pred&#39;</span> <span class="p">(</span><span class="n">ChunkWiseCSVDataset</span><span class="p">)</span><span class="o">...</span>                                                                                    <span class="n">data_catalog</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">475</span>
 <span class="o">...</span>                                                                              <span class="n">runner</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">105</span>
 </pre></div>
 </div>

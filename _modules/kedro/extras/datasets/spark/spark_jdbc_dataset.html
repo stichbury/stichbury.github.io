@@ -301,7 +301,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../faq/faq.html#advanced-topics">Advanced topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../faq/faq.html#datasets-and-the-data-catalog">Datasets and the Data Catalog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../faq/faq.html#nodes-and-pipelines">Nodes and pipelines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../faq/faq.html#what-is-data-engineering-convention">What is data engineering convention?</a></li>
 </ul>
@@ -437,80 +436,112 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../data/index.html">Introducing the Kedro Data Catalog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../data/index.html#a-basic-catalog-yml">A basic <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/index.html#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/index.html#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../data/index.html">The Kedro Data Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/data_catalog.html">Introduction to the Data Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog.html#the-basics-of-catalog-yml">The basics of <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog.html#dataset-type">Dataset <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog.html#dataset-filepath">Dataset <code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../data/index.html#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/index.html#load-and-save-arguments">Load and save arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/index.html#dataset-access-credentials">Dataset access credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/index.html#dataset-versioning">Dataset versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog.html#additional-settings-in-catalog-yml">Additional settings in <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog.html#load-and-save-arguments">Load and save arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog.html#dataset-access-credentials">Dataset access credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog.html#dataset-versioning">Dataset versioning</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../data/index.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html">Data Catalog YAML examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#provide-the-project-value-to-the-underlying-filesystem-class-gcsfilesystem-to-interact-with-google-cloud-storage-gcs">Provide the <code class="docutils literal notranslate"><span class="pre">project</span></code> value to the underlying filesystem class (<code class="docutils literal notranslate"><span class="pre">GCSFileSystem</span></code>) to interact with Google Cloud Storage (GCS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-csv-file-from-to-a-local-file-system">Load / save a CSV file from / to a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load / save a CSV on a local file system, using specified load / save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-compressed-csv-on-a-local-file-system">Load / save a compressed CSV on a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-pickle-file-from-to-a-local-file-system">Load / save a pickle file from / to a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-an-excel-file-from-google-cloud-storage">Load an Excel file from Google Cloud Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-multi-sheet-excel-file-from-a-local-file-system">Load a multi-sheet Excel file from a local file system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#save-an-image-created-with-matplotlib-on-google-cloud-storage">Save an image created with Matplotlib on Google Cloud Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">Load / save an HDF file on local file system storage, using specified load / save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">Load / save a parquet file on local file system storage, using specified load / save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-spark-table-on-s3-using-specified-load-save-arguments">Load / save a Spark table on S3, using specified load / save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-sql-table-using-credentials-a-database-connection-using-specified-load-save-arguments">Load / save a SQL table using credentials, a database connection, using specified load / save arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-an-sql-table-with-credentials-a-database-connection-and-applies-a-sql-query-to-the-table">Load an SQL table with credentials, a database connection, and applies a SQL query to the table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-an-api-endpoint-example-us-corn-yield-data-from-usda">Load data from an API endpoint, example US corn yield data from USDA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-minio-s3-api-compatible-storage">Load data from Minio (S3 API Compatible Storage)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog.html#use-the-data-catalog-within-kedro-configuration">Use the Data Catalog within Kedro configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#generalise-datasets-with-similar-names-and-types-into-one-dataset-factory">Generalise datasets with similar names and types into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-into-one-dataset-factory">Generalise datasets of the same type into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#generalise-datasets-using-namespaces-into-one-dataset-factory">Generalise datasets using namespaces into one dataset factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#generalise-datasets-of-the-same-type-in-different-layers-into-one-dataset-factory-with-multiple-placeholders">Generalise datasets of the same type in different layers into one dataset factory with multiple placeholders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html">Data Catalog YAML examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-a-local-binary-file-using-utf-8-encoding">Load data from a local binary file using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#save-data-to-a-csv-file-without-row-names-index-using-utf-8-encoding">Save data to a CSV file without row names (index) using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-csv-file-from-to-a-local-file-system">Load/save a CSV file from/to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-csv-on-a-local-file-system-using-specified-load-save-arguments">Load/save a CSV on a local file system, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-compressed-csv-on-a-local-file-system">Load/save a compressed CSV on a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-csv-file-from-a-specific-s3-bucket-using-credentials-and-load-arguments">Load a CSV file from a specific S3 bucket, using credentials and load arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-pickle-file-from-to-a-local-file-system">Load/save a pickle file from/to a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-an-excel-file-from-google-cloud-storage">Load an Excel file from Google Cloud Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-multi-sheet-excel-file-from-a-local-file-system">Load a multi-sheet Excel file from a local file system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#save-an-image-created-with-matplotlib-on-google-cloud-storage">Save an image created with Matplotlib on Google Cloud Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-an-hdf-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save an HDF file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-parquet-file-on-local-file-system-storage-using-specified-load-save-arguments">Load/save a parquet file on local file system storage, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-spark-table-on-s3-using-specified-load-save-arguments">Load/save a Spark table on S3, using specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-save-a-sql-table-using-credentials-a-database-connection-and-specified-load-save-arguments">Load/save a SQL table using credentials, a database connection, and specified load/save arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-sql-table-with-credentials-and-a-database-connection-and-apply-a-sql-query-to-the-table">Load a SQL table with credentials and a database connection, and apply a SQL query to the table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-an-api-endpoint">Load data from an API endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-data-from-minio-s3-api-compatible-storage">Load data from Minio (S3 API Compatible Storage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-model-saved-as-a-pickle-from-azure-blob-storage">Load a model saved as a pickle from Azure Blob Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-a-csv-file-stored-in-a-remote-location-through-ssh">Load a CSV file stored in a remote location through SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#load-multiple-datasets-with-similar-configuration-using-yaml-anchors">Load multiple datasets with similar configuration using YAML anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#read-the-same-file-using-two-different-datasets">Read the same file using two different datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/data_catalog_yaml_examples.html#create-a-data-catalog-yaml-configuration-file-via-the-cli">Create a Data Catalog YAML configuration file via the CLI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-definition">Partitioned dataset definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html">Kedro dataset factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-with-similar-names-and-types">How to generalise datasets with similar names and types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type">How to generalise datasets of the same type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-namespaces">How to generalise datasets using namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-of-the-same-type-in-different-layers">How to generalise datasets of the same type in different layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-datasets-using-multiple-dataset-factories">How to generalise datasets using multiple dataset factories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-generalise-all-datasets-with-a-catch-all-dataset-factory">How to generalise all datasets with a catch-all dataset factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#cli-commands-for-dataset-factories">CLI commands for dataset factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-rank">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/kedro_dataset_factories.html#how-to-use-kedro-catalog-resolve">How to use <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">catalog</span> <span class="pre">resolve</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html">Advanced: Access the Data Catalog in code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-configure-the-data-catalog">How to configure the Data Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-view-the-available-data-sources">How to view the available data sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-load-datasets-programmatically">How to load datasets programmatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-save-data-programmatically">How to save data programmatically</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-save-data-to-memory">How to save data to memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-save-data-to-a-sql-database-for-querying">How to save data to a SQL database for querying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-save-data-in-parquet">How to save data in Parquet</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-access-a-dataset-with-credentials">How to access a dataset with credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-version-a-dataset-using-the-code-api">How to version a dataset using the Code API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-save">Partitioned dataset save</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#partitioned-dataset-lazy-saving">Partitioned dataset lazy saving</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#incremental-loads-with-incrementaldataset">Incremental loads with <code class="docutils literal notranslate"><span class="pre">IncrementalDataSet</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html">Advanced Data Catalog usage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#how-to-read-the-same-file-using-two-different-dataset-implementations">How to read the same file using two different dataset implementations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/advanced_data_catalog_usage.html#access-the-data-catalog-in-code">Access the Data Catalog in code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#incremental-datasets">Incremental datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-loads">Incremental dataset loads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-save">Incremental dataset save</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#incremental-dataset-confirm">Incremental dataset confirm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#checkpoint-configuration">Checkpoint configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/partitioned_and_incremental_datasets.html#special-checkpoint-config-keys">Special checkpoint config keys</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html">Tutorial: How to create a custom dataset</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#the-anatomy-of-a-dataset">The anatomy of a dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-load-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_load</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-save-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-describe-method">Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#the-complete-example">The complete example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#versioning">Versioning</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#thread-safety">Thread-safety</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#how-to-handle-credentials-and-different-filesystems">How to handle credentials and different filesystems</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#how-to-contribute-a-custom-dataset-implementation">How to contribute a custom dataset implementation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#the-anatomy-of-a-dataset">The anatomy of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-load-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_load</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-save-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#implement-the-describe-method">Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#the-complete-example">The complete example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#versioning">Versioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#how-to-implement-versioning-in-your-dataset">How to implement versioning in your dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#thread-safety">Thread-safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#how-to-handle-credentials-and-different-filesystems">How to handle credentials and different filesystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../data/how_to_create_a_custom_dataset.html#how-to-contribute-a-custom-dataset-implementation">How to contribute a custom dataset implementation</a></li>
 </ul>
 </li>
 </ul>
@@ -931,45 +962,7 @@
 <p class="caption" role="heading"><span class="caption-text">Contribute to Kedro</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contribution/index.html">Contribute to Kedro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html">Guidelines for contributing developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#before-you-start-development-set-up">Before you start: development set up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#get-started-areas-of-contribution">Get started: areas of contribution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#core-contribution-process"><code class="docutils literal notranslate"><span class="pre">core</span></code> contribution process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#extras-contribution-process"><code class="docutils literal notranslate"><span class="pre">extras</span></code> contribution process</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#create-a-pull-request">Create a pull request</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#pull-request-title-conventions">Pull request title conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#hints-on-pre-commit-usage">Hints on <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/developer_contributor_guidelines.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/backwards_compatibility.html">Backwards compatibility &amp; breaking changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/backwards_compatibility.html#when-should-i-make-a-breaking-change">When should I make a breaking change?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/backwards_compatibility.html#the-kedro-release-model">The Kedro release model</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html">Contribute to the Kedro documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#how-do-i-rebuild-the-documentation-after-i-make-changes-to-it">How do I rebuild the documentation after I make changes to it?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#set-up-to-build-kedro-documentation">Set up to build Kedro documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#build-the-documentation">Build the documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#extend-kedro-documentation">Extend Kedro documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#add-new-pages">Add new pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#move-or-remove-pages">Move or remove pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#create-a-pull-request">Create a pull request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#help">Help!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/documentation_contributor_guidelines.html#kedro-documentation-style-guide">Kedro documentation style guide</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html">Join the Technical Steering Committee</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html">Kedro’s Technical Steering Committee</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#responsibilities-of-a-maintainer">Responsibilities of a maintainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#product-development">Product development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#community-management">Community management</a></li>
@@ -981,16 +974,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#other-issues-or-proposals">Other issues or proposals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/technical_steering_committee.html#adding-or-removing-maintainers">Adding or removing maintainers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html">Contribute changes to Kedro that are tested on Databricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html#how-to-deploy-a-development-version-of-kedro-to-databricks">How to deploy a development version of Kedro to Databricks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html#how-to-install-a-build-of-kedro-onto-databricks">How to install a build of Kedro onto Databricks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html#how-to-set-up-the-databricks-cli-to-test-a-kedro-build">How to set up the Databricks CLI to test a Kedro build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../contribution/development_for_databricks.html#how-to-use-make-databricks-build-to-test-your-kedro-build">How to use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">databricks-build</span></code> to test your Kedro build</a></li>
 </ul>
 </li>
 </ul>
@@ -1126,14 +1109,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../kedro.io.html">kedro.io</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../kedro.io.AbstractDataSet.html">kedro.io.AbstractDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../kedro.io.AbstractDataSet.html#kedro.io.AbstractDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractDataSet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../kedro.io.AbstractVersionedDataSet.html">kedro.io.AbstractVersionedDataSet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../kedro.io.AbstractVersionedDataSet.html#kedro.io.AbstractVersionedDataSet"><code class="docutils literal notranslate"><span class="pre">AbstractVersionedDataSet</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../kedro.io.CachedDataSet.html">kedro.io.CachedDataSet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../kedro.io.CachedDataSet.html#kedro.io.CachedDataSet"><code class="docutils literal notranslate"><span class="pre">CachedDataSet</span></code></a></li>
 </ul>
@@ -2004,7 +1979,7 @@
 
 <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">SparkSession</span>
 
-<span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">AbstractDataSet</span><span class="p">,</span> <span class="n">DatasetError</span>
+<span class="kn">from</span> <span class="nn">kedro.io.core</span> <span class="kn">import</span> <span class="n">AbstractDataset</span><span class="p">,</span> <span class="n">DatasetError</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SparkJDBCDataSet&quot;</span><span class="p">]</span>
 
@@ -2013,7 +1988,7 @@
 <span class="c1"># in kedro-plugins (https://github.com/kedro-org/kedro-plugins)</span>
 
 
-<div class="viewcode-block" id="SparkJDBCDataSet"><a class="viewcode-back" href="../../../../../kedro.extras.datasets.spark.SparkJDBCDataSet.html#kedro.extras.datasets.spark.SparkJDBCDataSet">[docs]</a><span class="k">class</span> <span class="nc">SparkJDBCDataSet</span><span class="p">(</span><span class="n">AbstractDataSet</span><span class="p">[</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">]):</span>
+<div class="viewcode-block" id="SparkJDBCDataSet"><a class="viewcode-back" href="../../../../../kedro.extras.datasets.spark.SparkJDBCDataSet.html#kedro.extras.datasets.spark.SparkJDBCDataSet">[docs]</a><span class="k">class</span> <span class="nc">SparkJDBCDataSet</span><span class="p">(</span><span class="n">AbstractDataset</span><span class="p">[</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;``SparkJDBCDataSet`` loads data from a database table accessible</span>
 <span class="sd">    via JDBC URL url and connection properties and saves the content of</span>
 <span class="sd">    a PySpark DataFrame to an external database table via JDBC.  It uses</span>
