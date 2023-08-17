@@ -2156,13 +2156,16 @@
 <span class="n">io</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;test_data_set&quot;</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We do not recommend passing exact load and/or save versions, since it might lead to inconsistencies between operations. For example, if versions for load and save operations do not match, a save operation would result in a <code class="docutils literal notranslate"><span class="pre">UserWarning</span></code> indicating that save and load versions do not match. Load after save might also return an error if the corresponding load version is not found:</p>
+<p>We do not recommend passing exact load and/or save versions, since it might lead to inconsistencies between operations. For example, if versions for load and save operations do not match, a save operation would result in a <code class="docutils literal notranslate"><span class="pre">UserWarning</span></code>.</p>
+<p>Imagine a simple pipeline with two nodes, where B takes the output from A. If you specify the load-version of the data for B to be <code class="docutils literal notranslate"><span class="pre">my_data_2023_08_16.csv</span></code>, the data that A produces (<code class="docutils literal notranslate"><span class="pre">my_data_20230818.csv</span></code>) is not used.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Node_A -&gt; my_data_20230818.csv
+my_data_2023_08_16.csv -&gt; Node B
+</pre></div>
 </div>
+<p>In code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="n">Version</span><span class="p">(</span>
-    <span class="n">load</span><span class="o">=</span><span class="s2">&quot;exact_load_version&quot;</span><span class="p">,</span>  <span class="c1"># load exact version</span>
-    <span class="n">save</span><span class="o">=</span><span class="s2">&quot;exact_save_version&quot;</span><span class="p">,</span>  <span class="c1"># save to exact version</span>
+    <span class="n">load</span><span class="o">=</span><span class="s2">&quot;my_data_2023_08_16.csv&quot;</span><span class="p">,</span>  <span class="c1"># load exact version</span>
+    <span class="n">save</span><span class="o">=</span><span class="s2">&quot;my_data_20230818.csv&quot;</span><span class="p">,</span>  <span class="c1"># save to exact version</span>
 <span class="p">)</span>
 
 <span class="n">test_data_set</span> <span class="o">=</span> <span class="n">CSVDataSet</span><span class="p">(</span>
