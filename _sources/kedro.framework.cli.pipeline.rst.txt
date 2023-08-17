@@ -1,0 +1,29 @@
+kedro.framework.cli.pipeline
+============================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.pipeline
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      PipelineArtifacts
+   
+   
+
+   
+   
+   
+
+
+

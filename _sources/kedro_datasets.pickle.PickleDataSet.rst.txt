@@ -1,0 +1,36 @@
+﻿kedro\_datasets.pickle.PickleDataSet
+====================================
+
+.. currentmodule:: kedro_datasets.pickle
+
+.. autoclass:: PickleDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PickleDataSet.DEFAULT_LOAD_ARGS
+      ~PickleDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PickleDataSet.exists
+      ~PickleDataSet.from_config
+      ~PickleDataSet.load
+      ~PickleDataSet.release
+      ~PickleDataSet.resolve_load_version
+      ~PickleDataSet.resolve_save_version
+      ~PickleDataSet.save
+   
+   

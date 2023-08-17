@@ -1,0 +1,28 @@
+kedro.framework.cli.micropkg
+============================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.micropkg
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      safe_extract
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

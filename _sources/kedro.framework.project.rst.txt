@@ -1,0 +1,31 @@
+kedro.framework.project
+=======================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.project
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      configure_logging
+      configure_project
+      find_pipelines
+      validate_settings
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

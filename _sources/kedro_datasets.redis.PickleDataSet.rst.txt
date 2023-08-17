@@ -1,0 +1,35 @@
+﻿kedro\_datasets.redis.PickleDataSet
+===================================
+
+.. currentmodule:: kedro_datasets.redis
+
+.. autoclass:: PickleDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PickleDataSet.DEFAULT_LOAD_ARGS
+      ~PickleDataSet.DEFAULT_REDIS_URL
+      ~PickleDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PickleDataSet.exists
+      ~PickleDataSet.from_config
+      ~PickleDataSet.load
+      ~PickleDataSet.release
+      ~PickleDataSet.save
+   
+   

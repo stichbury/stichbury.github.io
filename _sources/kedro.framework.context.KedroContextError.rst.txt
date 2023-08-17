@@ -1,0 +1,17 @@
+﻿kedro.framework.context.KedroContextError
+=========================================
+
+.. currentmodule:: kedro.framework.context
+
+.. autoclass:: KedroContextError
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

@@ -1,0 +1,21 @@
+kedro.framework.cli.catalog
+===========================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.catalog
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

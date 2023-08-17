@@ -1,0 +1,6 @@
+kedro.framework.startup.bootstrap\_project
+==========================================
+
+.. currentmodule:: kedro.framework.startup
+
+.. autofunction:: bootstrap_project

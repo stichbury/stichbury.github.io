@@ -1,0 +1,33 @@
+kedro.framework.hooks.specs
+===========================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.hooks.specs
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      DataCatalogSpecs
+      DatasetSpecs
+      KedroContextSpecs
+      NodeSpecs
+      PipelineSpecs
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,27 @@
+﻿kedro\_datasets.video.VideoDataSet
+==================================
+
+.. currentmodule:: kedro_datasets.video
+
+.. autoclass:: VideoDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoDataSet.exists
+      ~VideoDataSet.from_config
+      ~VideoDataSet.load
+      ~VideoDataSet.release
+      ~VideoDataSet.save
+   
+   

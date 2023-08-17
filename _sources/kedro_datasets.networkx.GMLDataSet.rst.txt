@@ -1,0 +1,36 @@
+﻿kedro\_datasets.networkx.GMLDataSet
+===================================
+
+.. currentmodule:: kedro_datasets.networkx
+
+.. autoclass:: GMLDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GMLDataSet.DEFAULT_LOAD_ARGS
+      ~GMLDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GMLDataSet.exists
+      ~GMLDataSet.from_config
+      ~GMLDataSet.load
+      ~GMLDataSet.release
+      ~GMLDataSet.resolve_load_version
+      ~GMLDataSet.resolve_save_version
+      ~GMLDataSet.save
+   
+   

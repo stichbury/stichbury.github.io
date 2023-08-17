@@ -1,0 +1,6 @@
+kedro.ipython.load\_ipython\_extension
+======================================
+
+.. currentmodule:: kedro.ipython
+
+.. autofunction:: load_ipython_extension

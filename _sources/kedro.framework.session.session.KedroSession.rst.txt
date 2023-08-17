@@ -1,0 +1,32 @@
+kedro.framework.session.session.KedroSession
+============================================
+
+.. currentmodule:: kedro.framework.session.session
+
+.. autoclass:: KedroSession
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~KedroSession.store
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~KedroSession.close
+      ~KedroSession.create
+      ~KedroSession.load_context
+      ~KedroSession.run
+   
+   

@@ -1,0 +1,36 @@
+﻿kedro.extras.datasets.tracking.MetricsDataSet
+=============================================
+
+.. currentmodule:: kedro.extras.datasets.tracking
+
+.. autoclass:: MetricsDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MetricsDataSet.DEFAULT_SAVE_ARGS
+      ~MetricsDataSet.versioned
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MetricsDataSet.exists
+      ~MetricsDataSet.from_config
+      ~MetricsDataSet.load
+      ~MetricsDataSet.release
+      ~MetricsDataSet.resolve_load_version
+      ~MetricsDataSet.resolve_save_version
+      ~MetricsDataSet.save
+   
+   

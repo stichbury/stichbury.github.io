@@ -1,0 +1,36 @@
+﻿kedro.extras.datasets.networkx.GraphMLDataSet
+=============================================
+
+.. currentmodule:: kedro.extras.datasets.networkx
+
+.. autoclass:: GraphMLDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GraphMLDataSet.DEFAULT_LOAD_ARGS
+      ~GraphMLDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GraphMLDataSet.exists
+      ~GraphMLDataSet.from_config
+      ~GraphMLDataSet.load
+      ~GraphMLDataSet.release
+      ~GraphMLDataSet.resolve_load_version
+      ~GraphMLDataSet.resolve_save_version
+      ~GraphMLDataSet.save
+   
+   

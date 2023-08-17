@@ -1,0 +1,17 @@
+kedro.KedroPythonVersionWarning
+===============================
+
+.. currentmodule:: kedro
+
+.. autoclass:: KedroPythonVersionWarning
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   

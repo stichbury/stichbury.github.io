@@ -1,0 +1,6 @@
+kedro.framework.project.validate\_settings
+==========================================
+
+.. currentmodule:: kedro.framework.project
+
+.. autofunction:: validate_settings

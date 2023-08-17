@@ -1,0 +1,34 @@
+﻿kedro.config.OmegaConfigLoader
+==============================
+
+.. currentmodule:: kedro.config
+
+.. autoclass:: OmegaConfigLoader
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~OmegaConfigLoader.clear
+      ~OmegaConfigLoader.copy
+      ~OmegaConfigLoader.fromkeys
+      ~OmegaConfigLoader.get
+      ~OmegaConfigLoader.items
+      ~OmegaConfigLoader.keys
+      ~OmegaConfigLoader.load_and_merge_dir_config
+      ~OmegaConfigLoader.pop
+      ~OmegaConfigLoader.popitem
+      ~OmegaConfigLoader.setdefault
+      ~OmegaConfigLoader.update
+      ~OmegaConfigLoader.values
+   
+   

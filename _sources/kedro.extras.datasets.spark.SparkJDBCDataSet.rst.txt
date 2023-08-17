@@ -1,0 +1,34 @@
+﻿kedro.extras.datasets.spark.SparkJDBCDataSet
+============================================
+
+.. currentmodule:: kedro.extras.datasets.spark
+
+.. autoclass:: SparkJDBCDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SparkJDBCDataSet.DEFAULT_LOAD_ARGS
+      ~SparkJDBCDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SparkJDBCDataSet.exists
+      ~SparkJDBCDataSet.from_config
+      ~SparkJDBCDataSet.load
+      ~SparkJDBCDataSet.release
+      ~SparkJDBCDataSet.save
+   
+   

@@ -1,0 +1,34 @@
+﻿kedro\_datasets.snowflake.SnowparkTableDataSet
+==============================================
+
+.. currentmodule:: kedro_datasets.snowflake
+
+.. autoclass:: SnowparkTableDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SnowparkTableDataSet.DEFAULT_LOAD_ARGS
+      ~SnowparkTableDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SnowparkTableDataSet.exists
+      ~SnowparkTableDataSet.from_config
+      ~SnowparkTableDataSet.load
+      ~SnowparkTableDataSet.release
+      ~SnowparkTableDataSet.save
+   
+   

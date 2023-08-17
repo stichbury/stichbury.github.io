@@ -1,0 +1,32 @@
+kedro.framework.cli.pipeline.PipelineArtifacts
+==============================================
+
+.. currentmodule:: kedro.framework.cli.pipeline
+
+.. autoclass:: PipelineArtifacts
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PipelineArtifacts.pipeline_conf
+      ~PipelineArtifacts.pipeline_dir
+      ~PipelineArtifacts.pipeline_tests
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PipelineArtifacts.count
+      ~PipelineArtifacts.index
+   
+   

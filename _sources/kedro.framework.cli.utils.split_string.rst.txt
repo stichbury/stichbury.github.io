@@ -1,0 +1,6 @@
+﻿kedro.framework.cli.utils.split\_string
+=======================================
+
+.. currentmodule:: kedro.framework.cli.utils
+
+.. autofunction:: split_string

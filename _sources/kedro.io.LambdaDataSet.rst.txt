@@ -1,0 +1,27 @@
+﻿kedro.io.LambdaDataSet
+======================
+
+.. currentmodule:: kedro.io
+
+.. autoclass:: LambdaDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LambdaDataSet.exists
+      ~LambdaDataSet.from_config
+      ~LambdaDataSet.load
+      ~LambdaDataSet.release
+      ~LambdaDataSet.save
+   
+   

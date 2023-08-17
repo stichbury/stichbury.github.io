@@ -1,0 +1,36 @@
+kedro.framework.cli.cli
+=======================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.cli
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      main
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      KedroCLI
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,26 @@
+kedro.framework.hooks.specs.DatasetSpecs
+========================================
+
+.. currentmodule:: kedro.framework.hooks.specs
+
+.. autoclass:: DatasetSpecs
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DatasetSpecs.after_dataset_loaded
+      ~DatasetSpecs.after_dataset_saved
+      ~DatasetSpecs.before_dataset_loaded
+      ~DatasetSpecs.before_dataset_saved
+   
+   

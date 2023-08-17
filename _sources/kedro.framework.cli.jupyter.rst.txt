@@ -1,0 +1,29 @@
+kedro.framework.cli.jupyter
+===========================
+
+.. rubric:: Description
+
+.. automodule:: kedro.framework.cli.jupyter
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: autosummary/class.rst
+   
+      JupyterCommandGroup
+   
+   
+
+   
+   
+   
+
+
+
