@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advanced configuration &mdash; kedro 0.18.12 documentation</title>
+  <title>Advanced configuration &mdash; kedro 0.18.13 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -21,6 +21,7 @@
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -187,7 +188,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/spaceflights_tutorial_faqs.html">Spaceflights tutorial FAQs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/spaceflights_tutorial_faqs.html#how-do-i-resolve-these-common-errors">How do I resolve these common errors?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorial/spaceflights_tutorial_faqs.html#dataset-errors">DataSet errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorial/spaceflights_tutorial_faqs.html#dataset-errors">Dataset errors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorial/spaceflights_tutorial_faqs.html#pipeline-run">Pipeline run</a></li>
 </ul>
 </li>
@@ -209,6 +210,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#automatic-visualisation-updates">Automatic visualisation updates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#visualise-layers">Visualise layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/kedro-viz_visualisation.html#share-a-pipeline-visualisation">Share a pipeline visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation/share_kedro_viz.html">Publish and share Kedro-Viz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/share_kedro_viz.html#update-and-install-the-dependencies">Update and install the dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/share_kedro_viz.html#configure-your-aws-s3-bucket-and-set-credentials">Configure your AWS S3 bucket and set credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/share_kedro_viz.html#publish-and-share-the-project">Publish and share the project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/share_kedro_viz.html#permissions-and-access-control">Permissions and access control</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation/preview_datasets.html">Preview data in Kedro-Viz</a><ul>
@@ -268,19 +276,41 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks_and_ipython/index.html">Kedro for notebook users</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Kedro and Jupyter Notebooks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#a-custom-kedro-kernel">A custom Kedro kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html">Add Kedro features to a notebook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Spaceflights-in-a-notebook">Spaceflights in a notebook</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#The-notebook-example">The notebook example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-Kedro-for-data-processing">Use Kedro for data processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-a-YAML-configuration-file">Use a YAML configuration file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-a-configuration-file-just-for-“magic-numbers”">Use a configuration file just for “magic numbers”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-a-configuration-file-for-all-“magic-values”">Use a configuration file for all “magic values”</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-Kedro-configuration">Use Kedro configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-Kedro’s-configuration-loader-to-load-“magic-values”">Use Kedro’s configuration loader to load “magic values”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Use-Kedro’s-configuration-loader-to-load-the-Data-Catalog">Use Kedro’s configuration loader to load the Data Catalog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Where-next?">Where next?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/add_kedro_to_a_notebook.html#Refactor-your-code-into-functions">Refactor your code into functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html">Use a Jupyter notebook for Kedro project experiments</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#iris-dataset-example">Iris dataset example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#what-does-kedro-jupyter-notebook-do">What does <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">jupyter</span> <span class="pre">notebook</span></code> do?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#how-to-explore-a-kedro-project-in-my-notebook">How to explore a Kedro project in my notebook</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#run-viz-line-magic"><code class="docutils literal notranslate"><span class="pre">%run_viz</span></code> line magic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#catalog"><code class="docutils literal notranslate"><span class="pre">catalog</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#context"><code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#pipelines"><code class="docutils literal notranslate"><span class="pre">pipelines</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#session"><code class="docutils literal notranslate"><span class="pre">session</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#reload-kedro-line-magic"><code class="docutils literal notranslate"><span class="pre">%reload_kedro</span></code> line magic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#run-viz-line-magic"><code class="docutils literal notranslate"><span class="pre">%run_viz</span></code> line magic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#convert-functions-from-jupyter-notebooks-into-kedro-nodes">Convert functions from Jupyter Notebooks into Kedro nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#useful-to-know">Useful to know…</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#how-to-use-tags-to-convert-functions-from-jupyter-notebooks-into-kedro-nodes">How to use tags to convert functions from Jupyter notebooks into Kedro nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#useful-to-know-for-advanced-users">Useful to know (for advanced users)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#managed-services">Managed services</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks_and_ipython/kedro_and_notebooks.html#ipython-jupyterlab-and-other-jupyter-clients">IPython, JupyterLab and other Jupyter clients</a></li>
 </ul>
@@ -414,20 +444,34 @@
 <li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#exception-handling">6. Exception Handling</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="config_loader_migration.html#templatedconfigloader-to-omegaconfigloader"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code></span> to <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id1">1. Install the required library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id2">2. Use the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id3">3. Import statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id4">4. File format support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id5">5. Load configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#templating-of-values">6. Templating of values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#globals">7. Globals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#deprecation-of-jinja2">8. Deprecation of Jinja2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config_loader_migration.html#id6">9. Exception handling</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#omegaconfigloader">OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#templatedconfigloader">TemplatedConfigLoader</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#provide-template-values-through-globals">Provide template values through globals</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#omegaconfigloader">OmegaConfigLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#advanced-kedro-configuration">Advanced Kedro configuration</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-change-which-configuration-files-are-loaded">How to change which configuration files are loaded</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-ensure-non-default-configuration-files-get-loaded">How to ensure non default configuration files get loaded</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-global-variables-with-the-omegaconfigloader">How to use global variables with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-override-configuration-with-runtime-parameters-with-the-omegaconfigloader">How to override configuration with runtime parameters with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></li>
 </ul>
@@ -509,7 +553,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html">Advanced: Partitioned and incremental datasets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-datasets">Partitioned datasets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#how-to-use-partitioneddataset">How to use <code class="docutils literal notranslate"><span class="pre">PartitionedDataset</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#dataset-definition">Dataset definition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-credentials">Partitioned dataset credentials</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data/partitioned_and_incremental_datasets.html#partitioned-dataset-load">Partitioned dataset load</a></li>
@@ -528,7 +572,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html">Advanced: Tutorial to create a custom dataset</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#abstractdataset">AbstractDataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#scenario">Scenario</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#project-setup">Project setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#the-anatomy-of-a-dataset">The anatomy of a dataset</a></li>
@@ -536,7 +580,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#implement-the-save-method-with-fsspec">Implement the <code class="docutils literal notranslate"><span class="pre">_save</span></code> method with <code class="docutils literal notranslate"><span class="pre">fsspec</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#implement-the-describe-method">Implement the <code class="docutils literal notranslate"><span class="pre">_describe</span></code> method</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#the-complete-example">The complete example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataSet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#integration-with-partitioneddataset">Integration with <code class="docutils literal notranslate"><span class="pre">PartitionedDataset</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#versioning">Versioning</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../data/how_to_create_a_custom_dataset.html#how-to-implement-versioning-in-your-dataset">How to implement versioning in your dataset</a></li>
 </ul>
@@ -580,6 +624,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html#bad-pipelines">Bad pipelines</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html#pipeline-with-bad-nodes">Pipeline with bad nodes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html#pipeline-with-circular-dependencies">Pipeline with circular dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/pipeline_introduction.html#pipeline-nodes-named-with-the-dot-notation">Pipeline nodes named with the dot notation</a></li>
 </ul>
 </li>
 </ul>
@@ -591,6 +636,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html#how-do-i-create-a-modular-pipeline">How do I create a modular pipeline?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html#what-does-kedro-pipeline-create-do">What does <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">pipeline</span> <span class="pre">create</span></code> do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html#custom-templates">Custom templates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html#ensuring-portability">Ensuring portability</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../nodes_and_pipelines/modular_pipelines.html#providing-modular-pipeline-specific-dependencies">Providing modular pipeline specific dependencies</a></li>
 </ul>
@@ -667,24 +713,42 @@
 <li class="toctree-l3"><a class="reference internal" href="../extend_kedro/plugins.html#community-developed-plugins">Community-developed plugins</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../extend_kedro/architecture_overview.html">Kedro architecture overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extend_kedro/architecture_overview.html#kedro-project">Kedro project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extend_kedro/architecture_overview.html#kedro-framework">Kedro framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extend_kedro/architecture_overview.html#kedro-starter">Kedro starter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extend_kedro/architecture_overview.html#kedro-library">Kedro library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extend_kedro/architecture_overview.html#kedro-extension">Kedro extension</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../hooks/index.html">Hooks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/introduction.html">Hooks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#concepts">Concepts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#hook-specification">Hook specification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#hook-implementation">Hook implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#concepts">Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#hook-specifications">Hook specifications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#cli-hooks">CLI Hooks</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#hook-implementation">Hook implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#define-the-hook-implementation">Define the Hook implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#registering-the-hook-implementation-with-kedro">Registering the Hook implementation with Kedro</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#hook-execution-order">Hook execution order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/introduction.html#under-the-hood">Under the hood</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hooks/introduction.html#plugin-hooks">Plugin Hooks</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/common_use_cases.html">Common use cases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-extend-a-node-s-behaviour">Use Hooks to extend a node’s behaviour</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-customise-the-dataset-load-and-save-methods">Use Hooks to customise the dataset load and save methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hooks/common_use_cases.html#use-hooks-to-load-external-credentials">Use Hooks to load external credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks/common_use_cases.html#use-a-hook-to-read-metadata-from-datacatalog">Use a Hook to read <code class="docutils literal notranslate"><span class="pre">metadata</span></code> from <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../hooks/examples.html">Hooks examples</a><ul>
@@ -726,8 +790,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#initialise-a-sparksession-using-a-hook">Initialise a <code class="docutils literal notranslate"><span class="pre">SparkSession</span></code> using a hook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#use-kedro-s-built-in-spark-datasets-to-load-and-save-raw-data">Use Kedro’s built-in Spark datasets to load and save raw data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#spark-and-delta-lake-interaction">Spark and Delta Lake interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#use-memorydataset-for-intermediary-dataframe">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> for intermediary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#use-memorydataset-with-copy-mode-assign-for-non-dataframe-spark-objects">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataSet</span></code> with <code class="docutils literal notranslate"><span class="pre">copy_mode=&quot;assign&quot;</span></code> for non-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> Spark objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#use-memorydataset-for-intermediary-dataframe">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataset</span></code> for intermediary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#use-memorydataset-with-copy-mode-assign-for-non-dataframe-spark-objects">Use <code class="docutils literal notranslate"><span class="pre">MemoryDataset</span></code> with <code class="docutils literal notranslate"><span class="pre">copy_mode=&quot;assign&quot;</span></code> for non-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> Spark objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/pyspark_integration.html#tips-for-maximising-concurrency-using-threadrunner">Tips for maximising concurrency using <code class="docutils literal notranslate"><span class="pre">ThreadRunner</span></code></a></li>
 </ul>
 </li>
@@ -855,6 +919,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_sagemaker.html#the-kedro-sagemaker-plugin">The <code class="docutils literal notranslate"><span class="pre">kedro-sagemaker</span></code> plugin</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/amazon_emr_serverless.html">Amazon EMR Serverless</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#context">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#overview-of-approach">Overview of approach</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#setup">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#infrastructure">Infrastructure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#iam">IAM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#optional-validate-the-custom-image">(Optional) Validate the custom image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#run-a-job">Run a job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#faq">FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#how-is-the-approach-defined-here-different-from-the-approach-in-seven-steps-to-deploy-kedro-pipelines-on-amazon-emr-on-the-kedro-blog">How is the approach defined here different from the approach in “Seven steps to deploy Kedro pipelines on Amazon EMR” on the Kedro blog?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#emr-serverless-already-has-python-installed-why-do-we-need-a-custom-python-version">EMR Serverless already has Python installed. Why do we need a custom Python version?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#why-do-we-need-to-create-a-custom-image-to-provide-the-custom-python-version">Why do we need to create a custom image to provide the custom Python version?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#why-do-we-need-to-package-the-kedro-project-and-invoke-using-an-entrypoint-script-why-can-t-we-use-cmd-or-entrypoint-with-kedro-run-in-the-custom-image">Why do we need to package the Kedro project and invoke using an entrypoint script? Why can’t we use [CMD] or [ENTRYPOINT] with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> in the custom image?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/amazon_emr_serverless.html#how-about-using-the-method-described-in-lifecycle-management-with-kedrosession-to-run-kedro-programmatically">How about using the method described in Lifecycle management with KedroSession to run Kedro programmatically?</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../deployment/aws_step_functions.html">AWS Step Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../deployment/aws_step_functions.html#why-would-you-run-a-kedro-pipeline-with-aws-step-functions">Why would you run a Kedro pipeline with AWS Step Functions?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../deployment/aws_step_functions.html#strategy">Strategy</a></li>
@@ -971,7 +1059,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#requirements-to-become-a-maintainer">Requirements to become a maintainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#kedro-maintainers">Kedro maintainers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#current-maintainers">Current maintainers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#past-maintainers">Past maintainers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#application-process">Application process</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contribution/technical_steering_committee.html#voting-process">Voting process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../contribution/technical_steering_committee.html#other-issues-or-proposals">Other issues or proposals</a></li>
@@ -1700,6 +1789,22 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html">kedro_datasets.polars.GenericDataSet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet"><code class="docutils literal notranslate"><span class="pre">GenericDataSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.DEFAULT_LOAD_ARGS"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.DEFAULT_LOAD_ARGS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.DEFAULT_SAVE_ARGS"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.DEFAULT_SAVE_ARGS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.__init__"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.exists"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.from_config"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.from_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.load"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.release"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.resolve_load_version"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.resolve_load_version()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.resolve_save_version"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.resolve_save_version()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.polars.GenericDataSet.html#kedro_datasets.polars.GenericDataSet.save"><code class="docutils literal notranslate"><span class="pre">GenericDataSet.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../kedro_datasets.redis.PickleDataSet.html">kedro_datasets.redis.PickleDataSet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../kedro_datasets.redis.PickleDataSet.html#kedro_datasets.redis.PickleDataSet"><code class="docutils literal notranslate"><span class="pre">PickleDataSet</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../kedro_datasets.redis.PickleDataSet.html#kedro_datasets.redis.PickleDataSet.DEFAULT_LOAD_ARGS"><code class="docutils literal notranslate"><span class="pre">PickleDataSet.DEFAULT_LOAD_ARGS</span></code></a></li>
@@ -1976,13 +2081,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="advanced-configuration">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="advanced-configuration">
 <h1>Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this heading">¶</a></h1>
 <p>The documentation on <a class="reference internal" href="configuration_basics.html"><span class="std std-doc">configuration</span></a> describes how to satisfy most common requirements of standard Kedro project configuration:</p>
 <p>By default, Kedro is set up to use the <a class="reference internal" href="../kedro.config.ConfigLoader.html"><span class="doc std std-doc">ConfigLoader</span></a> class. Kedro also provides two additional configuration loaders with more advanced functionality: the <a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html"><span class="doc std std-doc">TemplatedConfigLoader</span></a> and the <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc">OmegaConfigLoader</span></a>.
 Each of these classes are alternatives for the default <code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code> and have different features. The following sections describe each of these classes and their specific functionality in more detail.</p>
+<p>This page also contains a set of guidance for advanced configuration requirements of standard Kedro projects:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-to-change-which-configuration-files-are-loaded">How to change which configuration files are loaded</a></p></li>
+<li><p><a class="reference internal" href="#how-to-ensure-non-default-configuration-files-get-loaded">How to ensure non default configuration files get loaded</a></p></li>
+<li><p><a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></p></li>
+<li><p><a class="reference internal" href="#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-global-variables-with-the-omegaconfigloader">How to use global variables with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+<li><p><a class="reference internal" href="#how-to-override-configuration-with-runtime-parameters-with-the-omegaconfigloader">How to override configuration with runtime parameters with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+<li><p><a class="reference internal" href="#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables with <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
+</ul>
+<div class="section" id="omegaconfigloader">
+<h2>OmegaConfigLoader<a class="headerlink" href="#omegaconfigloader" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://omegaconf.readthedocs.io/">OmegaConf</a> is a Python library designed to handle and manage settings. It serves as a YAML-based hierarchical system to organise configurations, which can be structured to accommodate various sources, allowing you to merge settings from multiple locations.</p>
+<p>From Kedro 0.18.5 you can use the <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a> which uses <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> to load data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> is under active development. It is available from Kedro version 0.18.5 with additional features due in later releases. Let us know if you have any feedback about the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> by joining the <a class="reference external" href="https://slack.kedro.org/">Kedro community on Slack</a>.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> can load <code class="docutils literal notranslate"><span class="pre">YAML</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files. Acceptable file extensions are <code class="docutils literal notranslate"><span class="pre">.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>, and <code class="docutils literal notranslate"><span class="pre">.json</span></code>. By default, any configuration files used by the config loaders in Kedro are <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>  <span class="c1"># new import</span>
+
+<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="templatedconfigloader">
 <h2>TemplatedConfigLoader<a class="headerlink" href="#templatedconfigloader" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">ConfigLoader</span></code> and <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> have been deprecated since Kedro <code class="docutils literal notranslate"><span class="pre">0.18.12</span></code> and will be removed in Kedro <code class="docutils literal notranslate"><span class="pre">0.19.0</span></code>. Refer to the <a class="reference internal" href="config_loader_migration.html"><span class="std std-doc">migration guide for config loaders</span></a> for instructions on how to update your code to use <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code>.</p>
+</div>
 <p>Kedro provides an extension <a class="reference internal" href="../kedro.config.TemplatedConfigLoader.html"><span class="doc std std-doc">TemplatedConfigLoader</span></a> class that allows you to template values in configuration files. To apply templating in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">TemplatedConfigLoader</span>  <span class="c1"># new import</span>
 
@@ -2007,7 +2168,7 @@ Each of these classes are alternatives for the default <code class="docutils lit
 <span class="w">    </span><span class="nt">fea</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;04_feature&quot;</span>
 </pre></div>
 </div>
-<p>To point your <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> to the globals file, add it to the the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code> variable in <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
+<p>To point your <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> to the globals file, add it to the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code> variable in <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG_LOADER_ARGS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;globals_pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;*globals.yml&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -2058,34 +2219,8 @@ Each of these classes are alternatives for the default <code class="docutils lit
 <p>If you specify both <code class="docutils literal notranslate"><span class="pre">globals_pattern</span></code> and <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> in <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code>, the contents of the dictionary resulting from <code class="docutils literal notranslate"><span class="pre">globals_pattern</span></code> are merged with the <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> dictionary. In case of conflicts, the keys from the <code class="docutils literal notranslate"><span class="pre">globals_dict</span></code> dictionary take precedence.</p>
 </div>
 </div>
-<div class="section" id="omegaconfigloader">
-<h2>OmegaConfigLoader<a class="headerlink" href="#omegaconfigloader" title="Permalink to this heading">¶</a></h2>
-<p><a class="reference external" href="https://omegaconf.readthedocs.io/">OmegaConf</a> is a Python library designed for configuration. It is a YAML-based hierarchical configuration system with support for merging configurations from multiple sources.</p>
-<p>From Kedro 0.18.5 you can use the <a class="reference internal" href="../kedro.config.OmegaConfigLoader.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></span></a> which uses <code class="docutils literal notranslate"><span class="pre">OmegaConf</span></code> under the hood to load data.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> is under active development. It was first available from Kedro 0.18.5 with additional features due in later releases. Let us know if you have any feedback about the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code>.</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> can load <code class="docutils literal notranslate"><span class="pre">YAML</span></code> and <code class="docutils literal notranslate"><span class="pre">JSON</span></code> files. Acceptable file extensions are <code class="docutils literal notranslate"><span class="pre">.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>, and <code class="docutils literal notranslate"><span class="pre">.json</span></code>. By default, any configuration files used by the config loaders in Kedro are <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files.</p>
-<p>To use <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code> in your project, set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_CLASS</span></code> constant in your <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kedro.config</span> <span class="kn">import</span> <span class="n">OmegaConfigLoader</span>  <span class="c1"># new import</span>
-
-<span class="n">CONFIG_LOADER_CLASS</span> <span class="o">=</span> <span class="n">OmegaConfigLoader</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="advanced-kedro-configuration">
 <h2>Advanced Kedro configuration<a class="headerlink" href="#advanced-kedro-configuration" title="Permalink to this heading">¶</a></h2>
-<p>This section contains a set of guidance for advanced configuration requirements of standard Kedro projects:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#how-to-change-which-configuration-files-are-loaded">How to change which configuration files are loaded</a></p></li>
-<li><p><a class="reference internal" href="#how-to-ensure-non-default-configuration-files-get-loaded">How to ensure non default configuration files get loaded</a></p></li>
-<li><p><a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">How to bypass the configuration loading rules</a></p></li>
-<li><p><a class="reference internal" href="#how-to-use-jinja2-syntax-in-configuration">How to use Jinja2 syntax in configuration</a></p></li>
-<li><p><a class="reference internal" href="#how-to-do-templating-with-the-omegaconfigloader">How to do templating with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
-<li><p><a class="reference internal" href="#how-to-use-resolvers-in-the-omegaconfigloader">How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code></a></p></li>
-<li><p><a class="reference internal" href="#how-to-load-credentials-through-environment-variables">How to load credentials through environment variables</a></p></li>
-</ul>
 <div class="section" id="how-to-change-which-configuration-files-are-loaded">
 <h3>How to change which configuration files are loaded<a class="headerlink" href="#how-to-change-which-configuration-files-are-loaded" title="Permalink to this heading">¶</a></h3>
 <p>If you want to change the patterns that the configuration loader uses to find the files to load you need to set the <code class="docutils literal notranslate"><span class="pre">CONFIG_LOADER_ARGS</span></code> variable in <a class="reference internal" href="../kedro_project_setup/settings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">src/&lt;package_name&gt;/settings.py</span></code></span></a>.
@@ -2130,7 +2265,7 @@ For example, if you want to load Spark configuration files you need to update <c
 <p>From version 0.17.0, <code class="docutils literal notranslate"><span class="pre">TemplatedConfigLoader</span></code> also supports the <a class="reference external" href="https://palletsprojects.com/p/jinja/">Jinja2</a> template engine alongside the original template syntax. Below is an example of a <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> file that uses both features:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{% for speed in [&#39;fast&#39;, &#39;slow&#39;] %}
 {{ speed }}-trains:
-    type: MemoryDataSet
+    type: MemoryDataset
 
 {{ speed }}-cars:
     type: pandas.CSVDataSet
@@ -2149,13 +2284,13 @@ For example, if you want to load Spark configuration files you need to update <c
 </ol>
 <p>The output Python dictionary will look as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;fast-trains&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MemoryDataSet&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;fast-trains&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MemoryDataset&quot;</span><span class="p">},</span>
     <span class="s2">&quot;fast-cars&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pandas.CSVDataSet&quot;</span><span class="p">,</span>
         <span class="s2">&quot;filepath&quot;</span><span class="p">:</span> <span class="s2">&quot;s3://my_s3_bucket/fast-cars.csv&quot;</span><span class="p">,</span>
         <span class="s2">&quot;save_args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
     <span class="p">},</span>
-    <span class="s2">&quot;slow-trains&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MemoryDataSet&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;slow-trains&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MemoryDataset&quot;</span><span class="p">},</span>
     <span class="s2">&quot;slow-cars&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pandas.CSVDataSet&quot;</span><span class="p">,</span>
         <span class="s2">&quot;filepath&quot;</span><span class="p">:</span> <span class="s2">&quot;s3://my_s3_bucket/slow-cars.csv&quot;</span><span class="p">,</span>
@@ -2210,6 +2345,60 @@ By default, the config pattern for catalogs is: <code class="docutils literal no
 <h4>Other configuration files<a class="headerlink" href="#other-configuration-files" title="Permalink to this heading">¶</a></h4>
 <p>It’s also possible to use variable interpolation in configuration files other than parameters and catalog, such as custom spark or mlflow configuration. This works in the same way as variable interpolation in parameter files. You can still use the underscore for the templated values if you want, but it’s not mandatory like it is for catalog files.</p>
 </div>
+</div>
+<div class="section" id="how-to-use-global-variables-with-the-omegaconfigloader">
+<h3>How to use global variables with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code><a class="headerlink" href="#how-to-use-global-variables-with-the-omegaconfigloader" title="Permalink to this heading">¶</a></h3>
+<p>From Kedro <code class="docutils literal notranslate"><span class="pre">0.18.13</span></code>, you can use variable interpolation in your configurations using “globals” with <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code>.
+The benefit of using globals over regular variable interpolation is that the global variables are shared across different configuration types, such as catalog and parameters.
+By default, these global variables are assumed to be in files called <code class="docutils literal notranslate"><span class="pre">globals.yml</span></code> in any of your environments. If you want to configure the naming patterns for the files that contain your global variables,
+you can do so <a class="reference internal" href="#how-to-change-which-configuration-files-are-loaded">by overwriting the <code class="docutils literal notranslate"><span class="pre">globals</span></code> key in <code class="docutils literal notranslate"><span class="pre">config_patterns</span></code></a>. You can also <a class="reference internal" href="#how-to-bypass-the-configuration-loading-rules">bypass the configuration loading</a>
+to directly set the global variables in <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code>.</p>
+<p>Suppose you have global variables located in the file <code class="docutils literal notranslate"><span class="pre">conf/base/globals.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_global_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">45</span>
+<span class="nt">dataset_type</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">csv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+</pre></div>
+</div>
+<p>You can access these global variables in your catalog or parameters config files with a <code class="docutils literal notranslate"><span class="pre">globals</span></code> resolver like this:
+<code class="docutils literal notranslate"><span class="pre">conf/base/parameters.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_param </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${globals:my_global_value}&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">conf/base/catalog.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/01_raw/companies.csv</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${globals:dataset_type.csv}&quot;</span>
+</pre></div>
+</div>
+<p>You can also provide a default value to be used in case the global variable does not exist:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_param</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${globals:</span><span class="nv"> </span><span class="s">nonexistent_global,</span><span class="nv"> </span><span class="s">23}&quot;</span>
+</pre></div>
+</div>
+<p>If there are duplicate keys in the globals files in your base and runtime environments, the values in the runtime environment
+overwrite the values in your base environment.</p>
+</div>
+<div class="section" id="how-to-override-configuration-with-runtime-parameters-with-the-omegaconfigloader">
+<h3>How to override configuration with runtime parameters with the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code><a class="headerlink" href="#how-to-override-configuration-with-runtime-parameters-with-the-omegaconfigloader" title="Permalink to this heading">¶</a></h3>
+<p>Kedro allows you to <a class="reference internal" href="parameters.html#how-to-specify-parameters-at-runtime"><span class="std std-ref">specify runtime parameters for the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> command with the <code class="docutils literal notranslate"><span class="pre">--params</span></code> CLI option</span></a>. These runtime parameters
+are added to the <code class="docutils literal notranslate"><span class="pre">KedroContext</span></code> and merged with parameters from the configuration files to be used in your project’s pipelines and nodes. From Kedro <code class="docutils literal notranslate"><span class="pre">0.18.14</span></code>, you can use the
+<code class="docutils literal notranslate"><span class="pre">runtime_params</span></code> resolver to indicate that you want to override values of certain keys in your configuration with runtime parameters provided through the CLI option.
+This resolver can be used across different configuration types, such as parameters, catalog, and more, except for “globals”.</p>
+<p>Consider this <code class="docutils literal notranslate"><span class="pre">parameters.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model_options</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">random_state</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${runtime_params:random}&quot;</span>
+</pre></div>
+</div>
+<p>This will allow you to pass a runtime parameter named <code class="docutils literal notranslate"><span class="pre">random</span></code> through the CLI to specify the value of <code class="docutils literal notranslate"><span class="pre">model_options.random_state</span></code> in your project’s parameters:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kedro<span class="w"> </span>run<span class="w"> </span>--params<span class="w"> </span><span class="nv">random</span><span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+<p>You can also specify a default value to be used in case the runtime parameter is not specified with the <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code> command. Consider this catalog entry:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">companies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas.CSVDataSet</span>
+<span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${runtime_params:folder,</span><span class="nv"> </span><span class="s">&#39;data/01_raw&#39;}/companies.csv&quot;</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">folder</span></code> parameter is not passed through the CLI <code class="docutils literal notranslate"><span class="pre">--params</span></code> option with <code class="docutils literal notranslate"><span class="pre">kedro</span> <span class="pre">run</span></code>, the default value <code class="docutils literal notranslate"><span class="pre">'data/01_raw/'</span></code> is used for the <code class="docutils literal notranslate"><span class="pre">filepath</span></code>.</p>
 </div>
 <div class="section" id="how-to-use-resolvers-in-the-omegaconfigloader">
 <h3>How to use resolvers in the <code class="docutils literal notranslate"><span class="pre">OmegaConfigLoader</span></code><a class="headerlink" href="#how-to-use-resolvers-in-the-omegaconfigloader" title="Permalink to this heading">¶</a></h3>

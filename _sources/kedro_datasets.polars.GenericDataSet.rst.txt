@@ -1,0 +1,36 @@
+﻿kedro\_datasets.polars.GenericDataSet
+=====================================
+
+.. currentmodule:: kedro_datasets.polars
+
+.. autoclass:: GenericDataSet
+   :members:
+   :undoc-members:
+   :inherited-members:
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GenericDataSet.DEFAULT_LOAD_ARGS
+      ~GenericDataSet.DEFAULT_SAVE_ARGS
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GenericDataSet.exists
+      ~GenericDataSet.from_config
+      ~GenericDataSet.load
+      ~GenericDataSet.release
+      ~GenericDataSet.resolve_load_version
+      ~GenericDataSet.resolve_save_version
+      ~GenericDataSet.save
+   
+   

@@ -1,8 +1,9 @@
 # Introduction to the Data Catalog
 
+
 In a Kedro project, the Data Catalog is a registry of all data sources available for use by the project. It is specified with a YAML catalog file that maps the names of node inputs and outputs as keys in the `DataCatalog` class.
 
-This page introduces the basic sections of `catalog.yml`, which is the file used to register data sources for a Kedro project.
+This page introduces the basic sections of `catalog.yml`, which is the file Kedro uses to register data sources for a project.
 
 ## The basics of `catalog.yml`
 A separate page of [Data Catalog YAML examples](./data_catalog_yaml_examples.md)  gives further examples of how to work with `catalog.yml`, but here we revisit the [basic `catalog.yml` introduced by the spaceflights tutorial](../tutorial/set_up_data.md).
@@ -126,6 +127,7 @@ In the example above, the `catalog.yml` file contains references to credentials 
 
 ### Dataset versioning
 
+
 Kedro enables dataset and ML model versioning through the `versioned` definition. For example:
 
 ```yaml
@@ -144,9 +146,9 @@ kedro run --load-version=cars:YYYY-MM-DDThh.mm.ss.sssZ
 ```
 where `--load-version` is dataset name and version timestamp separated by `:`.
 
-A dataset offers versioning support if it extends the [`AbstractVersionedDataSet`](/kedro.io.AbstractVersionedDataSet) class to accept a version keyword argument as part of the constructor and adapt the `_save` and `_load` method to use the versioned data path obtained from `_get_save_path` and `_get_load_path` respectively.
+A dataset offers versioning support if it extends the [`AbstractVersionedDataset`](/kedro.io.AbstractVersionedDataset) class to accept a version keyword argument as part of the constructor and adapt the `_save` and `_load` method to use the versioned data path obtained from `_get_save_path` and `_get_load_path` respectively.
 
-To verify whether a dataset can undergo versioning, you should examine the dataset class code to inspect its inheritance [(you can find contributed datasets within the `kedro-datasets` repository)](https://github.com/kedro-org/kedro-plugins/tree/main/kedro-datasets/kedro_datasets). Check if the dataset class inherits from the `AbstractVersionedDataSet`. For instance, if you encounter a class like `CSVDataSet(AbstractVersionedDataSet[pd.DataFrame, pd.DataFrame])`, this indicates that the dataset is set up to support versioning.
+To verify whether a dataset can undergo versioning, you should examine the dataset class code to inspect its inheritance [(you can find contributed datasets within the `kedro-datasets` repository)](https://github.com/kedro-org/kedro-plugins/tree/main/kedro-datasets/kedro_datasets). Check if the dataset class inherits from the `AbstractVersionedDataset`. For instance, if you encounter a class like `CSVDataSet(AbstractVersionedDataset[pd.DataFrame, pd.DataFrame])`, this indicates that the dataset is set up to support versioning.
 
 ```{note}
 Note that HTTP(S) is a supported file system in the dataset implementations, but if you it, you can't also use versioning.
@@ -160,4 +162,16 @@ By default, Kedro has a `base` and a `local` folder for configuration. The Data 
 
 In summary, if you need to configure your datasets for different environments, you can create both `conf/base/catalog.yml` and `conf/local/catalog.yml`. For instance, you can use the `catalog.yml` file in `conf/base/` to register the locations of datasets that would run in production, while adding a second version of `catalog.yml` in `conf/local/` to register the locations of sample datasets while you are using them for prototyping data pipeline(s).
 
-To illustrate this, if you include a dataset called `cars` in `catalog.yml` stored in both `conf/base` and `conf/local`, your pipeline code would use the `cars` dataset and rely on Kedro to detect which definition of `cars` dataset to use in your pipeline.
+To illustrate this, consider the following catalog entry for a dataset named `cars` in `conf/base/catalog.yml`, which points to a csv file stored in a bucket on AWS S3:
+```yaml
+cars:
+  filepath: s3://my_bucket/cars.csv
+  type: pandas.CSVDataSet
+ ```
+You can overwrite this catalog entry in `conf/local/catalog.yml` to point to a locally stored file instead:
+```yaml
+cars:
+  filepath: data/01_raw/cars.csv
+  type: pandas.CSVDataSet
+```
+In your pipeline code, when the `cars` dataset is used, it will use the overwritten catalog entry from `conf/local/catalog.yml` and rely on Kedro to detect which definition of `cars` dataset to use in your pipeline.
